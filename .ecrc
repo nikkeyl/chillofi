@@ -1,0 +1,7 @@
+{
+  "exclude": [
+    "CHANGELOG.md",
+    "pnpm-lock.yaml",
+    "README.md"
+  ]
+}
