@@ -1,19 +1,19 @@
-# directories
+# Directories
 .husky
 
-# files
+# Files
 *.md
-pnpm-lock.yaml
+bun.lockb
 
 # *rc
 .czrc
 .ecrc
 
-# configs
+# Configs
 .editorconfig
 .gitattributes
 
-# ignores
+# Ignores
 .gitignore
 .prettierignore
 .remarkignore

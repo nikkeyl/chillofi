@@ -1,2 +1,6 @@
-# directories
+# Directories
+.next
 node_modules
+
+# Files
+bun.lockb

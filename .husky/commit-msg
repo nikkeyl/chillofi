@@ -1,1 +1,1 @@
-pnpm --no-install commitlint --edit
+bunx commitlint --edit
