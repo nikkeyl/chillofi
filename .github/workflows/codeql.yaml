@@ -5,14 +5,14 @@ on:
     branches:
       - main
     paths:
-      - package.json
-      - src/**/*.{ts,tsx}
+      - src/**/*.tsx
+      - src/**/*.ts
   push:
     branches:
       - main
     paths:
-      - package.json
-      - src/**/*.{ts,tsx}
+      - src/**/*.tsx
+      - src/**/*.ts
 
 permissions:
   actions: read
