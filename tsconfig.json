@@ -11,7 +11,7 @@
     "noUnusedParameters": true,
     "strict": true
   },
-  "exclude": ["specs"],
+  "exclude": ["node_modules"],
   "extends": ["./tsconfig.node.json"],
-  "include": ["src"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", ".next/types/**/*.ts", "next-env.d.ts"]
 }

@@ -1,5 +1,6 @@
 export default {
   '**/*.md': 'remark --quiet --frail',
   '**/*': 'prettier --write',
-  'src/**/*.{ts,tsx}': 'eslint --fix',
+  'src/**/*.{tsx,ts}': 'eslint --fix',
+  'src/**/*.scss': 'stylelint --fix',
 };
