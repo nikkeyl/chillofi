@@ -2,6 +2,7 @@
   "compilerOptions": {
     "allowImportingTsExtensions": true,
     "allowJs": true,
+    "baseUrl": "./",
     "composite": true,
     "esModuleInterop": true,
     "incremental": true,
@@ -12,7 +13,9 @@
     "moduleResolution": "Bundler",
     "noEmit": true,
     "paths": {
-      "@/*": ["./src/*"]
+      "@app/*": ["./src/app/*"],
+      "@features": ["./src/features"],
+      "@shared": ["./src/shared"]
     },
     "plugins": [
       {
@@ -20,7 +23,6 @@
       }
     ],
     "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "target": "ESNext"
+    "skipLibCheck": true
   }
 }
