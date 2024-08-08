@@ -1,25 +1,36 @@
 {
   "type": "module",
-  "imports": {
-    "#src": "./src/index.ts"
-  },
   "scripts": {
     "init": "bun i && husky",
+    "dev": "next dev --turbo",
+    "build": "next build",
+    "start": "next start",
     "lint:editorconfig": "editorconfig-checker",
     "lint:formatting": "prettier . --check",
     "lint:md": "remark . --quiet --frail",
-    "lint:ts": "eslint src/**/*.{ts,tsx} --fix",
+    "lint:scss": "stylelint src/**/*.scss --fix",
+    "lint:ts": "eslint src/**/*.{tsx,ts} --fix",
     "prettify": "prettier . --write",
     "commit": "cz"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "next": "14.2.5"
   },
   "devDependencies": {
     "@archoleat/commitlint-define-config": "^1.0.8",
     "@archoleat/eslint-flat-compatibility": "^1.1.6",
-    "@commitlint/cli": "^19.3.0",
+    "@archoleat/stylelint-config-extended-scss": "^1.6.14",
+    "@commitlint/cli": "^19.4.0",
     "@commitlint/config-conventional": "^19.2.2",
     "@commitlint/types": "^19.0.3",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
+    "@types/bun": "^1.1.6",
+    "@types/node": "^22.1.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
     "conventional-changelog-conventionalcommits": "^8.0.0",
@@ -41,6 +52,7 @@
     "remark-cli": "^12.0.1",
     "remark-preset-lint-consistent": "^6.0.0",
     "remark-preset-lint-markdown-style-guide": "^6.0.0",
-    "remark-preset-lint-recommended": "^7.0.0"
+    "remark-preset-lint-recommended": "^7.0.0",
+    "sass": "^1.77.8"
   }
 }

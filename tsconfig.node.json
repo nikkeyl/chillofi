@@ -1,14 +1,28 @@
 {
   "compilerOptions": {
     "allowImportingTsExtensions": true,
+    "allowJs": true,
+    "baseUrl": "./",
     "composite": true,
-    "emitDeclarationOnly": true,
-    "lib": ["DOM", "ESNext"],
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "outDir": "",
-    "rootDir": "src",
-    "skipLibCheck": true,
-    "target": "ESNext"
+    "esModuleInterop": true,
+    "incremental": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "lib": ["DOM.Iterable", "DOM", "ESNext"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "noEmit": true,
+    "paths": {
+      "@app/*": ["./src/app/*"],
+      "@features/*": ["./src/features/*"],
+      "@shared/*": ["./src/shared/*"]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "resolveJsonModule": true,
+    "skipLibCheck": true
   }
 }

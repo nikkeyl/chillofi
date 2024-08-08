@@ -2,10 +2,12 @@
 .husky
 
 # Files
+.env
 *.md
 bun.lockb
 
 # *rc
+.browserslistrc
 .czrc
 .ecrc
 
