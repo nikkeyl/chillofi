@@ -1,4 +1,4 @@
-import '@app/style.scss';
+import './style.scss';
 
 import type { Metadata } from 'next';
 import type { PropsWithChildren } from 'react';
@@ -16,7 +16,7 @@ const metadata: Metadata = {
   },
 };
 
-const RootLayout = ({ children }: PropsWithChildren) => {
+const Layout = ({ children }: PropsWithChildren) => {
   return (
     <html lang="en">
       <body>{children}</body>
@@ -26,4 +26,4 @@ const RootLayout = ({ children }: PropsWithChildren) => {
 
 export { metadata };
 
-export default RootLayout;
+export default Layout;

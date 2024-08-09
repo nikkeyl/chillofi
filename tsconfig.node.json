@@ -2,7 +2,7 @@
   "compilerOptions": {
     "allowImportingTsExtensions": true,
     "allowJs": true,
-    "baseUrl": "./",
+    "baseUrl": ".",
     "composite": true,
     "esModuleInterop": true,
     "incremental": true,
