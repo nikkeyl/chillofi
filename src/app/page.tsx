@@ -1,15 +1,14 @@
-import styles from './page.module.scss';
+// import styles from './page.module.scss';
 
 import Image from 'next/image';
 
 import { Wrapper } from '../shared/ui/wrapper';
 
-const Home = () => {
-  return (
+const Home = () => (
     <Wrapper>
-      <main className=''>
+      <main className="">
         <Image
-          className=''
+          className=""
           src="/images/background.jpg"
           alt="background"
           width={1920}
@@ -18,6 +17,5 @@ const Home = () => {
       </main>
     </Wrapper>
   );
-};
 
 export default Home;
