@@ -4,10 +4,10 @@
 # Files
 .env
 *.md
+browserslist
 bun.lockb
 
 # *rc
-.browserslistrc
 .czrc
 .ecrc
 
