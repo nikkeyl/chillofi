@@ -10,8 +10,7 @@
     "lint:md": "remark . --quiet --frail",
     "lint:scss": "stylelint src/**/*.scss --fix",
     "lint:ts": "eslint src/**/*.{tsx,ts} --fix",
-    "prettify": "prettier . --write",
-    "commit": "cz"
+    "prettify": "prettier . --write"
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -36,7 +35,6 @@
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
     "conventional-changelog-conventionalcommits": "^8.0.0",
-    "cz-conventional-changelog": "^3.3.0",
     "editorconfig-checker": "^5.1.8",
     "eslint": "^8.57.0",
     "eslint-config-airbnb-typescript": "^18.0.0",
