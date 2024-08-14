@@ -3,10 +3,11 @@
 import Image from 'next/image';
 
 import { Wrapper } from '../shared/ui/wrapper';
+import { Main } from '../shared/ui/main';
 
 const Home = () => (
   <Wrapper>
-    <main className="">
+    <Main>
       <Image
         className=""
         src="/images/background.jpg"
@@ -14,7 +15,7 @@ const Home = () => (
         width={1920}
         height={1080}
       />
-    </main>
+    </Main>
   </Wrapper>
 );
 
