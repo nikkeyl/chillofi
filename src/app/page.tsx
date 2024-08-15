@@ -1,17 +1,20 @@
 import Image from 'next/image';
 
-import { Main, Wrapper } from '@shared/ui';
+import { Fullscreen, Main, Wrapper } from '@shared/ui';
+
+import background from 'public/images/background.jpg';
 
 const Home = () => (
   <Wrapper>
     <Main>
-      <Image
-        className=""
-        src="/images/background.jpg"
-        alt="background"
-        width={1920}
-        height={1080}
-      />
+      <Fullscreen>
+        <Image
+          className=""
+          src={background}
+          alt="background"
+          priority
+        />
+      </Fullscreen>
     </Main>
   </Wrapper>
 );

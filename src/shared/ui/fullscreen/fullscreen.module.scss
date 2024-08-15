@@ -1,0 +1,12 @@
+.fullscreen {
+  min-block-size: 100svb;
+}
+
+.bgCover {
+  position: relative;
+
+  img {
+    position: absolute;
+    inset: 0;
+  }
+}
