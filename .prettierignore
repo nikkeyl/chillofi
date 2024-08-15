@@ -16,5 +16,6 @@ bun.lockb
 .gitattributes
 
 # Ignores
+.eslintignore
 .gitignore
 .prettierignore

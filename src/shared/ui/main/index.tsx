@@ -1,8 +1,8 @@
 import styles from './main.module.scss';
 
-import type { Props } from './props.d.ts';
+import type { Properties } from './properties.d.ts';
 
-const Main = ({ children }: Props) => (
+const Main = ({ children }: Properties) => (
   <main className={styles.main}>{children}</main>
 );
 

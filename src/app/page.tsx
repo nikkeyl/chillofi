@@ -1,9 +1,6 @@
-// import styles from './page.module.scss';
-
 import Image from 'next/image';
 
-import { Wrapper } from '../shared/ui/wrapper';
-import { Main } from '../shared/ui/main';
+import { Main, Wrapper } from '@shared/ui';
 
 const Home = () => (
   <Wrapper>

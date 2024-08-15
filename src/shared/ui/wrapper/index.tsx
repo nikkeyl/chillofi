@@ -1,8 +1,8 @@
 import styles from './wrapper.module.scss';
 
-import type { Props } from './props.d.ts';
+import type { Properties } from './properties.d.ts';
 
-const Wrapper = ({ children }: Props) => (
+const Wrapper = ({ children }: Properties) => (
   <div className={styles.wrapper}>{children}</div>
 );
 
