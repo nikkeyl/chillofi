@@ -1,39 +1,48 @@
 {
   "compilerOptions": {
-    "allowImportingTsExtensions": true,
-    "allowJs": true,
-    "allowUnreachableCode": false,
-    "allowUnusedLabels": false,
-    "baseUrl": ".",
-    "composite": true,
-    "disableReferencedProjectLoad": true,
-    "esModuleInterop": true,
-    "exactOptionalPropertyTypes": true,
-    "incremental": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "lib": ["DOM.Iterable", "DOM", "ESNext"],
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "noEmit": true,
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noUncheckedIndexedAccess": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "paths": {
-      "@app/*": ["./src/app/*"],
-      "@features/*": ["./src/features/*"],
-      "@shared/*": ["./src/shared/*"]
-    },
+    // Editor Support
     "plugins": [
       {
         "name": "next"
       }
     ],
-    "resolveJsonModule": true,
+    // Emit
+    "noEmit": true,
+    // Completeness
     "skipLibCheck": true,
-    "strict": true
+    // JavaScript Support
+    "allowJs": true,
+    // Language and Environment
+    "jsx": "preserve",
+    "lib": ["DOM.Iterable", "DOM", "ESNext"],
+    // Modules
+    "allowImportingTsExtensions": true,
+    "baseUrl": ".",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "paths": {
+      "@app/*": ["./src/app/*"],
+      "@features/*": ["./src/features/*"],
+      "@shared/*": ["./src/shared/*"]
+    },
+    "resolveJsonModule": true,
+    // Projects
+    "disableReferencedProjectLoad": true,
+    "incremental": true,
+    // Type Checking
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    // Interop Constraints
+    "esModuleInterop": true,
+    "isolatedModules": true
   },
   "exclude": ["node_modules"],
   "include": ["**/*.tsx", "**/*.ts", ".next/types/**/*.ts", "next-env.d.ts"]
