@@ -6,4 +6,3 @@ export default defineConfig({
     'declaration-empty-line-before': null,
   },
 });
-

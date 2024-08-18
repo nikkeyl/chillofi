@@ -17,10 +17,10 @@ const metadata: Metadata = {
 };
 
 const Layout = ({ children }: PropsWithChildren) => (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
-  );
+  <html lang="en">
+    <body>{children}</body>
+  </html>
+);
 
 export { metadata };
 
