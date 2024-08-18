@@ -1,6 +1,5 @@
 {
   "exclude": [
-    "bun.lockb",
-    "LICENSE"
+    "bun.lockb"
   ]
 }
