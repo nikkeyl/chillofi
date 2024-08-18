@@ -1,23 +1,20 @@
-name: Markdown
+name: Remark
 
 on:
-  workflow_run:
-    workflows:
-      - CodeQL
-    types:
-      - completed
   pull_request:
     branches:
       - main
+    paths:
+      - '**/*.md'
   push:
     branches:
       - main
+    paths:
+      - '**/*.md'
 
 jobs:
-  markdown:
-    name: Markdown
-
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+  remark:
+    name: Remark
 
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -33,4 +30,4 @@ jobs:
         run: bun i
 
       - name: Lint
-        run: bun lint:md
+        run: bun remark . --quiet --frail

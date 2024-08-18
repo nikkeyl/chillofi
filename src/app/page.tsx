@@ -1,5 +1,17 @@
-import styles from '@/app/page.module.scss';
+import Image from 'next/image';
 
-const Home = () => {};
+import { Fullscreen, Main, Wrapper } from '@shared/ui';
+
+import background from 'public/images/background.jpg';
+
+const Home = () => (
+  <Wrapper>
+    <Main>
+      <Fullscreen>
+        <Image className="" src={background} alt="background" priority />
+      </Fullscreen>
+    </Main>
+  </Wrapper>
+);
 
 export default Home;

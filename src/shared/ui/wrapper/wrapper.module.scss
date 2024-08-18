@@ -1,0 +1,9 @@
+.wrapper {
+  display: flex;
+
+  min-block-size: 100vb;
+
+  overflow: clip;
+
+  flex-direction: column;
+}

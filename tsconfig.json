@@ -1,17 +1,49 @@
 {
   "compilerOptions": {
+    // Editor Support
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    // Emit
+    "noEmit": true,
+    // Completeness
+    "skipLibCheck": true,
+    // JavaScript Support
+    "allowJs": true,
+    // Language and Environment
+    "jsx": "preserve",
+    "lib": ["DOM.Iterable", "DOM", "ESNext"],
+    // Modules
+    "allowImportingTsExtensions": true,
+    "baseUrl": ".",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "paths": {
+      "@app/*": ["./src/app/*"],
+      "@features/*": ["./src/features/*"],
+      "@shared/*": ["./src/shared/*"]
+    },
+    "resolveJsonModule": true,
+    // Projects
+    "disableReferencedProjectLoad": true,
+    "incremental": true,
+    // Type Checking
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
-    "disableReferencedProjectLoad": true,
     "exactOptionalPropertyTypes": true,
     "noImplicitAny": true,
+    "noImplicitOverride": true,
     "noImplicitReturns": true,
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "strict": true
+    "strict": true,
+    // Interop Constraints
+    "esModuleInterop": true,
+    "isolatedModules": true
   },
   "exclude": ["node_modules"],
-  "extends": ["./tsconfig.node.json"],
-  "include": ["src/**/*.ts", "src/**/*.tsx", ".next/types/**/*.ts", "next-env.d.ts"]
+  "include": ["**/*.tsx", "**/*.ts", ".next/types/**/*.ts", "next-env.d.ts"]
 }
