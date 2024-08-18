@@ -4,9 +4,13 @@ on:
   pull_request:
     branches:
       - main
+    paths:
+      - src/**/*.scss
   push:
     branches:
       - main
+    paths:
+      - src/**/*.scss
 
 jobs:
   stylelint:
@@ -26,4 +30,4 @@ jobs:
         run: bun i
 
       - name: Lint
-        run: bun lint:scss
+        run: bun stylelint src/**/*.scss
