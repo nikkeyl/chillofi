@@ -8,7 +8,7 @@ const metadata: Metadata = {
   description: 'LOFI-radio for work, study and relax',
   icons: {
     icon: {
-      url: 'public/favicon.ico',
+      url: 'favicon.ico',
       type: 'image/x-icon',
       sizes: '48x48',
       fetchPriority: 'high',
