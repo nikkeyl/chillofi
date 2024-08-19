@@ -1,3 +1,3 @@
-type Sound = HTMLAudioElement | null
+type Sound = HTMLAudioElement | null;
 
 export { Sound };
