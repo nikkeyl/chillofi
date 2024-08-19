@@ -1,3 +1,5 @@
+@import "@styles/abstracts/mixins";
+
 * {
   margin: 0;
 
@@ -29,4 +31,12 @@ img {
 
   background-origin: border-box;
   background-repeat: no-repeat;
+}
+
+button {
+  background-color: transparent;
+
+  @include media-hover {
+    cursor: pointer;
+  }
 }

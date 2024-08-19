@@ -29,7 +29,10 @@
       "@styles/*": ["./src/shared/styles/*"],
       "@fullscreen/*": ["./src/shared/ui/fullscreen/*"],
       "@main/*": ["./src/shared/ui/main/*"],
-      "@wrapper/*": ["./src/shared/ui/wrapper/*"]
+      "@switcher/*": ["./src/shared/ui/switcher/*"],
+      "@wrapper/*": ["./src/shared/ui/wrapper/*"],
+      // Effects
+      "@effects/*": ["./src/shared/styles/effects/*"],
     },
     "resolveJsonModule": true,
     // Projects
