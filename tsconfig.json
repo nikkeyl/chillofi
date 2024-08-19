@@ -32,7 +32,7 @@
       "@switcher/*": ["./src/shared/ui/switcher/*"],
       "@wrapper/*": ["./src/shared/ui/wrapper/*"],
       // Effects
-      "@effects/*": ["./src/shared/styles/effects/*"],
+      "@effects/*": ["./src/shared/styles/effects/*"]
     },
     "resolveJsonModule": true,
     // Projects
