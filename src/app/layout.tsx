@@ -1,4 +1,4 @@
-import '@app/style.scss';
+import '@app/main.scss';
 
 import type { Metadata } from 'next';
 import type { PropsWithChildren } from 'react';

@@ -1,0 +1,60 @@
+@import "@styles/abstracts/functions";
+@import "@styles/abstracts/mixins";
+
+.switcher {
+  z-index: 1;
+  position: absolute;
+  background-color: #333;
+  padding: to-rem(2);
+  border-radius: to-rem(1);
+  block-size: to-rem(30);
+  inline-size: to-rem(55);
+  bottom: to-rem(10);
+  left: to-rem(10);
+}
+
+.inner {
+  background-color: #ffffc2;
+  display: block;
+  border-radius: inherit;
+  block-size: 100%;
+  inline-size: 100%;
+  position: relative;
+  box-shadow: 0 0 to-rem(10) 0 rgba(30, 30, 30, 1) inset;
+
+  &::before,
+  &::after {
+    @include pseudo;
+
+    background-color: #333;
+  }
+
+  &::before {
+    border-radius: to-rem(1);
+    inset: to-rem(1);
+    block-size: to-rem(24);
+    inline-size: to-rem(24);
+  }
+
+  &::after {
+    background-color: #3e3e3e;
+    inset: to-rem(5) 0 to-rem(5) to-rem(10);
+    inline-size: to-rem(4);
+    border-radius: to-rem(10);
+    block-size: to-rem(16);
+  }
+
+  &:global(.active) {
+    &::before {
+      right: to-rem(1);
+      left: auto;
+    }
+
+    &::after {
+      right: to-rem(11);
+      left: auto;
+      background-color: #00ff48;
+      box-shadow: 0 0 to-rem(15) to-rem(1) rgba(0, 255, 72, 0.5);
+    }
+  }
+}
