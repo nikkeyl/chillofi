@@ -8,7 +8,7 @@ const Home = () => (
   <Wrapper>
     <Main>
       <Fullscreen>
-        <Image className="" src={background} alt="background" priority />
+        <Image src={background} alt="background" priority />
       </Fullscreen>
     </Main>
   </Wrapper>

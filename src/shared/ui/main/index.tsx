@@ -1,4 +1,4 @@
-import styles from './main.module.scss';
+import styles from '@main/main.module.scss';
 
 import type { Properties } from './properties';
 
