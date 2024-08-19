@@ -1,5 +1,7 @@
 import '@app/main.scss';
 
+import { Analytics } from '@vercel/analytics/react';
+
 import type { Metadata } from 'next';
 import type { PropsWithChildren } from 'react';
 
@@ -18,7 +20,10 @@ const metadata: Metadata = {
 
 const Layout = ({ children }: PropsWithChildren) => (
   <html lang="en">
-    <body>{children}</body>
+    <body>
+      {children}
+      <Analytics />
+    </body>
   </html>
 );
 
