@@ -8,8 +8,8 @@ import typescriptParser from '@typescript-eslint/parser';
 
 export default defineFlatConfig([
   ...extend(
-    'airbnb-base',
-    'airbnb-typescript/base',
+    'airbnb',
+    'airbnb-typescript',
     'plugin:import/recommended',
     'plugin:import/typescript',
   ),
@@ -22,6 +22,9 @@ export default defineFlatConfig([
       },
       parser: typescriptParser,
       parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
         project: 'tsconfig.json',
       },
       sourceType: 'module',
