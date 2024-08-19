@@ -4,5 +4,6 @@ export default defineConfig({
   extends: '@archoleat/stylelint-config-extended-scss',
   rules: {
     'declaration-empty-line-before': null,
+    'selector-class-pattern': null,
   },
 });

@@ -1,4 +1,4 @@
-import styles from './wrapper.module.scss';
+import styles from '@wrapper/wrapper.module.scss';
 
 import type { Properties } from './properties';
 

@@ -2,7 +2,6 @@
 .husky
 
 # Files
-.env
 *.md
 browserslist
 bun.lockb
