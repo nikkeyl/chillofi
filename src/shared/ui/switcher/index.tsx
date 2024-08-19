@@ -6,11 +6,11 @@ import { useState } from 'react';
 
 import cn from 'classnames';
 
-import { SoundState } from './sound';
+import type { Sound } from './sound';
 
 const Switcher = () => {
   const [isActive, setActive] = useState(true);
-  const [sound, setSound] = useState<SoundState['sound']>(null);
+  const [sound, setSound] = useState<Sound>(null);
 
   const toggleClass = () => {
     setActive((previousState) => !previousState);

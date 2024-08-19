@@ -1,17 +1,13 @@
+@import "@styles/abstracts/functions";
+@import "@styles/abstracts/mixins";
+
 $screen-background: #111;
-
-@mixin pseudo {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-}
 
 .crtEffect {
   &::before {
     @include pseudo;
 
-    z-index: 1;
+    // z-index: 1;
 
     background: linear-gradient(
         transparentize($screen-background, 1) 50%,
@@ -24,8 +20,8 @@ $screen-background: #111;
         transparentize(#00f, 0.94)
       );
     background-size:
-      100% 0.25rem,
-      0.3125rem 100%;
+      100% to-rem(4),
+      to-rem(5) 100%;
 
     pointer-events: none;
   }

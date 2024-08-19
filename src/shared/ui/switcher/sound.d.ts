@@ -1,5 +1,3 @@
-interface SoundState {
-  sound: HTMLAudioElement | null;
-}
+type Sound = HTMLAudioElement | null
 
-export { SoundState };
+export { Sound };
