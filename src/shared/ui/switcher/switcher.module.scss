@@ -38,10 +38,10 @@
 
   &::after {
     background-color: #3e3e3e;
-    inset: to-rem(3) 0 to-rem(3) to-rem(10);
+    inset: to-rem(5) 0 to-rem(5) to-rem(10);
     inline-size: to-rem(4);
     border-radius: to-rem(10);
-    block-size: to-rem(20);
+    block-size: to-rem(16);
   }
 
   &:global(.active) {
