@@ -32,7 +32,7 @@ const Switcher = () => {
     >
       <span className={cn(style.inner, isActive && 'active')}></span>
       <audio ref={(sound) => setSound(sound)}>
-        <source src="audio/switcher.mp3" type="audio/mpeg" />
+        <source src="audio/switcher.wav" type="audio/wav" />
       </audio>
     </button>
   );
