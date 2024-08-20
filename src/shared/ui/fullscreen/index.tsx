@@ -6,9 +6,7 @@ import cn from 'classnames';
 import type { Properties } from './properties';
 
 const Fullscreen = ({ children }: Properties) => (
-  <section className={cn(style.fullscreen, CRTEffect.crtEffect)}>
-    {children}
-  </section>
+  <section className={cn(style.fullscreen, CRTEffect.crtEffect)}>{children}</section>
 );
 
 export { Fullscreen };
