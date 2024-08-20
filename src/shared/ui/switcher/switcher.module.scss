@@ -1,25 +1,34 @@
 @use "@styles/abstracts" as *;
 
 .switcher {
-  z-index: 1;
   position: absolute;
-  background-color: $color-dark;
-  padding: to-rem(2);
+  inset-block-end: to-rem(10);
+  inset-inline-start: to-rem(10);
+  z-index: 1;
+
   border-radius: to-rem($default-border-radius);
+
   block-size: to-rem(30);
   inline-size: to-rem(55);
-  bottom: to-rem(10);
-  left: to-rem(10);
+
+  padding: to-rem(2);
+
+  background-color: $color-dark;
 }
 
 .inner {
-  background-color: $color-light;
   display: block;
+
+  position: relative;
+
   border-radius: inherit;
+
+  box-shadow: 0 0 to-rem(10) 0 rgb(30 30 30 / 100%) inset;
+
   block-size: 100%;
   inline-size: auto;
-  position: relative;
-  box-shadow: 0 0 to-rem(10) 0 rgb(30 30 30 / 1) inset;
+
+  background-color: $color-light;
 
   &::before,
   &::after {
@@ -29,31 +38,36 @@
   }
 
   &::before {
-    border-radius: to-rem($default-border-radius);
     inset: to-rem(1);
+
+    border-radius: to-rem($default-border-radius);
+
     block-size: to-rem(24);
     inline-size: to-rem(24);
   }
 
   &::after {
-    background-color: $color-light-dark;
     inset: to-rem(5) 0 to-rem(5) to-rem(11);
-    inline-size: to-rem(4);
+
     border-radius: to-rem(10);
+
     block-size: to-rem(16);
+    inline-size: to-rem(4);
+
+    background-color: $color-light-dark;
   }
 
   &:global(.active) {
     &::before {
-      right: to-rem(1);
-      left: auto;
+      inset-inline: auto to-rem(1);
     }
 
     &::after {
-      right: to-rem(11);
-      left: auto;
+      inset-inline: auto to-rem(11);
+
+      box-shadow: 0 0 to-rem(15) to-rem(1) rgb(0 255 72 / 50%);
+
       background-color: $color-green;
-      box-shadow: 0 0 to-rem(15) to-rem(1) rgb(0 255 72 / 0.5);
     }
   }
 }

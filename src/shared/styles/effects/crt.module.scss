@@ -6,8 +6,8 @@ $screen-background: #111;
   &::before {
     @include pseudo;
 
-    z-index: 1;
     inset: 0;
+    z-index: 1;
 
     background: linear-gradient(
         transparentize($screen-background, 1) 50%,
