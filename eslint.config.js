@@ -46,6 +46,7 @@ export default defineFlatConfig([
       'import/no-namespace': 'error',
       'import/no-unassigned-import': 'warn',
       'import/prefer-default-export': 'off',
+      'jsx-a11y/media-has-caption': 'warn',
       'react/react-in-jsx-scope': 'off',
       'react/function-component-definition': [
         'error',

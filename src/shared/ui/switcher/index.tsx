@@ -1,6 +1,6 @@
 'use client';
 
-import styles from '@switcher/switcher.module.scss';
+import style from '@switcher/switcher.module.scss';
 
 import { useState } from 'react';
 
@@ -17,14 +17,12 @@ const Switcher = () => {
   };
 
   const playSound = () => {
-    if (sound) {
-      sound.play();
-    }
+    sound?.play();
   };
 
   return (
     <button
-      className={styles.switcher}
+      className={style.switcher}
       type="button"
       onClick={() => {
         toggleClass();
@@ -32,7 +30,7 @@ const Switcher = () => {
       }}
       aria-label="Switcher"
     >
-      <span className={cn(styles.inner, isActive && 'active')}></span>
+      <span className={cn(style.inner, isActive && 'active')}></span>
       <audio ref={(sound) => setSound(sound)}>
         <source src="audio/switcher.mp3" type="audio/mpeg" />
       </audio>

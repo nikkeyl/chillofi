@@ -1,9 +1,9 @@
-import styles from '@main/main.module.scss';
+import style from '@main/main.module.scss';
 
 import type { Properties } from './properties';
 
 const Main = ({ children }: Properties) => (
-  <main className={styles.main}>{children}</main>
+  <main className={style.main}>{children}</main>
 );
 
 export { Main };

@@ -1,4 +1,4 @@
-import styles from '@fullscreen/fullscreen.module.scss';
+import style from '@fullscreen/fullscreen.module.scss';
 import CRTEffect from '@effects/crt.module.scss';
 
 import cn from 'classnames';
@@ -6,7 +6,7 @@ import cn from 'classnames';
 import type { Properties } from './properties';
 
 const Fullscreen = ({ children }: Properties) => (
-  <section className={cn(styles.fullscreen, CRTEffect.crtEffect)}>
+  <section className={cn(style.fullscreen, CRTEffect.crtEffect)}>
     {children}
   </section>
 );
