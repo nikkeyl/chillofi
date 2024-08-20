@@ -23,7 +23,6 @@
     "paths": {
       // Main Folders
       "@app/*": ["./src/app/*"],
-      "@features/*": ["./src/features/*"],
       "@shared/*": ["./src/shared/*"],
       // Styles
       "@styles/*": ["./src/shared/styles/*"],

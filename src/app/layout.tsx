@@ -1,4 +1,4 @@
-import '@app/main.scss';
+import '@styles/styles.scss';
 
 import { Analytics } from '@vercel/analytics/react';
 
