@@ -1,0 +1,26 @@
+@use "@styles/abstracts" as *;
+
+.crtEffect {
+  &::before {
+    @include pseudo;
+
+    inset: 0;
+    z-index: 1;
+
+    background: linear-gradient(
+        scale-color($color-dark, $alpha: -100%) 50%,
+        scale-color(scale-color($color-dark, $alpha: -10%), $alpha: -65%) 50%
+      ),
+      linear-gradient(
+        90deg,
+        scale-color($color-red, $alpha: -94%),
+        scale-color($color-green, $alpha: -98%),
+        scale-color($color-blue, $alpha: -94%)
+      );
+    background-size:
+      100% to-rem(4),
+      to-rem(5) 100%;
+
+    pointer-events: none;
+  }
+}

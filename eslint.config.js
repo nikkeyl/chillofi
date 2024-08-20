@@ -18,7 +18,7 @@ export default defineFlatConfig([
     languageOptions: {
       ecmaVersion: 'latest',
       globals: {
-        ...globals.node,
+        ...globals.browser,
       },
       parser: typescriptParser,
       parserOptions: {
@@ -37,14 +37,24 @@ export default defineFlatConfig([
       },
     },
     rules: {
+      'func-style': ['error', 'expression'],
       'import/exports-last': 'error',
-      'import/extensions': ['error', { ts: 'always' }],
+      'import/extensions': ['error', { ts: 'never', tsx: 'never' }],
       'import/group-exports': 'error',
       'import/no-commonjs': 'error',
       'import/no-default-export': 'error',
       'import/no-namespace': 'error',
-      'import/no-unassigned-import': 'error',
+      'import/no-unassigned-import': 'warn',
       'import/prefer-default-export': 'off',
+      'jsx-a11y/media-has-caption': 'warn',
+      'react/react-in-jsx-scope': 'off',
+      'react/function-component-definition': [
+        'error',
+        {
+          namedComponents: 'arrow-function',
+          unnamedComponents: 'arrow-function',
+        },
+      ],
       'unicorn/no-unused-properties': 'error',
       'unicorn/string-content': 'error',
     },

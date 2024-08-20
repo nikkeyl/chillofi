@@ -3,11 +3,9 @@
 
 # Files
 *.md
-browserslist
 bun.lockb
 
 # *rc
-.czrc
 .ecrc
 
 # Configs
@@ -15,6 +13,5 @@ bun.lockb
 .gitattributes
 
 # Ignores
-.eslintignore
 .gitignore
 .prettierignore

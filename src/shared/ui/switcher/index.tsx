@@ -1,30 +1,28 @@
 'use client';
 
-import styles from '@switcher/switcher.module.scss';
+import style from '@switcher/switcher.module.scss';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import cn from 'classnames';
 
-import { SoundState } from './sound';
+import type { Nullable } from '@shared/types';
 
 const Switcher = () => {
-  const [isActive, setActive] = useState(true);
-  const [sound, setSound] = useState<SoundState['sound']>(null);
+  const [isPlay, setPlay] = useState(true);
+  const audioRef = useRef<Nullable<HTMLAudioElement>>(null);
 
   const toggleClass = () => {
-    setActive((previousState) => !previousState);
+    setPlay((previousState) => !previousState);
   };
 
   const playSound = () => {
-    if (sound) {
-      sound.play();
-    }
+    audioRef.current?.play();
   };
 
   return (
     <button
-      className={styles.switcher}
+      className={style.switcher}
       type="button"
       onClick={() => {
         toggleClass();
@@ -32,9 +30,9 @@ const Switcher = () => {
       }}
       aria-label="Switcher"
     >
-      <span className={cn(styles.inner, isActive && 'active')}></span>
-      <audio ref={(sound) => setSound(sound)}>
-        <source src="audio/switcher.mp3" type="audio/mpeg" />
+      <span className={cn(style.inner, isPlay && 'play')} />
+      <audio ref={audioRef}>
+        <source src="audio/switcher.wav" type="audio/wav" />
       </audio>
     </button>
   );
