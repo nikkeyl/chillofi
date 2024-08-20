@@ -1,7 +1,5 @@
 @use "@styles/abstracts" as *;
 
-$screen-background: #111;
-
 .crtEffect {
   &::before {
     @include pseudo;
@@ -10,14 +8,14 @@ $screen-background: #111;
     z-index: 1;
 
     background: linear-gradient(
-        transparentize($screen-background, 1) 50%,
-        transparentize(darken($screen-background, 10), 0.65) 50%
+        scale-color($color-dark, $alpha: -100%) 50%,
+        scale-color(scale-color($color-dark, $alpha: -10%), $alpha: -65%) 50%
       ),
       linear-gradient(
         90deg,
-        transparentize(#f00, 0.94),
-        transparentize(#0f0, 0.98),
-        transparentize(#00f, 0.94)
+        scale-color($color-red, $alpha: -94%),
+        scale-color($color-green, $alpha: -98%),
+        scale-color($color-blue, $alpha: -94%)
       );
     background-size:
       100% to-rem(4),

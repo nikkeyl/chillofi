@@ -13,7 +13,7 @@
 
   padding: to-rem(2);
 
-  background-color: $color-dark;
+  background-color: $color-dark-gray;
 }
 
 .inner {
@@ -34,7 +34,7 @@
   &::after {
     @include pseudo;
 
-    background-color: $color-dark;
+    background-color: $color-dark-gray;
   }
 
   &::before {
@@ -54,7 +54,7 @@
     block-size: to-rem(16);
     inline-size: to-rem(4);
 
-    background-color: $color-light-dark;
+    background-color: $color-light-gray;
   }
 
   &:global(.active) {
