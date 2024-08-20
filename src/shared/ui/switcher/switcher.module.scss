@@ -57,7 +57,7 @@
     background-color: $color-light-gray;
   }
 
-  &:global(.active) {
+  &:global(.play) {
     &::before {
       inset-inline: auto to-rem(1);
     }

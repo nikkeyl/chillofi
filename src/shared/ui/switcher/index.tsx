@@ -2,22 +2,22 @@
 
 import style from '@switcher/switcher.module.scss';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import cn from 'classnames';
 
-import type { Sound } from './sound';
+import type { Nullable } from '@shared/types';
 
 const Switcher = () => {
-  const [isActive, setActive] = useState(true);
-  const [sound, setSound] = useState<Sound>(null);
+  const [isPlay, setPlay] = useState(true);
+  const audioRef = useRef<Nullable<HTMLAudioElement>>(null);
 
   const toggleClass = () => {
-    setActive((previousState) => !previousState);
+    setPlay((previousState) => !previousState);
   };
 
   const playSound = () => {
-    sound?.play();
+    audioRef.current?.play();
   };
 
   return (
@@ -30,8 +30,8 @@ const Switcher = () => {
       }}
       aria-label="Switcher"
     >
-      <span className={cn(style.inner, isActive && 'active')}></span>
-      <audio ref={(sound) => setSound(sound)}>
+      <span className={cn(style.inner, isPlay && 'play')} />
+      <audio ref={audioRef}>
         <source src="audio/switcher.wav" type="audio/wav" />
       </audio>
     </button>

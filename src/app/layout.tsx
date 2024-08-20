@@ -2,6 +2,8 @@ import '@styles/styles.scss';
 
 import { Analytics } from '@vercel/analytics/react';
 
+import { Main, Wrapper } from '@shared/ui';
+
 import type { Metadata } from 'next';
 import type { PropsWithChildren } from 'react';
 
@@ -21,7 +23,9 @@ const metadata: Metadata = {
 const Layout = ({ children }: PropsWithChildren) => (
   <html lang="en">
     <body>
-      {children}
+      <Wrapper>
+        <Main>{children}</Main>
+      </Wrapper>
       <Analytics />
     </body>
   </html>

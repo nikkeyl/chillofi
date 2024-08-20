@@ -24,14 +24,15 @@
       // Main Folders
       "@app/*": ["./src/app/*"],
       "@shared/*": ["./src/shared/*"],
+      // Effects
+      "@effects/*": ["./src/shared/styles/effects/*"],
+      // Images
+      "@images/*": ["./public/images/*"],
       // Styles
       "@styles/*": ["./src/shared/styles/*"],
-      "@fullscreen/*": ["./src/shared/ui/fullscreen/*"],
       "@main/*": ["./src/shared/ui/main/*"],
       "@switcher/*": ["./src/shared/ui/switcher/*"],
-      "@wrapper/*": ["./src/shared/ui/wrapper/*"],
-      // Effects
-      "@effects/*": ["./src/shared/styles/effects/*"]
+      "@wrapper/*": ["./src/shared/ui/wrapper/*"]
     },
     "resolveJsonModule": true,
     // Projects
