@@ -19,7 +19,7 @@
     "@archoleat/eslint-flat-compatibility": "^1.1.7",
     "@archoleat/next-define-config": "^1.0.0",
     "@archoleat/prettier-define-config": "^1.0.1",
-    "@archoleat/stylelint-config-extended-scss": "^1.7.0",
+    "@archoleat/stylelint-config-extended-scss": "^1.7.1",
     "@commitlint/cli": "^19.4.0",
     "@commitlint/config-conventional": "^19.2.2",
     "@commitlint/types": "^19.0.3",
