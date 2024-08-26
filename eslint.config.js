@@ -1,9 +1,11 @@
 import { defineFlatConfig } from 'eslint-define-config';
 import { extend, plugins } from '@archoleat/eslint-flat-compatibility';
 
+import globals from 'globals';
+
 import prettierConfig from 'eslint-config-prettier';
 import unicornPlugin from 'eslint-plugin-unicorn';
-import globals from 'globals';
+
 import parser from '@typescript-eslint/parser';
 
 export default defineFlatConfig([
