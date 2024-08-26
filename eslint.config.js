@@ -1,5 +1,5 @@
 import { defineFlatConfig } from 'eslint-define-config';
-import { extend } from '@archoleat/eslint-flat-compatibility';
+import { extend, plugins } from '@archoleat/eslint-flat-compatibility';
 
 import eslintConfigPrettier from 'eslint-config-prettier';
 import eslintPluginUnicorn from 'eslint-plugin-unicorn';
@@ -13,6 +13,7 @@ export default defineFlatConfig([
     'plugin:import/recommended',
     'plugin:import/typescript',
   ),
+  ...plugins('@next/eslint-plugin-next'),
   eslintPluginUnicorn.configs['flat/recommended'],
   {
     languageOptions: {

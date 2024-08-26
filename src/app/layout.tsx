@@ -1,10 +1,6 @@
-import '@styles/styles.scss';
+import '@styles/global.scss';
 
-import { Analytics } from '@vercel/analytics/react';
-
-import { Main, Wrapper } from '@shared/ui';
-
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import type { PropsWithChildren } from 'react';
 
 const metadata: Metadata = {
@@ -20,17 +16,22 @@ const metadata: Metadata = {
   },
 };
 
-const Layout = ({ children }: PropsWithChildren) => (
-  <html lang="en">
-    <body>
-      <Wrapper>
-        <Main>{children}</Main>
-      </Wrapper>
-      <Analytics />
-    </body>
-  </html>
-);
+const viewport: Viewport = {
+  colorScheme: 'dark',
+  themeColor: 'black',
+  userScalable: false,
+};
 
-export { metadata };
+const RootLayout = (properties: PropsWithChildren) => {
+  const { children } = properties;
 
-export default Layout;
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  );
+};
+
+export { metadata, viewport };
+
+export default RootLayout;

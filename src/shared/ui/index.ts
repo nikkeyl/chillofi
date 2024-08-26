@@ -1,4 +1,4 @@
-export { Fullscreen } from './fullscreen';
-export { Main } from './main';
-export { Switcher } from './switcher';
-export { Wrapper } from './wrapper';
+export { Main } from './main/main';
+export { Screen } from './screen/screen';
+export { Switcher } from './switcher/switcher';
+export { Wrapper } from './wrapper/wrapper';

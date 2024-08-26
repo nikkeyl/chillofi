@@ -21,18 +21,16 @@
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "paths": {
-      // Main Folders
+      // App
       "@app/*": ["./src/app/*"],
-      "@shared/*": ["./src/shared/*"],
-      // Effects
-      "@effects/*": ["./src/shared/styles/effects/*"],
       // Images
       "@images/*": ["./public/images/*"],
       // Styles
       "@styles/*": ["./src/shared/styles/*"],
-      "@main/*": ["./src/shared/ui/main/*"],
-      "@switcher/*": ["./src/shared/ui/switcher/*"],
-      "@wrapper/*": ["./src/shared/ui/wrapper/*"]
+      // Types
+      "@types": ["./src/shared/types/index.ts"],
+      // UI
+      "@ui": ["./src/shared/ui/index.ts"]
     },
     "resolveJsonModule": true,
     // Projects
