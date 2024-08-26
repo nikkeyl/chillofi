@@ -1,14 +1,23 @@
+import { Analytics } from '@vercel/analytics/react';
+
 import Image from 'next/image';
 
-import { Fullscreen, Switcher } from '@shared/ui';
+import { Main, Screen, Switcher, Wrapper } from '@ui';
 
 import background from '@images/background.jpg';
 
 const Home = () => (
-  <Fullscreen>
-    <Image src={background} alt="background" priority />
-    <Switcher />
-  </Fullscreen>
+  <>
+    <Wrapper>
+      <Main>
+        <Screen>
+          <Image src={background} alt="background" priority />
+          <Switcher />
+        </Screen>
+      </Main>
+    </Wrapper>
+    <Analytics />
+  </>
 );
 
 export default Home;

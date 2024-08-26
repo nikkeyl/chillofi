@@ -1,12 +1,12 @@
 'use client';
 
-import style from '@switcher/switcher.module.scss';
+import style from './switcher.module.scss';
 
 import { useRef, useState } from 'react';
 
 import cn from 'classnames';
 
-import type { Nullable } from '@shared/types';
+import type { Nullable } from '@types';
 
 const Switcher = () => {
   const [isPlay, setPlay] = useState(true);

@@ -1,6 +1,10 @@
 @use "@styles/abstracts" as *;
 
-.crtEffect {
+.screen {
+  position: relative;
+
+  min-block-size: 100svb;
+
   &::before {
     @include pseudo;
 
@@ -22,5 +26,10 @@
       to-rem(5) 100%;
 
     pointer-events: none;
+  }
+
+  img {
+    position: absolute;
+    inset: 0;
   }
 }
