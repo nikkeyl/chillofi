@@ -22,7 +22,7 @@
     "@archoleat/prettier-define-config": "^1.0.1",
     "@archoleat/stylelint-config-extended-scss": "^1.7.1",
     "@commitlint/cli": "^19.4.0",
-    "@commitlint/config-conventional": "^19.2.2",
+    "@commitlint/config-conventional": "^19.4.1",
     "@commitlint/types": "^19.0.3",
     "@next/eslint-plugin-next": "^14.2.6",
     "@semantic-release/changelog": "^6.0.3",
