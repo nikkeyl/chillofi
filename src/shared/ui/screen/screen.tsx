@@ -1,4 +1,4 @@
-import type { Properties } from './properties';
+import type { Properties } from '@types';
 
 import style from './screen.module.scss';
 

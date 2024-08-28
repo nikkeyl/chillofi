@@ -17,12 +17,9 @@
     "lib": ["DOM.Iterable", "DOM", "ESNext"],
     // Modules
     "allowImportingTsExtensions": true,
-    "baseUrl": ".",
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "paths": {
-      // App
-      "@app/*": ["./src/app/*"],
       // Images
       "@images/*": ["./public/images/*"],
       // Styles
