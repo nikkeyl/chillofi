@@ -5,12 +5,6 @@ export default defineConfig({
   rules: {
     'declaration-empty-line-before': null,
     'selector-class-pattern': null,
-    'selector-pseudo-class-no-unknown': [
-      true,
-      {
-        ignorePseudoClasses: ['global'],
-      },
-    ],
     'scss/no-global-function-names': null,
   },
 });
