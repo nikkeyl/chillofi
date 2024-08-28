@@ -1,12 +1,13 @@
 @use "@styles/abstracts" as *;
 
 :root {
-  // Border Radiuses
-  --default-border-radius: #{$default-border-radius};
-
   // Main Colors
   --color-dark: #{$color-dark};
   --color-dark-gray: #{$color-dark-gray};
   --color-light-gray: #{$color-light-gray};
   --color-light: #{$color-light};
+
+  // RGB Colors
+  --color-dark-rgb: #{$color-dark-rgb};
+  --color-green-rgb: #{$color-green-rgb};
 }

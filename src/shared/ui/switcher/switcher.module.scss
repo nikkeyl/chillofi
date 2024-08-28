@@ -6,8 +6,6 @@
   inset-inline-start: to-rem(10);
   z-index: 1;
 
-  border-radius: var(--default-border-radius, #{to-rem($default-border-radius)});
-
   block-size: to-rem(30);
   inline-size: to-rem(55);
 
@@ -25,9 +23,7 @@
 
   position: relative;
 
-  border-radius: inherit;
-
-  box-shadow: 0 0 to-rem(10) 0 rgb(30 30 30 / 100%) inset;
+  box-shadow: 0 0 to-rem(10) 0 var(--color-dark-rgb, $color-dark-rgb) inset;
 
   block-size: 100%;
 
@@ -42,8 +38,6 @@
 
   &::before {
     inset: to-rem(1);
-
-    border-radius: inherit;
 
     block-size: to-rem(24);
     inline-size: to-rem(24);
@@ -68,7 +62,7 @@
     &::after {
       inset-inline: auto to-rem(11);
 
-      box-shadow: 0 0 to-rem(15) to-rem(1) rgb(0 255 72 / 50%);
+      box-shadow: 0 0 to-rem(15) to-rem(1) var(--color-green-rgb, $color-green-rgb);
 
       background-color: var(--color-green, $color-green);
     }
