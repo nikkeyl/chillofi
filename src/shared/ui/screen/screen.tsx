@@ -1,8 +1,8 @@
-import type { Properties } from './properties';
+import type { PropsWithChildren } from 'react';
 
 import style from './screen.module.scss';
 
-const Screen = (properties: Properties) => {
+const Screen = (properties: PropsWithChildren) => {
   const { children } = properties;
 
   return <section className={style.screen}>{children}</section>;

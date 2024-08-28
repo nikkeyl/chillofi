@@ -11,7 +11,7 @@
     inset: 0;
     z-index: 1;
 
-    background: linear-gradient(
+    background-image: linear-gradient(
         scale-color($color-dark, $alpha: -100%) 50%,
         scale-color(scale-color($color-dark, $alpha: -10%), $alpha: -65%) 50%
       ),
@@ -31,5 +31,10 @@
   img {
     position: absolute;
     inset: 0;
+
+    object-fit: cover;
+
+    block-size: 100vb;
+    inline-size: 100vi;
   }
 }

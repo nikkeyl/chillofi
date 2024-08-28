@@ -9,12 +9,12 @@ import type { Nullable } from '@types';
 import style from './switcher.module.scss';
 
 const Switcher = () => {
-  const [isPlay, setPlay] = useState(true);
+  const [isPlay, setIsPlay] = useState(true);
 
   const audioReference = useRef<Nullable<HTMLAudioElement>>(null);
 
   const toggleClass = () => {
-    setPlay((previousState) => !previousState);
+    setIsPlay((previousState) => !previousState);
   };
 
   const playSound = () => {
@@ -25,13 +25,13 @@ const Switcher = () => {
     <button
       className={style.switcher}
       type='button'
+      aria-label='Switcher'
       onClick={() => {
         toggleClass();
         playSound();
       }}
-      aria-label='Switcher'
     >
-      <span className={cn(style.inner, isPlay && 'play')} />
+      <span className={cn(style.inner, isPlay && style.play)} />
       <audio ref={audioReference}>
         <source src='audio/switcher.wav' type='audio/wav' />
       </audio>

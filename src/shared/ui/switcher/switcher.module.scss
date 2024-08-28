@@ -6,14 +6,18 @@
   inset-inline-start: to-rem(10);
   z-index: 1;
 
-  border-radius: to-rem($default-border-radius);
+  border-radius: var(--default-border-radius, #{to-rem($default-border-radius)});
 
   block-size: to-rem(30);
   inline-size: to-rem(55);
 
   padding: to-rem(2);
 
-  background-color: $color-dark-gray;
+  background-color: var(--color-dark-gray, $color-dark-gray);
+
+  @include media-hover {
+    cursor: pointer;
+  }
 }
 
 .inner {
@@ -26,21 +30,20 @@
   box-shadow: 0 0 to-rem(10) 0 rgb(30 30 30 / 100%) inset;
 
   block-size: 100%;
-  inline-size: auto;
 
-  background-color: $color-light;
+  background-color: var(--color-light, $color-light);
 
   &::before,
   &::after {
     @include pseudo;
 
-    background-color: $color-dark-gray;
+    background-color: var(--color-dark-gray, $color-dark-gray);
   }
 
   &::before {
     inset: to-rem(1);
 
-    border-radius: to-rem($default-border-radius);
+    border-radius: inherit;
 
     block-size: to-rem(24);
     inline-size: to-rem(24);
@@ -54,10 +57,10 @@
     block-size: to-rem(16);
     inline-size: to-rem(4);
 
-    background-color: $color-light-gray;
+    background-color: var(--color-light-gray, $color-light-gray);
   }
 
-  &:global(.play) {
+  &.play {
     &::before {
       inset-inline: auto to-rem(1);
     }
@@ -67,7 +70,7 @@
 
       box-shadow: 0 0 to-rem(15) to-rem(1) rgb(0 255 72 / 50%);
 
-      background-color: $color-green;
+      background-color: var(--color-green, $color-green);
     }
   }
 }
