@@ -22,7 +22,6 @@ const metadata: Metadata = {
 const viewport: Viewport = {
   colorScheme: 'dark',
   themeColor: 'black',
-  userScalable: false,
 };
 
 const RootLayout = (properties: PropsWithChildren) => {
