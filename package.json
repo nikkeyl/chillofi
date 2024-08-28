@@ -24,7 +24,7 @@
     "@commitlint/cli": "^19.4.0",
     "@commitlint/config-conventional": "^19.2.2",
     "@commitlint/types": "^19.0.3",
-    "@next/eslint-plugin-next": "^14.2.6",
+    "@next/eslint-plugin-next": "^14.2.7",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@types/bun": "^1.1.8",
