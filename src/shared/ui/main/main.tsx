@@ -1,6 +1,6 @@
-import style from './main.module.scss';
-
 import type { Properties } from './properties';
+
+import style from './main.module.scss';
 
 const Main = (properties: Properties) => {
   const { children } = properties;

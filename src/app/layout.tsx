@@ -1,7 +1,10 @@
-import '@styles/global.scss';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import type { Metadata, Viewport } from 'next';
 import type { PropsWithChildren } from 'react';
+
+import '@styles/global.scss';
 
 const metadata: Metadata = {
   title: 'Chillofi',
@@ -19,15 +22,18 @@ const metadata: Metadata = {
 const viewport: Viewport = {
   colorScheme: 'dark',
   themeColor: 'black',
-  userScalable: false,
 };
 
 const RootLayout = (properties: PropsWithChildren) => {
   const { children } = properties;
 
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang='en'>
+      <body>
+        {children}
+        <Analytics />
+        <SpeedInsights />
+      </body>
     </html>
   );
 };
