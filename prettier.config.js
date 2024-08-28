@@ -5,6 +5,7 @@ export default defineConfig({
     {
       files: ['*.js', '*.tsx', '*.ts', '*.yaml'],
       options: {
+        jsxSingleQuote: true,
         singleQuote: true,
       },
     },
