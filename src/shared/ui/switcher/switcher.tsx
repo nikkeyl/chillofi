@@ -9,7 +9,7 @@ import cn from 'classnames';
 import style from './switcher.module.scss';
 
 const Switcher = () => {
-  const [isPlay, setIsPlay] = useState(true);
+  const [isPlay, setIsPlay] = useState(false);
   const [play] = useSound('audio/switcher.wav');
 
   return (
