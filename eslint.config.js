@@ -18,6 +18,7 @@ export default defineFlatConfig([
   ...plugins('@next/eslint-plugin-next'),
   unicornPlugin.configs['flat/recommended'],
   {
+    files: ['src/**/*.tsx', 'src/**/*.ts'],
     languageOptions: {
       parser,
       ecmaVersion: 'latest',
