@@ -5,7 +5,7 @@ import style from './screen.module.scss';
 const Screen = (properties: PropsWithChildren) => {
   const { children } = properties;
 
-  return <section className={style.screen}>{children}</section>;
+  return <main className={style.screen}>{children}</main>;
 };
 
 export { Screen };
