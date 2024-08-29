@@ -24,8 +24,6 @@
       "@images/*": ["./public/images/*"],
       // Styles
       "@styles/*": ["./src/shared/styles/*"],
-      // Types
-      "@types": ["./src/shared/types/index.ts"],
       // UI
       "@ui": ["./src/shared/ui/index.ts"]
     },
