@@ -15,9 +15,9 @@
     "use-sound": "^4.0.3"
   },
   "devDependencies": {
-    "@archoleat/commitlint-define-config": "^1.0.10",
+    "@archoleat/commitlint-define-config": "^1.0.11",
     "@archoleat/eslint-flat-compatibility": "^1.1.8",
-    "@archoleat/next-define-config": "^1.0.0",
+    "@archoleat/next-define-config": "^1.0.1",
     "@archoleat/prettier-define-config": "^1.0.1",
     "@archoleat/stylelint-config-extended-scss": "^1.7.1",
     "@commitlint/cli": "^19.4.1",
@@ -28,7 +28,7 @@
     "@semantic-release/git": "^10.0.1",
     "@types/bun": "^1.1.8",
     "@types/node": "^22.5.1",
-    "@types/react": "^18.3.4",
+    "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
