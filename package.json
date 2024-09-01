@@ -17,7 +17,7 @@
   "devDependencies": {
     "@archoleat/commitlint-define-config": "^1.0.11",
     "@archoleat/eslint-flat-compatibility": "^1.1.7",
-    "@archoleat/next-define-config": "^1.0.0",
+    "@archoleat/next-define-config": "^1.0.1",
     "@archoleat/prettier-define-config": "^1.0.1",
     "@archoleat/stylelint-config-extended-scss": "^1.7.1",
     "@commitlint/cli": "^19.4.1",
