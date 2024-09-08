@@ -10,7 +10,7 @@ import style from './switcher.module.scss';
 
 const Switcher = () => {
   const [isPlay, setIsPlay] = useState(false);
-  const [play] = useSound('audio/Switcher.mp3');
+  const [play] = useSound('audio/switcher.mp3');
 
   return (
     <button
