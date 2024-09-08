@@ -1,12 +1,13 @@
 import Image from 'next/image';
 
-import { Screen, Switcher } from '@ui';
+import { Screen } from '@ui/screen/screen';
+import { Switcher } from '@ui/switcher/switcher';
 
 import background from '@images/background.jpg';
 
 const Home = () => (
   <Screen>
-    <Image src={background} alt='background' priority />
+    <Image src={background} alt='background' priority fetchPriority='high' />
     <Switcher />
   </Screen>
 );
