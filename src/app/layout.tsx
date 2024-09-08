@@ -10,27 +10,32 @@ import '@styles/global.scss';
 
 const title = 'Chillofi';
 const description = 'LOFI-radio for work, study and relax';
+const images = [{ url: ogImage.src, height: ogImage.height, width: ogImage.width }];
+const siteName = title;
+const siteURL = 'https://chillofi.vercel.app';
 
 const metadata: Metadata = {
   title,
   description,
-  icons: {
-    icon: {
-      url: 'favicon.ico',
-      type: 'image/x-icon',
-      sizes: '48x48',
-      fetchPriority: 'high',
-    },
-  },
   openGraph: {
-    title,
     description,
-    images: [{ url: ogImage.src, height: ogImage.height, width: ogImage.width }],
+    url: siteURL,
+    images,
+    siteName,
+    title,
   },
   twitter: {
-    title,
     description,
-    images: [{ url: ogImage.src, height: ogImage.height, width: ogImage.width }],
+    images,
+    title,
+  },
+  icons: {
+    icon: {
+      fetchPriority: 'high',
+      sizes: '48x48',
+      type: 'image/x-icon',
+      url: 'favicon.ico',
+    },
   },
 };
 
