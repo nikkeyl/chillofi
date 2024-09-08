@@ -4,6 +4,8 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata, Viewport } from 'next';
 import type { PropsWithChildren } from 'react';
 
+import ogImage from '@images/socials-preview/image.jpg';
+
 import '@styles/global.scss';
 
 const title = 'Chillofi';
@@ -23,12 +25,12 @@ const metadata: Metadata = {
   openGraph: {
     title,
     description,
-    images: ['/socials-preview/image.jpg'],
+    images: [{ url: ogImage.src, height: ogImage.height, width: ogImage.width }],
   },
   twitter: {
     title,
     description,
-    images: ['/socials-preview/image.jpg'],
+    images: [{ url: ogImage.src, height: ogImage.height, width: ogImage.width }],
   },
 };
 
