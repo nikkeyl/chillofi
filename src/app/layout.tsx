@@ -6,9 +6,12 @@ import type { PropsWithChildren } from 'react';
 
 import '@styles/global.scss';
 
+const title = 'Chillofi';
+const description = 'LOFI-radio for work, study and relax';
+
 const metadata: Metadata = {
-  title: 'Chillofi',
-  description: 'LOFI-radio for work, study and relax',
+  title,
+  description,
   icons: {
     icon: {
       url: 'favicon.ico',
@@ -16,6 +19,16 @@ const metadata: Metadata = {
       sizes: '48x48',
       fetchPriority: 'high',
     },
+  },
+  openGraph: {
+    title,
+    description,
+    images: ['/socials-preview/image.jpg'],
+  },
+  twitter: {
+    title,
+    description,
+    images: ['/socials-preview/image.jpg'],
   },
 };
 
