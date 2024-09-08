@@ -4,13 +4,19 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata, Viewport } from 'next';
 import type { PropsWithChildren } from 'react';
 
-import ogImage from '@images/socials-preview/image.jpg';
+import openGraphImage from '@images/socials-preview/opengraph-image.jpg';
 
 import '@styles/global.scss';
 
 const title = 'Chillofi';
 const description = 'LOFI-radio for work, study and relax';
-const images = [{ url: ogImage.src, height: ogImage.height, width: ogImage.width }];
+const images = [
+  {
+    url: openGraphImage.src,
+    height: openGraphImage.height,
+    width: openGraphImage.width,
+  },
+];
 const siteName = title;
 const siteURL = 'https://chillofi.vercel.app';
 
