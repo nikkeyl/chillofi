@@ -14,16 +14,14 @@ const Switcher = () => {
 
   return (
     <button
-      className={style.switcher}
+      className={cn(style.switcher, isPlay && style.play)}
       type='button'
       aria-label='Switcher'
       onClick={() => {
         setIsPlay(!isPlay);
         play();
       }}
-    >
-      <span className={cn(style.inner, isPlay && style.play)} />
-    </button>
+    />
   );
 };
 

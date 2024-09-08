@@ -1,3 +1,4 @@
+@use "sass:math" as *;
 @use "@styles/abstracts/variables" as *;
 @use "@styles/abstracts/functions" as *;
 @use "@styles/abstracts/mixins" as *;
@@ -8,26 +9,14 @@
   inset-inline-start: to-rem(10);
   z-index: 1;
 
-  block-size: to-rem(30);
-  inline-size: to-rem(55);
+  box-shadow:
+    0 0 to-rem(10) 0 var(--color-dark, $color-dark) inset,
+    0 0 0 to-rem(2) var(--color-dark-gray, $color-dark-gray);
+
+  block-size: to-rem(28);
+  inline-size: to-rem(52);
 
   padding: to-rem(2);
-
-  background-color: var(--color-dark-gray, $color-dark-gray);
-
-  @include media-hover {
-    cursor: pointer;
-  }
-}
-
-.inner {
-  display: block;
-
-  position: relative;
-
-  box-shadow: 0 0 to-rem(10) 0 var(--color-dark-rgb, $color-dark-rgb) inset;
-
-  block-size: 100%;
 
   background-color: var(--color-light, $color-light);
 
@@ -39,34 +28,40 @@
   }
 
   &::before {
-    inset: to-rem(1);
+    inset: to-rem(2);
 
     block-size: to-rem(24);
     inline-size: to-rem(24);
   }
 
   &::after {
-    inset: to-rem(5) 0 to-rem(5) to-rem(11);
+    $inline-size: 4;
 
-    border-radius: to-rem(10);
+    inset: to-rem(6) 0 to-rem(6) to-rem(12);
+
+    border-radius: to-rem(div($inline-size, 2));
 
     block-size: to-rem(16);
-    inline-size: to-rem(4);
+    inline-size: to-rem($inline-size);
 
     background-color: var(--color-light-gray, $color-light-gray);
   }
 
   &.play {
     &::before {
-      inset-inline: auto to-rem(1);
+      inset-inline: auto to-rem(2);
     }
 
     &::after {
-      inset-inline: auto to-rem(11);
+      inset-inline: auto to-rem(12);
 
-      box-shadow: 0 0 to-rem(15) to-rem(1) var(--color-green-rgb, $color-green-rgb);
+      box-shadow: 0 0 to-rem(15) to-rem(1) var(--color-green, $color-green);
 
       background-color: var(--color-green, $color-green);
     }
+  }
+
+  @include media-hover {
+    cursor: pointer;
   }
 }
