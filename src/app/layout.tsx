@@ -15,6 +15,7 @@ const siteName = title;
 const siteURL = 'https://chillofi.vercel.app';
 
 const metadata: Metadata = {
+  metadataBase: new URL(siteURL),
   title,
   description,
   openGraph: {
