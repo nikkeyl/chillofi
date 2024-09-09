@@ -1,3 +1,5 @@
+import process from 'node:process';
+
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
@@ -8,8 +10,8 @@ import openGraphImage from '@images/socials-preview/opengraph-image.jpg';
 
 import '@styles/global.scss';
 
-const title = 'Chillofi';
-const description = 'LOFI-radio for work, study and relax';
+const title = process.env.NEXT_PUBLIC_DEFAULT_TITLE;
+const description = process.env.NEXT_PUBLIC_DEFAULT_DESCRIPTION;
 const images = [
   {
     url: openGraphImage.src,
@@ -18,10 +20,26 @@ const images = [
   },
 ];
 const siteName = title;
-const siteURL = 'https://chillofi.vercel.app';
+const siteURL = process.env.NEXT_PUBLIC_DEFAULT_URL;
+const author = process.env.NEXT_PUBLIC_AUTHOR_NAME;
 
 const metadata: Metadata = {
   metadataBase: new URL(siteURL),
+  applicationName: title,
+  keywords: [
+    'chill',
+    'chillofi',
+    'lofi-radio',
+    'lofi',
+    'radio',
+    'relax',
+  ],
+  publisher: 'Vercel',
+  creator: author,
+  authors: {
+    name: author,
+    url: `https://t.me/${author}`,
+  },
   title,
   description,
   openGraph: {

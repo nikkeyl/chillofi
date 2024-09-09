@@ -1,5 +1,6 @@
 import { defineConfig } from '@archoleat/next-define-config';
 
+const siteName = 'chillofi';
 const domainName = 'vercel.app';
 
 export default defineConfig({
@@ -7,15 +8,13 @@ export default defineConfig({
     formats: ['image/webp'],
     remotePatterns: [
       {
-        hostname: `chillofi-archoleat.${domainName}`,
+        hostname: `${siteName}-archoleat.${domainName}`,
+        pathname: '/images/**',
         protocol: 'https',
       },
       {
-        hostname: `chillofi-git-main-archoleat.${domainName}`,
-        protocol: 'https',
-      },
-      {
-        hostname: `chillofi.${domainName}`,
+        hostname: `${siteName}.${domainName}`,
+        pathname: '/images/**',
         protocol: 'https',
       },
     ],
