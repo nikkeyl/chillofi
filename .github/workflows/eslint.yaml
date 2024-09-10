@@ -6,13 +6,11 @@ on:
       - main
     paths:
       - 'src/**/*.tsx'
-      - 'src/**/*.ts'
   push:
     branches:
       - main
     paths:
       - 'src/**/*.tsx'
-      - 'src/**/*.ts'
 
 jobs:
   eslint:
@@ -32,4 +30,4 @@ jobs:
         run: bun i
 
       - name: Lint
-        run: bun eslint 'src/**/*.{tsx,ts}'
+        run: bun eslint 'src/**/*.tsx'

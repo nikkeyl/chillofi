@@ -10,8 +10,8 @@ import openGraphImage from '@images/socials-preview/opengraph-image.jpg';
 
 import '@styles/global.scss';
 
-const title = process.env.NEXT_PUBLIC_DEFAULT_TITLE;
-const description = process.env.NEXT_PUBLIC_DEFAULT_DESCRIPTION;
+const title = process.env.NEXT_PUBLIC_DEFAULT_TITLE as string;
+const description = process.env.NEXT_PUBLIC_DEFAULT_DESCRIPTION as string;
 const images = [
   {
     url: openGraphImage.src,
@@ -20,20 +20,13 @@ const images = [
   },
 ];
 const siteName = title;
-const siteURL = process.env.NEXT_PUBLIC_DEFAULT_URL;
-const author = process.env.NEXT_PUBLIC_AUTHOR_NAME;
+const siteURL = process.env.NEXT_PUBLIC_DEFAULT_URL as string;
+const author = process.env.NEXT_PUBLIC_AUTHOR_NAME as string;
 
 const metadata: Metadata = {
   metadataBase: new URL(siteURL),
   applicationName: title,
-  keywords: [
-    'chill',
-    'chillofi',
-    'lofi-radio',
-    'lofi',
-    'radio',
-    'relax',
-  ],
+  keywords: ['chill', 'chillofi', 'lofi-radio', 'lofi', 'radio', 'relax'],
   publisher: 'Vercel',
   creator: author,
   authors: {
