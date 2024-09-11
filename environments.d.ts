@@ -1,4 +1,4 @@
-export namespace NodeJS {
+declare namespace NodeJS {
   export interface ProcessEnv {
     NEXT_PUBLIC_AUTHOR_NAME: string;
     NEXT_PUBLIC_DEFAULT_DESCRIPTION: string;
