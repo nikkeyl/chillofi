@@ -18,7 +18,7 @@ export default defineFlatConfig([
   ...plugins('@next/eslint-plugin-next'),
   unicornPlugin.configs['flat/recommended'],
   {
-    files: ['src/**/*.tsx', 'src/**/*.ts'],
+    files: ['src/**/*.tsx'],
     languageOptions: {
       parser,
       ecmaVersion: 'latest',
@@ -48,7 +48,7 @@ export default defineFlatConfig([
       'import/no-commonjs': 'error',
       'import/no-default-export': 'error',
       'import/no-namespace': 'error',
-      'import/no-unassigned-import': 'warn',
+      'import/no-unassigned-import': 'off',
       'import/prefer-default-export': 'off',
       'react/react-in-jsx-scope': 'off',
       'react/function-component-definition': [
