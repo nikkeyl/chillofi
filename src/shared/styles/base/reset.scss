@@ -1,4 +1,6 @@
-* {
+*,
+*::before,
+*::after {
   margin: 0;
 
   border: 0;
@@ -9,7 +11,7 @@
 }
 
 body {
-  overflow-inline: hidden;
+  overflow: hidden;
 
   overscroll-behavior: none;
 }

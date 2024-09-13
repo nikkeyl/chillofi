@@ -4,40 +4,47 @@
 @use "@styles/abstracts/mixins" as *;
 
 .switcher {
+  $inset: 10;
+  $padding: 2;
+
   position: absolute;
-  inset-block-end: to-rem(10);
-  inset-inline-start: to-rem(10);
+  inset-block-end: to-rem($inset);
+  inset-inline-start: to-rem($inset);
   z-index: 1;
 
   box-shadow:
-    0 0 to-rem(10) 0 var(--color-dark, $color-dark) inset,
-    0 0 0 to-rem(2) var(--color-dark-gray, $color-dark-gray);
+    0 0 to-rem($inset) to-rem($padding) var(--color-dark-gray, $color-dark-gray)
+      inset,
+    0 0 0 to-rem($padding) var(--color-dark-gray, $color-dark-gray);
 
   block-size: to-rem(28);
   inline-size: to-rem(52);
 
-  padding: to-rem(2);
+  padding: to-rem($padding);
 
   background-color: var(--color-light, $color-light);
 
   &::before,
   &::after {
     @include pseudo;
+  }
+
+  &::before {
+    $size: 24;
+
+    inset: to-rem($padding);
+
+    block-size: to-rem($size);
+    inline-size: to-rem($size);
 
     background-color: var(--color-dark-gray, $color-dark-gray);
   }
 
-  &::before {
-    inset: to-rem(2);
-
-    block-size: to-rem(24);
-    inline-size: to-rem(24);
-  }
-
   &::after {
     $inline-size: 4;
+    $inset-block: 6;
 
-    inset: to-rem(6) 0 to-rem(6) to-rem(12);
+    inset: to-rem($inset-block) 0 to-rem($inset-block) to-rem(12);
 
     border-radius: to-rem(div($inline-size, 2));
 
@@ -49,7 +56,7 @@
 
   &.play {
     &::before {
-      inset-inline: auto to-rem(2);
+      inset-inline: auto to-rem($padding);
     }
 
     &::after {
