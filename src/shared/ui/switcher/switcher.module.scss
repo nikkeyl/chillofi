@@ -5,6 +5,7 @@
 
 .switcher {
   $inset: 10;
+  $padding: 2;
 
   position: absolute;
   inset-block-end: to-rem($inset);
@@ -12,30 +13,31 @@
   z-index: 1;
 
   box-shadow:
-    0 0 to-rem($inset) 0 var(--color-dark, $color-dark) inset,
-    0 0 0 to-rem(2) var(--color-dark-gray, $color-dark-gray);
+    0 0 to-rem($inset) to-rem($padding) var(--color-dark-gray, $color-dark-gray)
+      inset,
+    0 0 0 to-rem($padding) var(--color-dark-gray, $color-dark-gray);
 
   block-size: to-rem(28);
   inline-size: to-rem(52);
 
-  padding: to-rem(2);
+  padding: to-rem($padding);
 
   background-color: var(--color-light, $color-light);
 
   &::before,
   &::after {
     @include pseudo;
-
-    background-color: var(--color-dark-gray, $color-dark-gray);
   }
 
   &::before {
     $size: 24;
 
-    inset: to-rem(2);
+    inset: to-rem($padding);
 
     block-size: to-rem($size);
     inline-size: to-rem($size);
+
+    background-color: var(--color-dark-gray, $color-dark-gray);
   }
 
   &::after {
@@ -54,7 +56,7 @@
 
   &.play {
     &::before {
-      inset-inline: auto to-rem(2);
+      inset-inline: auto to-rem($padding);
     }
 
     &::after {
