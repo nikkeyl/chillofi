@@ -35,6 +35,7 @@ const metadata: Metadata = {
     images,
     siteName,
     title,
+    type: 'website',
   },
   twitter: {
     description,
