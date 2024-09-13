@@ -20,12 +20,14 @@
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "paths": {
+      // Widgets
+      "@widgets": ["./src/widgets/index.ts"],
+      // UI
+      "@ui": ["./src/shared/ui/index.ts"],
       // Images
       "@images/*": ["./public/images/*"],
       // Styles
-      "@styles/*": ["./src/shared/styles/*"],
-      // UI
-      "@ui/*": ["./src/shared/ui/*"]
+      "@styles/*": ["./src/shared/styles/*"]
     },
     "resolveJsonModule": true,
     // Projects

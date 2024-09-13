@@ -1,15 +1,15 @@
 import Image from 'next/image';
 
-import { Screen } from '@ui/screen/screen';
-import { Switcher } from '@ui/switcher/switcher';
+import { Screen } from '@widgets';
+import { Switcher } from '@ui';
 
 import background from '@images/background.jpg';
 
-const Home = () => (
+const HomePage = () => (
   <Screen>
     <Image src={background} alt='background' priority fetchPriority='high' />
     <Switcher />
   </Screen>
 );
 
-export default Home;
+export default HomePage;
