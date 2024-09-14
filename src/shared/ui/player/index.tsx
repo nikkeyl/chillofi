@@ -1,8 +1,9 @@
 'use client';
 
+import dynamic from 'next/dynamic';
+
 import { useState } from 'react';
 
-import AudioPlayer from 'react-modern-audio-player';
 import cn from 'classnames';
 import useSound from 'use-sound';
 
@@ -14,13 +15,17 @@ const Player = () => {
   const [isPlay, setIsPlay] = useState(false);
   const [play] = useSound('audio/switcher.mp3');
 
+  const AudioPlayer = dynamic(() => import('react-modern-audio-player'), {
+    ssr: false,
+  });
+
   return (
     <>
       <button
         className={cn(style.switcher, isPlay && style.play)}
         type='button'
         aria-label='Switcher'
-        onClick={() => {
+        onMouseDown={() => {
           setIsPlay(!isPlay);
           play();
         }}
