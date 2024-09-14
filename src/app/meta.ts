@@ -2,7 +2,7 @@ import process from 'node:process';
 
 import type { Metadata, Viewport } from 'next';
 
-import openGraphImage from '@images/preview/opengraph-image.jpg';
+import openGraphImage from '@preview/opengraph-image.jpg';
 
 const title = process.env.NEXT_PUBLIC_DEFAULT_TITLE;
 const description = process.env.NEXT_PUBLIC_DEFAULT_DESCRIPTION;
