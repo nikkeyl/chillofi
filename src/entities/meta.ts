@@ -1,5 +1,3 @@
-import process from 'node:process';
-
 import type { Metadata, Viewport } from 'next';
 
 import openGraphImage from '@preview/opengraph-image.jpg';
