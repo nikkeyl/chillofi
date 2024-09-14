@@ -1,4 +1,5 @@
-const musicFolder = `audio`;
+const audioFolder = `audio`;
+const musicFolder = `${audioFolder}/music`;
 
 const playList = [
   {

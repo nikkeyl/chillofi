@@ -17,7 +17,7 @@ const AudioPlayer = dynamic(() => import('react-modern-audio-player'), {
 
 const Player = () => {
   const [isPlay, setIsPlay] = useState(false);
-  const [play] = useSound('audio/switcher.mp3');
+  const [play] = useSound('audio/effects/switcher.mp3');
 
   return (
     <>
