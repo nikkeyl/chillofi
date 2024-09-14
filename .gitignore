@@ -4,3 +4,4 @@ node_modules
 
 # Files
 bun.lockb
+.env

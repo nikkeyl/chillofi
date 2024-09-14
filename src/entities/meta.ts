@@ -1,8 +1,6 @@
-import process from 'node:process';
-
 import type { Metadata, Viewport } from 'next';
 
-import openGraphImage from '@images/socials-preview/opengraph-image.jpg';
+import openGraphImage from '@preview/opengraph-image.jpg';
 
 const title = process.env.NEXT_PUBLIC_DEFAULT_TITLE;
 const description = process.env.NEXT_PUBLIC_DEFAULT_DESCRIPTION;
@@ -18,23 +16,34 @@ const siteURL = process.env.NEXT_PUBLIC_DEFAULT_URL;
 const author = process.env.NEXT_PUBLIC_AUTHOR_NAME;
 
 const metadata: Metadata = {
-  metadataBase: new URL(siteURL),
   applicationName: title,
-  keywords: ['chill', 'chillofi', 'lofi-radio', 'lofi', 'radio', 'relax'],
-  publisher: 'Vercel',
   creator: author,
+  description,
+  keywords: ['chill', 'chillofi', 'lofi-radio', 'lofi', 'radio', 'relax'],
+  metadataBase: new URL(siteURL),
+  publisher: 'Vercel',
+  robots: {
+    index: true,
+    follow: true,
+  },
+  referrer: 'origin',
+  title,
+  appleWebApp: {
+    title,
+    capable: true,
+    statusBarStyle: 'black-translucent',
+  },
   authors: {
     name: author,
     url: `https://t.me/${author}`,
   },
-  title,
-  description,
   openGraph: {
     description,
     url: siteURL,
     images,
     siteName,
     title,
+    type: 'website',
   },
   twitter: {
     description,
@@ -42,6 +51,12 @@ const metadata: Metadata = {
     title,
   },
   icons: {
+    apple: {
+      fetchPriority: 'high',
+      sizes: '180x180',
+      type: 'image/png',
+      url: 'favicons/apple-icon.png',
+    },
     icon: {
       fetchPriority: 'high',
       sizes: '48x48',
