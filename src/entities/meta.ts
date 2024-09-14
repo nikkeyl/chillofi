@@ -31,9 +31,9 @@ const metadata: Metadata = {
   referrer: 'origin',
   title,
   appleWebApp: {
+    title,
     capable: true,
     statusBarStyle: 'black-translucent',
-    title: title,
   },
   authors: {
     name: author,

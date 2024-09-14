@@ -25,7 +25,7 @@ const Player = () => {
         className={cn(style.switcher, isPlay && style.play)}
         type='button'
         aria-label='Switcher'
-        onMouseDown={() => {
+        onClick={() => {
           setIsPlay(!isPlay);
           play();
         }}

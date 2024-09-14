@@ -1,6 +1,4 @@
-*,
-*::before,
-*::after {
+* {
   margin: 0;
 
   border: 0;
@@ -10,7 +8,7 @@
   padding: 0;
 }
 
-body {
+html {
   overflow: hidden;
 
   overscroll-behavior: none;
