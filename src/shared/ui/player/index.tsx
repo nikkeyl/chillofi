@@ -11,13 +11,13 @@ import { playList } from '@entities';
 
 import style from './player.module.scss';
 
+const AudioPlayer = dynamic(() => import('react-modern-audio-player'), {
+  ssr: false,
+});
+
 const Player = () => {
   const [isPlay, setIsPlay] = useState(false);
   const [play] = useSound('audio/switcher.mp3');
-
-  const AudioPlayer = dynamic(() => import('react-modern-audio-player'), {
-    ssr: false,
-  });
 
   return (
     <>
