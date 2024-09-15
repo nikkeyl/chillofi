@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 
 import openGraphImage from '@preview/opengraph-image.jpg';
 
+const isProduction = process.env.NODE_ENV === 'production';
 const title = process.env.NEXT_PUBLIC_DEFAULT_TITLE;
 const description = process.env.NEXT_PUBLIC_DEFAULT_DESCRIPTION;
 const images = [
@@ -20,7 +21,7 @@ const metadata: Metadata = {
   creator: author,
   description,
   keywords: ['chill', 'chillofi', 'lofi-radio', 'lofi', 'radio', 'relax'],
-  metadataBase: new URL(siteURL),
+  metadataBase: isProduction ? new URL(siteURL) : null,
   publisher: 'Vercel',
   robots: {
     index: true,
