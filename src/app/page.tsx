@@ -13,6 +13,7 @@ import background from '@images/background.jpg';
 // Lighthouse performance
 // Stylelint
 // Funding
+// Cypress
 // seo
 // i18n for alt
 const HomePage = () => (
