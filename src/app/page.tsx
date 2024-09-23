@@ -14,6 +14,7 @@ import background from '@images/background.jpg';
 // Stylelint
 // Funding
 // Cypress
+// Security
 // seo
 // i18n for alt
 const HomePage = () => (
