@@ -34,8 +34,6 @@
 
     block-size: to-rem($size);
     inline-size: to-rem($size);
-
-    background-color: var(--color-dark-gray, $color-dark-gray);
   }
 
   &::after {
