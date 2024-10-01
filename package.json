@@ -16,7 +16,7 @@
     "use-sound": "^4.0.3"
   },
   "devDependencies": {
-    "@archoleat/commitlint-define-config": "^1.0.11",
+    "@archoleat/commitlint-define-config": "^1.1.0",
     "@archoleat/eslint-flat-compatibility": "^1.1.8",
     "@archoleat/next-define-config": "^1.0.1",
     "@archoleat/prettier-define-config": "^1.0.2",
