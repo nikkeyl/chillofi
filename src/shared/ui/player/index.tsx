@@ -22,8 +22,8 @@ const Player = () => {
   return (
     <>
       <button
-        className={cn(style.switcher, isPlay && style.play)}
         type='button'
+        className={cn(style.switcher, isPlay && style.play)}
         aria-label='Switcher'
         onClick={() => {
           setIsPlay(!isPlay);
@@ -31,8 +31,8 @@ const Player = () => {
         }}
       />
       <AudioPlayer
-        playList={playList}
         audioInitialState={{ curPlayId: 1, isPlaying: isPlay }}
+        playList={playList}
       />
     </>
   );

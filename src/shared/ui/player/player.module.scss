@@ -1,7 +1,5 @@
 @use "sass:math" as *;
-@use "@styles/abstracts/variables" as *;
-@use "@styles/abstracts/functions" as *;
-@use "@styles/abstracts/mixins" as *;
+@use "@styles/abstracts" as *;
 
 .switcher {
   $inset: 10;
@@ -36,8 +34,6 @@
 
     block-size: to-rem($size);
     inline-size: to-rem($size);
-
-    background-color: var(--color-dark-gray, $color-dark-gray);
   }
 
   &::after {
