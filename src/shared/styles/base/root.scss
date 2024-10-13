@@ -1,6 +1,7 @@
 @use "@styles/abstracts" as *;
 
 :root {
+  --z-index: #{$z-index};
   --color-dark: #{$color-dark};
   --color-dark-gray: #{$color-dark-gray};
   --color-light: #{$color-light};

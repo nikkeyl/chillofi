@@ -5,15 +5,12 @@
   $inset: 10;
   $padding: 2;
 
-  position: absolute;
-  inset-block-end: to-rem($inset);
-  inset-inline-start: to-rem($inset);
-  z-index: 1;
+  position: relative;
 
-  box-shadow:
-    0 0 to-rem($inset) to-rem($padding) var(--color-dark-gray, $color-dark-gray)
-      inset,
-    0 0 0 to-rem($padding) var(--color-dark-gray, $color-dark-gray);
+  border-radius: 0.125rem;
+
+  box-shadow: 0 0 to-rem($inset) to-rem($padding)
+    var(--color-dark-gray, $color-dark-gray) inset;
 
   block-size: to-rem(28);
   inline-size: to-rem(52);
@@ -25,12 +22,16 @@
   &::before,
   &::after {
     @include pseudo;
+
+    background-color: var(--color-dark-gray);
   }
 
   &::before {
     $size: 24;
 
     inset: to-rem($padding);
+
+    border-radius: 0.125rem;
 
     block-size: to-rem($size);
     inline-size: to-rem($size);

@@ -1,2 +1,2 @@
 User-agent: *
-Allow: https://chillofi.vercel.app
+Allow: *
