@@ -1,18 +1,23 @@
-@use "@styles/abstracts/variables" as *;
-@use "@styles/abstracts/functions" as *;
-@use "@styles/abstracts/mixins" as *;
+@use "@styles/abstracts" as *;
 
 .screen {
   position: relative;
 
-  min-block-size: 100svb;
+  border-radius: to-rem(10);
 
-  &::before {
+  overflow: hidden;
+
+  user-select: none;
+
+  &::before,
+  &::after {
     @include pseudo;
 
     inset: 0;
-    z-index: 1;
+    z-index: var(--z-index, #{$z-index});
+  }
 
+  &::before {
     background-image: linear-gradient(
         scale-color($color-dark, $alpha: -100%) 50%,
         scale-color(scale-color($color-dark, $alpha: -10%), $alpha: -65%) 50%
@@ -26,17 +31,21 @@
     background-size:
       100% to-rem(4),
       to-rem(5) 100%;
-
-    pointer-events: none;
   }
 
-  img {
-    position: absolute;
-    inset: 0;
+  &::after {
+    background-color: transparentize($color-dark, 0.9);
 
-    object-fit: cover;
+    animation: flicker 0.15s infinite;
 
-    block-size: 100vb;
-    inline-size: 100vi;
+    @keyframes flicker {
+      $steps: 25;
+
+      @for $i from 0 through $steps {
+        #{percentage($i * (1 / $steps))} {
+          opacity: random();
+        }
+      }
+    }
   }
 }

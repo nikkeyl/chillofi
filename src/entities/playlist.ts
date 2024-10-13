@@ -1,5 +1,3 @@
-const audioFolder = `audio`;
-
 const audios = [
   'bedhead',
   'cats-cradle',
@@ -28,8 +26,8 @@ const audios = [
 ];
 
 const playList = audios.map((file, index) => ({
-  src: `${audioFolder}/music/${file}.mp3`,
-  id: +index,
+  src: `audio/music/${file}.mp3`,
+  id: index + 1,
 }));
 
 export { playList };
