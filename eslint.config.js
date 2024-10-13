@@ -46,7 +46,7 @@ export default defineFlatConfig([
       'import/extensions': ['error', { ts: 'never', tsx: 'never' }],
       'import/group-exports': 'error',
       'import/no-commonjs': 'error',
-      'import/no-default-export': 'error',
+      'import/no-default-export': 'off',
       'import/no-namespace': 'error',
       'import/no-unassigned-import': 'off',
       'import/prefer-default-export': 'off',
