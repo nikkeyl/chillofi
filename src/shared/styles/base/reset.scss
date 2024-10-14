@@ -28,7 +28,7 @@ main {
   grid-template-rows: 1fr auto;
   gap: to-rem(10);
 
-  background-color: #130f0e;
+  background-color: var(--color-dark-wood, #{$color-dark-wood});
 }
 
 img {
