@@ -1,16 +1,17 @@
-import Image from 'next/image';
-
-import { Screen } from '@widgets';
-import { Player } from '@ui';
-
 import background from '@images/background.jpg';
+import { Logo, Panel, Player } from '@ui';
+import { Screen } from '@widgets';
+import Image from 'next/image';
 
 const HomePage = () => (
   <main>
     <Screen>
-      <Image src={background} alt='background' priority fetchPriority='high' />
+      <Image alt='background' fetchPriority='high' priority src={background} />
     </Screen>
-    <Player />
+    <Panel>
+      <Player />
+      <Logo>Chillofi</Logo>
+    </Panel>
   </main>
 );
 

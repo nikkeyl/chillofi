@@ -1,13 +1,10 @@
 'use client';
 
-import dynamic from 'next/dynamic';
-
-import { useState } from 'react';
-
-import cn from 'classnames';
-import useSound from 'use-sound';
-
 import { playList } from '@entities';
+import cn from 'classnames';
+import dynamic from 'next/dynamic';
+import { useState } from 'react';
+import useSound from 'use-sound';
 
 import style from './player.module.scss';
 
@@ -22,13 +19,13 @@ const Player = () => {
   return (
     <>
       <button
-        type='button'
-        className={cn(style.switcher, isPlay && style.play)}
         aria-label='Switcher'
+        className={cn(style.switcher, isPlay && style.play)}
         onClick={() => {
           setIsPlay(!isPlay);
           play();
         }}
+        type='button'
       />
       <AudioPlayer
         audioInitialState={{ curPlayId: 1, isPlaying: isPlay }}
