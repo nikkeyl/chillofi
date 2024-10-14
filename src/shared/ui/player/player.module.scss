@@ -4,10 +4,11 @@
 .switcher {
   $inset: 10;
   $padding: 2;
+  $border-radius: 5;
 
   position: relative;
 
-  border-radius: 0.125rem;
+  border-radius: to-rem($border-radius);
 
   box-shadow: 0 0 to-rem($inset) to-rem($padding)
     var(--color-dark-gray, $color-dark-gray) inset;
@@ -31,7 +32,7 @@
 
     inset: to-rem($padding);
 
-    border-radius: 0.125rem;
+    border-radius: to-rem($border-radius);
 
     block-size: to-rem($size);
     inline-size: to-rem($size);
