@@ -25,7 +25,7 @@
   &::after {
     @include pseudo;
 
-    background-color: var(--color-dark-gray);
+    background-color: var(--color-dark-gray, $color-dark-gray);
   }
 
   &::before {
