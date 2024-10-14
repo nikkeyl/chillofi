@@ -3,15 +3,16 @@
 
 .switcher {
   $inset: 10;
-  $padding: 2;
+  $inset-inline-start: 12;
   $border-radius: 5;
+  $padding: 2;
 
   position: relative;
 
   border-radius: to-rem($border-radius);
 
-  box-shadow: 0 0 to-rem($inset) to-rem($padding)
-    var(--color-dark-gray, $color-dark-gray) inset;
+  box-shadow: 0 0 to-rem($inset) to-rem($padding) var(--color-dark, $color-dark)
+    inset;
 
   block-size: to-rem(28);
   inline-size: to-rem(52);
@@ -42,7 +43,7 @@
     $inline-size: 4;
     $inset-block: 6;
 
-    inset: to-rem($inset-block) 0 to-rem($inset-block) to-rem(12);
+    inset: to-rem($inset-block) 0 to-rem($inset-block) to-rem($inset-inline-start);
 
     border-radius: to-rem(div($inline-size, 2));
 
@@ -58,7 +59,7 @@
     }
 
     &::after {
-      inset-inline: auto to-rem(12);
+      inset-inline: auto to-rem($inset-inline-start);
 
       box-shadow: 0 0 to-rem(15) to-rem(1) var(--color-green, $color-green);
 
