@@ -3,6 +3,8 @@
 .panel {
   display: flex;
 
+  gap: to-rem(10);
+
   flex-wrap: nowrap;
 
   align-items: center;
