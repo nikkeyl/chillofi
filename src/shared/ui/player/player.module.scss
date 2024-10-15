@@ -19,11 +19,6 @@
 
   background-color: var(--color-light, $color-light);
 
-  // &::before {
-
-  //   background-color: var(--color-dark, $color-dark);
-  // }
-
   &::before {
     $size: 24;
 
@@ -43,32 +38,10 @@
     );
   }
 
-  // &::after {
-  //   $inline-size: 4;
-  //   $inset-block: 6;
-
-  //   inset: to-rem($inset-block) 0 to-rem($inset-block) to-rem($inset-inline-start);
-
-  //   border-radius: to-rem(div($inline-size, 2));
-
-  //   block-size: to-rem(16);
-  //   inline-size: to-rem($inline-size);
-
-  //   background-color: var(--color-dark-gray, $color-dark-gray);
-  // }
-
   &.play {
     &::before {
       inset-inline: auto to-rem($padding);
     }
-
-    // &::after {
-    //   inset-inline: auto to-rem($inset-inline-start);
-
-    //   box-shadow: 0 0 to-rem(15) to-rem(1) var(--color-green, $color-green);
-
-    //   background-color: var(--color-green, $color-green);
-    // }
   }
 
   @include media-hover {
@@ -105,7 +78,6 @@
     block-size: to-rem(20);
     inline-size: to-rem(10);
 
-    // background-color: var(--color-dark, $color-dark);
     background-image: linear-gradient(
       rgb(150 150 150) 30%,
       rgb(40 40 40) 60%,
@@ -133,7 +105,6 @@
     block-size: to-rem(20);
     inline-size: to-rem(10);
 
-    // background-color: var(--color-dark, $color-dark);
     background-image: linear-gradient(
       rgb(150 150 150) 30%,
       rgb(40 40 40) 60%,
