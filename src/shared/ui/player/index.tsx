@@ -3,7 +3,7 @@
 import { playList } from '@entities';
 import cn from 'classnames';
 import dynamic from 'next/dynamic';
-import { createRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import useSound from 'use-sound';
 
 import style from './player.module.scss';
@@ -17,11 +17,13 @@ const Player = () => {
   const [play] = useSound('audio/effects/switch.mp3');
 
   const [volume, setVolume] = useState(50);
-  const audioRef = createRef();
+  const audioRef = useRef<HTMLAudioElement>();
 
   const handleVolumeChange = (event: any) => {
     const newVolume = event.target.value;
+
     setVolume(newVolume);
+
     if (audioRef.current) {
       audioRef.current.volume = newVolume / 100;
     }
