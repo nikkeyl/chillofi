@@ -19,7 +19,7 @@ const Player = () => {
   const [volume, setVolume] = useState(50);
   const audioRef = createRef();
 
-  const handleVolumeChange = (event) => {
+  const handleVolumeChange = (event: any) => {
     const newVolume = event.target.value;
     setVolume(newVolume);
     if (audioRef.current) {
