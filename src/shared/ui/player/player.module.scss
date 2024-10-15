@@ -10,8 +10,6 @@
 
   border-radius: to-rem($border-radius);
 
-  box-shadow: 0 0 to-rem(20) to-rem(6) var(--color-dark, $color-dark) inset;
-
   block-size: to-rem(28);
   inline-size: to-rem(52);
 
@@ -25,6 +23,7 @@
     @include pseudo;
 
     inset: to-rem($padding);
+    z-index: var(--z-index-1, $z-index-1);
 
     border-radius: to-rem($border-radius);
 
@@ -36,6 +35,14 @@
       rgb(40 40 40) 60%,
       rgb(77 77 77) 90%
     );
+  }
+
+  &::after {
+    @include pseudo;
+
+    inset: 0;
+
+    box-shadow: 0 0 to-rem(20) to-rem(6) var(--color-dark, $color-dark) inset;
   }
 
   &.play {
@@ -52,7 +59,7 @@
 .input {
   appearance: none;
 
-  max-inline-size: to-rem(140);
+  max-inline-size: to-rem(100);
 
   background-color: transparent;
 
