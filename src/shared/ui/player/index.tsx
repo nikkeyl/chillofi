@@ -14,24 +14,23 @@ const AudioPlayer = dynamic(() => import('react-modern-audio-player'), {
 
 const Player = () => {
   const [isPlay, setIsPlay] = useState(false);
-  const [play] = useSound('audio/effects/switcher.mp3');
+  const [play] = useSound('audio/effects/switch.mp3');
 
   return (
-    <>
-      <button
-        aria-label='Switcher'
-        className={cn(style.switcher, isPlay && style.play)}
-        onClick={() => {
-          setIsPlay(!isPlay);
-          play();
-        }}
-        type='button'
-      />
+    <button
+      aria-label='Player'
+      className={cn(style.player, isPlay && style.play)}
+      onClick={() => {
+        setIsPlay(!isPlay);
+        play();
+      }}
+      type='button'
+    >
       <AudioPlayer
         audioInitialState={{ curPlayId: 1, isPlaying: isPlay }}
         playList={playList}
       />
-    </>
+    </button>
   );
 };
 

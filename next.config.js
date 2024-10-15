@@ -21,11 +21,6 @@ export default defineConfig({
     formats: ['image/webp'],
     remotePatterns: [
       {
-        hostname: `${siteName}-archoleat.${domainName}`,
-        pathname: '/images/**',
-        protocol: 'https',
-      },
-      {
         hostname: `${siteName}.${domainName}`,
         pathname: '/images/**',
         protocol: 'https',

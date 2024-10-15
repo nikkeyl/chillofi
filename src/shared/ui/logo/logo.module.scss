@@ -1,19 +1,21 @@
+@use "sass:math" as *;
+@use "@styles/abstracts" as *;
+
 .logo {
+  // color: rgb(255 242 181);
+  padding-inline: to-rem(2);
+
+  line-height: div(45, 40);
+
   text-align: center;
 
-  font-size: 2.5rem;
+  font-size: to-rem(40);
   font-weight: 600;
 
-  // text-shadow: -0.5px 0.5px 0 #bbb;
-
-  // color: #bbb;
-  color: rgb(255 242 181);
-  padding-inline: 2px;
-
   background-image: linear-gradient(
-    rgb(150 150 150) 50%,
-    rgb(40 40 40) 70%,
-    rgb(77 77 77) 85%
+    rgb(150 150 150) 30%,
+    rgb(40 40 40) 60%,
+    rgb(77 77 77) 90%
   );
   background-clip: text;
 
