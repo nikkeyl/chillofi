@@ -1,9 +1,11 @@
 import { defineFlatConfig } from 'eslint-define-config';
-import { extend, plugins } from '@archoleat/eslint-flat-compatibility';
+import { extend } from '@archoleat/eslint-flat-compatibility';
 
 import globals from 'globals';
 
 import prettierConfig from 'eslint-config-prettier';
+import importSortPlugin from 'eslint-plugin-simple-import-sort';
+import nextPlugin from '@next/eslint-plugin-next';
 import unicornPlugin from 'eslint-plugin-unicorn';
 
 import parser from '@typescript-eslint/parser';
@@ -15,20 +17,19 @@ export default defineFlatConfig([
     'plugin:import/recommended',
     'plugin:import/typescript',
   ),
-  ...plugins('@next/eslint-plugin-next'),
-  unicornPlugin.configs['flat/recommended'],
   {
     files: ['src/**/*.tsx', 'src/**/*.ts'],
     languageOptions: {
       parser,
-      ecmaVersion: 'latest',
       globals: {
         ...globals.browser,
+        ...globals.es2015,
       },
       parserOptions: {
         ecmaFeatures: {
           jsx: true,
         },
+        ecmaVersion: 'latest',
         project: 'tsconfig.json',
       },
       sourceType: 'module',
@@ -40,8 +41,15 @@ export default defineFlatConfig([
         },
       },
     },
+    plugins: {
+      'simple-import-sort': importSortPlugin,
+      next: nextPlugin,
+      unicorn: unicornPlugin,
+    },
     rules: {
       'func-style': ['error', 'expression'],
+      'simple-import-sort/imports': 'warn',
+      'simple-import-sort/exports': 'error',
       'import/exports-last': 'error',
       'import/extensions': ['error', { ts: 'never', tsx: 'never' }],
       'import/group-exports': 'error',
@@ -50,7 +58,6 @@ export default defineFlatConfig([
       'import/no-namespace': 'error',
       'import/no-unassigned-import': 'off',
       'import/prefer-default-export': 'off',
-      'react/react-in-jsx-scope': 'off',
       'react/function-component-definition': [
         'error',
         {
@@ -58,6 +65,8 @@ export default defineFlatConfig([
           unnamedComponents: 'arrow-function',
         },
       ],
+      'react/jsx-sort-props': 'warn',
+      'react/react-in-jsx-scope': 'off',
       'unicorn/no-null': 'off',
       'unicorn/no-unused-properties': 'error',
       'unicorn/string-content': 'error',

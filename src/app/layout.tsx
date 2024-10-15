@@ -1,9 +1,8 @@
+import '@styles/app.scss';
+
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-
 import type { PropsWithChildren } from 'react';
-
-import '@styles/global.scss';
 
 const RootLayout = (properties: PropsWithChildren) => {
   const { children } = properties;

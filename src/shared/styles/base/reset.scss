@@ -1,5 +1,3 @@
-@use "@styles/abstracts" as *;
-
 * {
   margin: 0;
 
@@ -18,17 +16,6 @@ main {
   overflow: hidden;
 
   overscroll-behavior: none;
-}
-
-main {
-  display: grid;
-
-  padding: to-rem(10);
-
-  grid-template-rows: 1fr auto;
-  gap: to-rem(10);
-
-  background-color: #130f0e;
 }
 
 img {

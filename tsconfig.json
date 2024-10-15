@@ -22,8 +22,6 @@
     "paths": {
       // Entities
       "@entities": ["./src/entities/index.ts"],
-      // Widgets
-      "@widgets": ["./src/widgets/index.ts"],
       // Preview
       "@preview/*": ["./public/preview/*"],
       // Styles

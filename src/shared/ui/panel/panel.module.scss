@@ -1,0 +1,10 @@
+@use "@styles/abstracts" as *;
+
+.panel {
+  display: flex;
+
+  flex-wrap: nowrap;
+
+  align-items: center;
+  justify-content: space-between;
+}

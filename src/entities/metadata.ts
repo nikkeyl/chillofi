@@ -1,6 +1,5 @@
-import type { Metadata, Viewport } from 'next';
-
 import openGraphImage from '@preview/opengraph-image.jpg';
+import type { Metadata, Viewport } from 'next';
 
 const isProduction = process.env.NODE_ENV === 'production';
 const title = process.env.NEXT_PUBLIC_DEFAULT_TITLE;

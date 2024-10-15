@@ -1,2 +1,3 @@
-export { metadata, viewport } from './meta';
+export { cookie } from './fonts';
+export { metadata, viewport } from './metadata';
 export { playList } from './playlist';
