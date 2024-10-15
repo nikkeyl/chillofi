@@ -1,5 +1,5 @@
 import { defineFlatConfig } from 'eslint-define-config';
-import { extend, plugins } from '@archoleat/eslint-flat-compatibility';
+import { extend } from '@archoleat/eslint-flat-compatibility';
 
 import globals from 'globals';
 
@@ -17,7 +17,6 @@ export default defineFlatConfig([
     'plugin:import/recommended',
     'plugin:import/typescript',
   ),
-  // ...plugins('@next/eslint-plugin-next'),
   {
     files: ['src/**/*.tsx', 'src/**/*.ts'],
     languageOptions: {
