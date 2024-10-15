@@ -4,6 +4,7 @@ const cookie = Cookie({
   display: 'swap',
   preload: true,
   style: 'normal',
+  subsets: ['latin'],
   weight: '400',
 });
 
