@@ -26,7 +26,7 @@ const Player = () => {
 
   const audioReference = useRef<HTMLAudioElement>();
   const parseVolume = volume / 100;
-  const saveVolumeState = localStorage.setItem(volumeItem, volume.toString());
+  const saveVolume = localStorage.setItem(volumeItem, volume.toString());
 
   const handleVolumeChange = (event: ChangeEvent<HTMLInputElement>) => {
     const newVolume = Number(event.target.value);
@@ -54,6 +54,7 @@ const Player = () => {
             curPlayId: 1,
             isPlaying: isPlay,
             volume: parseVolume,
+            muted: !volume,
           }}
           playList={playList}
         />
@@ -66,7 +67,7 @@ const Player = () => {
         className={style.input}
         max={100}
         min={0}
-        onBlur={() => saveVolumeState}
+        onBlur={() => saveVolume}
         onChange={handleVolumeChange}
         type='range'
         value={volume}
