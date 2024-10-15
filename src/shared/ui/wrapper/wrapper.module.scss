@@ -1,0 +1,12 @@
+@use "@styles/abstracts" as *;
+
+.wrapper {
+  display: grid;
+
+  padding: to-rem(10);
+
+  grid-template-rows: 1fr auto;
+  gap: to-rem(10);
+
+  background-color: var(--color-dark, $color-dark);
+}

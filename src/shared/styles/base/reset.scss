@@ -20,17 +20,6 @@ main {
   overscroll-behavior: none;
 }
 
-main {
-  display: grid;
-
-  padding: to-rem(10);
-
-  grid-template-rows: 1fr auto;
-  gap: to-rem(10);
-
-  background-color: var(--color-dark, $color-dark);
-}
-
 img {
   position: absolute;
   inset: 0;
