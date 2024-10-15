@@ -5,7 +5,7 @@ const HomePage = () => (
     <Screen />
     <Panel>
       <Player />
-      <Logo>Chillofi</Logo>
+      <Logo text='Chillofi' />
     </Panel>
   </Wrapper>
 );

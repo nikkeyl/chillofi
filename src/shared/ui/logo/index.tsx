@@ -1,13 +1,13 @@
 import { cookie } from '@entities';
 import cn from 'classnames';
-import type { PropsWithChildren } from 'react';
 
 import style from './logo.module.scss';
+import type { Properties } from './logo.props';
 
-const Logo = (properties: PropsWithChildren) => {
-  const { children } = properties;
+const Logo = (properties: Properties) => {
+  const { text } = properties;
 
-  return <h1 className={cn(style.logo, cookie.className)}>{children}</h1>;
+  return <h1 className={cn(style.logo, cookie.className)}>{text}</h1>;
 };
 
 export { Logo };
