@@ -2,14 +2,13 @@
 @use "@styles/abstracts" as *;
 
 .logo {
-  padding-inline: to-rem(2);
+  padding-inline: to-rem(3);
 
   line-height: div(45, 40);
 
   text-align: center;
 
   font-size: to-rem(40);
-  font-weight: 600;
 
   background-image: linear-gradient(
     rgb(150 150 150) 30%,
