@@ -44,7 +44,7 @@ const Player = () => {
         aria-label={playControl}
         className={cn(style.player, isPlay && style.play)}
         onClick={() => {
-          setIsPlay(!isPlay);
+          setIsPlay((previousState) => !previousState);
           playSound();
         }}
         type='button'

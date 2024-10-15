@@ -5,7 +5,7 @@ import style from './screen.module.scss';
 
 const Screen = () => (
   <div className={style.screen}>
-    <Image alt='background' fetchPriority='high' priority src={background} />
+    <Image alt='No Signal' fetchPriority='high' priority src={background} />
   </div>
 );
 
