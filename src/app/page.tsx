@@ -1,11 +1,13 @@
-import { Logo, Panel, Player, Screen, Wrapper } from '@ui';
+import { Logo, Panel, Player, Screen, Switcher, Volume, Wrapper } from '@ui';
 
 const HomePage = () => (
   <Wrapper>
     <Screen />
     <Panel>
       <Player />
-      <Logo text='Chillofi' />
+      <Switcher />
+      <Volume />
+      <Logo />
     </Panel>
   </Wrapper>
 );

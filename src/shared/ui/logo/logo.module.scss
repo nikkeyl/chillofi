@@ -2,13 +2,11 @@
 @use "@styles/abstracts" as *;
 
 .logo {
-  position: relative;
+  margin-inline-start: auto;
 
   padding-inline: to-rem(3);
 
   line-height: div(45, 40);
-
-  text-align: center;
 
   font-size: to-rem(40);
 
@@ -22,5 +20,6 @@
   filter: drop-shadow(-0.0312rem 0.0312rem 0 #000);
 
   user-select: none;
+
   -webkit-text-fill-color: transparent;
 }
