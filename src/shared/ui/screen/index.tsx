@@ -1,12 +1,14 @@
 'use client';
 
-import { images } from '@entities';
+import { ariaLabels, images } from '@entities';
 import Image from 'next/image';
 import { useState } from 'react';
 
 import style from './screen.module.scss';
 
 const Screen = () => {
+  const { switcherControl } = ariaLabels;
+
   const [currentImage, setCurrentImage] = useState(images[0]);
 
   const changeImage = () => {
@@ -20,14 +22,19 @@ const Screen = () => {
       <div className={style.screen}>
         <Image
           alt='No Signal'
-          fetchPriority={currentImage === images[0] ? 'high' : 'auto'}
+          fetchPriority='high'
           height={1080}
           priority
-          src={currentImage}
+          src={currentImage ?? ''}
           width={1920}
         />
       </div>
-      <button className={style.switcher} onClick={changeImage} type='button' />
+      <button
+        aria-label={switcherControl}
+        className={style.switcher}
+        onClick={changeImage}
+        type='button'
+      />
     </>
   );
 };

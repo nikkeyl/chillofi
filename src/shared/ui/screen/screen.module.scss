@@ -72,8 +72,8 @@
 
     border-radius: 50%;
 
-    block-size: to-rem(28);
-    inline-size: to-rem(28);
+    block-size: to-rem(24);
+    inline-size: to-rem(24);
 
     background-image: linear-gradient(
       rgb(150 150 150) 30%,
@@ -84,8 +84,8 @@
     transform: translate(-50%, -50%);
 
     :active & {
-      block-size: to-rem(24);
-      inline-size: to-rem(24);
+      block-size: to-rem(20);
+      inline-size: to-rem(20);
     }
   }
 
