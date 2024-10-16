@@ -1,7 +1,8 @@
+export { FlickerSwitcher } from './flicker-switcher';
+export { ImageSwitcher } from './image-switcher';
 export { Logo } from './logo';
 export { Panel } from './panel';
 export { Player } from './player';
 export { Screen } from './screen';
-export { Switcher } from './switcher';
-export { Volume } from './volume';
+export { VolumeMixer } from './volume-mixer';
 export { Wrapper } from './wrapper';

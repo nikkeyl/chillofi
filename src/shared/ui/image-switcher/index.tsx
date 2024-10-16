@@ -4,9 +4,9 @@ import { ariaLabels, images } from '@entities';
 import { useState } from 'react';
 import useSound from 'use-sound';
 
-import style from './switcher.module.scss';
+import style from './image-switcher.module.scss';
 
-const Switcher = () => {
+const ImageSwitcher = () => {
   const { switcherControl } = ariaLabels;
 
   const [currentImage, setCurrentImage] = useState(images[0]);
@@ -31,4 +31,4 @@ const Switcher = () => {
   );
 };
 
-export { Switcher };
+export { ImageSwitcher };

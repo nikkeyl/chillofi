@@ -3,9 +3,9 @@
 import { ariaLabels, localStorageItems } from '@entities';
 import { ChangeEvent, useRef, useState } from 'react';
 
-import style from './volume.module.scss';
+import style from './volume-mixer.module.scss';
 
-const Volume = () => {
+const VolumeMixer = () => {
   const { volumeControl } = ariaLabels;
   const { volumeItem } = localStorageItems;
 
@@ -46,4 +46,4 @@ const Volume = () => {
   );
 };
 
-export { Volume };
+export { VolumeMixer };

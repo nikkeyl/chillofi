@@ -1,18 +1,28 @@
 @use "@styles/abstracts" as *;
 
 .input {
-  appearance: none;
+  display: flex;
 
+  position: relative;
+
+  block-size: to-rem(20);
   max-inline-size: to-rem(100);
+
+  flex-wrap: nowrap;
+
+  align-items: center;
 
   background-color: transparent;
 
-  &::-webkit-slider-runnable-track {
+  &::before {
+    @include pseudo;
+
     border-radius: to-rem(3);
 
     box-shadow: 0 0 to-rem(10) to-rem(2) var(--color-dark, $color-dark) inset;
 
     block-size: to-rem(10);
+    inline-size: 100%;
 
     background-color: var(--color-light, $color-light);
   }
@@ -22,40 +32,22 @@
 
     position: relative;
 
-    margin-block-start: to-rem(-5);
-
     border-radius: to-rem(2);
 
     block-size: to-rem(20);
     inline-size: to-rem(10);
 
     background-image: var(--color-light-gradient, $color-light-gradient);
-  }
-
-  &::-moz-range-track {
-    border-radius: to-rem(3);
-
-    box-shadow: 0 0 to-rem(10) to-rem(2) var(--color-dark, $color-dark) inset;
-
-    block-size: to-rem(10);
-
-    background-color: var(--color-light, $color-light);
   }
 
   &::-moz-range-thumb {
     appearance: none;
 
-    margin-block-start: to-rem(-5);
-
     border-radius: to-rem(2);
 
     block-size: to-rem(20);
     inline-size: to-rem(10);
 
     background-image: var(--color-light-gradient, $color-light-gradient);
-  }
-
-  @include media-hover {
-    cursor: pointer;
   }
 }

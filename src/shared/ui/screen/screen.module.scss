@@ -30,21 +30,23 @@
         scale-color($color-blue, $alpha: -94%)
       );
     background-size:
-      100% to-rem(4),
-      to-rem(5) 100%;
+      100% to-rem(3),
+      to-rem(4) 100%;
   }
 
-  &::after {
-    background-color: scale-color($color-dark, $alpha: -90%);
+  &.flicker {
+    &::after {
+      background-color: scale-color($color-dark, $alpha: -90%);
 
-    animation: flicker 0.15s infinite;
+      animation: flicker 0.15s infinite;
 
-    @keyframes flicker {
-      $steps: 25;
+      @keyframes flicker {
+        $steps: 25;
 
-      @for $index from 0 through $steps {
-        #{percentage($index * div(1, $steps))} {
-          opacity: random();
+        @for $index from 0 through $steps {
+          #{percentage($index * div(1, $steps))} {
+            opacity: random();
+          }
         }
       }
     }

@@ -1,12 +1,22 @@
-import { Logo, Panel, Player, Screen, Switcher, Volume, Wrapper } from '@ui';
+import {
+  FlickerSwitcher,
+  ImageSwitcher,
+  Logo,
+  Panel,
+  Player,
+  Screen,
+  VolumeMixer,
+  Wrapper,
+} from '@ui';
 
 const HomePage = () => (
   <Wrapper>
     <Screen />
     <Panel>
       <Player />
-      <Switcher />
-      <Volume />
+      <ImageSwitcher />
+      <FlickerSwitcher />
+      <VolumeMixer />
       <Logo />
     </Panel>
   </Wrapper>

@@ -22,14 +22,16 @@
     "paths": {
       // Entities
       "@entities": ["./src/entities/index.ts"],
+      // Icons
+      "@icons": ["./src/shared/icons/index.ts"],
+      // UI
+      "@ui": ["./src/shared/ui/index.ts"],
       // Preview
       "@preview/*": ["./public/preview/*"],
       // Styles
       "@styles/*": ["./src/shared/styles/*"],
       // Images
-      "@images/*": ["./public/images/*"],
-      // UI
-      "@ui": ["./src/shared/ui/index.ts"]
+      "@images/*": ["./public/images/*"]
     },
     "resolveJsonModule": true,
     // Projects

@@ -45,8 +45,4 @@
       inset-inline: auto to-rem($padding);
     }
   }
-
-  @include media-hover {
-    cursor: pointer;
-  }
 }
