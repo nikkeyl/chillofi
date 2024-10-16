@@ -2,6 +2,8 @@
 @use "@styles/abstracts" as *;
 
 .logo {
+  position: relative;
+
   padding-inline: to-rem(3);
 
   line-height: div(45, 40);
@@ -16,6 +18,8 @@
     rgb(77 77 77) 90%
   );
   background-clip: text;
+
+  filter: drop-shadow(-0.0312rem 0.0312rem 0 #000);
 
   user-select: none;
   -webkit-text-fill-color: transparent;

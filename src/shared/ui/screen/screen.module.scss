@@ -50,3 +50,53 @@
     }
   }
 }
+
+.switcher {
+  appearance: none;
+
+  position: relative;
+
+  border-radius: 50%;
+
+  block-size: to-rem(28);
+  inline-size: to-rem(28);
+
+  background-color: var(--color-light, $color-light);
+
+  &::before {
+    @include pseudo;
+
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+    z-index: var(--z-index-1, $z-index-1);
+
+    border-radius: 50%;
+
+    block-size: to-rem(28);
+    inline-size: to-rem(28);
+
+    background-image: linear-gradient(
+      rgb(150 150 150) 30%,
+      rgb(40 40 40) 60%,
+      rgb(77 77 77) 90%
+    );
+
+    transform: translate(-50%, -50%);
+
+    :active & {
+      block-size: to-rem(24);
+      inline-size: to-rem(24);
+    }
+  }
+
+  &::after {
+    @include pseudo;
+    inset: 0;
+
+    box-shadow: 0 0 to-rem(20) to-rem(4) var(--color-dark, $color-dark) inset;
+  }
+
+  @include media-hover {
+    cursor: pointer;
+  }
+}
