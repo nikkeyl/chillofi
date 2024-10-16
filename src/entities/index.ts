@@ -4,3 +4,4 @@ export { images } from './images';
 export { localStorageItems } from './local-storage';
 export { metadata, viewport } from './metadata';
 export { playList } from './playlist';
+export { sounds } from './sounds';

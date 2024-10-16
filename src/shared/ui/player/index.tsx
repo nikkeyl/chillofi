@@ -1,6 +1,6 @@
 'use client';
 
-import { ariaLabels, playList } from '@entities';
+import { ariaLabels, playList, sounds } from '@entities';
 import cn from 'classnames';
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
@@ -14,6 +14,7 @@ const AudioPlayer = dynamic(() => import('react-modern-audio-player'), {
 
 const Player = () => {
   const { playControl } = ariaLabels;
+  const { switch } = sounds;
 
   const [isPlay, setIsPlay] = useState(false);
   const [playSound] = useSound('audio/effects/switch.mp3');

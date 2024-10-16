@@ -1,6 +1,6 @@
 'use client';
 
-import { ariaLabels } from '@entities';
+import { ariaLabels, sounds } from '@entities';
 import { CircleSwitcherIcon } from '@icons';
 import cn from 'classnames';
 import { useState } from 'react';
@@ -10,9 +10,10 @@ import style from './flicker-switcher.module.scss';
 
 const FlickerSwitcher = () => {
   const { flickerControl } = ariaLabels;
+  const { crackle } = sounds;
 
   const [isSwitch, setIsSwitch] = useState(false);
-  const [playSound] = useSound('audio/effects/crackle.mp3');
+  const [playSound] = useSound(crackle);
 
   return (
     <button
