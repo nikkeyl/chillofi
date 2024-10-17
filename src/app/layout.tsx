@@ -18,6 +18,6 @@ const RootLayout = (properties: PropsWithChildren) => {
   );
 };
 
-export { metadata, viewport } from '@data';
+export { metadata, viewport } from './metadata';
 
 export default RootLayout;
