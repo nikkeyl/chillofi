@@ -1,5 +1,5 @@
 import {
-  FlickerSwitcher,
+  // FlickerSwitcher,
   ImageSwitcher,
   Logo,
   Panel,
@@ -15,7 +15,7 @@ const HomePage = () => (
     <Panel>
       <Player />
       <ImageSwitcher />
-      <FlickerSwitcher />
+      {/* <FlickerSwitcher /> */}
       <VolumeMixer />
       <Logo />
     </Panel>

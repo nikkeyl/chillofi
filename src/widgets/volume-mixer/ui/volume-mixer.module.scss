@@ -5,7 +5,7 @@
 
   position: relative;
 
-  block-size: to-rem(20);
+  block-size: to-rem(28);
   max-inline-size: to-rem(100);
 
   flex-wrap: nowrap;
@@ -19,10 +19,10 @@
 
     border-radius: to-rem(3);
 
-    box-shadow: 0 0 to-rem(10) to-rem(2)
+    box-shadow: 0 0 to-rem(10) to-rem(3)
       var(--color-primary-dark, $color-primary-dark) inset;
 
-    block-size: to-rem(10);
+    block-size: to-rem(14);
     inline-size: 100%;
 
     background-color: var(--color-primary-light, $color-primary-light);
@@ -35,8 +35,8 @@
 
     border-radius: to-rem(2);
 
-    block-size: to-rem(20);
-    inline-size: to-rem(10);
+    block-size: to-rem(28);
+    inline-size: to-rem(14);
 
     background-image: var(
       --color-primary-light-gradient,
