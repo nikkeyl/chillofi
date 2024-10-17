@@ -21,7 +21,7 @@ const VolumeMixer = () => {
 
   const audioReference = useRef<HTMLAudioElement>();
   const precisionVolume = volume / 100;
-  const isSaveVolume =
+  const saveVolume =
     typeof window !== 'undefined'
       ? localStorage.setItem(volumeItem, volume.toString())
       : null;
@@ -45,7 +45,7 @@ const VolumeMixer = () => {
       className={style.mixer}
       max={100}
       min={0}
-      onBlur={() => isSaveVolume}
+      onBlur={() => saveVolume}
       onChange={handleVolumeChange}
       type='range'
       value={volume}
