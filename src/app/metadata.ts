@@ -1,7 +1,7 @@
 import openGraphImage from '@socials/preview.jpg';
 import type { Metadata, Viewport } from 'next';
 
-const isProduction = process.env.NODE_ENV === 'production';
+const isDevelopment = process.env.NODE_ENV === 'development';
 const title = process.env.NEXT_PUBLIC_DEFAULT_TITLE;
 const description = process.env.NEXT_PUBLIC_DEFAULT_DESCRIPTION;
 const images = [
@@ -29,7 +29,7 @@ const metadata: Metadata = {
   creator: author,
   description,
   keywords: ['chill', 'chillofi', 'lofi-radio', 'lofi', 'radio', 'relax'],
-  metadataBase: isProduction ? new URL(siteURL) : null,
+  metadataBase: isDevelopment ? new URL('http://localhost:3000') : new URL(siteURL),
   publisher: 'Vercel',
   robots: {
     index: true,
