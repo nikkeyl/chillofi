@@ -35,7 +35,7 @@ const VolumeMixer = () => {
       aria-valuemax={100}
       aria-valuemin={0}
       aria-valuenow={volume}
-      className={style.input}
+      className={style.mixer}
       max={100}
       min={0}
       onBlur={() => saveVolume}

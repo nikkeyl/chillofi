@@ -12,15 +12,15 @@ const FlickerSwitcher = () => {
   const { flickerControlLabel } = ariaLabels;
   const { crackleSound } = sounds;
 
-  const [isSwitch, setIsSwitch] = useState(false);
+  const [isActive, setIsActive] = useState(false);
   const [playSound] = useSound(crackleSound);
 
   return (
     <button
       aria-label={flickerControlLabel}
-      className={cn(style.button, isSwitch && style.rotate)}
+      className={cn(style.switcher, isActive && style.active)}
       onClick={() => {
-        setIsSwitch((previousState) => !previousState);
+        setIsActive((previousState) => !previousState);
         playSound();
       }}
       type='button'

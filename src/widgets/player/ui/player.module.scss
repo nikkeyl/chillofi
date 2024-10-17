@@ -40,7 +40,7 @@
     box-shadow: 0 0 to-rem(20) to-rem(6) var(--color-dark, $color-dark) inset;
   }
 
-  &.play {
+  &.active {
     &::before {
       inset-inline: auto to-rem($padding);
     }

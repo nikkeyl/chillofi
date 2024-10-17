@@ -16,15 +16,15 @@ const Player = () => {
   const { playControlLabel } = ariaLabels;
   const { switcherSound } = sounds;
 
-  const [isPlay, setIsPlay] = useState(false);
+  const [isActive, setIsActive] = useState(false);
   const [playSound] = useSound(switcherSound);
 
   return (
     <button
       aria-label={playControlLabel}
-      className={cn(style.player, isPlay && style.play)}
+      className={cn(style.player, isActive && style.active)}
       onClick={() => {
-        setIsPlay((previousState) => !previousState);
+        setIsActive((previousState) => !previousState);
         playSound();
       }}
       type='button'
@@ -32,7 +32,7 @@ const Player = () => {
       <AudioPlayer
         audioInitialState={{
           curPlayId: 1,
-          isPlaying: isPlay,
+          isPlaying: isActive,
           volume: 1 /* precisionVolume */,
           muted: false /* !volume */,
         }}
