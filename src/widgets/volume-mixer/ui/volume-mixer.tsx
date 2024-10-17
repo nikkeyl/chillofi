@@ -10,14 +10,21 @@ const VolumeMixer = () => {
   const { volumeItem } = localStorageItems;
 
   const [volume, setVolume] = useState(() => {
-    const savedVolume = localStorage.getItem(volumeItem);
+    if (typeof window !== 'undefined') {
+      const savedVolume = localStorage.getItem(volumeItem);
 
-    return parseInt(savedVolume ?? '50', 10);
+      return parseInt(savedVolume ?? '50', 10);
+    }
+
+    return 50;
   });
 
   const audioReference = useRef<HTMLAudioElement>();
   const precisionVolume = volume / 100;
-  const saveVolume = localStorage.setItem(volumeItem, volume.toString());
+  const isSaveVolume =
+    typeof window !== 'undefined'
+      ? localStorage.setItem(volumeItem, volume.toString())
+      : null;
 
   const handleVolumeChange = (event: ChangeEvent<HTMLInputElement>) => {
     const newVolume = Number(event.target.value);
@@ -38,7 +45,7 @@ const VolumeMixer = () => {
       className={style.mixer}
       max={100}
       min={0}
-      onBlur={() => saveVolume}
+      onBlur={() => isSaveVolume}
       onChange={handleVolumeChange}
       type='range'
       value={volume}
