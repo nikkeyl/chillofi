@@ -1,10 +1,10 @@
-import cn from 'classnames';
+import classes from 'classnames';
 import Image from 'next/image';
 
 import style from './screen.module.scss';
 
 const Screen = () => (
-  <div className={cn(style.screen, style.flicker)}>
+  <div className={classes(style.screen, style.flicker)}>
     <Image
       alt='No Signal'
       fetchPriority='high'
