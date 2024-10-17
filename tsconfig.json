@@ -20,16 +20,16 @@
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "paths": {
-      // Entities
-      "@entities": ["./src/entities/index.ts"],
+      // Data
+      "@data": ["./src/shared/data/index.ts"],
       // Icons
       "@icons": ["./src/shared/icons/index.ts"],
-      // UI
-      "@ui": ["./src/shared/ui/index.ts"],
-      // Preview
-      "@preview/*": ["./public/preview/*"],
+      // Widgets
+      "@widgets": ["./src/widgets/index.ts"],
+      // Social Preview
+      "@social-preview/*": ["./public/social-preview/*"],
       // Styles
-      "@styles/*": ["./src/shared/styles/*"],
+      "@styles/*": ["./src/app/styles/*"],
       // Images
       "@images/*": ["./public/images/*"]
     },

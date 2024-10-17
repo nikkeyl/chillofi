@@ -7,7 +7,7 @@ import {
   Screen,
   VolumeMixer,
   Wrapper,
-} from '@ui';
+} from '@widgets';
 
 const HomePage = () => (
   <Wrapper>
