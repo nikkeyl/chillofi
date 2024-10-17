@@ -1,7 +1,7 @@
 'use client';
 
 import { ariaLabels, playList, sounds } from '@data';
-import cn from 'classnames';
+import classes from 'classnames';
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import useSound from 'use-sound';
@@ -23,7 +23,7 @@ const Player = () => {
     <>
       <button
         aria-label={playControlLabel}
-        className={cn(style.player, isActive && style.active)}
+        className={classes(style.player, isActive && style.active)}
         onClick={() => {
           setIsActive((previousState) => !previousState);
           playSound();

@@ -8,7 +8,7 @@ const RootLayout = (properties: PropsWithChildren) => {
   const { children } = properties;
 
   return (
-    <html lang='en-US'>
+    <html lang='en'>
       <body>
         {children}
         <Analytics />

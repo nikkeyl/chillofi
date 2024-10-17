@@ -2,7 +2,7 @@
 
 import { ariaLabels, sounds } from '@data';
 import { CircleSwitcherIcon } from '@icons';
-import cn from 'classnames';
+import classes from 'classnames';
 import { useState } from 'react';
 import useSound from 'use-sound';
 
@@ -18,7 +18,7 @@ const FlickerSwitcher = () => {
   return (
     <button
       aria-label={flickerControlLabel}
-      className={cn(style.switcher, isActive && style.active)}
+      className={classes(style.switcher, isActive && style.active)}
       onClick={() => {
         setIsActive((previousState) => !previousState);
         playSound();
