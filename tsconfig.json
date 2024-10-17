@@ -26,8 +26,8 @@
       "@icons": ["./src/shared/icons/index.ts"],
       // Widgets
       "@widgets": ["./src/widgets/index.ts"],
-      // Social Preview
-      "@social-preview/*": ["./public/social-preview/*"],
+      // Socials
+      "@socials/*": ["./public/socials/*"],
       // Styles
       "@styles/*": ["./src/app/styles/*"],
       // Images

@@ -14,7 +14,7 @@
 
   padding: to-rem($padding);
 
-  background-color: var(--color-light, $color-light);
+  background-color: var(--color-primary-light, $color-primary-light);
 
   &::before {
     $size: 24;
@@ -29,7 +29,10 @@
     block-size: to-rem($size);
     inline-size: to-rem($size);
 
-    background-image: var(--color-light-gradient, $color-light-gradient);
+    background-image: var(
+      --color-primary-light-gradient,
+      $color-primary-light-gradient
+    );
   }
 
   &::after {
@@ -37,7 +40,8 @@
 
     inset: 0;
 
-    box-shadow: 0 0 to-rem(20) to-rem(6) var(--color-dark, $color-dark) inset;
+    box-shadow: 0 0 to-rem(20) to-rem(6)
+      var(--color-primary-dark, $color-primary-dark) inset;
   }
 
   &.active {

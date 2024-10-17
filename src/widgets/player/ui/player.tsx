@@ -20,15 +20,16 @@ const Player = () => {
   const [playSound] = useSound(switcherSound);
 
   return (
-    <button
-      aria-label={playControlLabel}
-      className={cn(style.player, isActive && style.active)}
-      onClick={() => {
-        setIsActive((previousState) => !previousState);
-        playSound();
-      }}
-      type='button'
-    >
+    <>
+      <button
+        aria-label={playControlLabel}
+        className={cn(style.player, isActive && style.active)}
+        onClick={() => {
+          setIsActive((previousState) => !previousState);
+          playSound();
+        }}
+        type='button'
+      />
       <AudioPlayer
         audioInitialState={{
           curPlayId: 1,
@@ -38,7 +39,7 @@ const Player = () => {
         }}
         playList={playList}
       />
-    </button>
+    </>
   );
 };
 

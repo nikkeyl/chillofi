@@ -19,12 +19,13 @@
 
     border-radius: to-rem(3);
 
-    box-shadow: 0 0 to-rem(10) to-rem(2) var(--color-dark, $color-dark) inset;
+    box-shadow: 0 0 to-rem(10) to-rem(2)
+      var(--color-primary-dark, $color-primary-dark) inset;
 
     block-size: to-rem(10);
     inline-size: 100%;
 
-    background-color: var(--color-light, $color-light);
+    background-color: var(--color-primary-light, $color-primary-light);
   }
 
   &::-webkit-slider-thumb {
@@ -37,7 +38,10 @@
     block-size: to-rem(20);
     inline-size: to-rem(10);
 
-    background-image: var(--color-light-gradient, $color-light-gradient);
+    background-image: var(
+      --color-primary-light-gradient,
+      $color-primary-light-gradient
+    );
   }
 
   &::-moz-range-thumb {
@@ -48,6 +52,9 @@
     block-size: to-rem(20);
     inline-size: to-rem(10);
 
-    background-image: var(--color-light-gradient, $color-light-gradient);
+    background-image: var(
+      --color-primary-light-gradient,
+      $color-primary-light-gradient
+    );
   }
 }

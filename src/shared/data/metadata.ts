@@ -1,4 +1,4 @@
-import openGraphImage from '@social-preview/opengraph.jpg';
+import openGraphImage from '@socials/preview.jpg';
 import type { Metadata, Viewport } from 'next';
 
 const isProduction = process.env.NODE_ENV === 'production';

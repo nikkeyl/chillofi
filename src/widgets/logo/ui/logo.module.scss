@@ -17,7 +17,9 @@
   );
   background-clip: text;
 
-  filter: drop-shadow(to-rem(-0.5) to-rem(1) 0 var(--color-black, $color-black));
+  filter: drop-shadow(
+    to-rem(-0.5) to-rem(1) 0 var(--color-secondary-black, $color-secondary-black)
+  );
 
   user-select: none;
 
