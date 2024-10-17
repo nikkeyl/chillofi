@@ -17,6 +17,15 @@ const author = process.env.NEXT_PUBLIC_AUTHOR_NAME;
 
 const metadata: Metadata = {
   applicationName: title,
+  appleWebApp: {
+    title,
+    capable: true,
+    statusBarStyle: 'black-translucent',
+  },
+  authors: {
+    name: author,
+    url: `https://t.me/${author}`,
+  },
   creator: author,
   description,
   keywords: ['chill', 'chillofi', 'lofi-radio', 'lofi', 'radio', 'relax'],
@@ -28,15 +37,7 @@ const metadata: Metadata = {
   },
   referrer: 'origin',
   title,
-  appleWebApp: {
-    title,
-    capable: true,
-    statusBarStyle: 'black-translucent',
-  },
-  authors: {
-    name: author,
-    url: `https://t.me/${author}`,
-  },
+  manifest: 'manifest.webmanifest',
   openGraph: {
     description,
     url: siteURL,
@@ -55,13 +56,19 @@ const metadata: Metadata = {
       fetchPriority: 'high',
       sizes: '180x180',
       type: 'image/png',
-      url: 'favicons/apple-icon.png',
+      url: 'favicons/apple-touch-icon.png',
     },
     icon: {
       fetchPriority: 'high',
       sizes: '48x48',
       type: 'image/x-icon',
       url: 'favicon.ico',
+    },
+    other: {
+      fetchPriority: 'high',
+      sizes: 'any',
+      type: 'image/svg+xml',
+      url: 'favicons/icon.svg',
     },
   },
 };
