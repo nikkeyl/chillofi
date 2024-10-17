@@ -10,9 +10,12 @@
 
   background-color: var(--color-primary-light, $color-primary-light);
 
-  &::before {
+  &::before,
+  &::after {
     @include pseudo;
+  }
 
+  &::before {
     inset-block-start: 50%;
     inset-inline-start: 50%;
     z-index: var(--z-index-1, $z-index-1);
@@ -31,8 +34,6 @@
   }
 
   &::after {
-    @include pseudo;
-
     inset: 0;
 
     box-shadow: 0 0 to-rem(20) to-rem(4)
