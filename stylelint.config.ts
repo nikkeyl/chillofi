@@ -5,7 +5,5 @@ export default defineConfig({
   rules: {
     'declaration-empty-line-before': null,
     'selector-class-pattern': null,
-    'plugin/no-unsupported-browser-features': null,
-    'scss/dollar-variable-colon-newline-after': null,
   },
 });
