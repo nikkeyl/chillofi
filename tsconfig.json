@@ -29,9 +29,7 @@
       // Socials
       "@socials/*": ["./public/socials/*"],
       // Styles
-      "@styles/*": ["./src/app/styles/*"],
-      // Images
-      "@images/*": ["./public/images/*"]
+      "@styles/*": ["./src/app/styles/*"]
     },
     "resolveJsonModule": true,
     // Projects

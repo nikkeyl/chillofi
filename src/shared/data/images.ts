@@ -1,7 +1,9 @@
+const imagesFolder = 'images';
+
 const images = [
-  'images/background-1.jpg',
-  'images/background-2.jpg',
-  'images/background-3.jpg',
+  `${imagesFolder}/background-1.jpg`,
+  `${imagesFolder}/background-2.jpg`,
+  `${imagesFolder}/background-3.jpg`,
 ];
 
 export { images };
