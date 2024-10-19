@@ -1,13 +1,13 @@
 'use client';
 
-import { ariaLabels, images, localStorageItems } from '@data';
+import { accessibilityLabels, images, localStorageItems } from '@data';
 import { useState } from 'react';
 import useSound from 'use-sound';
 
 import style from './image-switcher.module.scss';
 
 const ImageSwitcher = () => {
-  const { switcherControlLabel } = ariaLabels;
+  const { switcherControlLabel } = accessibilityLabels;
   const { imageItem } = localStorageItems;
 
   const [currentImage, setCurrentImage] = useState(images[0]);

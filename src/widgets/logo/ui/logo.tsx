@@ -1,10 +1,16 @@
-import { cookie } from '@data';
+import { accessibilityLabels, cookieFont } from '@data';
 import classes from 'classnames';
 
 import style from './logo.module.scss';
 
-const Logo = () => (
-  <h1 className={classes(style.logo, cookie.className)}>Chillofi</h1>
-);
+const Logo = () => {
+  const { logoLabel } = accessibilityLabels;
+
+  return (
+    <h1 aria-label={logoLabel} className={classes(style.logo, cookieFont.className)}>
+      {logoLabel}
+    </h1>
+  );
+};
 
 export { Logo };

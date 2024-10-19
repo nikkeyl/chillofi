@@ -1,6 +1,6 @@
 import { Cookie } from 'next/font/google';
 
-const cookie = Cookie({
+const cookieFont = Cookie({
   display: 'swap',
   preload: true,
   style: 'normal',
@@ -8,4 +8,4 @@ const cookie = Cookie({
   weight: '400',
 });
 
-export { cookie };
+export { cookieFont };

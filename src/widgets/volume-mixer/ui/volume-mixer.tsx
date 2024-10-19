@@ -1,12 +1,12 @@
 'use client';
 
-import { ariaLabels, localStorageItems } from '@data';
+import { accessibilityLabels, localStorageItems } from '@data';
 import { ChangeEvent, useRef, useState } from 'react';
 
 import style from './volume-mixer.module.scss';
 
 const VolumeMixer = () => {
-  const { volumeControlLabel } = ariaLabels;
+  const { volumeControlLabel } = accessibilityLabels;
   const { volumeItem } = localStorageItems;
 
   const [volume, setVolume] = useState(() => {

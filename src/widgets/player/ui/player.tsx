@@ -1,6 +1,6 @@
 'use client';
 
-import { ariaLabels, playList, sounds } from '@data';
+import { accessibilityLabels, playList, sounds } from '@data';
 import classes from 'classnames';
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
@@ -13,7 +13,7 @@ const AudioPlayer = dynamic(() => import('react-modern-audio-player'), {
 });
 
 const Player = () => {
-  const { playControlLabel } = ariaLabels;
+  const { playControlLabel } = accessibilityLabels;
   const { switcherSound } = sounds;
 
   const [isActive, setIsActive] = useState(false);
