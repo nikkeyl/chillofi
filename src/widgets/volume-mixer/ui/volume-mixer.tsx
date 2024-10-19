@@ -10,13 +10,9 @@ const VolumeMixer = () => {
   const { volumeItem } = localStorageItems;
 
   const [volume, setVolume] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const savedVolume = localStorage.getItem(volumeItem);
+    const savedVolume = localStorage.getItem(volumeItem);
 
-      return parseInt(savedVolume ?? '50', 10);
-    }
-
-    return 50;
+    return parseInt(savedVolume ?? '50', 10);
   });
 
   const audioReference = useRef<HTMLAudioElement>();
