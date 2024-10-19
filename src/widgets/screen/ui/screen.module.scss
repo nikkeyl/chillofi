@@ -9,7 +9,7 @@
 
   overflow: hidden;
 
-  transition: filter 0.2s ease-in-out;
+  transition: filter var(--default-transition, $default-transition);
 
   user-select: none;
 
@@ -36,7 +36,7 @@
       100% to-rem(3),
       to-rem(4) 100%;
 
-    transition: box-shadow 0.2s ease-in-out;
+    transition: box-shadow var(--default-transition, $default-transition);
   }
 
   &.flicker {
@@ -50,7 +50,7 @@
     &::after {
       background-color: scale-color($color-primary-dark, $alpha: -90%);
 
-      animation: flicker 0.15s infinite;
+      animation: flicker 0.2s infinite;
 
       @keyframes flicker {
         $steps: 25;

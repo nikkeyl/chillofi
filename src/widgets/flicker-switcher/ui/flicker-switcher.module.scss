@@ -4,7 +4,7 @@
   block-size: to-rem(28);
   inline-size: to-rem(28);
 
-  transition: rotate 0.2s ease-in-out;
+  transition: rotate var(--default-transition, $default-transition);
 
   &.active {
     rotate: 90deg;
