@@ -1,7 +1,8 @@
 {
-  "screen_alt": "Нет Сигнала",
   "flicker_control_label": "Контроллер мерцания",
+  "image_alt_label": "Нет Сигнала",
   "play_control_label": "Контроллер воспроизведения",
+  "screen_label": "Экран",
   "switcher_control_label": "Контроллер переключения",
   "volume_control_label": "Контроллер громкости"
 }

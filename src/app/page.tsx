@@ -1,4 +1,5 @@
 import {
+  Controls,
   // FlickerSwitcher,
   ImageSwitcher,
   Logo,
@@ -13,10 +14,12 @@ const HomePage = () => (
   <Wrapper>
     <Screen />
     <Panel>
-      <Player />
-      <ImageSwitcher />
-      {/* <FlickerSwitcher /> */}
-      <VolumeMixer />
+      <Controls>
+        <Player />
+        <ImageSwitcher />
+        {/* <FlickerSwitcher /> */}
+        <VolumeMixer />
+      </Controls>
       <Logo />
     </Panel>
   </Wrapper>

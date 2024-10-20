@@ -2,14 +2,25 @@ import { accessibilityLabels, cookieFont } from '@data';
 import classes from 'classnames';
 
 import style from './logo.module.scss';
+import type { Properties } from './logo.properties';
 
-const Logo = () => {
+const Logo = (properties: Properties) => {
+  const { type } = properties;
+
   const { logoLabel } = accessibilityLabels;
 
   return (
-    <h1 aria-label={logoLabel} className={classes(style.logo, cookieFont.className)}>
-      {logoLabel}
-    </h1>
+    <a
+      aria-label={logoLabel}
+      className={classes(
+        style.logo,
+        cookieFont.className,
+        type === '404' && style.notFound,
+      )}
+      href='/'
+    >
+      {type === '404' ? '404' : logoLabel}
+    </a>
   );
 };
 

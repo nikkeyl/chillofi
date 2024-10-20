@@ -1,3 +1,4 @@
+export { Controls } from './controls';
 export { FlickerSwitcher } from './flicker-switcher';
 export { ImageSwitcher } from './image-switcher';
 export { Logo } from './logo';

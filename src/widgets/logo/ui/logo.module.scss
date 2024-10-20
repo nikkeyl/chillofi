@@ -2,8 +2,6 @@
 @use "@styles/abstracts" as *;
 
 .logo {
-  margin-inline-start: auto;
-
   padding-inline: to-rem(3);
 
   line-height: div(45, 40);
@@ -24,4 +22,12 @@
   user-select: none;
 
   -webkit-text-fill-color: transparent;
+}
+
+.notFound {
+  margin-inline: auto;
+
+  line-height: div(250, 200);
+
+  font-size: to-rem(200);
 }
