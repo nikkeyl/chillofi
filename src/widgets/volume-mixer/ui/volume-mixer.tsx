@@ -30,19 +30,21 @@ const VolumeMixer = () => {
   };
 
   return (
-    <input
-      aria-label={volumeControlLabel}
-      aria-valuemax={100}
-      aria-valuemin={0}
-      aria-valuenow={volume}
-      className={style.mixer}
-      max={100}
-      min={0}
-      onBlur={() => saveVolume}
-      onChange={handleVolumeChange}
-      type='range'
-      value={volume}
-    />
+    <label aria-label={volumeControlLabel} htmlFor='mixer'>
+      <input
+        aria-valuemax={100}
+        aria-valuemin={0}
+        aria-valuenow={volume}
+        className={style.mixer}
+        id='mixer'
+        max={100}
+        min={0}
+        onBlur={() => saveVolume}
+        onChange={handleVolumeChange}
+        type='range'
+        value={volume}
+      />
+    </label>
   );
 };
 
