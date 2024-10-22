@@ -1,9 +1,10 @@
 const imagesFolder = 'images';
 
 const images = [
-  `${imagesFolder}/background-1.jpg`,
-  `${imagesFolder}/background-2.jpg`,
-  `${imagesFolder}/background-3.jpg`,
+  `${imagesFolder}/screen-1.jpg`,
+  `${imagesFolder}/screen-2.jpg`,
+  `${imagesFolder}/screen-3.jpg`,
+  `${imagesFolder}/screen-4.jpg`,
 ];
 
 export { images };
