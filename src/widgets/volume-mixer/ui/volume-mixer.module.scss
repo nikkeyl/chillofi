@@ -5,7 +5,7 @@
 
   position: relative;
 
-  block-size: to-rem(28);
+  block-size: to-rem(14);
   max-inline-size: to-rem(100);
 
   flex-wrap: nowrap;
@@ -14,16 +14,22 @@
 
   background-color: transparent;
 
-  &::before {
+  &::before,
+  &::after {
     @include pseudo;
 
-    border-radius: to-rem(3);
+    inset: 0;
+  }
+
+  &::before {
+    z-index: 1;
 
     box-shadow: 0 0 to-rem(10) to-rem(3)
       var(--color-primary-dark, $color-primary-dark) inset;
+  }
 
-    block-size: to-rem(14);
-    inline-size: 100%;
+  &::after {
+    border-radius: to-rem(3);
 
     background-color: var(--color-primary-light, $color-primary-light);
   }
@@ -31,6 +37,7 @@
   &::-webkit-slider-thumb {
     appearance: none;
 
+    z-index: 1;
     position: relative;
 
     border-radius: to-rem(2);
@@ -47,10 +54,13 @@
   &::-moz-range-thumb {
     appearance: none;
 
+    z-index: 1;
+    position: relative;
+
     border-radius: to-rem(2);
 
-    block-size: to-rem(20);
-    inline-size: to-rem(10);
+    block-size: to-rem(28);
+    inline-size: to-rem(14);
 
     background-image: var(
       --color-primary-light-gradient,

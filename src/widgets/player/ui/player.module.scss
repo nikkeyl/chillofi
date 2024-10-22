@@ -16,10 +16,13 @@
 
   background-color: var(--color-primary-light, $color-primary-light);
 
+  &::before,
+  &::after {
+    @include pseudo;
+  }
+
   &::before {
     $size: 24;
-
-    @include pseudo;
 
     inset: to-rem($padding);
     z-index: var(--z-index-1, $z-index-1);
@@ -36,8 +39,6 @@
   }
 
   &::after {
-    @include pseudo;
-
     inset: 0;
 
     box-shadow: 0 0 to-rem(20) to-rem(6)
