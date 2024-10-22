@@ -38,7 +38,7 @@
     transition: box-shadow var(--default-transition, $default-transition);
   }
 
-  &.flicker {
+  &.crtEffect {
     border: to-rem(1) solid var(--color-secondary-black, $color-secondary-black);
 
     filter: brightness(0.8) sepia(50%);

@@ -8,7 +8,7 @@ const Screen = () => {
   const { imageAltLabel, screenLabel } = accessibilityLabels;
 
   return (
-    <div aria-label={screenLabel} className={classes(style.screen, style.flicker)}>
+    <div aria-label={screenLabel} className={classes(style.screen, style.crtEffect)}>
       <Image
         alt={imageAltLabel}
         fetchPriority='high'
