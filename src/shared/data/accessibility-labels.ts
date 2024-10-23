@@ -1,5 +1,5 @@
 const accessibilityLabels = {
-  flickerControlLabel: 'Flicker control',
+  CRTEffectControlLabel: 'CRT effect control',
   imageAltLabel: 'No Signal',
   logoLabel: 'Chillofi',
   playControlLabel: 'Play control',

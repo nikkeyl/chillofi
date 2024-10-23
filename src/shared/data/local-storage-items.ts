@@ -1,5 +1,5 @@
 const localStorageItems = {
-  flickerItem: 'flicker',
+  CRTEffectItem: 'crt-effect',
   imageItem: 'image',
   volumeItem: 'volume',
 };

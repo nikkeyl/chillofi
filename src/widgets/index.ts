@@ -1,5 +1,5 @@
 export { Controls } from './controls';
-export { FlickerSwitcher } from './flicker-switcher';
+export { CRTEffectSwitcher } from './crt-effect-switcher';
 export { ImageSwitcher } from './image-switcher';
 export { Logo } from './logo';
 export { Panel } from './panel';

@@ -6,11 +6,11 @@ import classes from 'classnames';
 import { useState } from 'react';
 import useSound from 'use-sound';
 
-import style from './flicker-switcher.module.scss';
+import style from './crt-effect-switcher.module.scss';
 
-const FlickerSwitcher = () => {
-  const { flickerControlLabel } = accessibilityLabels;
-  const { flickerItem } = localStorageItems;
+const CRTEffectSwitcher = () => {
+  const { CRTEffectControlLabel } = accessibilityLabels;
+  const { CRTEffectItem } = localStorageItems;
   const { crackleSound } = sounds;
 
   const [isActive, setIsActive] = useState(false);
@@ -18,7 +18,7 @@ const FlickerSwitcher = () => {
 
   return (
     <button
-      aria-label={flickerControlLabel}
+      aria-label={CRTEffectControlLabel}
       className={classes(style.switcher, isActive && style.active)}
       onClick={() => {
         setIsActive((previousState) => !previousState);
@@ -31,4 +31,4 @@ const FlickerSwitcher = () => {
   );
 };
 
-export { FlickerSwitcher };
+export { CRTEffectSwitcher };

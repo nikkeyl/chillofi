@@ -1,6 +1,6 @@
 import {
   Controls,
-  // FlickerSwitcher,
+  // CRTEffectSwitcher,
   ImageSwitcher,
   Logo,
   Panel,
@@ -17,7 +17,7 @@ const HomePage = () => (
       <Controls>
         <Player />
         <ImageSwitcher />
-        {/* <FlickerSwitcher /> */}
+        {/* <CRTEffectSwitcher /> */}
         <VolumeMixer />
       </Controls>
       <Logo />
