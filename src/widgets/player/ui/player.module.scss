@@ -1,12 +1,9 @@
 @use "@styles/abstracts" as *;
 
 .player {
-  $inset-inline-start: 12;
-  $border-radius: 5;
-
   position: relative;
 
-  border-radius: to-rem($border-radius);
+  border-radius: to-rem(5);
 
   block-size: to-rem(28);
   inline-size: to-rem(52);
@@ -24,10 +21,10 @@
     inset: to-rem(2);
     z-index: var(--z-index-1, $z-index-1);
 
-    border-radius: to-rem($border-radius);
+    border-radius: inherit;
 
-    block-size: to-rem($size);
-    inline-size: to-rem($size);
+    block-size: auto;
+    inline-size: to-rem(24);
 
     background-image: var(
       --color-primary-light-gradient,
@@ -44,7 +41,7 @@
 
   &.active {
     &::before {
-      inset-inline: auto to-rem($padding);
+      inset-inline: auto to-rem(2);
     }
   }
 }
