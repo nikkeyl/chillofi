@@ -3,7 +3,6 @@
 .player {
   $inset-inline-start: 12;
   $border-radius: 5;
-  $padding: 2;
 
   position: relative;
 
@@ -11,8 +10,6 @@
 
   block-size: to-rem(28);
   inline-size: to-rem(52);
-
-  padding: to-rem($padding);
 
   background-color: var(--color-primary-light, $color-primary-light);
 
@@ -24,7 +21,7 @@
   &::before {
     $size: 24;
 
-    inset: to-rem($padding);
+    inset: to-rem(2);
     z-index: var(--z-index-1, $z-index-1);
 
     border-radius: to-rem($border-radius);
