@@ -4,6 +4,7 @@
 .screen {
   position: relative;
 
+  border: to-rem(1) solid var(--color-secondary-black, $color-secondary-black);
   border-radius: to-rem(25);
 
   overflow: hidden;
@@ -39,8 +40,6 @@
   }
 
   &.CRTEffect {
-    border: to-rem(1) solid var(--color-secondary-black, $color-secondary-black);
-
     filter: brightness(0.8) sepia(50%);
 
     &::before {
@@ -51,9 +50,9 @@
     &::after {
       background-color: scale-color($color-primary-dark, $alpha: -90%);
 
-      animation: crt 0.2s infinite;
+      animation: flicker 0.2s infinite;
 
-      @keyframes crt {
+      @keyframes flicker {
         $steps: 25;
 
         @for $index from 0 through $steps {
