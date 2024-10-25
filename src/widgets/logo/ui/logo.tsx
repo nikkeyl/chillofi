@@ -15,11 +15,11 @@ const Logo = (properties: Properties) => {
       className={classes(
         style.logo,
         cookieFont.className,
-        type === '404' && style.notFound,
+        type === 404 && style.notFound,
       )}
       href='/'
     >
-      {type === '404' ? '404' : logoLabel}
+      {type === 404 ? type : logoLabel}
     </a>
   );
 };

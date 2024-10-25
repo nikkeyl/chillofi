@@ -1,5 +1,5 @@
 type Properties = {
-  type?: '404';
+  type?: number;
 };
 
 export type { Properties };
