@@ -1,13 +1,11 @@
+import { Controls, Panel, Wrapper } from '@ui';
 import {
-  Controls,
   // CRTEffectSwitcher,
   ImageSwitcher,
   Logo,
-  Panel,
   Player,
   Screen,
   VolumeMixer,
-  Wrapper,
 } from '@widgets';
 
 const HomePage = () => (
