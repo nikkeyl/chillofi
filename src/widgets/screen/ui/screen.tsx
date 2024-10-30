@@ -9,7 +9,6 @@ import style from './screen.module.scss';
 
 const Screen = () => {
   const { imageAltLabel, screenLabel } = accessibilityLabels;
-
   const { image } = useSettingsContext();
 
   return (
