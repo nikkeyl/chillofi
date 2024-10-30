@@ -19,15 +19,17 @@ const Player = () => {
   const [isActive, setIsActive] = useState(false);
   const [playSound] = useSound(switcherSound);
 
+  const handleClick = () => {
+    setIsActive((previousState) => !previousState);
+    playSound();
+  };
+
   return (
     <>
       <button
         aria-label={playControlLabel}
         className={classes(style.player, isActive && style.active)}
-        onClick={() => {
-          setIsActive((previousState) => !previousState);
-          playSound();
-        }}
+        onClick={handleClick}
         type='button'
       />
       <AudioPlayer

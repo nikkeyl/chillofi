@@ -16,14 +16,16 @@ const CRTEffectSwitcher = () => {
   const [isActive, setIsActive] = useState(false);
   const [playSound] = useSound(crackleSound);
 
+  const handleClick = () => {
+    setIsActive((previousState) => !previousState);
+    playSound();
+  };
+
   return (
     <button
       aria-label={CRTEffectControlLabel}
       className={classes(style.switcher, isActive && style.active)}
-      onClick={() => {
-        setIsActive((previousState) => !previousState);
-        playSound();
-      }}
+      onClick={handleClick}
       type='button'
     >
       <CircleSwitcherIcon />

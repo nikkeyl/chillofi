@@ -14,20 +14,18 @@ const ImageSwitcher = () => {
   const [currentImage, setCurrentImage] = useState(images[0]);
   const [playSound] = useSound(switcherSound);
 
-  const changeImage = () => {
+  const handleClick = () => {
     const randomIndex = Math.floor(Math.random() * images.length);
 
     setCurrentImage(images[randomIndex]);
-  };
+    playSound();
+  }
 
   return (
     <button
       aria-label={switcherControlLabel}
       className={style.switcher}
-      onClick={() => {
-        changeImage();
-        playSound();
-      }}
+      onClick={handleClick}
       type='button'
     />
   );
