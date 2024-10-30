@@ -1,4 +1,4 @@
-const effectsFolder = 'audio/effects';
+const effectsFolder = '/audio/effects';
 
 const sounds = {
   crackleSound: `${effectsFolder}/crackle.mp3`,

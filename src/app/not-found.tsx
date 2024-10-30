@@ -1,11 +1,5 @@
-import { Logo, Panel, Wrapper } from '@widgets';
+import { redirect } from 'next/navigation';
 
-const NotFoundPage = () => (
-  <Wrapper>
-    <Panel>
-      <Logo type={404} />
-    </Panel>
-  </Wrapper>
-);
+const NotFoundPage = () => redirect('/');
 
 export default NotFoundPage;

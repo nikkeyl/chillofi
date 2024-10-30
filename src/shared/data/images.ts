@@ -1,4 +1,4 @@
-const imagesFolder = 'images';
+const imagesFolder = '/images';
 
 const images = [
   `${imagesFolder}/screen-1.jpg`,
