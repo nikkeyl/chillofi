@@ -26,6 +26,8 @@
       "@helpers": ["./src/shared/helpers/index.ts"],
       // Icons
       "@icons": ["./src/shared/icons/index.ts"],
+      // Providers
+      "@providers/*": ["./src/app/providers/*"],
       // Socials
       "@socials/*": ["./public/socials/*"],
       // Styles

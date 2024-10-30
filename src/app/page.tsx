@@ -8,19 +8,23 @@ import {
   VolumeMixer,
 } from '@widgets';
 
+import { SettingsProvider } from './providers/settings-provider';
+
 const HomePage = () => (
-  <Wrapper>
-    <Screen />
-    <Panel>
-      <Controls>
-        <Player />
-        <ImageSwitcher />
-        {/* <CRTEffectSwitcher /> */}
-        <VolumeMixer />
-      </Controls>
-      <Logo />
-    </Panel>
-  </Wrapper>
+  <SettingsProvider>
+    <Wrapper>
+      <Screen />
+      <Panel>
+        <Controls>
+          <Player />
+          <ImageSwitcher />
+          {/* <CRTEffectSwitcher /> */}
+          <VolumeMixer />
+        </Controls>
+        <Logo />
+      </Panel>
+    </Wrapper>
+  </SettingsProvider>
 );
 
 export default HomePage;

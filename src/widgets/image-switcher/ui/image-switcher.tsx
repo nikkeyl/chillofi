@@ -1,25 +1,23 @@
 'use client';
 
-import { accessibilityLabels, images, localStorageItems, sounds } from '@data';
-import { useState } from 'react';
+import { accessibilityLabels, /* localStorageItems, */ sounds } from '@data';
+import { useSettingsContext } from '@providers/use-settings-context';
 import useSound from 'use-sound';
 
 import style from './image-switcher.module.scss';
 
 const ImageSwitcher = () => {
   const { switcherControlLabel } = accessibilityLabels;
-  const { imageItem } = localStorageItems;
+  // const { imageItem } = localStorageItems;
   const { switcherSound } = sounds;
+  const { randomImage } = useSettingsContext();
 
-  const [currentImage, setCurrentImage] = useState(images[0]);
   const [playSound] = useSound(switcherSound);
 
   const handleClick = () => {
-    const randomIndex = Math.floor(Math.random() * images.length);
-
-    setCurrentImage(images[randomIndex]);
+    randomImage();
     playSound();
-  }
+  };
 
   return (
     <button
