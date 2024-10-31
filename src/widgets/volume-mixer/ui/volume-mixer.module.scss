@@ -4,7 +4,9 @@
   position: relative;
 
   block-size: to-rem(14);
-  max-inline-size: to-rem(100);
+  inline-size: to-rem(100);
+
+  flex: 0 0 to-rem(100);
 
   background-color: transparent;
 

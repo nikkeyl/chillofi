@@ -18,6 +18,11 @@ main {
   overflow: hidden;
 
   overscroll-behavior: none;
+
+  line-height: 1;
+
+  text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
 }
 
 img {

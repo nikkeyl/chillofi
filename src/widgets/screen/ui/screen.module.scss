@@ -50,7 +50,7 @@
     &::after {
       background-color: scale-color($color-primary-dark, $alpha: -90%);
 
-      animation: flicker 0.2s infinite;
+      animation: flicker infinite var(--default-transition, $default-transition);
 
       @keyframes flicker {
         $steps: 25;

@@ -8,6 +8,8 @@
   block-size: to-rem(28);
   inline-size: to-rem(52);
 
+  flex: 0 0 to-rem(52);
+
   background-color: var(--color-primary-light, $color-primary-light);
 
   &::before,
