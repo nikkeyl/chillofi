@@ -1,22 +1,14 @@
 import { defineFlatConfig } from 'eslint-define-config';
 import { extend } from '@archoleat/eslint-flat-compatibility';
-
 import globals from 'globals';
-
-import prettierConfig from 'eslint-config-prettier';
 import importSortPlugin from 'eslint-plugin-simple-import-sort';
 import nextPlugin from '@next/eslint-plugin-next';
+import parser from '@typescript-eslint/parser';
+import prettierConfig from 'eslint-config-prettier';
 import unicornPlugin from 'eslint-plugin-unicorn';
 
-import parser from '@typescript-eslint/parser';
-
 export default defineFlatConfig([
-  ...extend(
-    'airbnb',
-    'airbnb-typescript',
-    'plugin:import/recommended',
-    'plugin:import/typescript',
-  ),
+  ...extend('airbnb', 'airbnb-typescript'),
   {
     files: ['src/**/*.tsx', 'src/**/*.ts'],
     languageOptions: {
@@ -48,7 +40,7 @@ export default defineFlatConfig([
     },
     rules: {
       'func-style': ['error', 'expression'],
-      'simple-import-sort/imports': 'warn',
+      'simple-import-sort/imports': 'error',
       'simple-import-sort/exports': 'error',
       'import/exports-last': 'error',
       'import/extensions': ['error', { ts: 'never', tsx: 'never' }],

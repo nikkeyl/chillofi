@@ -1,0 +1,8 @@
+{
+  "crt_effect_control_label": "Контроллер CRT-эффекта",
+  "image_alt_label": "Нет Сигнала",
+  "play_control_label": "Контроллер воспроизведения",
+  "screen_label": "Экран",
+  "switcher_control_label": "Контроллер переключения",
+  "volume_control_label": "Контроллер громкости"
+}

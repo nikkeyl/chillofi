@@ -1,0 +1,49 @@
+@use "@styles/abstracts" as *;
+
+.player {
+  position: relative;
+
+  border-radius: to-rem(5);
+
+  block-size: to-rem(28);
+  inline-size: to-rem(52);
+
+  flex: 0 0 to-rem(52);
+
+  background-color: var(--color-primary-light, $color-primary-light);
+
+  &::before,
+  &::after {
+    @include pseudo;
+  }
+
+  &::before {
+    $size: 24;
+
+    inset: to-rem(2);
+    z-index: var(--z-index-1, $z-index-1);
+
+    border-radius: inherit;
+
+    block-size: auto;
+    inline-size: to-rem(24);
+
+    background-image: var(
+      --color-primary-light-gradient,
+      $color-primary-light-gradient
+    );
+  }
+
+  &::after {
+    inset: 0;
+
+    box-shadow: 0 0 to-rem(20) to-rem(6)
+      var(--color-primary-dark, $color-primary-dark) inset;
+  }
+
+  &.active {
+    &::before {
+      inset-inline: auto to-rem(2);
+    }
+  }
+}

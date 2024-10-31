@@ -4,6 +4,16 @@ const siteName = 'chillofi';
 const domainName = 'vercel.app';
 
 export default defineConfig({
+  images: {
+    formats: ['image/webp'],
+    remotePatterns: [
+      {
+        hostname: `${siteName}.${domainName}`,
+        pathname: '/images/**',
+        protocol: 'https',
+      },
+    ],
+  },
   async headers() {
     return [
       {
@@ -16,15 +26,5 @@ export default defineConfig({
         ],
       },
     ];
-  },
-  images: {
-    formats: ['image/webp'],
-    remotePatterns: [
-      {
-        hostname: `${siteName}.${domainName}`,
-        pathname: '/images/**',
-        protocol: 'https',
-      },
-    ],
   },
 });

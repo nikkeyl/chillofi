@@ -1,13 +1,23 @@
-import { Logo, Panel, Player, Screen, Wrapper } from '@ui';
+import { ImageProvider, SoundProvider } from '@providers';
+import { Controls, Panel, Wrapper } from '@ui';
+import { ImageSwitcher, Logo, Player, Screen, VolumeMixer } from '@widgets';
 
 const HomePage = () => (
-  <Wrapper>
-    <Screen />
-    <Panel>
-      <Player />
-      <Logo text='Chillofi' />
-    </Panel>
-  </Wrapper>
+  <ImageProvider>
+    <Wrapper>
+      <Screen />
+      <Panel>
+        <Controls>
+          <SoundProvider>
+            <Player />
+            <VolumeMixer />
+          </SoundProvider>
+          <ImageSwitcher />
+        </Controls>
+        <Logo />
+      </Panel>
+    </Wrapper>
+  </ImageProvider>
 );
 
 export default HomePage;

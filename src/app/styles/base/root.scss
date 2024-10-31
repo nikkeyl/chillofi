@@ -1,0 +1,19 @@
+@use "@styles/abstracts" as *;
+
+:root {
+  // Z Indexes
+  --z-index-1: #{$z-index-1};
+
+  // Main Colors
+  --color-primary-dark: #{$color-primary-dark};
+  --color-primary-light: #{$color-primary-light};
+
+  // Secondary Colors
+  --color-secondary-black: #{$color-secondary-black};
+
+  // Gradients
+  --color-primary-light-gradient: #{$color-primary-light-gradient};
+
+  // Transitions
+  --default-transition: #{$default-transition};
+}

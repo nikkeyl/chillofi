@@ -8,7 +8,7 @@ const RootLayout = (properties: PropsWithChildren) => {
   const { children } = properties;
 
   return (
-    <html lang='en-US'>
+    <html lang='en'>
       <body>
         {children}
         <Analytics />
@@ -18,6 +18,6 @@ const RootLayout = (properties: PropsWithChildren) => {
   );
 };
 
-export { metadata, viewport } from '@entities';
+export { metadata, viewport } from './metadata';
 
 export default RootLayout;

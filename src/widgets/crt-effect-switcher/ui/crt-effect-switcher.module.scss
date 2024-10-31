@@ -1,0 +1,12 @@
+@use "@styles/abstracts" as *;
+
+.switcher {
+  block-size: to-rem(28);
+  inline-size: to-rem(28);
+
+  transition: rotate var(--default-transition, $default-transition);
+
+  &.active {
+    rotate: 90deg;
+  }
+}

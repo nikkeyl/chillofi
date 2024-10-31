@@ -1,0 +1,48 @@
+@use "@styles/abstracts" as *;
+
+* {
+  margin: 0;
+
+  border: 0;
+
+  box-sizing: border-box;
+
+  padding: 0;
+}
+
+html,
+body,
+main {
+  min-block-size: 100svb;
+
+  overflow: hidden;
+
+  overscroll-behavior: none;
+
+  line-height: 1;
+
+  text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
+}
+
+img {
+  position: absolute;
+  inset: 0;
+
+  object-fit: cover;
+
+  block-size: 100%;
+  inline-size: 100%;
+}
+
+button,
+input {
+  appearance: none;
+  display: block;
+
+  background-color: transparent;
+
+  @include media-hover {
+    cursor: pointer;
+  }
+}

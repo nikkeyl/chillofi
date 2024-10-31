@@ -1,0 +1,13 @@
+@use "@styles/abstracts" as *;
+
+.controls {
+  display: flex;
+
+  max-inline-size: fit-content;
+
+  gap: to-rem(10);
+
+  flex-wrap: nowrap;
+
+  align-items: center;
+}

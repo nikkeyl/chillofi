@@ -1,0 +1,8 @@
+{
+  "crt_effect_control_label": "CRTエフェクトコントロール",
+  "image_alt_label": "シグナルなし",
+  "play_control_label": "プレーコントロール",
+  "screen_label": "スクリーン",
+  "switcher_control_label": "スイッチャーコントロール",
+  "volume_control_label": "ボリュームコントロール"
+}

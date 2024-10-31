@@ -20,16 +20,22 @@
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "paths": {
-      // Entities
-      "@entities": ["./src/entities/index.ts"],
-      // Preview
-      "@preview/*": ["./public/preview/*"],
+      // Data
+      "@data": ["./src/shared/data/index.ts"],
+      // Helpers
+      "@helpers": ["./src/shared/helpers/index.ts"],
+      // Icons
+      "@icons": ["./src/shared/icons/index.ts"],
+      // Providers
+      "@providers": ["./src/app/providers/index.ts"],
+      // Socials
+      "@socials/*": ["./public/socials/*"],
       // Styles
-      "@styles/*": ["./src/shared/styles/*"],
-      // Images
-      "@images/*": ["./public/images/*"],
+      "@styles/*": ["./src/app/styles/*"],
       // UI
-      "@ui": ["./src/shared/ui/index.ts"]
+      "@ui": ["./src/shared/ui/index.ts"],
+      // Widgets
+      "@widgets": ["./src/widgets/index.ts"]
     },
     "resolveJsonModule": true,
     // Projects
