@@ -1,7 +1,7 @@
 'use client';
 
 import { accessibilityLabels } from '@data';
-import { useImageContext } from '@providers/use-image-context';
+import { useImageContext } from '@providers';
 import classes from 'classnames';
 import Image from 'next/image';
 

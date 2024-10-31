@@ -1,6 +1,7 @@
 'use client';
 
 import { accessibilityLabels, playList, sounds } from '@data';
+import { useSoundContext } from '@providers';
 import classes from 'classnames';
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
@@ -15,6 +16,7 @@ const AudioPlayer = dynamic(() => import('react-modern-audio-player'), {
 const Player = () => {
   const { playControlLabel } = accessibilityLabels;
   const { switcherSound } = sounds;
+  const { volume, precisionVolume } = useSoundContext();
 
   const [isActive, setIsActive] = useState(false);
   const [playSound] = useSound(switcherSound);
@@ -36,8 +38,8 @@ const Player = () => {
         audioInitialState={{
           curPlayId: 1,
           isPlaying: isActive,
-          volume: 1 /* precisionVolume */,
-          muted: false /* !volume */,
+          volume: precisionVolume,
+          muted: !volume,
         }}
         playList={playList}
       />

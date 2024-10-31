@@ -1,7 +1,7 @@
 'use client';
 
 import { accessibilityLabels, /* localStorageItems, */ sounds } from '@data';
-import { useImageContext } from '@providers/use-image-context';
+import { useImageContext } from '@providers';
 import useSound from 'use-sound';
 
 import style from './image-switcher.module.scss';

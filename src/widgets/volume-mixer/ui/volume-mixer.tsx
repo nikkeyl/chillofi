@@ -1,23 +1,16 @@
 'use client';
 
-import { accessibilityLabels/* , localStorageItems */ } from '@data';
-import { ChangeEvent, useRef, useState } from 'react';
+import { accessibilityLabels } from '@data';
+import { useSoundContext } from '@providers';
+import { ChangeEvent, useRef } from 'react';
 
 import style from './volume-mixer.module.scss';
 
 const VolumeMixer = () => {
   const { volumeControlLabel } = accessibilityLabels;
-  // const { volumeItem } = localStorageItems;
-
-  const [volume, setVolume] = useState(50/* () => {
-    const savedVolume = localStorage.getItem(volumeItem);
-
-    return parseInt(savedVolume ?? '50', 10);
-  } */);
+  const { precisionVolume, volume, setVolume } = useSoundContext();
 
   const audioReference = useRef<HTMLAudioElement>();
-  const precisionVolume = volume / 100;
-  // const saveVolume = localStorage.setItem(volumeItem, volume.toString());
 
   const handleVolumeChange = (event: ChangeEvent<HTMLInputElement>) => {
     const newVolume = Number(event.target.value);
@@ -39,7 +32,6 @@ const VolumeMixer = () => {
         id='mixer'
         max={100}
         min={0}
-        // onBlur={() => saveVolume}
         onChange={handleVolumeChange}
         type='range'
         value={volume}
