@@ -1,5 +1,4 @@
-import { ImageProvider } from '@providers/image-provider/image-provider';
-import { SoundProvider } from '@providers/sound-provider/sound-provider';
+import { ImageProvider, SoundProvider } from '@providers';
 import { Controls, Panel, Wrapper } from '@ui';
 import {
   // CRTEffectSwitcher,
@@ -11,22 +10,22 @@ import {
 } from '@widgets';
 
 const HomePage = () => (
-  <SoundProvider>
-    <ImageProvider>
-      <Wrapper>
-        <Screen />
-        <Panel>
-          <Controls>
+  <ImageProvider>
+    <Wrapper>
+      <Screen />
+      <Panel>
+        <Controls>
+          <SoundProvider>
             <Player />
             <ImageSwitcher />
             {/* <CRTEffectSwitcher /> */}
             <VolumeMixer />
-          </Controls>
-          <Logo />
-        </Panel>
-      </Wrapper>
-    </ImageProvider>
-  </SoundProvider>
+          </SoundProvider>
+        </Controls>
+        <Logo />
+      </Panel>
+    </Wrapper>
+  </ImageProvider>
 );
 
 export default HomePage;
