@@ -1,11 +1,11 @@
 'use client';
 
-import { createContext } from 'react';
+import { createContext, Dispatch, SetStateAction } from 'react';
 
 type SoundContextValues = {
   precisionVolume: number;
   volume: number;
-  setVolume: () => void;
+  setVolume: Dispatch<SetStateAction<number>>;
 };
 
 const SoundContext = createContext<SoundContextValues | null>(null);
