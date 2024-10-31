@@ -18,8 +18,6 @@
   }
 
   &::before {
-    $size: 24;
-
     inset: to-rem(2);
     z-index: var(--z-index-1, $z-index-1);
 
@@ -32,6 +30,8 @@
       --color-primary-light-gradient,
       $color-primary-light-gradient
     );
+
+    transition: inset-inline var(--default-transition, $default-transition);
   }
 
   &::after {
@@ -43,7 +43,7 @@
 
   &.active {
     &::before {
-      inset-inline: auto to-rem(2);
+      inset-inline-start: to-rem(26);
     }
   }
 }
