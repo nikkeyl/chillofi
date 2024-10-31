@@ -10,9 +10,9 @@ const HomePage = () => (
         <Controls>
           <SoundProvider>
             <Player />
-            <ImageSwitcher />
             <VolumeMixer />
           </SoundProvider>
+          <ImageSwitcher />
         </Controls>
         <Logo />
       </Panel>

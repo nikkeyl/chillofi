@@ -1,9 +1,6 @@
-export { Controls } from '../shared/ui/controls';
 export { CRTEffectSwitcher } from './crt-effect-switcher';
 export { ImageSwitcher } from './image-switcher';
 export { Logo } from './logo';
-export { Panel } from '../shared/ui/panel';
 export { Player } from './player';
 export { Screen } from './screen';
 export { VolumeMixer } from './volume-mixer';
-export { Wrapper } from '../shared/ui/wrapper';
