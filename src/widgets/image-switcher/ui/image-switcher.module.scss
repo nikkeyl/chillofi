@@ -29,11 +29,9 @@
       $color-primary-light-gradient
     );
 
-    transform: translate(-50%, -50%);
+    translate: -50% -50%;
 
-    transition:
-      block-size 0.1s ease-in-out,
-      inline-size 0.1s ease-in-out;
+    transition: scale 0.1s ease-in-out;
   }
 
   &::after {
@@ -45,8 +43,7 @@
 
   &:active {
     &::before {
-      block-size: to-rem(20);
-      inline-size: to-rem(20);
+      scale: 0.9;
     }
   }
 }
