@@ -1,7 +1,7 @@
 'use client';
 
 import { images } from '@data';
-import { PropsWithChildren, useCallback, useState } from 'react';
+import { PropsWithChildren, useCallback, useMemo, useState } from 'react';
 
 import { ImageContext, type ImageContextValues } from './image-context';
 
@@ -17,10 +17,13 @@ const ImageProvider = (properties: PropsWithChildren) => {
     );
   }, []);
 
-  const imageContextValues: ImageContextValues = {
-    currentImage,
-    setNextImage,
-  };
+  const imageContextValues = useMemo<ImageContextValues>(
+    () => ({
+      currentImage,
+      setNextImage,
+    }),
+    [currentImage],
+  );
 
   return (
     <ImageContext.Provider value={imageContextValues}>
