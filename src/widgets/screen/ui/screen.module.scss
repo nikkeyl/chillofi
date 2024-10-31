@@ -11,8 +11,6 @@
 
   transition: filter var(--default-transition, $default-transition);
 
-  user-select: none;
-
   &::before,
   &::after {
     @include pseudo;
