@@ -1,13 +1,6 @@
 import { ImageProvider, SoundProvider } from '@providers';
 import { Controls, Panel, Wrapper } from '@ui';
-import {
-  // CRTEffectSwitcher,
-  ImageSwitcher,
-  Logo,
-  Player,
-  Screen,
-  VolumeMixer,
-} from '@widgets';
+import { ImageSwitcher, Logo, Player, Screen, VolumeMixer } from '@widgets';
 
 const HomePage = () => (
   <ImageProvider>
@@ -18,7 +11,6 @@ const HomePage = () => (
           <SoundProvider>
             <Player />
             <ImageSwitcher />
-            {/* <CRTEffectSwitcher /> */}
             <VolumeMixer />
           </SoundProvider>
         </Controls>
