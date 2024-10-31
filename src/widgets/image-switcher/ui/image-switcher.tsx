@@ -1,7 +1,7 @@
 'use client';
 
 import { accessibilityLabels, /* localStorageItems, */ sounds } from '@data';
-import { useSettingsContext } from '@providers/use-settings-context';
+import { useImageContext } from '@providers/use-image-context';
 import useSound from 'use-sound';
 
 import style from './image-switcher.module.scss';
@@ -10,12 +10,12 @@ const ImageSwitcher = () => {
   const { switcherControlLabel } = accessibilityLabels;
   // const { imageItem } = localStorageItems;
   const { switcherSound } = sounds;
-  const { randomImage } = useSettingsContext();
+  const { setNextImage } = useImageContext();
 
   const [playSound] = useSound(switcherSound);
 
   const handleClick = () => {
-    randomImage();
+    setNextImage();
     playSound();
   };
 

@@ -8,10 +8,10 @@ import {
   VolumeMixer,
 } from '@widgets';
 
-import { SettingsProvider } from './providers/settings-provider';
+import { ImageProvider } from './providers/image-provider';
 
 const HomePage = () => (
-  <SettingsProvider>
+  <ImageProvider>
     <Wrapper>
       <Screen />
       <Panel>
@@ -24,7 +24,7 @@ const HomePage = () => (
         <Logo />
       </Panel>
     </Wrapper>
-  </SettingsProvider>
+  </ImageProvider>
 );
 
 export default HomePage;
