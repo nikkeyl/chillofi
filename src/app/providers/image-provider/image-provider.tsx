@@ -9,6 +9,7 @@ const ImageProvider = (properties: PropsWithChildren) => {
   const { children } = properties;
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
   const currentImage = images[currentImageIndex] ?? '';
 
   const setNextImage = useCallback(() => {
