@@ -10,7 +10,10 @@ const ImageProvider = (properties: PropsWithChildren) => {
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const currentImage = images[currentImageIndex] ?? '';
+  const currentImage = useMemo(
+    () => images[currentImageIndex] ?? '',
+    [currentImageIndex],
+  );
 
   const setNextImage = useCallback(() => {
     setCurrentImageIndex(
@@ -23,7 +26,7 @@ const ImageProvider = (properties: PropsWithChildren) => {
       currentImage,
       setNextImage,
     }),
-    [currentImage],
+    [currentImage, setNextImage],
   );
 
   return (
