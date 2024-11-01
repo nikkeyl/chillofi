@@ -1,6 +1,6 @@
 'use client';
 
-import { PropsWithChildren, useMemo, useState } from 'react';
+import { PropsWithChildren, useCallback, useMemo, useState } from 'react';
 
 import { SoundContext, type SoundContextValues } from './sound-context';
 
@@ -11,13 +11,19 @@ const SoundProvider = (properties: PropsWithChildren) => {
 
   const precisionVolume = volume / 100;
 
+  const setVolumeState = useCallback((newVolume: number) => {
+    setVolume((previousVolume) =>
+      previousVolume !== newVolume ? newVolume : previousVolume,
+    );
+  }, []);
+
   const soundContextValues = useMemo<SoundContextValues>(
     () => ({
       precisionVolume,
       volume,
-      setVolume,
+      setVolume: setVolumeState,
     }),
-    [volume, precisionVolume],
+    [volume, precisionVolume, setVolume],
   );
 
   return (
