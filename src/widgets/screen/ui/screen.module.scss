@@ -2,9 +2,7 @@
 @use "@styles/abstracts" as *;
 
 .screen {
-  position: relative;
-
-  border: to-rem(1) solid var(--color-secondary-black, $color-secondary-black);
+  border: to-rem(2) solid var(--color-secondary-black, $color-secondary-black);
   border-radius: to-rem(25);
 
   overflow: hidden;

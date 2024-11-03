@@ -30,13 +30,7 @@ main {
 }
 
 img {
-  position: absolute;
-  inset: 0;
-
   object-fit: cover;
-
-  block-size: 100%;
-  inline-size: 100%;
 }
 
 button,

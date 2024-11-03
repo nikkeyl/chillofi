@@ -16,10 +16,9 @@ const Screen = () => {
       <Image
         alt={imageAltLabel}
         fetchPriority='high'
-        height={1080}
+        fill
         priority
         src={currentImage}
-        width={1920}
       />
     </div>
   );
