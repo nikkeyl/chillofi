@@ -1,8 +1,6 @@
 @use "@styles/abstracts" as *;
 
 .switcher {
-  position: relative;
-
   border-radius: 50%;
 
   block-size: to-rem(28);
@@ -10,26 +8,11 @@
 
   flex: 0 0 to-rem(28);
 
-  background-color: var(--color-primary-light, $color-primary-light);
-
-  &::before,
-  &::after {
-    @include pseudo;
-  }
-
   &::before {
     inset: 50%;
-    z-index: var(--z-index-1, $z-index-1);
-
-    border-radius: inherit;
 
     block-size: to-rem(24);
     inline-size: to-rem(24);
-
-    background-image: var(
-      --color-primary-light-gradient,
-      $color-primary-light-gradient
-    );
 
     translate: -50% -50%;
 
@@ -37,13 +20,11 @@
   }
 
   &::after {
-    inset: 0;
-
     box-shadow: 0 0 to-rem(20) to-rem(4)
       var(--color-primary-dark, $color-primary-dark) inset;
   }
 
-  &:active {
+  &.active {
     &::before {
       scale: 0.9;
     }

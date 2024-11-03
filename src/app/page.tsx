@@ -1,19 +1,18 @@
 import { ImageProvider, SoundProvider } from '@providers';
-import { Controls, Panel, Wrapper } from '@ui';
-import { ImageSwitcher, Logo, Player, Screen, VolumeMixer } from '@widgets';
+import { Panel, Wrapper } from '@ui';
+import { Logo, Player, Screen, Switcher, VolumeMixer } from '@widgets';
 
 const HomePage = () => (
   <ImageProvider>
     <Wrapper>
       <Screen />
       <Panel>
-        <Controls>
+          <Switcher />
           <SoundProvider>
             <Player />
             <VolumeMixer />
           </SoundProvider>
-          <ImageSwitcher />
-        </Controls>
+          <Switcher />
         <Logo />
       </Panel>
     </Wrapper>

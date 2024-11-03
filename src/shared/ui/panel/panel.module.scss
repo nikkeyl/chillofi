@@ -3,10 +3,12 @@
 .panel {
   display: flex;
 
+  position: relative;
+
   gap: to-rem(10);
 
   flex-wrap: nowrap;
 
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
