@@ -19,8 +19,8 @@ const Switcher = () => {
 
   const handleClick = () => {
     setIsActive(!isActive);
-    setNextImage();
     playSound();
+    setNextImage();
   };
 
   useEffect(() => {

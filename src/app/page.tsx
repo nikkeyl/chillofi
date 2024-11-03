@@ -7,12 +7,12 @@ const HomePage = () => (
     <Wrapper>
       <Screen />
       <Panel>
-          <Switcher />
-          <SoundProvider>
-            <Player />
-            <VolumeMixer />
-          </SoundProvider>
-          <Switcher />
+        <Switcher />
+        <SoundProvider>
+          <Player />
+          <VolumeMixer />
+        </SoundProvider>
+        <Switcher />
         <Logo />
       </Panel>
     </Wrapper>
