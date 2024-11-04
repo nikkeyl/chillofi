@@ -79,12 +79,12 @@
       $color-primary-light-gradient
     );
 
-    &:active {
-      cursor: grabbing;
-    }
-
     @include media-hover {
       cursor: pointer;
+
+      &:active {
+        cursor: grabbing;
+      }
     }
   }
 
@@ -104,12 +104,12 @@
       $color-primary-light-gradient
     );
 
-    &:active {
-      cursor: grabbing;
-    }
-
     @include media-hover {
       cursor: pointer;
+
+      &:active {
+        cursor: grabbing;
+      }
     }
   }
 }
