@@ -3,24 +3,22 @@
 .switcher {
   border-radius: 50%;
 
-  block-size: to-rem(28);
-  inline-size: to-rem(28);
+  block-size: to-rem(35);
+  inline-size: to-rem(35);
 
-  flex: 0 0 to-rem(28);
+  flex: 0 0 to-rem(35);
 
   &::before {
-    inset: 50%;
+    block-size: 89%;
+    inline-size: 89%;
 
-    block-size: to-rem(24);
-    inline-size: to-rem(24);
+    translate: -49% -49%;
 
-    translate: -50% -50%;
-
-    transition: scale 0.1s ease-in-out;
+    transition: scale var(--default-transition, $default-transition);
   }
 
   &::after {
-    box-shadow: 0 0 to-rem(20) to-rem(4)
+    box-shadow: 0 0 to-rem(20) to-rem(6)
       var(--color-primary-dark, $color-primary-dark) inset;
   }
 
