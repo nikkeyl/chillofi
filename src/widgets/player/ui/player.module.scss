@@ -1,6 +1,6 @@
 @use "@styles/abstracts" as *;
 
-.player {
+.button {
   border-radius: var(--default-border-radius, $default-border-radius);
 
   block-size: to-rem(35);
@@ -24,6 +24,77 @@
   &.active {
     &::before {
       inset-inline-start: to-rem(27);
+    }
+  }
+}
+
+.input {
+  position: relative;
+
+  block-size: to-rem(17.5);
+  inline-size: to-rem(140);
+
+  flex: 0 0 to-rem(140);
+
+  background-color: transparent;
+
+  &::before,
+  &::after {
+    @include pseudo;
+
+    inset: 0;
+  }
+
+  &::before {
+    border-radius: var(--default-border-radius, $default-border-radius);
+
+    background-color: var(--color-primary-light, $color-primary-light);
+  }
+
+  &::after {
+    box-shadow: 0 0 to-rem(10) to-rem(4)
+      var(--color-primary-dark, $color-primary-dark) inset;
+  }
+
+  &::-webkit-slider-thumb {
+    appearance: none;
+
+    z-index: var(--z-index-1, $z-index-1);
+    position: relative;
+
+    border-radius: var(--default-border-radius, $default-border-radius);
+
+    block-size: to-rem(35);
+    inline-size: to-rem(17.5);
+
+    background-image: var(
+      --color-primary-light-gradient,
+      $color-primary-light-gradient
+    );
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+
+  &::-moz-range-thumb {
+    appearance: none;
+
+    z-index: var(--z-index-1, $z-index-1);
+    position: relative;
+
+    border-radius: var(--default-border-radius, $default-border-radius);
+
+    block-size: to-rem(35);
+    inline-size: to-rem(17.5);
+
+    background-image: var(
+      --color-primary-light-gradient,
+      $color-primary-light-gradient
+    );
+
+    &:active {
+      cursor: grabbing;
     }
   }
 }

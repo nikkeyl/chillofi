@@ -1,11 +1,10 @@
 'use client';
 
 import { accessibilityLabels, playList, sounds } from '@data';
-import { useSoundContext } from '@providers';
 import { Button } from '@ui';
 import classes from 'classnames';
 import dynamic from 'next/dynamic';
-import { useState } from 'react';
+import { ChangeEvent, useRef, useState } from 'react';
 import useSound from 'use-sound';
 
 import style from './player.module.scss';
@@ -15,12 +14,25 @@ const AudioPlayer = dynamic(() => import('react-modern-audio-player'), {
 });
 
 const Player = () => {
-  const { playControlLabel } = accessibilityLabels;
+  const { playControlLabel, volumeControlLabel } = accessibilityLabels;
   const { switcherSound } = sounds;
-  const { volume, precisionVolume } = useSoundContext();
 
   const [isActive, setIsActive] = useState(false);
+  const [volume, setVolume] = useState(50);
   const [playSound] = useSound(switcherSound);
+
+  const audioReference = useRef<HTMLAudioElement>();
+  const precisionVolume = volume / 100;
+
+  const handleVolumeChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const newVolume = Number(event.target.value);
+
+    setVolume(newVolume);
+
+    if (audioReference.current) {
+      audioReference.current.volume = precisionVolume;
+    }
+  };
 
   const handleClick = () => {
     setIsActive((previousState) => !previousState);
@@ -31,9 +43,23 @@ const Player = () => {
     <>
       <Button
         ariaLabel={playControlLabel}
-        className={classes(style.player, isActive && style.active)}
+        className={classes(style.button, isActive && style.active)}
         onClick={handleClick}
       />
+      <label aria-label={volumeControlLabel} htmlFor='mixer'>
+        <input
+          aria-valuemax={100}
+          aria-valuemin={0}
+          aria-valuenow={volume}
+          className={style.input}
+          id='mixer'
+          max={100}
+          min={0}
+          onChange={handleVolumeChange}
+          type='range'
+          value={volume}
+        />
+      </label>
       <AudioPlayer
         audioInitialState={{
           curPlayId: 1,
