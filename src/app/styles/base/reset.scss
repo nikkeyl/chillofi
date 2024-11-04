@@ -45,8 +45,4 @@ button,
 input {
   appearance: none;
   display: block;
-
-  @include media-hover {
-    cursor: pointer;
-  }
 }

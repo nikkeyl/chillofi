@@ -26,6 +26,13 @@
       inset-inline-start: to-rem(27);
     }
   }
+
+  @include media-hover {
+    &::before,
+    &::after {
+      cursor: pointer;
+    }
+  }
 }
 
 .input {
@@ -75,6 +82,10 @@
     &:active {
       cursor: grabbing;
     }
+
+    @include media-hover {
+      cursor: pointer;
+    }
   }
 
   &::-moz-range-thumb {
@@ -95,6 +106,10 @@
 
     &:active {
       cursor: grabbing;
+    }
+
+    @include media-hover {
+      cursor: pointer;
     }
   }
 }

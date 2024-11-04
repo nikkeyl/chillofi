@@ -26,4 +26,10 @@
       scale: 0.9;
     }
   }
+
+  @include media-hover {
+    &::before {
+      cursor: pointer;
+    }
+  }
 }
