@@ -15,8 +15,7 @@
 }
 
 html,
-body,
-main {
+body {
   min-block-size: 100svb;
 
   overflow: hidden;
@@ -27,6 +26,17 @@ main {
 
   text-rendering: optimizeLegibility;
   text-size-adjust: 100%;
+}
+
+body {
+  display: grid;
+
+  padding: to-rem(10) to-rem(10) to-rem(15);
+
+  grid-template-rows: 1fr auto;
+  gap: to-rem(15);
+
+  background-color: var(--color-primary-dark, $color-primary-dark);
 }
 
 img {
