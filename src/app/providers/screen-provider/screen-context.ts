@@ -1,6 +1,6 @@
 'use client';
 
-import { StaticImageData } from 'next/image';
+import type { StaticImageData } from 'next/image';
 import { createContext } from 'react';
 
 type ScreenContextValues = {
