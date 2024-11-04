@@ -24,7 +24,7 @@
       var(--color-primary-dark, $color-primary-dark) inset;
   }
 
-  &.active {
+  &:active {
     &::before {
       scale: 0.9;
     }
