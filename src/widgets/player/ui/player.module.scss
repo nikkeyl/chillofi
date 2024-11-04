@@ -3,28 +3,28 @@
 .player {
   border-radius: to-rem(5);
 
-  block-size: to-rem(28);
-  inline-size: to-rem(52);
+  block-size: to-rem(35);
+  inline-size: to-rem(60);
 
-  flex: 0 0 to-rem(52);
+  flex: 0 0 to-rem(60);
 
   &::before {
     inset: to-rem(2);
 
     block-size: auto;
-    inline-size: to-rem(24);
+    inline-size: to-rem(30);
 
     transition: inset-inline var(--default-transition, $default-transition);
   }
 
   &::after {
-    box-shadow: 0 0 to-rem(20) to-rem(6)
+    box-shadow: 0 0 to-rem(20) to-rem(8)
       var(--color-primary-dark, $color-primary-dark) inset;
   }
 
   &.active {
     &::before {
-      inset-inline-start: to-rem(26);
+      inset-inline-start: to-rem(28);
     }
   }
 }

@@ -2,19 +2,19 @@
 @use "@styles/abstracts" as *;
 
 .logo {
-  @media (width <= 480px) {
+  @media (width <= 600px) {
     display: none;
   }
 
-  @media (width >= 480px) {
+  @media (width >= 600px) {
     position: absolute;
     inset-inline-end: 0;
 
     padding-inline: to-rem(2);
 
-    line-height: div(45, 40);
+    line-height: div(55, 50);
 
-    font-size: to-rem(40);
+    font-size: to-rem(50);
 
     background-image: linear-gradient(
       rgb(150 150 150) 30%,

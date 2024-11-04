@@ -3,10 +3,10 @@
 .mixer {
   position: relative;
 
-  block-size: to-rem(14);
-  inline-size: to-rem(100);
+  block-size: to-rem(17.5);
+  inline-size: to-rem(140);
 
-  flex: 0 0 to-rem(100);
+  flex: 0 0 to-rem(140);
 
   background-color: transparent;
 
@@ -24,7 +24,7 @@
   }
 
   &::after {
-    box-shadow: 0 0 to-rem(10) to-rem(3)
+    box-shadow: 0 0 to-rem(10) to-rem(4)
       var(--color-primary-dark, $color-primary-dark) inset;
   }
 
@@ -36,8 +36,8 @@
 
     border-radius: to-rem(3);
 
-    block-size: to-rem(28);
-    inline-size: to-rem(14);
+    block-size: to-rem(35);
+    inline-size: to-rem(17.5);
 
     background-image: var(
       --color-primary-light-gradient,
@@ -53,8 +53,8 @@
 
     border-radius: to-rem(3);
 
-    block-size: to-rem(28);
-    inline-size: to-rem(14);
+    block-size: to-rem(35);
+    inline-size: to-rem(17.5);
 
     background-image: var(
       --color-primary-light-gradient,
