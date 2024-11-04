@@ -1,5 +1,5 @@
 type SwitcherProperties = {
-  type: 'CRT' | 'image';
+  type: 'crt' | 'image';
 };
 
 export type { SwitcherProperties };

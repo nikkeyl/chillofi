@@ -28,12 +28,12 @@ const ScreenProvider = (properties: PropsWithChildren) => {
 
   const ScreenContextValues = useMemo<ScreenContextValues>(
     () => ({
-      currentImage,
       CRTEffect,
-      setNextImage,
+      currentImage,
       setCRTEffect: setCRT,
+      setNextImage,
     }),
-    [currentImage, setNextImage, setCRTEffect, CRTEffect],
+    [CRTEffect, currentImage, setCRTEffect, setNextImage],
   );
 
   return (

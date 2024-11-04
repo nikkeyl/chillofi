@@ -7,7 +7,7 @@ const HomePage = () => (
     <Wrapper>
       <Screen />
       <Panel>
-        <Switcher type='CRT' />
+        <Switcher type='crt' />
         <SoundProvider>
           <Player />
           <VolumeMixer />
