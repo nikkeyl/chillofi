@@ -43,6 +43,10 @@
       --color-primary-light-gradient,
       $color-primary-light-gradient
     );
+
+    &:active {
+      cursor: grabbing;
+    }
   }
 
   &::-moz-range-thumb {
@@ -60,5 +64,9 @@
       --color-primary-light-gradient,
       $color-primary-light-gradient
     );
+
+    &:active {
+      cursor: grabbing;
+    }
   }
 }
