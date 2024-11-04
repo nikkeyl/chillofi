@@ -22,8 +22,6 @@ body {
 
   overscroll-behavior: none;
 
-  line-height: 1;
-
   text-rendering: optimizeLegibility;
   text-size-adjust: 100%;
 }
@@ -47,8 +45,6 @@ button,
 input {
   appearance: none;
   display: block;
-
-  background-color: transparent;
 
   @include media-hover {
     cursor: pointer;
