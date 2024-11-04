@@ -3,16 +3,16 @@
 .button {
   border-radius: var(--default-border-radius, $default-border-radius);
 
-  block-size: to-rem(35);
-  inline-size: to-rem(60);
+  block-size: to-rem(36);
+  inline-size: to-rem(72);
 
-  flex: 0 0 to-rem(60);
+  flex: 0 0 to-rem(72);
 
   &::before {
     inset: to-rem(2);
 
-    block-size: to-rem(31);
-    inline-size: to-rem(31);
+    block-size: to-rem(32);
+    inline-size: to-rem(32);
 
     transition: inset-inline var(--default-transition, $default-transition);
   }
@@ -23,7 +23,7 @@
 
   &.active {
     &::before {
-      inset-inline-start: to-rem(27);
+      inset-inline-start: to-rem(38);
     }
   }
 
@@ -38,10 +38,10 @@
 .input {
   position: relative;
 
-  block-size: to-rem(17.5);
-  inline-size: to-rem(140);
+  block-size: to-rem(18);
+  inline-size: to-rem(126);
 
-  flex: 0 0 to-rem(140);
+  flex: 0 0 to-rem(126);
 
   background-color: transparent;
 
@@ -71,8 +71,8 @@
 
     border-radius: var(--default-border-radius, $default-border-radius);
 
-    block-size: to-rem(35);
-    inline-size: to-rem(17.5);
+    block-size: to-rem(36);
+    inline-size: to-rem(18);
 
     background-image: var(
       --color-primary-light-gradient,
@@ -96,8 +96,8 @@
 
     border-radius: var(--default-border-radius, $default-border-radius);
 
-    block-size: to-rem(35);
-    inline-size: to-rem(17.5);
+    block-size: to-rem(36);
+    inline-size: to-rem(18);
 
     background-image: var(
       --color-primary-light-gradient,
