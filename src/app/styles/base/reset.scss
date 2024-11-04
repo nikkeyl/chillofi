@@ -15,18 +15,26 @@
 }
 
 html,
-body,
-main {
+body {
   min-block-size: 100svb;
 
   overflow: hidden;
 
   overscroll-behavior: none;
 
-  line-height: 1;
-
   text-rendering: optimizeLegibility;
   text-size-adjust: 100%;
+}
+
+body {
+  display: grid;
+
+  padding: to-rem(10) to-rem(10) to-rem(15);
+
+  grid-template-rows: 1fr auto;
+  gap: to-rem(15);
+
+  background-color: var(--color-primary-dark, $color-primary-dark);
 }
 
 img {
@@ -37,10 +45,4 @@ button,
 input {
   appearance: none;
   display: block;
-
-  background-color: transparent;
-
-  @include media-hover {
-    cursor: pointer;
-  }
 }

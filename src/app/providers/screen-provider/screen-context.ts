@@ -3,9 +3,9 @@
 import { createContext } from 'react';
 
 type ScreenContextValues = {
-  CRTEffect: boolean;
+  isCRTEffect: boolean;
   currentImage: string;
-  setCRTEffect: () => void;
+  setIsCRTEffect: () => void;
   setNextImage: () => void;
 };
 

@@ -1,6 +1,6 @@
 @use "@styles/abstracts" as *;
 
-.switcher {
+.button {
   border-radius: 50%;
 
   block-size: to-rem(35);
@@ -18,13 +18,18 @@
   }
 
   &::after {
-    box-shadow: 0 0 to-rem(20) to-rem(6)
-      var(--color-primary-dark, $color-primary-dark) inset;
+    box-shadow: var(--default-box-shadow, $default-box-shadow);
   }
 
   &:active {
     &::before {
       scale: 0.9;
+    }
+  }
+
+  @include media-hover {
+    &::before {
+      cursor: pointer;
     }
   }
 }

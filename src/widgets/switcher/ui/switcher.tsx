@@ -6,14 +6,14 @@ import { Button } from '@ui';
 import useSound from 'use-sound';
 
 import style from './switcher.module.scss';
-import { SwitcherProperties } from './switcher.properties';
+import type { SwitcherProperties } from './switcher.properties';
 
 const Switcher = (properties: SwitcherProperties) => {
   const { type } = properties;
 
   const { switcherControlLabel } = accessibilityLabels;
   const { switcherSound } = sounds;
-  const { setCRTEffect, setNextImage } = useScreenContext();
+  const { setIsCRTEffect, setNextImage } = useScreenContext();
 
   const [playSound] = useSound(switcherSound);
 
@@ -23,14 +23,14 @@ const Switcher = (properties: SwitcherProperties) => {
     if (type === 'image') {
       setNextImage();
     } else {
-      setCRTEffect();
+      setIsCRTEffect();
     }
   };
 
   return (
     <Button
       ariaLabel={switcherControlLabel}
-      className={style.switcher ?? ''}
+      className={style.button ?? ''}
       onClick={handleClick}
     />
   );
