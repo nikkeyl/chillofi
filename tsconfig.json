@@ -24,6 +24,8 @@
       "@data": ["./src/shared/data/index.ts"],
       // Helpers
       "@helpers": ["./src/shared/helpers/index.ts"],
+      // Images
+      "@images/*": ["./public/images/*"],
       // Providers
       "@providers": ["./src/app/providers/index.ts"],
       // Socials
