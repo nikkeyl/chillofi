@@ -6,7 +6,7 @@ import { Button } from '@ui';
 import useSound from 'use-sound';
 
 import style from './switcher.module.scss';
-import { SwitcherProperties } from './switcher.properties';
+import type { SwitcherProperties } from './switcher.properties';
 
 const Switcher = (properties: SwitcherProperties) => {
   const { type } = properties;

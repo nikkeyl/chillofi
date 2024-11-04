@@ -1,7 +1,7 @@
 'use client';
 
 import { images } from '@data';
-import { PropsWithChildren, useCallback, useMemo, useState } from 'react';
+import { type PropsWithChildren, useCallback, useMemo, useState } from 'react';
 
 import { ScreenContext, type ScreenContextValues } from './screen-context';
 
