@@ -3,10 +3,10 @@
 .wrapper {
   display: grid;
 
-  padding: to-rem(10);
+  padding: to-rem(10) to-rem(10) to-rem(15);
 
   grid-template-rows: 1fr auto;
-  gap: to-rem(10);
+  gap: to-rem(15);
 
   background-color: var(--color-primary-dark, $color-primary-dark);
 }

@@ -1,7 +1,7 @@
 'use client';
 
 import { accessibilityLabels } from '@data';
-import { useImageContext } from '@providers';
+import { useScreenContext } from '@providers';
 import classes from 'classnames';
 import Image from 'next/image';
 
@@ -9,17 +9,19 @@ import style from './screen.module.scss';
 
 const Screen = () => {
   const { imageAltLabel, screenLabel } = accessibilityLabels;
-  const { currentImage } = useImageContext();
+  const { CRTEffect, currentImage } = useScreenContext();
 
   return (
-    <div aria-label={screenLabel} className={classes(style.screen, style.CRTEffect)}>
+    <div
+      aria-label={screenLabel}
+      className={classes(style.screen, CRTEffect && style.CRTEffect)}
+    >
       <Image
         alt={imageAltLabel}
         fetchPriority='high'
-        height={1080}
+        fill
         priority
         src={currentImage}
-        width={1920}
       />
     </div>
   );

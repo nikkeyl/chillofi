@@ -2,6 +2,7 @@
 
 import { accessibilityLabels, playList, sounds } from '@data';
 import { useSoundContext } from '@providers';
+import { Button } from '@ui';
 import classes from 'classnames';
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
@@ -28,11 +29,10 @@ const Player = () => {
 
   return (
     <>
-      <button
-        aria-label={playControlLabel}
+      <Button
+        ariaLabel={playControlLabel}
         className={classes(style.player, isActive && style.active)}
         onClick={handleClick}
-        type='button'
       />
       <AudioPlayer
         audioInitialState={{

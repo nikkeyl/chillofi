@@ -3,12 +3,13 @@
 import { images } from '@data';
 import { PropsWithChildren, useCallback, useMemo, useState } from 'react';
 
-import { ImageContext, type ImageContextValues } from './image-context';
+import { ScreenContext, type ScreenContextValues } from './screen-context';
 
-const ImageProvider = (properties: PropsWithChildren) => {
+const ScreenProvider = (properties: PropsWithChildren) => {
   const { children } = properties;
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [CRTEffect, setCRTEffect] = useState(true);
 
   const currentImage = useMemo(
     () => images[currentImageIndex] ?? '',
@@ -21,19 +22,25 @@ const ImageProvider = (properties: PropsWithChildren) => {
     );
   }, []);
 
-  const imageContextValues = useMemo<ImageContextValues>(
+  const setCRT = useCallback(() => {
+    setCRTEffect((previousState) => !previousState);
+  }, []);
+
+  const ScreenContextValues = useMemo<ScreenContextValues>(
     () => ({
       currentImage,
+      CRTEffect,
       setNextImage,
+      setCRTEffect: setCRT,
     }),
-    [currentImage, setNextImage],
+    [currentImage, setNextImage, setCRTEffect, CRTEffect],
   );
 
   return (
-    <ImageContext.Provider value={imageContextValues}>
+    <ScreenContext.Provider value={ScreenContextValues}>
       {children}
-    </ImageContext.Provider>
+    </ScreenContext.Provider>
   );
 };
 
-export { ImageProvider };
+export { ScreenProvider };

@@ -24,8 +24,6 @@
       "@data": ["./src/shared/data/index.ts"],
       // Helpers
       "@helpers": ["./src/shared/helpers/index.ts"],
-      // Icons
-      "@icons": ["./src/shared/icons/index.ts"],
       // Providers
       "@providers": ["./src/app/providers/index.ts"],
       // Socials
