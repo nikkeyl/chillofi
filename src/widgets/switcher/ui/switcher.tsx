@@ -30,7 +30,7 @@ const Switcher = (properties: SwitcherProperties) => {
   return (
     <Button
       ariaLabel={switcherControlLabel}
-      className={style.switcher ?? ''}
+      className={style.button ?? ''}
       onClick={handleClick}
     />
   );

@@ -16,10 +16,9 @@
 
     font-size: to-rem(50);
 
-    background-image: linear-gradient(
-      rgb(150 150 150) 30%,
-      rgb(40 40 40) 60%,
-      rgb(77 77 77) 90%
+    background-image: var(
+      --color-primary-light-gradient,
+      $color-primary-light-gradient
     );
     background-clip: text;
 
