@@ -1,10 +1,11 @@
 'use client';
 
+import type { StaticImageData } from 'next/image';
 import { createContext } from 'react';
 
 type ScreenContextValues = {
   isCRTEffect: boolean;
-  currentImage: string;
+  currentImage: StaticImageData | string;
   setIsCRTEffect: () => void;
   setNextImage: () => void;
 };
