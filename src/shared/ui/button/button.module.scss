@@ -22,6 +22,6 @@
   }
 
   &::after {
-    inset: 0;
+    inset: to-rem(-1);
   }
 }

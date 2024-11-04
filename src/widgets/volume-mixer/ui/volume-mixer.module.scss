@@ -18,7 +18,7 @@
   }
 
   &::before {
-    border-radius: to-rem(3);
+    border-radius: var(--default-border-radius, $default-border-radius);
 
     background-color: var(--color-primary-light, $color-primary-light);
   }
@@ -34,7 +34,7 @@
     z-index: var(--z-index-1, $z-index-1);
     position: relative;
 
-    border-radius: to-rem(3);
+    border-radius: var(--default-border-radius, $default-border-radius);
 
     block-size: to-rem(35);
     inline-size: to-rem(17.5);
@@ -51,7 +51,7 @@
     z-index: var(--z-index-1, $z-index-1);
     position: relative;
 
-    border-radius: to-rem(3);
+    border-radius: var(--default-border-radius, $default-border-radius);
 
     block-size: to-rem(35);
     inline-size: to-rem(17.5);
