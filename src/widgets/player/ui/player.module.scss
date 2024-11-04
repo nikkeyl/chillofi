@@ -11,20 +11,19 @@
   &::before {
     inset: to-rem(2);
 
-    block-size: auto;
-    inline-size: to-rem(30);
+    block-size: to-rem(31);
+    inline-size: to-rem(31);
 
     transition: inset-inline var(--default-transition, $default-transition);
   }
 
   &::after {
-    box-shadow: 0 0 to-rem(20) to-rem(8)
-      var(--color-primary-dark, $color-primary-dark) inset;
+    box-shadow: var(--default-box-shadow, $default-box-shadow);
   }
 
   &.active {
     &::before {
-      inset-inline-start: to-rem(28);
+      inset-inline-start: to-rem(27);
     }
   }
 }

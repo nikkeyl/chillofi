@@ -18,8 +18,7 @@
   }
 
   &::after {
-    box-shadow: 0 0 to-rem(20) to-rem(6)
-      var(--color-primary-dark, $color-primary-dark) inset;
+    box-shadow: var(--default-box-shadow, $default-box-shadow);
   }
 
   &:active {
