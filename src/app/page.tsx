@@ -1,9 +1,9 @@
-import { ImageProvider, SoundProvider } from '@providers';
+import { ScreenProvider, SoundProvider } from '@providers';
 import { Panel, Wrapper } from '@ui';
 import { Logo, Player, Screen, Switcher, VolumeMixer } from '@widgets';
 
 const HomePage = () => (
-  <ImageProvider>
+  <ScreenProvider>
     <Wrapper>
       <Screen />
       <Panel>
@@ -16,7 +16,7 @@ const HomePage = () => (
         <Logo />
       </Panel>
     </Wrapper>
-  </ImageProvider>
+  </ScreenProvider>
 );
 
 export default HomePage;
