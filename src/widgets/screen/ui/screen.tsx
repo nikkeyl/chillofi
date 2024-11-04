@@ -9,12 +9,12 @@ import style from './screen.module.scss';
 
 const Screen = () => {
   const { imageAltLabel, screenLabel } = accessibilityLabels;
-  const { CRTEffect, currentImage } = useScreenContext();
+  const { isCRTEffect, currentImage } = useScreenContext();
 
   return (
     <div
       aria-label={screenLabel}
-      className={classes(style.screen, CRTEffect && style.CRTEffect)}
+      className={classes(style.screen, isCRTEffect && style.CRTEffect)}
     >
       <Image
         alt={imageAltLabel}

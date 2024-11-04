@@ -13,7 +13,7 @@ const Switcher = (properties: SwitcherProperties) => {
 
   const { switcherControlLabel } = accessibilityLabels;
   const { switcherSound } = sounds;
-  const { setCRTEffect, setNextImage } = useScreenContext();
+  const { setIsCRTEffect, setNextImage } = useScreenContext();
 
   const [playSound] = useSound(switcherSound);
 
@@ -23,7 +23,7 @@ const Switcher = (properties: SwitcherProperties) => {
     if (type === 'image') {
       setNextImage();
     } else {
-      setCRTEffect();
+      setIsCRTEffect();
     }
   };
 

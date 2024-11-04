@@ -9,7 +9,7 @@ const ScreenProvider = (properties: PropsWithChildren) => {
   const { children } = properties;
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [CRTEffect, setCRTEffect] = useState(true);
+  const [isCRTEffect, setIsCRTEffect] = useState(true);
 
   const currentImage = useMemo(
     () => images[currentImageIndex] ?? '',
@@ -23,17 +23,17 @@ const ScreenProvider = (properties: PropsWithChildren) => {
   }, []);
 
   const setCRT = useCallback(() => {
-    setCRTEffect((previousState) => !previousState);
+    setIsCRTEffect((previousState) => !previousState);
   }, []);
 
   const ScreenContextValues = useMemo<ScreenContextValues>(
     () => ({
-      CRTEffect,
+      isCRTEffect,
       currentImage,
-      setCRTEffect: setCRT,
+      setIsCRTEffect: setCRT,
       setNextImage,
     }),
-    [CRTEffect, currentImage, setCRTEffect, setNextImage],
+    [isCRTEffect, currentImage, setIsCRTEffect, setNextImage],
   );
 
   return (
