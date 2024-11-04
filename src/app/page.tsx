@@ -7,12 +7,12 @@ const HomePage = () => (
     <Wrapper>
       <Screen />
       <Panel>
-        <Switcher />
+        <Switcher type='CRT' />
         <SoundProvider>
           <Player />
           <VolumeMixer />
         </SoundProvider>
-        <Switcher />
+        <Switcher type='image' />
         <Logo />
       </Panel>
     </Wrapper>

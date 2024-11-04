@@ -9,10 +9,10 @@ import useSound from 'use-sound';
 
 import style from './switcher.module.scss';
 
-const Switcher = () => {
+const Switcher = ({ type }: { type: 'image' | 'CRT' }) => {
   const { switcherControlLabel } = accessibilityLabels;
   const { switcherSound } = sounds;
-  const { setNextImage } = useImageContext();
+  const { setNextImage, setCRTEffect } = useImageContext();
 
   const [isActive, setIsActive] = useState(false);
   const [playSound] = useSound(switcherSound);
@@ -20,7 +20,7 @@ const Switcher = () => {
   const handleClick = () => {
     setIsActive(!isActive);
     playSound();
-    setNextImage();
+    // setNextImage();
   };
 
   useEffect(() => {
@@ -37,7 +37,12 @@ const Switcher = () => {
     <Button
       ariaLabel={switcherControlLabel}
       className={classes(style.switcher, isActive && style.active)}
-      onClick={handleClick}
+      onClick={() => {
+        handleClick();
+        type === 'image'
+          ? setNextImage()
+          : setCRTEffect();
+      }}
     />
   );
 };

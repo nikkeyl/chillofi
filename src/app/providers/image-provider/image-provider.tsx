@@ -9,6 +9,7 @@ const ImageProvider = (properties: PropsWithChildren) => {
   const { children } = properties;
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [CRTEffect, setCRTEffect] = useState(true);
 
   const currentImage = useMemo(
     () => images[currentImageIndex] ?? '',
@@ -21,12 +22,18 @@ const ImageProvider = (properties: PropsWithChildren) => {
     );
   }, []);
 
+  const setCRT = useCallback(() => {
+    setCRTEffect((previousState) => !previousState);
+  }, []);
+
   const imageContextValues = useMemo<ImageContextValues>(
     () => ({
       currentImage,
+      CRTEffect,
       setNextImage,
+      setCRTEffect: setCRT,
     }),
-    [currentImage, setNextImage],
+    [currentImage, setNextImage, setCRTEffect, CRTEffect],
   );
 
   return (
