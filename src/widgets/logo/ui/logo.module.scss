@@ -2,11 +2,11 @@
 @use "@styles/abstracts" as *;
 
 .logo {
-  @media (width <= 600px) {
-    display: none;
-  }
+  display: none;
 
   @media (width >= 600px) {
+    display: inline;
+
     position: absolute;
     inset-inline-end: 0;
 
