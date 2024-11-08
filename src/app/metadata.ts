@@ -1,5 +1,5 @@
 import { isDevelopment } from '@helpers';
-import socialPreviewImage from '@socials/preview.jpg';
+import socialPreviewImage from '@socials/cover.jpg';
 import type { Metadata, Viewport } from 'next';
 
 const title = process.env.NEXT_PUBLIC_DEFAULT_TITLE;
