@@ -1,6 +1,8 @@
 @use "@styles/abstracts" as *;
 
-* {
+*,
+*::before,
+*::after {
   outline: none;
 
   margin: 0;
@@ -14,22 +16,16 @@
   user-select: none;
 }
 
-html,
 body {
+  display: grid;
+
   min-block-size: 100svb;
+
+  padding: to-rem(10) to-rem(10) to-rem(15);
 
   overflow: hidden;
 
   overscroll-behavior: none;
-
-  text-rendering: optimizeLegibility;
-  text-size-adjust: 100%;
-}
-
-body {
-  display: grid;
-
-  padding: to-rem(10) to-rem(10) to-rem(15);
 
   grid-template-rows: 1fr auto;
   gap: to-rem(15);

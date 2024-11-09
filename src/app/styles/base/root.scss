@@ -22,4 +22,7 @@
 
   // Transitions
   --default-transition: #{$default-transition};
+
+  text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
 }

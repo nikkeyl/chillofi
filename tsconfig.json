@@ -15,6 +15,7 @@
     // Language and Environment
     "jsx": "preserve",
     "lib": ["DOM.Iterable", "DOM", "ESNext"],
+    "target": "ESNext",
     // Modules
     "allowImportingTsExtensions": true,
     "module": "ESNext",
