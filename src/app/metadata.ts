@@ -28,7 +28,16 @@ const metadata: Metadata = {
   },
   creator: author,
   description,
-  keywords: ['chill', 'chillofi', 'lofi-radio', 'lofi', 'radio', 'relax'],
+  keywords: [
+    'chill',
+    'chillofi',
+    'lofi-radio',
+    'lofi',
+    'radio',
+    'relax',
+    'study',
+    'work',
+  ],
   metadataBase: isDevelopment ? new URL('http://localhost:3000') : new URL(siteURL),
   publisher: 'Vercel',
   robots: {

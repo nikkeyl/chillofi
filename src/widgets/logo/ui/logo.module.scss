@@ -4,17 +4,13 @@
 .logo {
   display: none;
 
-  @media (width >= 600px) {
+  @media (width >= 500px) {
     display: inline;
 
     position: absolute;
     inset-inline-end: 0;
 
     padding-inline: to-rem(2);
-
-    line-height: div(55, 50);
-
-    font-size: to-rem(50);
 
     background-image: var(
       --color-primary-light-gradient,
