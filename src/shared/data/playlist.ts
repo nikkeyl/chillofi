@@ -26,7 +26,7 @@ const audios = [
 ];
 
 const playList = audios.map((file, index) => ({
-  src: `/audio/music/${file}.mp3`,
+  src: `/audio/music/${file}.aac`,
   id: index + 1,
 }));
 

@@ -2,6 +2,8 @@
 @use "@styles/abstracts" as *;
 
 .screen {
+  position: relative;
+
   border: to-rem(2) solid var(--color-secondary-black, $color-secondary-black);
   border-radius: to-rem(25);
 
@@ -39,7 +41,6 @@
   &.CRTEffect {
     &::after {
       background-color: scale-color($color-primary-dark, $alpha: -90%);
-
       animation: flicker infinite var(--default-transition, $default-transition);
 
       @keyframes flicker {
