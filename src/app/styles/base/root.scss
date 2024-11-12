@@ -22,13 +22,4 @@
 
   // Transitions
   --default-transition: #{$default-transition};
-
-  line-height: 1;
-
-  text-rendering: optimizeLegibility;
-  text-size-adjust: 100%;
-
-  font-size: to-rem(16);
-
-  -webkit-font-smoothing: antialiased;
 }
