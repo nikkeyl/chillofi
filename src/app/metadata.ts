@@ -87,7 +87,6 @@ const metadata: Metadata = {
 const viewport: Viewport = {
   colorScheme: 'dark',
   themeColor: 'black',
-  userScalable: false,
 };
 
 export { metadata, viewport };
