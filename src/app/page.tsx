@@ -1,6 +1,6 @@
 import { ScreenProvider } from '@providers';
 import { Panel } from '@ui';
-import { Logo, Player, Screen, Switcher } from '@widgets';
+import { Player, Screen, Switcher } from '@widgets';
 
 const HomePage = () => (
   <ScreenProvider>
@@ -9,7 +9,6 @@ const HomePage = () => (
       <Switcher type='crt' />
       <Player />
       <Switcher type='image' />
-      <Logo />
     </Panel>
   </ScreenProvider>
 );
