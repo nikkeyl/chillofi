@@ -41,7 +41,6 @@
   &.CRTEffect {
     &::after {
       background-color: scale-color($color-primary-dark, $alpha: -90%);
-
       animation: flicker infinite var(--default-transition, $default-transition);
 
       @keyframes flicker {
