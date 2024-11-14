@@ -30,7 +30,7 @@
   @include media-hover {
     &::before,
     &::after {
-      cursor: pointer;
+      cursor: url("/icons/cursor-pointer.svg"), pointer;
     }
   }
 }
@@ -81,10 +81,10 @@
     );
 
     @include media-hover {
-      cursor: pointer;
+      cursor: url("/icons/cursor-pointer.svg"), pointer;
 
       &:active {
-        cursor: grabbing;
+        cursor: url("/icons/cursor-grab.svg"), grabbing;
       }
     }
   }
@@ -106,10 +106,10 @@
     );
 
     @include media-hover {
-      cursor: pointer;
+      cursor: url("/icons/cursor-pointer.svg"), pointer;
 
       &:active {
-        cursor: grabbing;
+        cursor: url("/icons/cursor-grab.svg"), grabbing;
       }
     }
   }
