@@ -6,7 +6,7 @@ const useScreenContext = () => {
   const data = useContext(ScreenContext);
 
   if (!data) {
-    throw new Error('Screen Context not found');
+    throw new Error('useScreenContext should be used withing ScreenProvider');
   }
 
   return data;

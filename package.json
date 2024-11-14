@@ -13,7 +13,8 @@
     "react-dom": "^18.3.1",
     "react-modern-audio-player": "^1.4.0-rc.2",
     "sharp": "^0.33.5",
-    "use-sound": "^4.0.3"
+    "use-sound": "^4.0.3",
+    "usehooks-ts": "^3.1.0"
   },
   "devDependencies": {
     "@archoleat/commitlint-define-config": "^1.1.0",

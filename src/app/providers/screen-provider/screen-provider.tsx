@@ -1,15 +1,26 @@
 'use client';
 
-import { images } from '@data';
-import { type PropsWithChildren, useCallback, useMemo, useState } from 'react';
+import { images, localStorageItems } from '@data';
+import { type PropsWithChildren, useCallback, useMemo } from 'react';
+import { useLocalStorage } from 'usehooks-ts';
 
-import { ScreenContext, type ScreenContextValues } from './screen-context';
+import { ScreenContext, type ScreenContextValue } from './screen-context';
 
 const ScreenProvider = (properties: PropsWithChildren) => {
   const { children } = properties;
 
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isCRTEffect, setIsCRTEffect] = useState(true);
+  const { currentImageIndexItem, isCRTEffectItem } = localStorageItems;
+
+  const [currentImageIndex, setCurrentImageIndex] = useLocalStorage(
+    currentImageIndexItem,
+    0,
+    {
+      initializeWithValue: false,
+    },
+  );
+  const [isCRTEffect, setIsCRTEffect] = useLocalStorage(isCRTEffectItem, true, {
+    initializeWithValue: false,
+  });
 
   const currentImage = useMemo(
     () => images[currentImageIndex] ?? '',
@@ -20,26 +31,24 @@ const ScreenProvider = (properties: PropsWithChildren) => {
     setCurrentImageIndex(
       (previousImageIndex) => (previousImageIndex + 1) % images.length,
     );
-  }, []);
+  }, [setCurrentImageIndex]);
 
-  const setCRT = useCallback(() => {
+  const toggleCRTEffect = useCallback(() => {
     setIsCRTEffect((previousState) => !previousState);
-  }, []);
+  }, [setIsCRTEffect]);
 
-  const ScreenContextValues = useMemo<ScreenContextValues>(
+  const contextValue = useMemo<ScreenContextValue>(
     () => ({
       isCRTEffect,
       currentImage,
-      setIsCRTEffect: setCRT,
+      setIsCRTEffect: toggleCRTEffect,
       setNextImage,
     }),
-    [isCRTEffect, currentImage, setIsCRTEffect, setNextImage],
+    [isCRTEffect, currentImage, toggleCRTEffect, setNextImage],
   );
 
   return (
-    <ScreenContext.Provider value={ScreenContextValues}>
-      {children}
-    </ScreenContext.Provider>
+    <ScreenContext.Provider value={contextValue}>{children}</ScreenContext.Provider>
   );
 };
 
