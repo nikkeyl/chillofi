@@ -5,14 +5,12 @@ import { Player, Screen, Switcher } from '@widgets';
 const HomePage = () => (
   <ScreenCRTEffectProvider>
     <ScreenImagesProvider>
-      <main>
-        <Screen />
-        <Panel>
-          <Switcher type='crt' />
-          <Player />
-          <Switcher type='image' />
-        </Panel>
-      </main>
+      <Screen />
+      <Panel>
+        <Switcher type='crt' />
+        <Player />
+        <Switcher type='image' />
+      </Panel>
     </ScreenImagesProvider>
   </ScreenCRTEffectProvider>
 );
