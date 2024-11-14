@@ -5,7 +5,11 @@ import style from './panel.module.scss';
 const Panel = (properties: PropsWithChildren) => {
   const { children } = properties;
 
-  return <div className={style.panel}>{children}</div>;
+  return (
+    <div aria-hidden className={style.panel}>
+      {children}
+    </div>
+  );
 };
 
 export { Panel };
