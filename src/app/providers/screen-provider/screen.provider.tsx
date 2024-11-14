@@ -1,6 +1,6 @@
 'use client';
 
-import { images, localStorageItems } from '@data';
+import { images } from '@data';
 import { type PropsWithChildren, useCallback, useMemo } from 'react';
 import { useLocalStorage } from 'usehooks-ts';
 
@@ -9,16 +9,14 @@ import { ScreenContext, type ScreenContextValue } from './screen-context';
 const ScreenProvider = (properties: PropsWithChildren) => {
   const { children } = properties;
 
-  const { currentImageIndexItem, isCRTEffectItem } = localStorageItems;
-
   const [currentImageIndex, setCurrentImageIndex] = useLocalStorage(
-    currentImageIndexItem,
+    'current-image-index',
     0,
     {
       initializeWithValue: false,
     },
   );
-  const [isCRTEffect, setIsCRTEffect] = useLocalStorage(isCRTEffectItem, true, {
+  const [isCRTEffect, setIsCRTEffect] = useLocalStorage('is-crt-effect', true, {
     initializeWithValue: false,
   });
 

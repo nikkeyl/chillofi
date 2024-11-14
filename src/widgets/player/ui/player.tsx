@@ -1,6 +1,6 @@
 'use client';
 
-import { accessibilityLabels, localStorageItems, playList, sounds } from '@data';
+import { accessibilityLabels, playList, sounds } from '@data';
 import { Button } from '@ui';
 import classes from 'classnames';
 import dynamic from 'next/dynamic';
@@ -16,11 +16,10 @@ const AudioPlayer = dynamic(() => import('react-modern-audio-player'), {
 
 const Player = () => {
   const { playControlLabel, volumeControlLabel } = accessibilityLabels;
-  const { currentVolumeItem } = localStorageItems;
   const { switcherSound } = sounds;
 
   const [isActive, setIsActive] = useState(false);
-  const [volume, setVolume] = useLocalStorage(currentVolumeItem, 50, {
+  const [volume, setVolume] = useLocalStorage('current-volume', 50, {
     initializeWithValue: false,
   });
   const [playSound] = useSound(switcherSound);
