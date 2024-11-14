@@ -3,7 +3,7 @@
 *,
 *::before,
 *::after {
-  // outline: none;
+  outline: none;
 
   margin: 0;
 
@@ -17,15 +17,16 @@
 }
 
 body {
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+main {
   display: grid;
 
   min-block-size: 100svb;
 
   padding: to-rem(10) to-rem(10) to-rem(15);
-
-  overflow: hidden;
-
-  overscroll-behavior: none;
 
   grid-template-rows: 1fr auto;
   gap: to-rem(15);
