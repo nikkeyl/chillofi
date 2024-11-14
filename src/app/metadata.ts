@@ -1,6 +1,7 @@
-import { isDevelopment } from '@helpers';
 import socialCoverImage from '@socials/cover.jpg';
 import type { Metadata, Viewport } from 'next';
+
+const isDevelopment = process.env.NODE_ENV === 'development';
 
 const title = process.env.NEXT_PUBLIC_DEFAULT_TITLE;
 const description = process.env.NEXT_PUBLIC_DEFAULT_DESCRIPTION;

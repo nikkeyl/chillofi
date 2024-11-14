@@ -1,7 +1,7 @@
 'use client';
 
 import { accessibilityLabels } from '@data';
-import { useScreenContext } from '@providers';
+import { useScreenCRTEffectContext, useScreenImagesContext } from '@providers';
 import classes from 'classnames';
 import Image from 'next/image';
 
@@ -9,7 +9,9 @@ import style from './screen.module.scss';
 
 const Screen = () => {
   const { imageAltLabel, screenLabel } = accessibilityLabels;
-  const { isCRTEffect, currentImage } = useScreenContext();
+
+  const { isCRTEffect } = useScreenCRTEffectContext();
+  const { currentImage } = useScreenImagesContext();
 
   return (
     <div

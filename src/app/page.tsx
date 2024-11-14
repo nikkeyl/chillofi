@@ -1,16 +1,18 @@
-import { ScreenProvider } from '@providers';
+import { ScreenCRTEffectProvider, ScreenImagesProvider } from '@providers';
 import { Panel } from '@ui';
 import { Player, Screen, Switcher } from '@widgets';
 
 const HomePage = () => (
-  <ScreenProvider>
-    <Screen />
-    <Panel>
-      <Switcher type='crt' />
-      <Player />
-      <Switcher type='image' />
-    </Panel>
-  </ScreenProvider>
+  <ScreenCRTEffectProvider>
+    <ScreenImagesProvider>
+      <Screen />
+      <Panel>
+        <Switcher type='crt' />
+        <Player />
+        <Switcher type='image' />
+      </Panel>
+    </ScreenImagesProvider>
+  </ScreenCRTEffectProvider>
 );
 
 export default HomePage;
