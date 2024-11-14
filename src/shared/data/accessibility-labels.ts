@@ -1,4 +1,5 @@
 const accessibilityLabels = {
+  controlsPanelLabel: 'Controls Panel',
   CRTEffectControlLabel: 'CRT effect control',
   imageAltLabel: 'No Signal',
   logoLabel: 'Chillofi',
