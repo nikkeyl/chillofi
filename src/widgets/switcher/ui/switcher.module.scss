@@ -29,7 +29,7 @@
 
   @include media-hover {
     &::before {
-      cursor: pointer;
+      cursor: url("/icons/cursor-pointer.svg"), pointer;
     }
   }
 }
