@@ -48,17 +48,19 @@
   &::before,
   &::after {
     @include pseudo;
-
-    inset: 0;
   }
 
   &::before {
+    inset: 0;
+
     border-radius: var(--default-border-radius, $default-border-radius);
+
     background-color: var(--color-primary-light, $color-primary-light);
   }
 
   &::after {
-    box-shadow: 0 0 to-rem(10) to-rem(4)
+    inset: to-rem(-1);
+    box-shadow: 0 0 to-rem(10) to-rem(5)
       var(--color-primary-dark, $color-primary-dark) inset;
   }
 
