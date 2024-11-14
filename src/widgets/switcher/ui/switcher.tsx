@@ -1,7 +1,7 @@
 'use client';
 
 import { accessibilityLabels, sounds } from '@data';
-import { useScreenContext } from '@providers';
+import { useScreenCRTEffectContext, useScreenImagesContext } from '@providers';
 import { Button } from '@ui';
 import useSound from 'use-sound';
 
@@ -13,7 +13,9 @@ const Switcher = (properties: SwitcherProperties) => {
 
   const { switcherControlLabel } = accessibilityLabels;
   const { switcherSound } = sounds;
-  const { setIsCRTEffect, setNextImage } = useScreenContext();
+
+  const { setIsCRTEffect } = useScreenCRTEffectContext();
+  const { setNextImage } = useScreenImagesContext();
 
   const [playSound] = useSound(switcherSound);
 

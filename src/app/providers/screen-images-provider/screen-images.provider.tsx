@@ -4,9 +4,12 @@ import { images } from '@data';
 import { type PropsWithChildren, useCallback, useMemo } from 'react';
 import { useLocalStorage } from 'usehooks-ts';
 
-import { ScreenContext, type ScreenContextValue } from './screen-context';
+import {
+  ScreenImagesContext,
+  type ScreenImagesContextValue,
+} from './screen-images-context';
 
-const ScreenProvider = (properties: PropsWithChildren) => {
+const ScreenImagesProvider = (properties: PropsWithChildren) => {
   const { children } = properties;
 
   const [currentImageIndex, setCurrentImageIndex] = useLocalStorage(
@@ -16,9 +19,6 @@ const ScreenProvider = (properties: PropsWithChildren) => {
       initializeWithValue: false,
     },
   );
-  const [isCRTEffect, setIsCRTEffect] = useLocalStorage('is-crt-effect', true, {
-    initializeWithValue: false,
-  });
 
   const currentImage = useMemo(
     () => images[currentImageIndex] ?? '',
@@ -31,23 +31,19 @@ const ScreenProvider = (properties: PropsWithChildren) => {
     );
   }, [setCurrentImageIndex]);
 
-  const toggleCRTEffect = useCallback(() => {
-    setIsCRTEffect((previousState) => !previousState);
-  }, [setIsCRTEffect]);
-
-  const contextValue = useMemo<ScreenContextValue>(
+  const contextValue = useMemo<ScreenImagesContextValue>(
     () => ({
-      isCRTEffect,
       currentImage,
-      setIsCRTEffect: toggleCRTEffect,
       setNextImage,
     }),
-    [isCRTEffect, currentImage, toggleCRTEffect, setNextImage],
+    [currentImage, setNextImage],
   );
 
   return (
-    <ScreenContext.Provider value={contextValue}>{children}</ScreenContext.Provider>
+    <ScreenImagesContext.Provider value={contextValue}>
+      {children}
+    </ScreenImagesContext.Provider>
   );
 };
 
-export { ScreenProvider };
+export { ScreenImagesProvider };
