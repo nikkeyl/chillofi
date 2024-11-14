@@ -6,7 +6,9 @@ const useScreenImagesContext = () => {
   const data = useContext(ScreenImagesContext);
 
   if (!data) {
-    throw new Error('useScreenContext should be used withing ScreenProvider');
+    throw new Error(
+      'useScreenImagesContext should be used withing ScreenImagesProvider',
+    );
   }
 
   return data;
