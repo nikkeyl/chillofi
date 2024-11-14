@@ -1,11 +1,12 @@
 'use client';
 
-import { accessibilityLabels, playList, sounds } from '@data';
+import { accessibilityLabels, localStorageItems, playList, sounds } from '@data';
 import { Button } from '@ui';
 import classes from 'classnames';
 import dynamic from 'next/dynamic';
 import { ChangeEvent, useRef, useState } from 'react';
 import useSound from 'use-sound';
+import { useLocalStorage } from 'usehooks-ts';
 
 import style from './player.module.scss';
 
@@ -15,13 +16,16 @@ const AudioPlayer = dynamic(() => import('react-modern-audio-player'), {
 
 const Player = () => {
   const { playControlLabel, volumeControlLabel } = accessibilityLabels;
+  const { currentVolumeItem } = localStorageItems;
   const { switcherSound } = sounds;
 
   const [isActive, setIsActive] = useState(false);
-  const [volume, setVolume] = useState(50);
+  const [volume, setVolume] = useLocalStorage(currentVolumeItem, 50, {
+    initializeWithValue: false,
+  });
   const [playSound] = useSound(switcherSound);
 
-  const audioReference = useRef<HTMLAudioElement>();
+  const audioReference = useRef<HTMLAudioElement>(null);
   const precisionVolume = volume / 100;
 
   const handleVolumeChange = (event: ChangeEvent<HTMLInputElement>) => {

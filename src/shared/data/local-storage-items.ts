@@ -1,7 +1,7 @@
 const localStorageItems = {
-  CRTEffectItem: 'crt-effect',
-  imageItem: 'image',
-  volumeItem: 'volume',
+  currentImageIndexItem: 'current-image-index',
+  currentVolumeItem: 'current-volume',
+  isCRTEffectItem: 'is-crt-effect',
 };
 
 export { localStorageItems };
