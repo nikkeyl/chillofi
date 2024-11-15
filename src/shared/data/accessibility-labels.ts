@@ -1,12 +1,10 @@
 const accessibilityLabels = {
   controlsPanelLabel: 'Controls Panel',
-  CRTEffectControlLabel: 'CRT effect control',
   imageAltLabel: 'No Signal',
-  logoLabel: 'Chillofi',
-  playControlLabel: 'Play control',
+  playControlLabel: 'Play Control',
   screenLabel: 'Screen',
-  switcherControlLabel: 'Switcher control',
-  volumeControlLabel: 'Volume control',
+  switcherControlLabel: 'Switcher Control',
+  volumeControlLabel: 'Volume Control',
 };
 
 export { accessibilityLabels };
