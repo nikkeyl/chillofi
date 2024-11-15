@@ -21,10 +21,6 @@
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "paths": {
-      // Data
-      "@data": ["./src/shared/data/index.ts"],
-      // Images
-      "@images/*": ["./public/images/*"],
       // Providers
       "@providers": ["./src/app/providers/index.ts"],
       // Socials

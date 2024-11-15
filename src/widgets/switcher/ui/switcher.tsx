@@ -1,40 +1,28 @@
 'use client';
 
-import { accessibilityLabels } from '@data';
 import { useScreenCRTEffectContext, useScreenImagesContext } from '@providers';
 import { Button } from '@ui';
+import { Howl } from 'howler';
 import { useEffect, useState } from 'react';
-import useSound from 'use-sound';
 
 import type { SwitcherProperties } from './switcher.properties';
 
 const Switcher = (properties: SwitcherProperties) => {
   const { type } = properties;
 
-  const { switcherControlLabel } = accessibilityLabels;
-
   const { setIsCRTEffect } = useScreenCRTEffectContext();
   const { setNextImage } = useScreenImagesContext();
 
-  const [soundUrls, setSoundUrls] = useState<string[]>([]);
-  const [playSound] = useSound(soundUrls.length > 0 ? `${soundUrls[0]}` : '', {
-    volume: 1,
+  const [soundURL, setSoundURL] = useState([]);
+
+  const playSound = new Howl({
+    src: [soundURL[0] || ''],
+    format: 'aac',
   });
 
-  useEffect(() => {
-    const fetchSounds = async () => {
-      const response = await fetch('/api/sounds');
-      const sounds = await response.json();
-
-      setSoundUrls(sounds);
-    };
-
-    fetchSounds();
-  }, []);
-
   const handleClick = () => {
-    if (soundUrls.length > 0) {
-      playSound();
+    if (soundURL[0]) {
+      playSound.play();
     }
 
     if (type === 'image') {
@@ -44,7 +32,18 @@ const Switcher = (properties: SwitcherProperties) => {
     }
   };
 
-  return <Button ariaLabel={switcherControlLabel} onClick={handleClick} />;
+  useEffect(() => {
+    const fetchSounds = async () => {
+      const response = await fetch('/api/get-sound');
+      const sound = await response.json();
+
+      setSoundURL(sound);
+    };
+
+    fetchSounds();
+  }, []);
+
+  return <Button ariaLabel='Switcher Control' onClick={handleClick} />;
 };
 
 export { Switcher };

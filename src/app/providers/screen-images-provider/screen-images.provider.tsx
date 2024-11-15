@@ -1,7 +1,12 @@
 'use client';
 
-import { images } from '@data';
-import { type PropsWithChildren, useCallback, useMemo } from 'react';
+import {
+  type PropsWithChildren,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
 import { useLocalStorage } from 'usehooks-ts';
 
 import {
@@ -12,6 +17,7 @@ import {
 const ScreenImagesProvider = (properties: PropsWithChildren) => {
   const { children } = properties;
 
+  const [imagesURL, setImagesURL] = useState([]);
   const [currentImageIndex, setCurrentImageIndex] = useLocalStorage(
     'current-image-index',
     0,
@@ -21,13 +27,13 @@ const ScreenImagesProvider = (properties: PropsWithChildren) => {
   );
 
   const currentImage = useMemo(
-    () => images[currentImageIndex] ?? '',
+    () => imagesURL[currentImageIndex] ?? '',
     [currentImageIndex],
   );
 
   const setNextImage = useCallback(() => {
     setCurrentImageIndex(
-      (previousImageIndex) => (previousImageIndex + 1) % images.length,
+      (previousImageIndex) => (previousImageIndex + 1) % imagesURL.length,
     );
   }, [setCurrentImageIndex]);
 
@@ -38,6 +44,17 @@ const ScreenImagesProvider = (properties: PropsWithChildren) => {
     }),
     [currentImage, setNextImage],
   );
+
+  useEffect(() => {
+    const fetchImages = async () => {
+      const response = await fetch('/api/get-images');
+      const images = await response.json();
+
+      setImagesURL(images);
+    };
+
+    fetchImages();
+  }, []);
 
   return (
     <ScreenImagesContext.Provider value={contextValue}>

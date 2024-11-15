@@ -1,10 +1,9 @@
 'use client';
 
-import { accessibilityLabels, playList, sounds } from '@data';
 import { Button } from '@ui';
+import { Howl } from 'howler';
 import dynamic from 'next/dynamic';
-import { ChangeEvent, useRef, useState } from 'react';
-import useSound from 'use-sound';
+import { ChangeEvent, useEffect, useRef, useState } from 'react';
 import { useLocalStorage } from 'usehooks-ts';
 
 import style from './player.module.scss';
@@ -14,15 +13,17 @@ const AudioPlayer = dynamic(() => import('react-modern-audio-player'), {
 });
 
 const Player = () => {
-  const { playControlLabel, volumeControlLabel } = accessibilityLabels;
-  const { switcherSound } = sounds;
-
   const [isActive, setIsActive] = useState(false);
   const [volume, setVolume] = useLocalStorage('current-volume', 50, {
     initializeWithValue: false,
   });
-  const [playSound] = useSound(switcherSound);
+  const [soundUrl, setSoundUrl] = useState([]);
+  const [musicURL, setMusicURL] = useState([]);
 
+  const playSound = new Howl({
+    src: [soundUrl[0] || ''],
+    format: 'aac',
+  });
   const audioReference = useRef<HTMLAudioElement>(null);
   const precisionVolume = volume / 100;
 
@@ -38,18 +39,45 @@ const Player = () => {
 
   const handleClick = () => {
     setIsActive((previousState) => !previousState);
-    playSound();
+    playSound.play();
   };
+
+  useEffect(() => {
+    const fetchSounds = async () => {
+      const response = await fetch('/api/get-sound');
+      const sound = await response.json();
+
+      setSoundUrl(sound);
+    };
+
+    fetchSounds();
+  }, []);
+
+  useEffect(() => {
+    const fetchMusic = async () => {
+      const response = await fetch('/api/get-music');
+      const music = await response.json();
+
+      const playList = music.map((file: string, index: number) => ({
+        src: file,
+        id: index + 1,
+      }));
+
+      setMusicURL(playList);
+    };
+
+    fetchMusic();
+  }, []);
 
   return (
     <>
       <Button
-        ariaLabel={playControlLabel}
+        ariaLabel='Play Control'
         isActive={isActive}
         onClick={handleClick}
         type='rectangle'
       />
-      <label aria-label={volumeControlLabel} htmlFor='mixer'>
+      <label aria-label='Volume Control' htmlFor='mixer'>
         <input
           aria-valuemax={100}
           aria-valuemin={0}
@@ -70,7 +98,7 @@ const Player = () => {
           volume: precisionVolume,
           muted: !volume,
         }}
-        playList={playList}
+        playList={musicURL}
       />
     </>
   );
