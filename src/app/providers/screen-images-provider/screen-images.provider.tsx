@@ -3,13 +3,14 @@
 import { type PropsWithChildren, useMemo } from 'react';
 import { useLocalStorage } from 'usehooks-ts';
 
+import type { ScreenImagesProviderProperties } from './screen-images.provider.properties';
 import {
   ScreenImagesContext,
   type ScreenImagesContextValue,
 } from './screen-images-context';
 
 const ScreenImagesProvider = (
-  properties: PropsWithChildren<{ images: string[] }>,
+  properties: PropsWithChildren<ScreenImagesProviderProperties>,
 ) => {
   const { children, images } = properties;
 
