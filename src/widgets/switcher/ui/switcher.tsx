@@ -5,7 +5,6 @@ import { useScreenCRTEffectContext, useScreenImagesContext } from '@providers';
 import { Button } from '@ui';
 import useSound from 'use-sound';
 
-import style from './switcher.module.scss';
 import type { SwitcherProperties } from './switcher.properties';
 
 const Switcher = (properties: SwitcherProperties) => {
@@ -29,13 +28,7 @@ const Switcher = (properties: SwitcherProperties) => {
     }
   };
 
-  return (
-    <Button
-      ariaLabel={switcherControlLabel}
-      className={style.button ?? ''}
-      onClick={handleClick}
-    />
-  );
+  return <Button ariaLabel={switcherControlLabel} onClick={handleClick} />;
 };
 
 export { Switcher };
