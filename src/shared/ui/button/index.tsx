@@ -4,7 +4,7 @@ import style from './button.module.scss';
 import type { ButtonProperties } from './button.properties';
 
 const Button = (properties: ButtonProperties) => {
-  const { ariaLabel, isActive, type = 'circle', onClick } = properties;
+  const { ariaLabel, isActive, type = 'switch', onClick } = properties;
 
   return (
     <button
