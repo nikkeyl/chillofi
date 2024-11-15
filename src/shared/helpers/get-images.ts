@@ -5,9 +5,9 @@ export const getImages = async (): Promise<string[]> => {
   const imagesFolder = join(process.cwd(), 'public/images');
 
   try {
-    const files = await promises.readdir(imagesFolder);
+    const images = await promises.readdir(imagesFolder);
 
-    return files.map((file) => `/images/${file}`);
+    return images.map((file) => `/images/${file}`);
   } catch {
     return [];
   }

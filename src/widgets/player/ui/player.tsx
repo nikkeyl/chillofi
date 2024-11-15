@@ -7,6 +7,7 @@ import { ChangeEvent, useEffect, useRef, useState } from 'react';
 import { useLocalStorage } from 'usehooks-ts';
 
 import style from './player.module.scss';
+import type { PlayListProperties } from './player.properties';
 
 const AudioPlayer = dynamic(() => import('react-modern-audio-player'), {
   ssr: false,
@@ -17,11 +18,11 @@ const Player = () => {
   const [volume, setVolume] = useLocalStorage('current-volume', 50, {
     initializeWithValue: false,
   });
-  const [soundUrl, setSoundUrl] = useState([]);
-  const [musicURL, setMusicURL] = useState([]);
+  const [soundsURLS, setSoundsURLS] = useState<string[]>([]);
+  const [musicURLS, setMusicURLS] = useState<PlayListProperties[]>([]);
 
   const playSound = new Howl({
-    src: [soundUrl[0] || ''],
+    src: [soundsURLS[0] || ''],
     format: 'aac',
   });
   const audioReference = useRef<HTMLAudioElement>(null);
@@ -45,9 +46,9 @@ const Player = () => {
   useEffect(() => {
     const fetchSounds = async () => {
       const response = await fetch('/api/get-sound');
-      const sound = await response.json();
+      const sounds = await response.json();
 
-      setSoundUrl(sound);
+      setSoundsURLS(sounds);
     };
 
     fetchSounds();
@@ -63,7 +64,7 @@ const Player = () => {
         id: index + 1,
       }));
 
-      setMusicURL(playList);
+      setMusicURLS(playList);
     };
 
     fetchMusic();
@@ -75,7 +76,7 @@ const Player = () => {
         ariaLabel='Play Control'
         isActive={isActive}
         onClick={handleClick}
-        type='rectangle'
+        type='play'
       />
       <label aria-label='Volume Control' htmlFor='mixer'>
         <input
@@ -98,7 +99,7 @@ const Player = () => {
           volume: precisionVolume,
           muted: !volume,
         }}
-        playList={musicURL}
+        playList={musicURLS}
       />
     </>
   );

@@ -13,15 +13,15 @@ const Switcher = (properties: SwitcherProperties) => {
   const { setIsCRTEffect } = useScreenCRTEffectContext();
   const { setNextImage } = useScreenImagesContext();
 
-  const [soundURL, setSoundURL] = useState([]);
+  const [soundsURLS, setSoundsURLS] = useState<string[]>([]);
 
   const playSound = new Howl({
-    src: [soundURL[0] || ''],
+    src: [soundsURLS[0] || ''],
     format: 'aac',
   });
 
   const handleClick = () => {
-    if (soundURL[0]) {
+    if (soundsURLS[0]) {
       playSound.play();
     }
 
@@ -35,9 +35,9 @@ const Switcher = (properties: SwitcherProperties) => {
   useEffect(() => {
     const fetchSounds = async () => {
       const response = await fetch('/api/get-sound');
-      const sound = await response.json();
+      const sounds = await response.json();
 
-      setSoundURL(sound);
+      setSoundsURLS(sounds);
     };
 
     fetchSounds();

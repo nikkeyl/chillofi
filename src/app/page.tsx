@@ -5,11 +5,11 @@ import { Player, Screen, Switcher } from '@widgets';
 import { getImages } from '../shared/helpers/get-images';
 
 const HomePage = async () => {
-  const data = await getImages();
+  const images = await getImages();
 
   return (
     <ScreenCRTEffectProvider>
-      <ScreenImagesProvider images={data}>
+      <ScreenImagesProvider images={images}>
         <Screen />
         <Panel>
           <Switcher type='crt' />

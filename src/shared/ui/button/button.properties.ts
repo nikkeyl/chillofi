@@ -1,7 +1,7 @@
 type ButtonProperties = {
   ariaLabel: string;
   isActive?: boolean;
-  type?: 'circle' | 'rectangle';
+  type?: 'switch' | 'play';
   onClick: () => void;
 };
 

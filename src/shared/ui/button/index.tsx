@@ -11,7 +11,7 @@ const Button = (properties: ButtonProperties) => {
       aria-label={ariaLabel}
       className={classes(
         style.button,
-        type === 'circle' ? style.circle : style.rectangle,
+        type === 'switch' ? style.circle : style.rectangle,
         isActive && style.active,
       )}
       onClick={onClick}
