@@ -4,11 +4,13 @@ import { join } from 'node:path';
 import { NextResponse } from 'next/server';
 
 const GET = async () => {
-  const imagesFolder = join(process.cwd(), 'public/images');
+  const { readdir } = promises;
+
+  const imagesFolder = join(process.cwd(), 'public/images/lofi');
 
   try {
-    const files = await promises.readdir(imagesFolder);
-    const images = files.map((file) => `/images/${file}`);
+    const files = await readdir(imagesFolder);
+    const images = files.map((file) => `/images/lofi/${file}`);
 
     return NextResponse.json(images);
   } catch (error) {

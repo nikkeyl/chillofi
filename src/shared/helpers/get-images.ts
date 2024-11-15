@@ -1,15 +1,17 @@
 import { promises } from 'node:fs';
 import { join } from 'node:path';
 
-const getImages = async (): Promise<string[]> => {
-  const imagesFolder = join(process.cwd(), 'public/images');
+const getImages = async () => {
+  const { readdir } = promises;
+
+  const imagesFolder = join(process.cwd(), 'public/images/lofi');
 
   try {
-    const images = await promises.readdir(imagesFolder);
+    const images = await readdir(imagesFolder);
 
-    return images.map((file) => `/images/${file}`);
-  } catch {
-    return [];
+    return images.map((file) => `/images/lofi/${file}`);
+  } catch (error) {
+    throw new Error(`Error: ${error}`);
   }
 };
 

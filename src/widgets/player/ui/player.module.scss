@@ -13,13 +13,12 @@
   &::before,
   &::after {
     @include pseudo;
+
+    border-radius: var(--default-border-radius, $default-border-radius);
   }
 
   &::before {
     inset: 0;
-
-    border-radius: var(--default-border-radius, $default-border-radius);
-
     background-color: var(--color-primary-light, $color-primary-light);
   }
 
@@ -44,6 +43,8 @@
       --color-primary-light-gradient,
       $color-primary-light-gradient
     );
+
+    transition: scale var(--default-transition, $default-transition);
 
     @include media-hover {
       cursor: url("/icons/cursor-pointer.svg"), pointer;
@@ -72,6 +73,8 @@
       $color-primary-light-gradient
     );
 
+    transition: scale var(--default-transition, $default-transition);
+
     @include media-hover {
       cursor: url("/icons/cursor-pointer.svg"), pointer;
 
@@ -80,6 +83,23 @@
           url("/icons/cursor-grabbing.svg") 7 0,
           grabbing;
       }
+    }
+  }
+
+  &:focus-visible {
+    &::-webkit-slider-thumb {
+      scale: 0.9;
+    }
+
+    &::-moz-range-thumb {
+      scale: 0.9;
+    }
+  }
+
+  @include media-hover {
+    &::before,
+    &::after {
+      cursor: url("/icons/cursor-pointer.svg"), pointer;
     }
   }
 }

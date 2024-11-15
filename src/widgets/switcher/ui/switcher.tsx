@@ -34,7 +34,7 @@ const Switcher = (properties: SwitcherProperties) => {
 
   useEffect(() => {
     const fetchSounds = async () => {
-      const response = await fetch('/api/get-sound');
+      const response = await fetch('/api/get-sounds');
       const sounds = await response.json();
 
       setSoundsURLS(sounds);
