@@ -26,6 +26,14 @@
       --color-primary-light-gradient,
       $color-primary-light-gradient
     );
+
+    transition: scale var(--default-transition, $default-transition);
+  }
+
+  &:focus-visible {
+    &::after {
+      scale: 0.9;
+    }
   }
 
   &.circle {
@@ -52,7 +60,9 @@
     inline-size: to-rem(72);
 
     &::after {
-      transition: inset-inline var(--default-transition, $default-transition);
+      transition:
+        inset-inline var(--default-transition, $default-transition),
+        scale var(--default-transition, $default-transition);
     }
 
     &.active {
