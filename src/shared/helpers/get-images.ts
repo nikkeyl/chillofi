@@ -10,8 +10,8 @@ const getImages = async () => {
     const images = await readdir(imagesFolder);
 
     return images.map((file) => `/images/lofi/${file}`);
-  } catch {
-    return [];
+  } catch (error) {
+    throw new Error(`Error: ${error}`);
   }
 };
 
