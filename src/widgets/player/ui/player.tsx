@@ -44,17 +44,6 @@ const Player = () => {
   };
 
   useEffect(() => {
-    const fetchSounds = async () => {
-      const response = await fetch('/api/get-sound');
-      const sounds = await response.json();
-
-      setSoundsURLS(sounds);
-    };
-
-    fetchSounds();
-  }, []);
-
-  useEffect(() => {
     const fetchMusic = async () => {
       const response = await fetch('/api/get-music');
       const music = await response.json();
@@ -67,7 +56,15 @@ const Player = () => {
       setMusicURLS(playList);
     };
 
+    const fetchSounds = async () => {
+      const response = await fetch('/api/get-sounds');
+      const sounds = await response.json();
+
+      setSoundsURLS(sounds);
+    };
+
     fetchMusic();
+    fetchSounds();
   }, []);
 
   return (
