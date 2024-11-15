@@ -1,4 +1,4 @@
-import { readdirSync } from 'node:fs';
+import { promises } from 'node:fs';
 import { join } from 'node:path';
 
 import { NextResponse } from 'next/server';
@@ -7,8 +7,7 @@ const GET = async () => {
   const musicFolder = join(process.cwd(), 'public/audio/music');
 
   try {
-    const files = readdirSync(musicFolder);
-
+    const files = await promises.readdir(musicFolder);
     const music = files.map((file) => `/audio/music/${file}`);
 
     return NextResponse.json(music);
