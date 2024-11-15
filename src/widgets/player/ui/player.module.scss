@@ -1,40 +1,5 @@
 @use "@styles/abstracts" as *;
 
-.button {
-  border-radius: var(--default-border-radius, $default-border-radius);
-
-  block-size: to-rem(36);
-  inline-size: to-rem(72);
-
-  flex: 0 0 to-rem(72);
-
-  &::before {
-    inset: to-rem(2);
-
-    block-size: to-rem(32);
-    inline-size: to-rem(32);
-
-    transition: inset-inline var(--default-transition, $default-transition);
-  }
-
-  &::after {
-    box-shadow: var(--default-box-shadow, $default-box-shadow);
-  }
-
-  &.active {
-    &::before {
-      inset-inline-start: to-rem(38);
-    }
-  }
-
-  @include media-hover {
-    &::before,
-    &::after {
-      cursor: url("/icons/cursor-pointer.svg"), pointer;
-    }
-  }
-}
-
 .input {
   position: relative;
 

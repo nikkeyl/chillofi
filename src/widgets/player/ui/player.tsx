@@ -2,7 +2,6 @@
 
 import { accessibilityLabels, playList, sounds } from '@data';
 import { Button } from '@ui';
-import classes from 'classnames';
 import dynamic from 'next/dynamic';
 import { ChangeEvent, useRef, useState } from 'react';
 import useSound from 'use-sound';
@@ -46,8 +45,9 @@ const Player = () => {
     <>
       <Button
         ariaLabel={playControlLabel}
-        className={classes(style.button, isActive && style.active)}
+        isActive={isActive}
         onClick={handleClick}
+        type='rectangle'
       />
       <label aria-label={volumeControlLabel} htmlFor='mixer'>
         <input
