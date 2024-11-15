@@ -4,14 +4,14 @@ import style from './button.module.scss';
 import type { ButtonProperties } from './button.properties';
 
 const Button = (properties: ButtonProperties) => {
-  const { ariaLabel, isActive, type = 'circle', onClick } = properties;
+  const { ariaLabel, isActive, type = 'switch', onClick } = properties;
 
   return (
     <button
       aria-label={ariaLabel}
       className={classes(
         style.button,
-        type === 'circle' ? style.circle : style.rectangle,
+        type === 'switch' ? style.circle : style.rectangle,
         isActive && style.active,
       )}
       onClick={onClick}

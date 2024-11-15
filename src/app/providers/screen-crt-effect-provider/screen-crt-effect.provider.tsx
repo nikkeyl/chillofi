@@ -1,6 +1,6 @@
 'use client';
 
-import { type PropsWithChildren, useCallback, useMemo } from 'react';
+import { type PropsWithChildren, useMemo } from 'react';
 import { useLocalStorage } from 'usehooks-ts';
 
 import {
@@ -15,9 +15,9 @@ const ScreenCRTEffectProvider = (properties: PropsWithChildren) => {
     initializeWithValue: false,
   });
 
-  const toggleCRTEffect = useCallback(() => {
+  const toggleCRTEffect = () => {
     setIsCRTEffect((previousState) => !previousState);
-  }, [setIsCRTEffect]);
+  };
 
   const contextValue = useMemo<ScreenCRTEffectContextValue>(
     () => ({

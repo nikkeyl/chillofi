@@ -1,0 +1,22 @@
+import { promises } from 'node:fs';
+import { join } from 'node:path';
+
+import { NextResponse } from 'next/server';
+
+const GET = async () => {
+  const imagesFolder = join(process.cwd(), 'public/images');
+
+  try {
+    const files = await promises.readdir(imagesFolder);
+    const images = files.map((file) => `/images/${file}`);
+
+    return NextResponse.json(images);
+  } catch (error) {
+    return NextResponse.json(
+      { error: 'Could not read image files' },
+      { status: 500 },
+    );
+  }
+};
+
+export { GET };
