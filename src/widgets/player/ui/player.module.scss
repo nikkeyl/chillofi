@@ -49,7 +49,9 @@
       cursor: url("/icons/cursor-pointer.svg"), pointer;
 
       &:active {
-        cursor: url("/icons/cursor-grab.svg"), grabbing;
+        cursor:
+          url("/icons/cursor-grabbing.svg") 7 0,
+          grabbing;
       }
     }
   }
@@ -74,7 +76,9 @@
       cursor: url("/icons/cursor-pointer.svg"), pointer;
 
       &:active {
-        cursor: url("/icons/cursor-grab.svg"), grabbing;
+        cursor:
+          url("/icons/cursor-grabbing.svg") 7 0,
+          grabbing;
       }
     }
   }
