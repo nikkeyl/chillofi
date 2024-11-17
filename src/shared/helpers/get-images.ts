@@ -4,12 +4,12 @@ import { join } from 'node:path';
 const getImages = async () => {
   const { readdir } = promises;
 
-  const imagesFolder = join(process.cwd(), 'public/images/lofi');
+  const imagesFolder = join(process.cwd(), 'public/images');
 
   try {
     const images = await readdir(imagesFolder);
 
-    return images.map((file) => `/images/lofi/${file}`);
+    return images.map((file) => `/images/${file}`);
   } catch (error) {
     throw new Error(`Error: ${error}`);
   }
