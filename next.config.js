@@ -1,7 +1,7 @@
 import { defineConfig } from '@archoleat/next-define-config';
 import createNextIntlPlugin from 'next-intl/plugin';
 
-const withNextIntl = createNextIntlPlugin('src/app/i18n/request.ts');
+const withNextIntl = createNextIntlPlugin('src/app/server/get-locales.ts');
 
 export default withNextIntl(
   defineConfig({

@@ -1,10 +1,11 @@
 'use client';
 
-import { useScreenCRTEffectContext, useScreenImagesContext } from '@providers';
-import { Button } from '@ui';
 import { Howl } from 'howler';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
+
+import { useScreenCRTEffectContext, useScreenImagesContext } from '@/providers';
+import { Button } from '@/ui';
 
 import type { SwitcherProperties } from './switcher.properties';
 

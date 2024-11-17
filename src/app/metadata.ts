@@ -1,5 +1,6 @@
-import socialCoverImage from '@socials/cover.jpg';
 import type { Metadata, Viewport } from 'next';
+
+import socialCoverImage from '@/socials/cover.jpg';
 
 const isDevelopment = process.env.NODE_ENV === 'development';
 
