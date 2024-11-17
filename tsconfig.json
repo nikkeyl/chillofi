@@ -22,15 +22,17 @@
     "moduleResolution": "Bundler",
     "paths": {
       // Providers
-      "@providers": ["./src/app/providers/index.ts"],
+      "@providers": ["./src/app/providers"],
+      // Server
+      "@server": ["./src/app/server"],
       // Socials
       "@socials/*": ["./public/socials/*"],
       // Styles
       "@styles/*": ["./src/app/styles/*"],
       // UI
-      "@ui": ["./src/shared/ui/index.ts"],
+      "@ui": ["./src/shared/ui"],
       // Widgets
-      "@widgets": ["./src/widgets/index.ts"]
+      "@widgets": ["./src/widgets"]
     },
     "resolveJsonModule": true,
     // Projects

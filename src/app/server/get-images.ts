@@ -11,7 +11,7 @@ const getImages = async () => {
 
     return images.map((file) => `/images/${file}`);
   } catch (error) {
-    throw new Error(`Error: ${error}`);
+    throw new Error(`Could not get image files: ${error}`);
   }
 };
 

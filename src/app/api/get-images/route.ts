@@ -15,7 +15,7 @@ const GET = async () => {
     return NextResponse.json(images);
   } catch (error) {
     return NextResponse.json(
-      { error: 'Could not read image files' },
+      { error: 'Could not get image files' },
       { status: 500 },
     );
   }
