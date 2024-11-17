@@ -6,11 +6,11 @@ import { NextResponse } from 'next/server';
 const GET = async () => {
   const { readdir } = promises;
 
-  const musicFolder = join(process.cwd(), 'public/audio/music/lofi');
+  const musicFolder = join(process.cwd(), 'public/audio/music');
 
   try {
     const files = await readdir(musicFolder);
-    const music = files.map((file) => `/audio/music/lofi/${file}`);
+    const music = files.map((file) => `/audio/music/${file}`);
 
     return NextResponse.json(music);
   } catch (error) {
