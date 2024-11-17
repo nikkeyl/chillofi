@@ -3,6 +3,7 @@
 import { useScreenCRTEffectContext, useScreenImagesContext } from '@providers';
 import { Button } from '@ui';
 import { Howl } from 'howler';
+import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 
 import type { SwitcherProperties } from './switcher.properties';
@@ -15,6 +16,7 @@ const Switcher = (properties: SwitcherProperties) => {
 
   const [soundsURLS, setSoundsURLS] = useState<string[]>([]);
 
+  const i18n = useTranslations('labels');
   const playSound = new Howl({
     src: [soundsURLS[0] || ''],
     format: 'aac',
@@ -43,7 +45,7 @@ const Switcher = (properties: SwitcherProperties) => {
     fetchSounds();
   }, []);
 
-  return <Button ariaLabel='Switcher Control' onClick={handleClick} />;
+  return <Button ariaLabel={i18n('switcher_control')} onClick={handleClick} />;
 };
 
 export { Switcher };

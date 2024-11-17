@@ -1,27 +1,32 @@
 import { defineConfig } from '@archoleat/next-define-config';
+import createNextIntlPlugin from 'next-intl/plugin';
 
-export default defineConfig({
-  images: {
-    formats: ['image/webp'],
-    remotePatterns: [
-      {
-        hostname: 'chillofi.vercel.app',
-        pathname: '/images/**',
-        protocol: 'https',
-      },
-    ],
-  },
-  async headers() {
-    return [
-      {
-        source: '/(.*?)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 's-maxage=1, stale-while-revalidate=59',
-          },
-        ],
-      },
-    ];
-  },
-});
+const withNextIntl = createNextIntlPlugin('src/app/i18n/request.ts');
+
+export default withNextIntl(
+  defineConfig({
+    images: {
+      formats: ['image/webp'],
+      remotePatterns: [
+        {
+          hostname: 'chillofi.vercel.app',
+          pathname: '/images/**',
+          protocol: 'https',
+        },
+      ],
+    },
+    async headers() {
+      return [
+        {
+          source: '/(.*?)',
+          headers: [
+            {
+              key: 'Cache-Control',
+              value: 's-maxage=1, stale-while-revalidate=59',
+            },
+          ],
+        },
+      ];
+    },
+  }),
+);

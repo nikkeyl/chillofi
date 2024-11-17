@@ -1,8 +1,10 @@
 {
-  "crt_effect_control_label": "CRT-Effekt-Kontrolle",
-  "image_alt_label": "Kein Zeichen",
-  "play_control_label": "Spielkontrolle",
-  "screen_label": "Bildschirm",
-  "switcher_control_label": "Switcher-Kontrolle",
-  "volume_control_label": "Lautstärkeregler"
+  "labels": {
+    "controls_panel": "Steuerpult",
+    "image_alt": "Kein Zeichen",
+    "play_control": "Wiedergabe Controller",
+    "screen": "Schirm",
+    "switcher_control": "Schaltender Controller",
+    "volume_control": "Lautstärkeregler"
+  }
 }
