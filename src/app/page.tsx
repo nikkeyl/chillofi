@@ -1,8 +1,7 @@
 import { ScreenCRTEffectProvider, ScreenImagesProvider } from '@providers';
+import { getImages } from '@server';
 import { Panel } from '@ui';
 import { Player, Screen, Switcher } from '@widgets';
-
-import { getImages } from '../shared/helpers/get-images';
 
 const HomePage = async () => {
   const images = await getImages();

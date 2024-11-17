@@ -15,7 +15,7 @@ const GET = async () => {
     return NextResponse.json(music);
   } catch (error) {
     return NextResponse.json(
-      { error: 'Could not read music files' },
+      { error: 'Could not get music files' },
       { status: 500 },
     );
   }
