@@ -1,8 +1,10 @@
 {
-  "crt_effect_control_label": "CRT-effect control",
-  "image_alt_label": "No Signal",
-  "play_control_label": "Play control",
-  "screen_label": "Screen",
-  "switcher_control_label": "Switcher control",
-  "volume_control_label": "Volume control"
+  "labels": {
+    "controls_panel": "Controls Panel",
+    "image_alt": "No Signal",
+    "play_control": "Play Control",
+    "screen": "Screen",
+    "switcher_control": "Switcher Control",
+    "volume_control": "Volume Control"
+  }
 }

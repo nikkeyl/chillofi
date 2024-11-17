@@ -3,6 +3,7 @@
 import { Button } from '@ui';
 import { Howl } from 'howler';
 import dynamic from 'next/dynamic';
+import { useTranslations } from 'next-intl';
 import { ChangeEvent, useEffect, useRef, useState } from 'react';
 import { useLocalStorage } from 'usehooks-ts';
 
@@ -21,6 +22,7 @@ const Player = () => {
   const [soundsURLS, setSoundsURLS] = useState<string[]>([]);
   const [musicURLS, setMusicURLS] = useState<PlayListProperties[]>([]);
 
+  const i18n = useTranslations('labels');
   const playSound = new Howl({
     src: [soundsURLS[0] || ''],
     format: 'aac',
@@ -70,12 +72,12 @@ const Player = () => {
   return (
     <>
       <Button
-        ariaLabel='Play Control'
+        ariaLabel={i18n('play_control')}
         isActive={isActive}
         onClick={handleClick}
         type='play'
       />
-      <label aria-label='Volume Control' htmlFor='mixer'>
+      <label aria-label={i18n('volume_control')} htmlFor='mixer'>
         <input
           aria-valuemax={100}
           aria-valuemin={0}

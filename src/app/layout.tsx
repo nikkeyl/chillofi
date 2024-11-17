@@ -2,15 +2,22 @@ import '@styles/app.scss';
 
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { NextIntlClientProvider } from 'next-intl';
+import { getLocale, getMessages } from 'next-intl/server';
 import type { PropsWithChildren } from 'react';
 
-const RootLayout = (properties: PropsWithChildren) => {
+const RootLayout = async (properties: PropsWithChildren) => {
   const { children } = properties;
 
+  const locale = await getLocale();
+  const messages = await getMessages();
+
   return (
-    <html lang='en'>
+    <html lang={locale}>
       <body>
-        {children}
+        <NextIntlClientProvider messages={messages}>
+          {children}
+        </NextIntlClientProvider>
         <Analytics />
         <SpeedInsights />
       </body>
