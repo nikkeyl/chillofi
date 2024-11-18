@@ -6,10 +6,10 @@ import { getRequestConfig } from 'next-intl/server';
 
 export default getRequestConfig(async () => {
   const browserLocale = headers().get('accept-language') ?? 'en';
-  // const supportedLocales = ['de', 'en', 'ja', 'ru'];
+  const supportedLocales = ['de', 'en', 'ja', 'ru'];
   const cleanLocales = browserLocale.split(',').map((locale) => locale.trim());
-  const locale = cleanLocales[0]?.split('-')[0] ?? 'en';
-  // const locale = supportedLocales.includes(defineLocale) ? defineLocale : 'en';
+  const defineLocale = cleanLocales[0]?.split('-')[0] ?? 'en';
+  const locale = supportedLocales.includes(defineLocale) ? defineLocale : 'en';
   const localesFile = join(
     process.cwd(),
     `/public/locales/${locale}/translations.json`,
