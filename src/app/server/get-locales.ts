@@ -12,7 +12,7 @@ export default getRequestConfig(async () => {
   const locale = supportedLocales.includes(defineLocale) ? defineLocale : 'en';
   const localesFile = join(
     process.cwd(),
-    `public/locales/${locale}/translations.json`,
+    `/public/locales/${locale}/translations.json`,
   );
 
   try {
