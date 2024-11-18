@@ -1,16 +1,17 @@
-import { readdir } from 'node:fs/promises';
-import { join } from 'node:path';
+// import { readdir } from 'node:fs/promises';
+// import { join } from 'node:path';
 
 import { headers } from 'next/headers';
 import { getRequestConfig } from 'next-intl/server';
 
 export default getRequestConfig(async () => {
-  const localesDirectory = join(process.cwd(), 'public/locales');
-  const directories = await readdir(localesDirectory, { withFileTypes: true });
+  // const localesDirectory = join(process.cwd(), 'public/locales');
+  // const directories = await readdir(localesDirectory, { withFileTypes: true });
 
-  const supportedLocales = directories
-    .filter((directory) => directory.isDirectory())
-    .map((directory) => directory.name);
+  // const supportedLocales = directories
+  //   .filter((directory) => directory.isDirectory())
+  //   .map((directory) => directory.name);
+  const supportedLocales = ['de', 'en', 'ja', 'ru', 'tr'];
 
   const browserLocale = headers().get('accept-language') ?? 'en';
 
