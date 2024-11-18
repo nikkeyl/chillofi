@@ -6,29 +6,22 @@ import { headers } from 'next/headers';
 import { getRequestConfig } from 'next-intl/server';
 
 export default getRequestConfig(async () => {
-  const getSupportedLocales = async () => {
-    const localesDirectory = join(process.cwd(), 'public/locales');
-    const directories = await readdir(localesDirectory, { withFileTypes: true });
+  const localesDirectory = join(process.cwd(), 'public/locales');
+  const directories = await readdir(localesDirectory, { withFileTypes: true });
 
-    return directories
-      .filter((directory) => directory.isDirectory())
-      .map((directory) => directory.name);
-  };
+  const supportedLocales = directories
+    .filter((directory) => directory.isDirectory())
+    .map((directory) => directory.name);
 
-  const getLocale = async () => {
-    const browserLocale = headers().get('accept-language') ?? 'en';
-    const supportedLocales = await getSupportedLocales();
+  const browserLocale = headers().get('accept-language') ?? 'en';
 
-    const defineLocale =
-      browserLocale
-        .split(',')
-        .map((locale) => locale.trim())[0]
-        ?.split('-')[0] ?? 'en';
+  const defineLocale =
+    browserLocale
+      .split(',')
+      .map((locale) => locale.trim())[0]
+      ?.split('-')[0] ?? 'en';
 
-    return supportedLocales.includes(defineLocale) ? defineLocale : 'en';
-  };
-
-  const locale = await getLocale();
+  const locale = supportedLocales.includes(defineLocale) ? defineLocale : 'en';
 
   return {
     locale,
