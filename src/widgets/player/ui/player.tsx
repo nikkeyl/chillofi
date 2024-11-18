@@ -3,7 +3,7 @@
 import { Howl } from 'howler';
 import dynamic from 'next/dynamic';
 import { useTranslations } from 'next-intl';
-import { ChangeEvent, useEffect, useRef, useState } from 'react';
+import { ChangeEvent, useCallback, useEffect, useRef, useState } from 'react';
 import { useLocalStorage } from 'usehooks-ts';
 
 import { Button } from '@/ui';
@@ -20,36 +20,41 @@ const Player = () => {
   const [volume, setVolume] = useLocalStorage('current-volume', 50, {
     initializeWithValue: false,
   });
-  const [soundsURLS, setSoundsURLS] = useState<string[]>([]);
   const [musicURLS, setMusicURLS] = useState<PlayListProperties[]>([]);
 
   const i18n = useTranslations('labels');
-  const playSound = new Howl({
-    src: [soundsURLS[0] || ''],
-    format: 'aac',
-  });
-  const audioReference = useRef<HTMLAudioElement>(null);
   const precisionVolume = volume / 100;
+  const audioReference = useRef<HTMLAudioElement>(null);
+  const howlReference = useRef<Howl | null>(null);
+  const playSound = () => howlReference.current?.play();
 
-  const handleVolumeChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const newVolume = Number(event.target.value);
+  const handleVolumeChange = useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      const newVolume = Number(event.target.value);
 
-    setVolume(newVolume);
+      setVolume(newVolume);
 
-    if (audioReference.current) {
-      audioReference.current.volume = precisionVolume;
-    }
-  };
+      if (audioReference.current) {
+        audioReference.current.volume = newVolume / 100;
+      }
+    },
+    [setVolume],
+  );
 
-  const handleClick = () => {
+  const handleClick = useCallback(() => {
     setIsActive((previousState) => !previousState);
-    playSound.play();
-  };
+  }, []);
 
   useEffect(() => {
-    const fetchMusic = async () => {
-      const response = await fetch('/api/get-music');
-      const music = await response.json();
+    const fetchData = async () => {
+      const [musicResponse, soundsResponse] = await Promise.all([
+        fetch('/api/get-music'),
+        fetch('/api/get-sounds'),
+      ]);
+      const [music, sounds] = await Promise.all([
+        musicResponse.json(),
+        soundsResponse.json(),
+      ]);
 
       const playList = music.map((file: string, index: number) => ({
         src: file,
@@ -57,17 +62,16 @@ const Player = () => {
       }));
 
       setMusicURLS(playList);
+
+      if (sounds.length > 0) {
+        howlReference.current = new Howl({
+          src: [sounds[0]],
+          format: 'aac',
+        });
+      }
     };
 
-    const fetchSounds = async () => {
-      const response = await fetch('/api/get-sounds');
-      const sounds = await response.json();
-
-      setSoundsURLS(sounds);
-    };
-
-    fetchMusic();
-    fetchSounds();
+    fetchData();
   }, []);
 
   return (
@@ -98,6 +102,14 @@ const Player = () => {
           isPlaying: isActive,
           volume: precisionVolume,
           muted: !volume,
+          onPause: () => {
+            setIsActive(false);
+            playSound();
+          },
+          onPlay: () => {
+            setIsActive(true);
+            playSound();
+          },
         }}
         playList={musicURLS}
       />
