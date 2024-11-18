@@ -15,18 +15,18 @@ export default getRequestConfig(async () => {
     `public/locales/${locale}/translations.json`,
   );
 
-  try {
-    const translations = await readFile(localesFile, 'utf-8');
-    const messages = JSON.parse(translations);
+  const translations = await readFile(localesFile, 'utf-8');
+  const messages = JSON.parse(translations);
 
-    return {
-      locale,
-      messages,
-    };
-  } catch (error: any) {
-    return {
-      message: `Failed to load translations, locale: ${locale} [${error.message}]`,
-      statusCode: 500,
-    };
-  }
+  return {
+    locale,
+    messages,
+  };
+  // try {
+  // } catch (error: any) {
+  //   return {
+  //     message: `Failed to load translations, locale: ${locale} [${error.message}]`,
+  //     statusCode: 500,
+  //   };
+  // }
 });
