@@ -43,7 +43,6 @@ const Player = () => {
 
   const handleClick = () => {
     setIsActive((previousState) => !previousState);
-    playSound.play();
   };
 
   useEffect(() => {
@@ -98,6 +97,14 @@ const Player = () => {
           isPlaying: isActive,
           volume: precisionVolume,
           muted: !volume,
+          onPause: () => {
+            setIsActive(false);
+            playSound.play();
+          },
+          onPlay: () => {
+            setIsActive(true);
+            playSound.play();
+          },
         }}
         playList={musicURLS}
       />
