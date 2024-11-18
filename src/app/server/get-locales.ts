@@ -10,6 +10,7 @@ export default getRequestConfig(async () => {
   const cleanLocales = browserLocale.split(',').map((locale) => locale.trim());
   const defineLocale = cleanLocales[0]?.split('-')[0] ?? 'en';
   const locale = supportedLocales.includes(defineLocale) ? defineLocale : 'en';
+  console.log(locale);
   // const localesFile = join(
   //   process.cwd(),
   //   `public/locales/${locale}/translations.json`,
@@ -20,7 +21,7 @@ export default getRequestConfig(async () => {
 
   return {
     locale,
-    messages: await import(`public/locales/${locale}/translations.json`),
+    messages: (await import(`/public/locales/${locale}/translations.json`)).default,
   };
   // try {
   // } catch (error: any) {
