@@ -7,6 +7,8 @@
   &::before,
   &::after {
     @include pseudo;
+
+    border-radius: inherit;
   }
 
   &::before {
@@ -16,8 +18,6 @@
 
   &::after {
     inset: to-rem(2);
-
-    border-radius: inherit;
 
     block-size: to-rem(32);
     inline-size: to-rem(32);
