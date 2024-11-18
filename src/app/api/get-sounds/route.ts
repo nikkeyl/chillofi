@@ -1,11 +1,9 @@
-import { promises } from 'node:fs';
+import { readdir } from 'node:fs/promises';
 import { join } from 'node:path';
 
 import { NextResponse } from 'next/server';
 
 const GET = async () => {
-  const { readdir } = promises;
-
   const effectsFolder = join(process.cwd(), 'public/audio/effects');
 
   try {
