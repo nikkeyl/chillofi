@@ -1,7 +1,6 @@
 import { readdir } from 'node:fs/promises';
 import { join } from 'node:path';
 
-// import { getLocale } from './get-locale';
 import { headers } from 'next/headers';
 import { getRequestConfig } from 'next-intl/server';
 
