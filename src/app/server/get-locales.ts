@@ -23,7 +23,10 @@ export default getRequestConfig(async () => {
       locale,
       messages,
     };
-  } catch (error) {
-    throw new Error(`Failed to load translations for locale: ${locale} [${error}]`);
+  } catch (error: any) {
+    return {
+      message: `Failed to load translations, locale: ${locale} [${error.message}]`,
+      statusCode: 500,
+    };
   }
 });
