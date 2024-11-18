@@ -23,7 +23,7 @@ export default getRequestConfig(async () => {
       locale,
       messages,
     };
-  } catch {
-    throw new Error(`Failed to load translations for locale: ${locale}`);
+  } catch (error) {
+    throw new Error(`Failed to load translations for locale: ${locale} [${error}]`);
   }
 });
