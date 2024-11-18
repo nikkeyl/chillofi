@@ -1,6 +1,6 @@
 'use client';
 
-import { type PropsWithChildren, useMemo } from 'react';
+import { type PropsWithChildren, useCallback, useMemo } from 'react';
 import { useLocalStorage } from 'usehooks-ts';
 
 import type { ScreenImagesProviderProperties } from './screen-images.provider.properties';
@@ -24,11 +24,11 @@ const ScreenImagesProvider = (
 
   const currentImage = images[currentImageIndex] ?? '';
 
-  const setNextImage = () => {
+  const setNextImage = useCallback(() => {
     setCurrentImageIndex(
       (previousImageIndex) => (previousImageIndex + 1) % images.length,
     );
-  };
+  }, [setCurrentImageIndex, images.length]);
 
   const contextValue = useMemo<ScreenImagesContextValue>(
     () => ({
