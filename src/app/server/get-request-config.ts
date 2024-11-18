@@ -6,7 +6,7 @@ import { headers } from 'next/headers';
 import { getRequestConfig } from 'next-intl/server';
 
 const getSupportedLocales = async () => {
-  const localesDirectory = join(process.cwd(), 'public/locales');
+  const localesDirectory = join(process.cwd(), '/public/locales');
   const directories = await readdir(localesDirectory, { withFileTypes: true });
 
   return directories
