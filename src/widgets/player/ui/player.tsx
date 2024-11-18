@@ -1,11 +1,12 @@
 'use client';
 
-import { Button } from '@ui';
 import { Howl } from 'howler';
 import dynamic from 'next/dynamic';
 import { useTranslations } from 'next-intl';
 import { ChangeEvent, useEffect, useRef, useState } from 'react';
 import { useLocalStorage } from 'usehooks-ts';
+
+import { Button } from '@/ui';
 
 import style from './player.module.scss';
 import type { PlayListProperties } from './player.properties';
