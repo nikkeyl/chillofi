@@ -1,0 +1,10 @@
+{
+  "labels": {
+    "controls_panel": "Denetleyici Paneli",
+    "image_alt": "Sinyal Yok",
+    "play_control": "Oynatma Denetleyicisi",
+    "screen": "Ekran",
+    "switcher_control": "Anahtarlama Kontrolörü",
+    "volume_control": "Ses kontrolörü"
+  }
+}
