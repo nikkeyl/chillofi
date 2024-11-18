@@ -2,7 +2,7 @@ import { readdir } from 'node:fs/promises';
 import { join } from 'node:path';
 
 const getImages = async () => {
-  const imagesFolder = join(process.cwd(), '/public/images');
+  const imagesFolder = join(process.cwd(), 'public/images');
 
   try {
     const images = await readdir(imagesFolder);
