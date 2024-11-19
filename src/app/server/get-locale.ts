@@ -1,11 +1,8 @@
 import { headers } from 'next/headers';
 
-import { getSupportedLocales } from './get-supported-locales';
-
 const getLocale = async () => {
   const browserLocale = headers().get('accept-language') ?? 'en';
-  const supportedLocales = await getSupportedLocales();
-
+  const supportedLocales = ['de', 'en', 'ja', 'ru', 'tr'];
   const defineLocale =
     browserLocale
       .split(',')

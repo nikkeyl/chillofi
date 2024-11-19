@@ -1,7 +1,6 @@
 {
   "exclude": [
     "bun.lockb",
-    "LICENSE",
     "next-env.d.ts",
     "src/app/providers/index.ts",
     "src/app/providers/screen-images-provider/screen-images.provider.tsx"
