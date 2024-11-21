@@ -19,7 +19,7 @@ const ScreenCRTEffectProvider = (properties: PropsWithChildren) => {
     setIsCRTEffect((previousState) => !previousState);
   };
 
-  const contextValue = useMemo<ScreenCRTEffectContextValue>(
+  const value = useMemo<ScreenCRTEffectContextValue>(
     () => ({
       isCRTEffect,
       setIsCRTEffect: toggleCRTEffect,
@@ -28,7 +28,7 @@ const ScreenCRTEffectProvider = (properties: PropsWithChildren) => {
   );
 
   return (
-    <ScreenCRTEffectContext.Provider value={contextValue}>
+    <ScreenCRTEffectContext.Provider value={value}>
       {children}
     </ScreenCRTEffectContext.Provider>
   );

@@ -17,19 +17,18 @@ const AudioPlayer = dynamic(() => import('react-modern-audio-player'), {
 
 const Player = () => {
   const [isActive, setIsActive] = useState(false);
-  const [volume, setVolume] = useLocalStorage('current-volume', 50, {
+  const [volume, setVolume] = useLocalStorage('current-volume', 0.5, {
     initializeWithValue: false,
   });
   const [soundsURLS, setSoundsURLS] = useState<string[]>([]);
   const [musicURLS, setMusicURLS] = useState<PlayListProperties[]>([]);
 
   const i18n = useTranslations('labels');
-  const playSound = new Howl({
+  const sound = new Howl({
     src: [soundsURLS[0] || ''],
     format: 'aac',
   });
   const audioReference = useRef<HTMLAudioElement>(null);
-  const precisionVolume = volume / 100;
 
   const handleVolumeChange = (event: ChangeEvent<HTMLInputElement>) => {
     const newVolume = Number(event.target.value);
@@ -37,7 +36,7 @@ const Player = () => {
     setVolume(newVolume);
 
     if (audioReference.current) {
-      audioReference.current.volume = precisionVolume;
+      audioReference.current.volume = volume;
     }
   };
 
@@ -50,9 +49,9 @@ const Player = () => {
       const response = await fetch('/api/get-music');
       const music = await response.json();
 
-      const playList = music.map((file: string, index: number) => ({
-        src: file,
-        id: index + 1,
+      const playList = music.map((src: string, id: number) => ({
+        src,
+        id,
       }));
 
       setMusicURLS(playList);
@@ -79,31 +78,33 @@ const Player = () => {
       />
       <label aria-label={i18n('volume_control')} htmlFor='mixer'>
         <input
-          aria-valuemax={100}
+          aria-valuemax={1}
           aria-valuemin={0}
           aria-valuenow={volume}
           className={style.input}
           id='mixer'
-          max={100}
+          max={1}
           min={0}
           onChange={handleVolumeChange}
+          step={0.02}
           type='range'
           value={volume}
         />
       </label>
       <AudioPlayer
         audioInitialState={{
-          curPlayId: 1,
+          volume,
+          curPlayId: 0,
+          preload: 'auto',
           isPlaying: isActive,
-          volume: precisionVolume,
           muted: !volume,
           onPause: () => {
             setIsActive(false);
-            playSound.play();
+            sound.play();
           },
           onPlay: () => {
             setIsActive(true);
-            playSound.play();
+            sound.play();
           },
         }}
         playList={musicURLS}
