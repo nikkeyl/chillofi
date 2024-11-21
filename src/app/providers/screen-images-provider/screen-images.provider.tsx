@@ -30,7 +30,7 @@ const ScreenImagesProvider = (
     );
   }, [setCurrentImageIndex, images.length]);
 
-  const contextValue = useMemo<ScreenImagesContextValue>(
+  const value = useMemo<ScreenImagesContextValue>(
     () => ({
       currentImage,
       setNextImage,
@@ -39,7 +39,7 @@ const ScreenImagesProvider = (
   );
 
   return (
-    <ScreenImagesContext.Provider value={contextValue}>
+    <ScreenImagesContext.Provider value={value}>
       {children}
     </ScreenImagesContext.Provider>
   );

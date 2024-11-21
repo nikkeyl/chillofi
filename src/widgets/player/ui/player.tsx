@@ -49,9 +49,9 @@ const Player = () => {
       const response = await fetch('/api/get-music');
       const music = await response.json();
 
-      const playList = music.map((file: string, index: number) => ({
-        src: file,
-        id: index + 1,
+      const playList = music.map((src: string, id: number) => ({
+        src,
+        id,
       }));
 
       setMusicURLS(playList);
@@ -94,7 +94,8 @@ const Player = () => {
       <AudioPlayer
         audioInitialState={{
           volume,
-          curPlayId: 1,
+          curPlayId: 0,
+          preload: 'auto',
           isPlaying: isActive,
           muted: !volume,
           onPause: () => {
