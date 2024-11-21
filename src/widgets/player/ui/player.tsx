@@ -36,7 +36,7 @@ const Player = () => {
     setVolume(newVolume);
 
     if (audioReference.current) {
-      audioReference.current.volume = volume;
+      audioReference.current.volume = newVolume;
     }
   };
 
