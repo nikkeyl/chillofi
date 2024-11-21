@@ -10,6 +10,8 @@
 
   background-color: transparent;
 
+  transition: opacity var(--default-transition, $default-transition);
+
   &::before,
   &::after {
     @include pseudo;
@@ -84,6 +86,10 @@
           grabbing;
       }
     }
+  }
+
+  &:disabled {
+    opacity: 0.5;
   }
 
   &:focus-visible {
