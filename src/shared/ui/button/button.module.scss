@@ -2,7 +2,10 @@
 
 .button {
   position: relative;
+
   background-color: var(--color-primary-light, $color-primary-light);
+
+  transition: opacity var(--default-transition, $default-transition);
 
   &::before,
   &::after {
@@ -28,6 +31,10 @@
     );
 
     transition: scale var(--default-transition, $default-transition);
+  }
+
+  &:disabled {
+    opacity: 0.5;
   }
 
   &:focus-visible {

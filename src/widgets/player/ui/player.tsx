@@ -3,7 +3,7 @@
 import { Howl } from 'howler';
 import dynamic from 'next/dynamic';
 import { useTranslations } from 'next-intl';
-import { ChangeEvent, useEffect, useRef, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import { useLocalStorage } from 'usehooks-ts';
 
 import { Button } from '@/ui';
@@ -17,6 +17,7 @@ const AudioPlayer = dynamic(() => import('react-modern-audio-player'), {
 
 const Player = () => {
   const [isActive, setIsActive] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(true);
   const [volume, setVolume] = useLocalStorage('current-volume', 0.5, {
     initializeWithValue: false,
   });
@@ -28,16 +29,11 @@ const Player = () => {
     src: [soundsURLS[0] || ''],
     format: 'aac',
   });
-  const audioReference = useRef<HTMLAudioElement>(null);
 
   const handleVolumeChange = (event: ChangeEvent<HTMLInputElement>) => {
     const newVolume = Number(event.target.value);
 
     setVolume(newVolume);
-
-    if (audioReference.current) {
-      audioReference.current.volume = newVolume;
-    }
   };
 
   const handleClick = () => {
@@ -66,6 +62,7 @@ const Player = () => {
 
     fetchMusic();
     fetchSounds();
+    setIsDisabled(false);
   }, []);
 
   return (
@@ -82,6 +79,7 @@ const Player = () => {
           aria-valuemin={0}
           aria-valuenow={volume}
           className={style.input}
+          disabled={isDisabled}
           id='mixer'
           max={1}
           min={0}
