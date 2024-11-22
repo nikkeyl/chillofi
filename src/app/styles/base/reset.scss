@@ -40,7 +40,12 @@ img {
   object-fit: cover;
 }
 
+button,
 input {
   appearance: none;
   display: block;
+
+  &:disabled {
+    opacity: 0.5;
+  }
 }
