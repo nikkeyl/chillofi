@@ -32,7 +32,6 @@ const Player = () => {
 
   const handleVolumeChange = (event: ChangeEvent<HTMLInputElement>) => {
     const newVolume = Number(event.target.value);
-
     setVolume(newVolume);
   };
 
@@ -56,7 +55,6 @@ const Player = () => {
     const fetchSounds = async () => {
       const response = await fetch('/api/get-sounds');
       const sounds = await response.json();
-
       setSoundsURLS(sounds);
     };
 
@@ -73,7 +71,11 @@ const Player = () => {
         onClick={handleClick}
         type='play'
       />
-      <label aria-label={i18n('volume_control')} htmlFor='mixer'>
+      <label
+        aria-label={i18n('volume_control')}
+        htmlFor='mixer'
+        style={{ position: 'relative' }}
+      >
         <input
           aria-valuemax={1}
           aria-valuemin={0}
@@ -87,6 +89,17 @@ const Player = () => {
           step={0.02}
           type='range'
           value={volume}
+        />
+        <button
+          aria-label='thumb'
+          className={style.thumb}
+          style={{
+            position: 'absolute',
+            top: '50%',
+            left: `${volume * 111}px`,
+            transition: 'left 0.2s ease',
+          }}
+          type='button'
         />
       </label>
       <AudioPlayer

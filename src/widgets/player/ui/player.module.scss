@@ -8,8 +8,6 @@
 
   flex: 0 0 to-rem(126);
 
-  background-color: transparent;
-
   transition: opacity var(--default-transition, $default-transition);
 
   &::before,
@@ -33,7 +31,7 @@
   &::-webkit-slider-thumb {
     appearance: none;
 
-    z-index: var(--z-index-1, $z-index-1);
+    z-index: 2;
     position: relative;
 
     border-radius: var(--default-border-radius, $default-border-radius);
@@ -41,28 +39,28 @@
     block-size: to-rem(36);
     inline-size: to-rem(18);
 
-    background-image: var(
-      --color-primary-light-gradient,
-      $color-primary-light-gradient
-    );
+    // background-image: var(
+    //   --color-primary-light-gradient,
+    //   $color-primary-light-gradient
+    // );
 
-    transition: scale var(--default-transition, $default-transition);
+    // transition: scale var(--default-transition, $default-transition);
 
-    @include media-hover {
-      cursor: url("/icons/cursor-pointer.svg"), pointer;
+    // @include media-hover {
+    //   cursor: url("/icons/cursor-pointer.svg"), pointer;
 
-      &:active {
-        cursor:
-          url("/icons/cursor-grabbing.svg") 7 0,
-          grabbing;
-      }
-    }
+    //   &:active {
+    //     cursor:
+    //       url("/icons/cursor-grabbing.svg") 7 0,
+    //       grabbing;
+    //   }
+    // }
   }
 
   &::-moz-range-thumb {
     appearance: none;
 
-    z-index: var(--z-index-1, $z-index-1);
+    z-index: 2;
     position: relative;
 
     border-radius: var(--default-border-radius, $default-border-radius);
@@ -70,22 +68,22 @@
     block-size: to-rem(36);
     inline-size: to-rem(18);
 
-    background-image: var(
-      --color-primary-light-gradient,
-      $color-primary-light-gradient
-    );
+    // background-image: var(
+    //   --color-primary-light-gradient,
+    //   $color-primary-light-gradient
+    // );
 
-    transition: scale var(--default-transition, $default-transition);
+    // transition: scale var(--default-transition, $default-transition);
 
-    @include media-hover {
-      cursor: url("/icons/cursor-pointer.svg"), pointer;
+    // @include media-hover {
+    //   cursor: url("/icons/cursor-pointer.svg"), pointer;
 
-      &:active {
-        cursor:
-          url("/icons/cursor-grabbing.svg") 7 0,
-          grabbing;
-      }
-    }
+    //   &:active {
+    //     cursor:
+    //       url("/icons/cursor-grabbing.svg") 7 0,
+    //       grabbing;
+    //   }
+    // }
   }
 
   &:disabled {
@@ -106,6 +104,42 @@
     &::before,
     &::after {
       cursor: url("/icons/cursor-pointer.svg"), pointer;
+    }
+  }
+}
+
+.thumb {
+  inset-inline-start: 50%;
+  z-index: 1;
+
+  border-radius: var(--default-border-radius, $default-border-radius);
+
+  block-size: to-rem(36);
+  inline-size: to-rem(18);
+
+  background-image: var(
+    --color-primary-light-gradient,
+    $color-primary-light-gradient
+  );
+
+  transform: translateY(-50%);
+
+  // transition:
+  //   inset-inline-start 0.5s ease-in-out,
+  //   translate 0.5s ease-in-out;
+  transition: scale var(--default-transition, $default-transition);
+
+  &:focus-visible {
+    scale: 0.9;
+  }
+
+  @include media-hover {
+    cursor: url("/icons/cursor-pointer.svg"), pointer;
+
+    &:active {
+      cursor:
+        url("/icons/cursor-grabbing.svg") 7 0,
+        grabbing;
     }
   }
 }
