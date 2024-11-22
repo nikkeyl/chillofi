@@ -62,7 +62,10 @@ const Player = () => {
 
     fetchMusic();
     fetchSounds();
-    setIsDisabled(false);
+
+    setTimeout(() => {
+      setIsDisabled(false);
+    }, 1000);
   }, []);
 
   return (

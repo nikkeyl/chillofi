@@ -6,10 +6,6 @@
   block-size: to-rem(18);
   inline-size: to-rem(126);
 
-  flex: 0 0 to-rem(126);
-
-  background-color: transparent;
-
   transition: opacity var(--default-transition, $default-transition);
 
   &::before,
@@ -47,16 +43,6 @@
     );
 
     transition: scale var(--default-transition, $default-transition);
-
-    @include media-hover {
-      cursor: url("/icons/cursor-pointer.svg"), pointer;
-
-      &:active {
-        cursor:
-          url("/icons/cursor-grabbing.svg") 7 0,
-          grabbing;
-      }
-    }
   }
 
   &::-moz-range-thumb {
@@ -76,23 +62,14 @@
     );
 
     transition: scale var(--default-transition, $default-transition);
-
-    @include media-hover {
-      cursor: url("/icons/cursor-pointer.svg"), pointer;
-
-      &:active {
-        cursor:
-          url("/icons/cursor-grabbing.svg") 7 0,
-          grabbing;
-      }
-    }
   }
 
   &:disabled {
     opacity: 0.5;
   }
 
-  &:focus-visible {
+  &:focus-visible,
+  &:active {
     &::-webkit-slider-thumb {
       scale: 0.9;
     }
@@ -106,6 +83,26 @@
     &::before,
     &::after {
       cursor: url("/icons/cursor-pointer.svg"), pointer;
+    }
+
+    &::-webkit-slider-thumb {
+      cursor: url("/icons/cursor-pointer.svg"), pointer;
+
+      &:active {
+        cursor:
+          url("/icons/cursor-grabbing.svg") 7 0,
+          grabbing;
+      }
+    }
+
+    &::-moz-range-thumb {
+      cursor: url("/icons/cursor-pointer.svg"), pointer;
+
+      &:active {
+        cursor:
+          url("/icons/cursor-grabbing.svg") 7 0,
+          grabbing;
+      }
     }
   }
 }

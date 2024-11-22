@@ -12,7 +12,9 @@ const Button = (properties: ButtonProperties) => {
   const [isDisabled, setIsDisabled] = useState(true);
 
   useEffect(() => {
-    setIsDisabled(false);
+    setTimeout(() => {
+      setIsDisabled(false);
+    }, 1000);
   }, []);
 
   return (
