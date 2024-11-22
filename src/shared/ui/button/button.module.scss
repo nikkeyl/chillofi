@@ -33,9 +33,24 @@
     transition: scale var(--default-transition, $default-transition);
   }
 
-  &:focus-visible {
-    &::after {
-      scale: 0.9;
+  &:not(:disabled) {
+    &:not(.rectangle):active {
+      &::after {
+        scale: 0.8;
+      }
+    }
+
+    &:focus-visible {
+      &::after {
+        scale: 0.9;
+      }
+    }
+
+    @include media-hover {
+      &::before,
+      &::after {
+        cursor: url("/icons/cursor-pointer.svg"), pointer;
+      }
     }
   }
 
@@ -47,12 +62,6 @@
 
     &::after {
       transition: scale var(--default-transition, $default-transition);
-    }
-
-    &:not(:disabled):active {
-      &::after {
-        scale: 0.8;
-      }
     }
   }
 
@@ -72,13 +81,6 @@
       &::after {
         inset-inline-start: to-rem(38);
       }
-    }
-  }
-
-  @include media-hover {
-    &::before,
-    &::after {
-      cursor: url("/icons/cursor-pointer.svg"), pointer;
     }
   }
 }

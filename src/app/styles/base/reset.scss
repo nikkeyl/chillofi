@@ -47,5 +47,6 @@ input {
 
   &:disabled {
     opacity: 0.5;
+    cursor: url("/icons/cursor-default.svg"), default;
   }
 }
