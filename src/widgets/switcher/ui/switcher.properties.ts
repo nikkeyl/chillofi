@@ -1,4 +1,5 @@
 type SwitcherProperties = {
+  text: string;
   type: 'crt' | 'image';
 };
 

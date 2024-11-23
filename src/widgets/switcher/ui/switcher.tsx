@@ -10,7 +10,7 @@ import { Button } from '@/ui';
 import type { SwitcherProperties } from './switcher.properties';
 
 const Switcher = (properties: SwitcherProperties) => {
-  const { type } = properties;
+  const { text, type } = properties;
 
   const { setIsCRTEffect } = useScreenCRTEffectContext();
   const { setNextImage } = useScreenImagesContext();
@@ -46,7 +46,9 @@ const Switcher = (properties: SwitcherProperties) => {
     fetchSounds();
   }, []);
 
-  return <Button ariaLabel={i18n('switcher_control')} onClick={handleClick} />;
+  return (
+    <Button ariaLabel={i18n('switcher_control')} onClick={handleClick} text={text} />
+  );
 };
 
 export { Switcher };

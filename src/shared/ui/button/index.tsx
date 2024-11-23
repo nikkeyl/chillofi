@@ -7,7 +7,7 @@ import style from './button.module.scss';
 import type { ButtonProperties } from './button.properties';
 
 const Button = (properties: ButtonProperties) => {
-  const { ariaLabel, isActive, type = 'switch', onClick } = properties;
+  const { ariaLabel, isActive, text, type = 'switch', onClick } = properties;
 
   const [isDisabled, setIsDisabled] = useState(true);
 
@@ -18,17 +18,20 @@ const Button = (properties: ButtonProperties) => {
   }, []);
 
   return (
-    <button
-      aria-label={ariaLabel}
-      className={classes(
-        style.button,
-        type === 'switch' ? style.circle : style.rectangle,
-        isActive && style.active,
-      )}
-      disabled={isDisabled}
-      onClick={onClick}
-      type='button'
-    />
+    <div className={style.wrapper}>
+      <button
+        aria-label={ariaLabel}
+        className={classes(
+          style.button,
+          type === 'switch' ? style.circle : style.rectangle,
+          isActive && style.active,
+        )}
+        disabled={isDisabled}
+        onClick={onClick}
+        type='button'
+      />
+      <span className={style.label}>{text}</span>
+    </div>
   );
 };
 

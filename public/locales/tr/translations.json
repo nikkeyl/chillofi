@@ -2,9 +2,13 @@
   "labels": {
     "controls_panel": "Denetleyici Paneli",
     "image_alt": "Sinyal Yok",
+    "image_control_label": "Resim",
+    "noise_control_label": "Gürültü",
+    "play_control_label": "Kapalı/Açık",
     "play_control": "Oynatma Denetleyicisi",
     "screen": "Ekran",
     "switcher_control": "Anahtarlama Kontrolörü",
+    "volume_control_label": "Hacim",
     "volume_control": "Ses kontrolörü"
   }
 }

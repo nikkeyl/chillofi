@@ -5,7 +5,7 @@
 .screen {
   position: relative;
 
-  border: to-rem(3) solid var(--color-secondary-black, $color-secondary-black);
+  border: to-rem(3) solid var(--color-secondary-dark, $color-secondary-dark);
   border-radius: to-rem(25);
 
   filter: brightness(0.8) sepia(50%);

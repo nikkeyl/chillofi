@@ -1,7 +1,29 @@
 @use "@/styles/abstracts" as *;
 
-.input {
+.slider {
+  display: flex;
+
   position: relative;
+
+  block-size: 100%;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  &[aria-disabled="true"] {
+    opacity: 0.5;
+
+    pointer-events: none;
+
+    user-select: none;
+  }
+}
+
+.track {
+  position: relative;
+
+  margin-block-start: to-rem(9);
 
   block-size: to-rem(18);
   inline-size: to-rem(126);

@@ -6,7 +6,7 @@
   --color-primary-light: #{$color-primary-light};
 
   // Secondary Colors
-  --color-secondary-black: #{$color-secondary-black};
+  --color-secondary-dark: #{$color-secondary-dark};
 
   // Gradients
   --color-primary-light-gradient: #{$color-primary-light-gradient};
@@ -22,4 +22,16 @@
 
   // Transitions
   --default-transition: #{$default-transition};
+
+  line-height: 1;
+
+  text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
+
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 600;
+
+  color: var(--color-primary-light, $color-primary-light);
+
+  -webkit-font-smoothing: antialiased;
 }

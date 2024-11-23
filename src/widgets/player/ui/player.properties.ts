@@ -1,3 +1,7 @@
+type PlayerProperties = {
+  text: string;
+};
+
 type PlayListProperties = {
   file: string;
   src: string;
@@ -5,4 +9,4 @@ type PlayListProperties = {
   index: number;
 };
 
-export type { PlayListProperties };
+export type { PlayerProperties, PlayListProperties };
