@@ -12,7 +12,6 @@
     "next": "14.2.18",
     "next-intl": "^3.25.1",
     "react": "^18.3.1",
-    "react-cookie": "^7.2.2",
     "react-dom": "^18.3.1",
     "react-modern-audio-player": "^1.4.0-rc.2",
     "sharp": "^0.33.5",
