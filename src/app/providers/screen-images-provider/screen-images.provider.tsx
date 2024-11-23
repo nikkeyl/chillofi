@@ -26,7 +26,7 @@ const ScreenImagesProvider = (
 
   const setNextImage = useCallback(() => {
     setCurrentImageIndex(
-      (previousImageIndex) => (previousImageIndex + 1) % images.length,
+      (previousImageIndex: number) => (previousImageIndex + 1) % images.length,
     );
   }, [setCurrentImageIndex, images.length]);
 
