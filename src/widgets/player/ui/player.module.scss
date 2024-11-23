@@ -25,6 +25,8 @@
 
   margin-block-start: to-rem(9);
 
+  border-radius: var(--default-border-radius, $default-border-radius);
+
   block-size: to-rem(18);
   inline-size: to-rem(126);
 
@@ -34,7 +36,7 @@
   &::after {
     @include pseudo;
 
-    border-radius: var(--default-border-radius, $default-border-radius);
+    border-radius: inherit;
   }
 
   &::before {
