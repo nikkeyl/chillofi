@@ -1,3 +1,4 @@
+@use "sass:color" as *;
 @use "sass:math" as *;
 @use "@/styles/abstracts" as *;
 
@@ -24,14 +25,14 @@
       var(--color-primary-dark, $color-primary-dark) inset;
 
     background-image: linear-gradient(
-        scale-color($color-primary-dark, $alpha: -100%) 50%,
-        scale-color(scale-color($color-primary-dark, $alpha: -10%), $alpha: -65%) 50%
+        scale($color-primary-dark, $alpha: -100%) 50%,
+        scale(scale($color-primary-dark, $alpha: -10%), $alpha: -65%) 50%
       ),
       linear-gradient(
         90deg,
-        scale-color($color-secondary-red, $alpha: -94%),
-        scale-color($color-secondary-green, $alpha: -98%),
-        scale-color($color-secondary-blue, $alpha: -94%)
+        scale($color-secondary-red, $alpha: -94%),
+        scale($color-secondary-green, $alpha: -98%),
+        scale($color-secondary-blue, $alpha: -94%)
       );
     background-size:
       100% to-rem(3),
@@ -40,7 +41,7 @@
 
   &.CRTEffect {
     &::after {
-      background-color: scale-color($color-primary-dark, $alpha: -90%);
+      background-color: scale($color-primary-dark, $alpha: -90%);
       animation: flicker infinite var(--default-transition, $default-transition);
 
       @keyframes flicker {
