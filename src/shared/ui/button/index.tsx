@@ -20,6 +20,7 @@ const Button = (properties: ButtonProperties) => {
   return (
     <div className={style.wrapper}>
       <button
+        aria-disabled={isDisabled}
         aria-label={ariaLabel}
         className={classes(
           style.button,

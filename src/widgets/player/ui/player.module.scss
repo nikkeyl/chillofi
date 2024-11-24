@@ -1,23 +1,11 @@
 @use "@/styles/abstracts" as *;
 
 .slider {
-  display: flex;
-
-  position: relative;
+  display: grid;
 
   block-size: 100%;
 
-  flex-direction: column;
-
-  justify-content: space-between;
-
-  &[aria-disabled="true"] {
-    opacity: 0.5;
-
-    pointer-events: none;
-
-    user-select: none;
-  }
+  grid-template-rows: 1fr auto;
 }
 
 .track {

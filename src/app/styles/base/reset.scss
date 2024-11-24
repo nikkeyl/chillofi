@@ -52,12 +52,13 @@ input {
   appearance: none;
   display: block;
 
-  &:disabled + span {
-    opacity: 0.25;
-  }
-
-  &:disabled {
+  &:disabled,
+  [aria-disabled="true"] {
     opacity: 0.5;
-    cursor: url("/icons/cursor-default.svg"), default;
+    pointer-events: none;
+
+    + span {
+      opacity: 0.25;
+    }
   }
 }

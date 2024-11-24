@@ -40,7 +40,10 @@ const Player = (properties: PlayerProperties) => {
 
   const handleClick = () => {
     setIsActive((previousState) => !previousState);
-    sound.play();
+
+    if (soundsURLS[0]) {
+      sound.play();
+    }
   };
 
   useEffect(() => {
@@ -87,10 +90,12 @@ const Player = (properties: PlayerProperties) => {
         htmlFor='mixer'
       >
         <input
+          aria-disabled={isDisabled}
           aria-valuemax={1}
           aria-valuemin={0}
           aria-valuenow={volume}
           className={style.track}
+          disabled={isDisabled}
           id='mixer'
           max={1}
           min={0}

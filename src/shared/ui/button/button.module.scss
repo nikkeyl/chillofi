@@ -38,7 +38,7 @@
     transition: scale var(--default-transition, $default-transition);
   }
 
-  &:not(:disabled) {
+  &:not(:disabled, [aria-disabled="true"]) {
     &:not(.rectangle):active {
       &::after {
         scale: 0.8;

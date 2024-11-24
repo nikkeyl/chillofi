@@ -14,8 +14,8 @@
   &::after {
     @include pseudo;
 
-    inset: to-rem(-0.5);
     z-index: var(--z-index-1, $z-index-1);
+    inset: to-rem(-1);
 
     border-radius: inherit;
   }
