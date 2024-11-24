@@ -1,7 +1,7 @@
 {
   "labels": {
     "controls_panel": "Denetleyici Paneli",
-    "image_alt": "Sinyal Yok",
+    "alt": "Sinyal Yok",
     "image_control_label": "Resim",
     "noise_control_label": "Gürültü",
     "play_control_label": "Kapalı/Açık",

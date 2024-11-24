@@ -1,7 +1,7 @@
 {
   "labels": {
     "controls_panel": "コントローラーパネル",
-    "image_alt": "シグナルなし",
+    "alt": "シグナルなし",
     "image_control_label": "イメージ",
     "noise_control_label": "ノイズ",
     "play_control_label": "オフ/オン",

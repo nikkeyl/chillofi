@@ -1,7 +1,7 @@
 {
   "labels": {
     "controls_panel": "Steuerpult",
-    "image_alt": "Kein Zeichen",
+    "alt": "Kein Zeichen",
     "image_control_label": "Bild",
     "noise_control_label": "Lärm",
     "play_control_label": "Aus/Ein",

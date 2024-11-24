@@ -1,7 +1,7 @@
 {
   "labels": {
     "controls_panel": "Панель Контроллеров",
-    "image_alt": "Нет Сигнала",
+    "alt": "Нет Сигнала",
     "image_control_label": "Изобр.",
     "noise_control_label": "Шум",
     "play_control_label": "Выкл/Вкл",
