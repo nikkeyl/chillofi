@@ -1,22 +1,25 @@
-import { ScreenCRTEffectProvider, ScreenImagesProvider } from '@/providers';
+import { getTranslations } from 'next-intl/server';
+
+import { ScreenImagesProvider, ScreenNoiseEffectProvider } from '@/providers';
 import { getImages } from '@/server';
-import { Panel } from '@/ui';
+import { Controls } from '@/ui';
 import { Player, Screen, Switcher } from '@/widgets';
 
 const HomePage = async () => {
   const images = await getImages();
+  const translations = await getTranslations('labels');
 
   return (
-    <ScreenCRTEffectProvider>
+    <ScreenNoiseEffectProvider>
       <ScreenImagesProvider images={images}>
         <Screen />
-        <Panel>
-          <Switcher type='crt' />
-          <Player />
-          <Switcher type='image' />
-        </Panel>
+        <Controls>
+          <Switcher text={translations('noise_control_label')} type='noise' />
+          <Player text={translations('play_control_label')} />
+          <Switcher text={translations('image_control_label')} type='image' />
+        </Controls>
       </ScreenImagesProvider>
-    </ScreenCRTEffectProvider>
+    </ScreenNoiseEffectProvider>
   );
 };
 

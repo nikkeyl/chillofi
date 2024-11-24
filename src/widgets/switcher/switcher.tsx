@@ -4,20 +4,20 @@ import { Howl } from 'howler';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 
-import { useScreenCRTEffectContext, useScreenImagesContext } from '@/providers';
+import { useScreenImagesContext, useScreenNoiseEffectContext } from '@/providers';
 import { Button } from '@/ui';
 
 import type { SwitcherProperties } from './switcher.properties';
 
 const Switcher = (properties: SwitcherProperties) => {
-  const { type } = properties;
+  const { text, type } = properties;
 
-  const { setIsCRTEffect } = useScreenCRTEffectContext();
+  const { setIsNoiseEffect } = useScreenNoiseEffectContext();
   const { setNextImage } = useScreenImagesContext();
 
   const [soundsURLS, setSoundsURLS] = useState<string[]>([]);
 
-  const i18n = useTranslations('labels');
+  const translations = useTranslations('labels');
   const playSound = new Howl({
     src: [soundsURLS[0] || ''],
     format: 'aac',
@@ -31,7 +31,7 @@ const Switcher = (properties: SwitcherProperties) => {
     if (type === 'image') {
       setNextImage();
     } else {
-      setIsCRTEffect();
+      setIsNoiseEffect();
     }
   };
 
@@ -46,7 +46,13 @@ const Switcher = (properties: SwitcherProperties) => {
     fetchSounds();
   }, []);
 
-  return <Button ariaLabel={i18n('switcher_control')} onClick={handleClick} />;
+  return (
+    <Button
+      ariaLabel={translations('switcher_control')}
+      onClick={handleClick}
+      text={text}
+    />
+  );
 };
 
 export { Switcher };

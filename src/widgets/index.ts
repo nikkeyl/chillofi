@@ -1,3 +1,3 @@
-export { Player } from './player';
-export { Screen } from './screen';
-export { Switcher } from './switcher';
+export { Player } from './player/player';
+export { Screen } from './screen/screen';
+export { Switcher } from './switcher/switcher';

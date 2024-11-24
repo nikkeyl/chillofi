@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 
-import { isDevelopment } from '@/server';
+import { isProduction } from '@/server';
 import socialCoverImage from '@/socials/cover.jpg';
 
 const title = process.env.NEXT_PUBLIC_DEFAULT_TITLE;
@@ -40,7 +40,7 @@ const metadata: Metadata = {
     'study',
     'work',
   ],
-  metadataBase: isDevelopment ? new URL('http://localhost:3000') : new URL(siteURL),
+  metadataBase: isProduction ? new URL(siteURL) : new URL('http://localhost:3000'),
   robots: {
     index: true,
     follow: true,

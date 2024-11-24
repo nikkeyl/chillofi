@@ -1,5 +1,10 @@
 @use "@/styles/abstracts" as *;
 
+.wrapper {
+  display: grid;
+  gap: to-rem(3);
+}
+
 .button {
   position: relative;
 
@@ -33,13 +38,24 @@
     transition: scale var(--default-transition, $default-transition);
   }
 
-  &:disabled {
-    opacity: 0.5;
-  }
+  &:not(:disabled, [aria-disabled="true"]) {
+    &:not(.rectangle):active {
+      &::after {
+        scale: 0.8;
+      }
+    }
 
-  &:focus-visible {
-    &::after {
-      scale: 0.9;
+    &:focus-visible {
+      &::after {
+        scale: 0.9;
+      }
+    }
+
+    @include media-hover {
+      &::before,
+      &::after {
+        cursor: url("/icons/cursor-pointer.svg"), pointer;
+      }
     }
   }
 
@@ -51,12 +67,6 @@
 
     &::after {
       transition: scale var(--default-transition, $default-transition);
-    }
-
-    &:not(:disabled):active {
-      &::after {
-        scale: 0.8;
-      }
     }
   }
 
@@ -76,13 +86,6 @@
       &::after {
         inset-inline-start: to-rem(38);
       }
-    }
-  }
-
-  @include media-hover {
-    &::before,
-    &::after {
-      cursor: url("/icons/cursor-pointer.svg"), pointer;
     }
   }
 }

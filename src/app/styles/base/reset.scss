@@ -32,6 +32,8 @@ body {
   grid-template-rows: 1fr auto;
   gap: to-rem(15);
 
+  font-size: to-rem(8);
+
   background-color: var(--color-primary-dark, $color-primary-dark);
 }
 
@@ -40,7 +42,23 @@ img {
   object-fit: cover;
 }
 
+span {
+  opacity: 0.5;
+  margin-inline: auto;
+}
+
+button,
 input {
   appearance: none;
   display: block;
+
+  &:disabled,
+  [aria-disabled="true"] {
+    opacity: 0.5;
+    pointer-events: none;
+
+    + span {
+      opacity: 0.25;
+    }
+  }
 }
