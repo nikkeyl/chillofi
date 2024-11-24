@@ -12,15 +12,15 @@ const Screen = () => {
   const { isNoiseEffect } = useScreenNoiseEffectContext();
   const { currentImage } = useScreenImagesContext();
 
-  const i18n = useTranslations('labels');
+  const translations = useTranslations('labels');
 
   return (
     <div
-      aria-label={i18n('screen')}
+      aria-label={translations('screen')}
       className={classes(style.screen, isNoiseEffect && style.NoiseEffect)}
     >
       <Image
-        alt={i18n('alt')}
+        alt={translations('alt')}
         blurDataURL='data:image/webp;base64,UklGRuYBAABXRUJQVlA4INoBAABQNgCdASpYApABPpFIoU0lpCMiIAgAsBIJaW7hd2EbQAnsA99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJx/AAD+/8DYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA='
         fetchPriority='high'
         fill

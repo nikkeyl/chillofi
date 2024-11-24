@@ -1,6 +1,6 @@
 {
   "labels": {
-    "controls_panel": "Controls Panel",
+    "controls": "Controls",
     "alt": "No Signal",
     "image_control_label": "Image",
     "noise_control_label": "Noise",

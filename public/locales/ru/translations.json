@@ -1,6 +1,6 @@
 {
   "labels": {
-    "controls_panel": "Панель Контроллеров",
+    "controls": "Контроллеры",
     "alt": "Нет Сигнала",
     "image_control_label": "Изобр.",
     "noise_control_label": "Шум",

@@ -17,7 +17,7 @@ const Switcher = (properties: SwitcherProperties) => {
 
   const [soundsURLS, setSoundsURLS] = useState<string[]>([]);
 
-  const i18n = useTranslations('labels');
+  const translations = useTranslations('labels');
   const playSound = new Howl({
     src: [soundsURLS[0] || ''],
     format: 'aac',
@@ -47,7 +47,11 @@ const Switcher = (properties: SwitcherProperties) => {
   }, []);
 
   return (
-    <Button ariaLabel={i18n('switcher_control')} onClick={handleClick} text={text} />
+    <Button
+      ariaLabel={translations('switcher_control')}
+      onClick={handleClick}
+      text={text}
+    />
   );
 };
 

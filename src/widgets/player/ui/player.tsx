@@ -26,7 +26,7 @@ const Player = (properties: PlayerProperties) => {
   const [soundsURLS, setSoundsURLS] = useState<string[]>([]);
   const [musicURLS, setMusicURLS] = useState<PlayListProperties[]>([]);
 
-  const i18n = useTranslations('labels');
+  const translations = useTranslations('labels');
   const sound = new Howl({
     src: [soundsURLS[0] || ''],
     format: 'aac',
@@ -77,7 +77,7 @@ const Player = (properties: PlayerProperties) => {
   return (
     <>
       <Button
-        ariaLabel={i18n('play_control')}
+        ariaLabel={translations('play_control')}
         isActive={isActive}
         onClick={handleClick}
         text={text}
@@ -85,7 +85,7 @@ const Player = (properties: PlayerProperties) => {
       />
       <label
         aria-disabled={isDisabled}
-        aria-label={i18n('volume_control')}
+        aria-label={translations('volume_control')}
         className={style.slider}
         htmlFor='mixer'
       >
@@ -104,7 +104,7 @@ const Player = (properties: PlayerProperties) => {
           type='range'
           value={volume}
         />
-        <span className={style.label}>{i18n('volume_control_label')}</span>
+        <span className={style.label}>{translations('volume_control_label')}</span>
       </label>
       <AudioPlayer
         audioInitialState={{
