@@ -4,12 +4,12 @@ import classes from 'classnames';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
-import { useScreenCRTEffectContext, useScreenImagesContext } from '@/providers';
+import { useScreenImagesContext,useScreenNoiseEffectContext } from '@/providers';
 
 import style from './screen.module.scss';
 
 const Screen = () => {
-  const { isCRTEffect } = useScreenCRTEffectContext();
+  const { isNoiseEffect } = useScreenNoiseEffectContext();
   const { currentImage } = useScreenImagesContext();
 
   const i18n = useTranslations('labels');
@@ -17,7 +17,7 @@ const Screen = () => {
   return (
     <div
       aria-label={i18n('screen')}
-      className={classes(style.screen, isCRTEffect && style.CRTEffect)}
+      className={classes(style.screen, isNoiseEffect && style.NoiseEffect)}
     >
       <Image
         alt={i18n('image_alt')}

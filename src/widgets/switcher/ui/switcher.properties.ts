@@ -1,6 +1,6 @@
 type SwitcherProperties = {
   text: string;
-  type: 'crt' | 'image';
+  type: 'noise' | 'image';
 };
 
 export type { SwitcherProperties };

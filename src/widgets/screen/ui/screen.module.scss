@@ -39,7 +39,7 @@
       to-rem(4) 100%;
   }
 
-  &.CRTEffect {
+  &.NoiseEffect {
     &::after {
       background-color: scale($color-primary-dark, $alpha: -90%);
       animation: flicker infinite var(--default-transition, $default-transition);

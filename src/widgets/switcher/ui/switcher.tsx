@@ -4,7 +4,7 @@ import { Howl } from 'howler';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 
-import { useScreenCRTEffectContext, useScreenImagesContext } from '@/providers';
+import { useScreenImagesContext, useScreenNoiseEffectContext } from '@/providers';
 import { Button } from '@/ui';
 
 import type { SwitcherProperties } from './switcher.properties';
@@ -12,7 +12,7 @@ import type { SwitcherProperties } from './switcher.properties';
 const Switcher = (properties: SwitcherProperties) => {
   const { text, type } = properties;
 
-  const { setIsCRTEffect } = useScreenCRTEffectContext();
+  const { setIsNoiseEffect } = useScreenNoiseEffectContext();
   const { setNextImage } = useScreenImagesContext();
 
   const [soundsURLS, setSoundsURLS] = useState<string[]>([]);
@@ -31,7 +31,7 @@ const Switcher = (properties: SwitcherProperties) => {
     if (type === 'image') {
       setNextImage();
     } else {
-      setIsCRTEffect();
+      setIsNoiseEffect();
     }
   };
 
