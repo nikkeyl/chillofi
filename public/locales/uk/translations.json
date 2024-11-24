@@ -1,0 +1,14 @@
+{
+  "labels": {
+    "controls": "Управління",
+    "alt": "Немає сигналу",
+    "image_control_label": "Зображ.",
+    "noise_control_label": "Шум",
+    "play_control_label": "Вимк/Увімк",
+    "play_control": "Керування відтворенням",
+    "screen": "Екран",
+    "switcher_control": "Керування перемикачем",
+    "volume_control_label": "Гучність",
+    "volume_control": "Регулювання гучності"
+  }
+}

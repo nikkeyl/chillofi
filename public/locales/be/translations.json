@@ -1,0 +1,14 @@
+{
+  "labels": {
+    "controls": "Элементы кіравання",
+    "alt": "Няма сігналу",
+    "image_control_label": "Малюнак",
+    "noise_control_label": "Шум",
+    "play_control_label": "Выкл./Укл",
+    "play_control": "Кіраванне прайграваннем",
+    "screen": "Экран",
+    "switcher_control": "Кіраванне камутатарам",
+    "volume_control_label": "Гучнасць",
+    "volume_control": "Рэгулятар гучнасці"
+  }
+}
