@@ -4,7 +4,7 @@ import classes from 'classnames';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
-import { useScreenImagesContext,useScreenNoiseEffectContext } from '@/providers';
+import { useScreenImagesContext, useScreenNoiseEffectContext } from '@/providers';
 
 import style from './screen.module.scss';
 
