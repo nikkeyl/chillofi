@@ -76,12 +76,8 @@
     transition: scale var(--default-transition, $default-transition);
   }
 
-  &:disabled {
-    opacity: 0.5;
-  }
-
-  &:focus-visible,
-  &:active {
+  &:not(:disabled):focus-visible,
+  &:not(:disabled):active {
     &::-webkit-slider-thumb {
       scale: 0.9;
     }
@@ -89,6 +85,10 @@
     &::-moz-range-thumb {
       scale: 0.9;
     }
+  }
+
+  &:disabled {
+    opacity: 0.5;
   }
 
   @include media-hover {

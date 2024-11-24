@@ -1,2 +1,2 @@
-export { isDevelopment } from './get-environment';
+export { isProduction } from './get-environment';
 export { getImages } from './get-images';
