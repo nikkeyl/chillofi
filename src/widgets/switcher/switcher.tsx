@@ -10,7 +10,7 @@ import { Button } from '@/ui';
 import type { SwitcherProperties } from './switcher.properties';
 
 const Switcher = (properties: SwitcherProperties) => {
-  const { text, type } = properties;
+  const { ariaLabelledBy, text, type } = properties;
 
   const { setIsNoiseEffect } = useScreenNoiseEffectContext();
   const { setNextImage } = useScreenImagesContext();
@@ -49,6 +49,7 @@ const Switcher = (properties: SwitcherProperties) => {
   return (
     <Button
       ariaLabel={translations('switcher_control')}
+      ariaLabelledBy={ariaLabelledBy}
       onClick={handleClick}
       text={text}
     />
