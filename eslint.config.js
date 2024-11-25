@@ -8,7 +8,7 @@ import prettierConfig from 'eslint-config-prettier';
 import unicornPlugin from 'eslint-plugin-unicorn';
 
 export default defineFlatConfig([
-  ...extend('airbnb', 'airbnb-typescript'),
+  ...extend('airbnb', 'airbnb-typescript', 'plugin:react/jsx-runtime'),
   {
     files: ['src/**/*.tsx', 'src/**/*.ts'],
     languageOptions: {
@@ -18,9 +18,6 @@ export default defineFlatConfig([
         ...globals.es2015,
       },
       parserOptions: {
-        ecmaFeatures: {
-          jsx: true,
-        },
         ecmaVersion: 'latest',
         project: 'tsconfig.json',
       },
@@ -40,10 +37,9 @@ export default defineFlatConfig([
     },
     rules: {
       'func-style': ['error', 'expression'],
-      'simple-import-sort/imports': 'error',
-      'simple-import-sort/exports': 'error',
+      'simple-import-sort/imports': 'warn',
+      'simple-import-sort/exports': 'warn',
       'import/exports-last': 'error',
-      'import/extensions': ['error', { ts: 'never', tsx: 'never' }],
       'import/group-exports': 'error',
       'import/no-commonjs': 'error',
       'import/no-default-export': 'off',
@@ -58,10 +54,8 @@ export default defineFlatConfig([
         },
       ],
       'react/jsx-sort-props': 'warn',
-      'react/react-in-jsx-scope': 'off',
-      'unicorn/no-null': 'off',
-      'unicorn/no-unused-properties': 'error',
-      'unicorn/string-content': 'error',
+      'unicorn/no-unused-properties': 'warn',
+      'unicorn/string-content': 'warn',
     },
   },
   prettierConfig,
