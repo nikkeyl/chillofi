@@ -16,7 +16,7 @@ const AudioPlayer = dynamic(() => import('react-modern-audio-player'), {
 });
 
 const Player = (properties: PlayerProperties) => {
-  const { text } = properties;
+  const { ariaLabelledBy, text } = properties;
 
   const [isActive, setIsActive] = useState(false);
   const [isDisabled, setIsDisabled] = useState(true);
@@ -27,6 +27,7 @@ const Player = (properties: PlayerProperties) => {
   const [musicURLS, setMusicURLS] = useState<PlayListProperties[]>([]);
 
   const translations = useTranslations('labels');
+  const volumeTranslation = translations('volume_control_label');
   const sound = new Howl({
     src: [soundsURLS[0] || ''],
     format: 'aac',
@@ -78,6 +79,7 @@ const Player = (properties: PlayerProperties) => {
     <>
       <Button
         ariaLabel={translations('play_control')}
+        ariaLabelledBy={ariaLabelledBy}
         isActive={isActive}
         onClick={handleClick}
         text={text}
@@ -87,7 +89,7 @@ const Player = (properties: PlayerProperties) => {
         aria-disabled={isDisabled}
         aria-label={translations('volume_control')}
         className={style.slider}
-        htmlFor='mixer'
+        htmlFor={volumeTranslation}
       >
         <input
           aria-disabled={isDisabled}
@@ -96,7 +98,7 @@ const Player = (properties: PlayerProperties) => {
           aria-valuenow={volume}
           className={style.track}
           disabled={isDisabled}
-          id='mixer'
+          id={volumeTranslation}
           max={1}
           min={0}
           onChange={handleVolumeUpdate}
@@ -104,7 +106,9 @@ const Player = (properties: PlayerProperties) => {
           type='range'
           value={volume}
         />
-        <span className={style.label}>{translations('volume_control_label')}</span>
+        <span aria-labelledby={volumeTranslation} className={style.label}>
+          {volumeTranslation}
+        </span>
       </label>
       <AudioPlayer
         audioInitialState={{

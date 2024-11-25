@@ -9,14 +9,26 @@ const HomePage = async () => {
   const images = await getImages();
   const translations = await getTranslations('labels');
 
+  const noiseTranslation = translations('noise_control_label');
+  const playTranslation = translations('play_control_label');
+  const imageTranslation = translations('image_control_label');
+
   return (
     <ScreenNoiseEffectProvider>
       <ScreenImagesProvider images={images}>
         <Screen />
         <Controls>
-          <Switcher text={translations('noise_control_label')} type='noise' />
-          <Player text={translations('play_control_label')} />
-          <Switcher text={translations('image_control_label')} type='image' />
+          <Switcher
+            ariaLabelledBy={noiseTranslation}
+            text={noiseTranslation}
+            type='noise'
+          />
+          <Player ariaLabelledBy={playTranslation} text={playTranslation} />
+          <Switcher
+            ariaLabelledBy={imageTranslation}
+            text={imageTranslation}
+            type='image'
+          />
         </Controls>
       </ScreenImagesProvider>
     </ScreenNoiseEffectProvider>
