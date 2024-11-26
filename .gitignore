@@ -3,6 +3,5 @@
 node_modules
 
 # Files
-.env.local
 bun.lockb
 next-env.d.ts
