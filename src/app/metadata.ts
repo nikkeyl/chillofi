@@ -3,8 +3,8 @@ import type { Metadata, Viewport } from 'next';
 import { isProduction } from '@/server';
 import socialCoverImage from '@/socials/cover.jpg';
 
-const title = process.env.NEXT_PUBLIC_DEFAULT_TITLE;
-const description = process.env.NEXT_PUBLIC_DEFAULT_DESCRIPTION;
+const title = 'Chillofi';
+const description = 'LOFI-radio for work, study and relax';
 const images = [
   {
     url: socialCoverImage.src,
@@ -13,8 +13,8 @@ const images = [
   },
 ];
 const siteName = title;
-const siteURL = process.env.NEXT_PUBLIC_DEFAULT_URL;
-const author = process.env.NEXT_PUBLIC_AUTHOR_NAME;
+const siteURL = 'https://chillofi.vercel.app';
+const author = 'nikkeyl';
 
 const metadata: Metadata = {
   alternates: { canonical: siteURL },
