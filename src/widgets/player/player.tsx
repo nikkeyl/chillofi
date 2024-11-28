@@ -106,9 +106,7 @@ const Player = (properties: PlayerProperties) => {
           type='range'
           value={volume}
         />
-        <span aria-labelledby={volumeTranslation} className={style.label}>
-          {volumeTranslation}
-        </span>
+        <span aria-labelledby={volumeTranslation}>{volumeTranslation}</span>
       </label>
       <AudioPlayer
         audioInitialState={{
