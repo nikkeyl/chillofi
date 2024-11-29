@@ -7,9 +7,7 @@
 
 .button {
   position: relative;
-
   background-color: var(--color-primary-light, $color-primary-light);
-
   transition: opacity var(--default-transition, $default-transition);
 
   &::before,
@@ -61,7 +59,6 @@
 
   &.circle {
     border-radius: 50%;
-
     block-size: to-rem(36);
     inline-size: to-rem(36);
 
@@ -72,7 +69,6 @@
 
   &.rectangle {
     border-radius: var(--default-border-radius, $default-border-radius);
-
     block-size: to-rem(36);
     inline-size: to-rem(72);
 

@@ -4,10 +4,8 @@
 
 .screen {
   position: relative;
-
   border: to-rem(3) solid var(--color-primary-dark, $color-primary-dark);
   border-radius: to-rem(25);
-
   filter: brightness(0.8) sepia(50%);
 
   &::before,
@@ -16,14 +14,12 @@
 
     z-index: var(--z-index-1, $z-index-1);
     inset: to-rem(-1);
-
     border-radius: inherit;
   }
 
   &::before {
     box-shadow: 0 0 to-rem(80) to-rem(60)
       var(--color-primary-dark, $color-primary-dark) inset;
-
     background-image: linear-gradient(
         scale($color-primary-dark, $alpha: -100%) 50%,
         scale(scale($color-primary-dark, $alpha: -10%), $alpha: -65%) 50%
