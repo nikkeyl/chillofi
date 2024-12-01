@@ -3,9 +3,4 @@ type PlayerProperties = {
   text: string;
 };
 
-type PlayListProperties = {
-  src: string;
-  id: number;
-};
-
-export type { PlayerProperties, PlayListProperties };
+export type { PlayerProperties };
