@@ -37,8 +37,6 @@ export default defineFlatConfig([
     },
     rules: {
       'func-style': ['error', 'expression'],
-      'simple-import-sort/imports': 'warn',
-      'simple-import-sort/exports': 'warn',
       'import/exports-last': 'error',
       'import/group-exports': 'error',
       'import/no-commonjs': 'error',
@@ -54,6 +52,8 @@ export default defineFlatConfig([
         },
       ],
       'react/jsx-sort-props': 'warn',
+      'simple-import-sort/exports': 'warn',
+      'simple-import-sort/imports': 'warn',
       'unicorn/no-unused-properties': 'warn',
       'unicorn/string-content': 'warn',
     },
