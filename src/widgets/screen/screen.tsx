@@ -17,7 +17,7 @@ const Screen = () => {
   return (
     <div
       aria-label={translations('screen')}
-      className={classes(style.screen, isNoiseEffect && style.NoiseEffect)}
+      className={classes(style.screen, isNoiseEffect && style.noiseEffect)}
     >
       <Image
         alt={translations('alt')}

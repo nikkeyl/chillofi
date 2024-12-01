@@ -11,7 +11,7 @@ const GET = async () => {
     const sounds = files.map((file) => `/audio/effects/${file}`);
 
     return NextResponse.json(sounds);
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: 'Could not get sound files' },
       { status: 500 },

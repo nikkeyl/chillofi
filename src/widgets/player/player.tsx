@@ -6,10 +6,11 @@ import { useTranslations } from 'next-intl';
 import { ChangeEvent, useEffect, useState } from 'react';
 import { useLocalStorage } from 'usehooks-ts';
 
+import type { PlayList } from '@/types';
 import { Button } from '@/ui';
 
 import style from './player.module.scss';
-import type { PlayerProperties, PlayListProperties } from './player.properties';
+import type { PlayerProperties } from './player.properties';
 
 const AudioPlayer = dynamic(() => import('react-modern-audio-player'), {
   ssr: false,
@@ -24,7 +25,7 @@ const Player = (properties: PlayerProperties) => {
     initializeWithValue: false,
   });
   const [soundsURLS, setSoundsURLS] = useState<string[]>([]);
-  const [musicURLS, setMusicURLS] = useState<PlayListProperties[]>([]);
+  const [musicURLS, setMusicURLS] = useState<PlayList[]>([]);
 
   const translations = useTranslations('labels');
   const volumeTranslation = translations('volume_control_label');
@@ -114,14 +115,6 @@ const Player = (properties: PlayerProperties) => {
           curPlayId: 0,
           isPlaying: isActive,
           muted: !volume,
-          // onPause: () => {
-          //   setIsActive(false);
-          //   sound.play();
-          // },
-          // onPlay: () => {
-          //   setIsActive(true);
-          //   sound.play();
-          // },
         }}
         playList={musicURLS}
       />
