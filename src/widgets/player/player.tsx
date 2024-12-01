@@ -115,14 +115,6 @@ const Player = (properties: PlayerProperties) => {
           curPlayId: 0,
           isPlaying: isActive,
           muted: !volume,
-          // onPause: () => {
-          //   setIsActive(false);
-          //   sound.play();
-          // },
-          // onPlay: () => {
-          //   setIsActive(true);
-          //   sound.play();
-          // },
         }}
         playList={musicURLS}
       />

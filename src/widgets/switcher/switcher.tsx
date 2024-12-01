@@ -18,14 +18,14 @@ const Switcher = (properties: SwitcherProperties) => {
   const [soundsURLS, setSoundsURLS] = useState<string[]>([]);
 
   const translations = useTranslations('labels');
-  const playSound = new Howl({
+  const sound = new Howl({
     src: [soundsURLS[0] || ''],
     format: 'aac',
   });
 
   const handleClick = () => {
     if (soundsURLS[0]) {
-      playSound.play();
+      sound.play();
     }
 
     if (type === 'image') {
