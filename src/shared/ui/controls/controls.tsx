@@ -9,7 +9,7 @@ const Controls = (properties: PropsWithChildren) => {
   const translations = useTranslations('labels');
 
   return (
-    <div aria-label={translations('controls')} className={style.controls}>
+    <div aria-label={translations('controls')} className={style.wrapper}>
       {children}
     </div>
   );
