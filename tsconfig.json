@@ -26,7 +26,6 @@
     "paths": {
       "@/config": ["./src/app/config"],
       "@/providers": ["./src/app/providers"],
-      "@/server": ["./src/app/server"],
       "@/socials/*": ["./public/socials/*"],
       "@/styles/*": ["./src/app/styles/*"],
       "@/types": ["./src/shared/types"],
