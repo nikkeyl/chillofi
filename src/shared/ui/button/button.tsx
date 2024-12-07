@@ -1,6 +1,6 @@
 'use client';
 
-import classes from 'classnames';
+import clsx from 'clsx';
 import { useEffect, useState } from 'react';
 
 import style from './button.module.scss';
@@ -30,7 +30,7 @@ const Button = (properties: ButtonProperties) => {
         aria-disabled={isDisabled}
         aria-label={ariaLabel}
         aria-labelledby={ariaLabelledBy}
-        className={classes(
+        className={clsx(
           style.button,
           type === 'switch' ? style.circle : style.rectangle,
           isActive && style.active,
@@ -39,9 +39,7 @@ const Button = (properties: ButtonProperties) => {
         onClick={onClick}
         type='button'
       />
-      <span className={style.label} id={ariaLabelledBy}>
-        {text}
-      </span>
+      <span id={ariaLabelledBy}>{text}</span>
     </div>
   );
 };

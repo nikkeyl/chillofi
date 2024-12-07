@@ -1,6 +1,6 @@
 'use client';
 
-import classes from 'classnames';
+import clsx from 'clsx';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
@@ -17,7 +17,7 @@ const Screen = () => {
   return (
     <div
       aria-label={translations('screen')}
-      className={classes(style.screen, isNoiseEffect && style.noiseEffect)}
+      className={clsx(style.screen, isNoiseEffect && style.noiseEffect)}
     >
       <Image
         alt={translations('alt')}
