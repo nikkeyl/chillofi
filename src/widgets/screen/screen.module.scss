@@ -18,7 +18,7 @@
   }
 
   &::before {
-    box-shadow: 0 0 to-rem(80) to-rem(60)
+    box-shadow: 0 0 to-rem(120) to-rem(100)
       var(--color-primary-dark, $color-primary-dark) inset;
     background-image: linear-gradient(
         scale($color-primary-dark, $alpha: -100%) 50%,
