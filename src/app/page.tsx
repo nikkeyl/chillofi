@@ -1,7 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 
+import { getImages } from '@/config';
 import { ScreenImagesProvider, ScreenNoiseEffectProvider } from '@/providers';
-import { getImages } from '@/server';
 import { Controls } from '@/ui';
 import { Player, Screen, Switcher } from '@/widgets';
 

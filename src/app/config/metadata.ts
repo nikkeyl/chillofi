@@ -1,7 +1,8 @@
 import type { Metadata, Viewport } from 'next';
 
-import { isProduction } from '@/server';
 import socialCoverImage from '@/socials/cover.jpg';
+
+import { isProduction } from './constants';
 
 const title = 'Chillofi';
 const description = 'LOFI-radio for work, study and relax';
