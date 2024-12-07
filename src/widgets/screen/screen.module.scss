@@ -33,6 +33,11 @@
     background-size:
       100% to-rem(3),
       to-rem(4) 100%;
+
+    @media (width >= 58.75rem) {
+      box-shadow: 0 0 to-rem(120) to-rem(100)
+        var(--color-primary-dark, $color-primary-dark) inset;
+    }
   }
 
   &.noiseEffect {
