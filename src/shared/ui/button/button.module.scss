@@ -25,7 +25,7 @@
   &::after {
     inset: to-rem(2);
 
-    block-size: to-rem(32);
+    aspect-ratio: 1;
     inline-size: to-rem(32);
 
     background-image: var(
@@ -59,7 +59,7 @@
 
   &.circle {
     border-radius: 50%;
-    block-size: to-rem(36);
+    aspect-ratio: 1;
     inline-size: to-rem(36);
 
     &::after {
