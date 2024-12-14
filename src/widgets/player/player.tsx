@@ -1,6 +1,5 @@
 'use client';
 
-import { Howl } from 'howler';
 import dynamic from 'next/dynamic';
 import { ChangeEvent, useEffect, useState } from 'react';
 import { useLocalStorage } from 'usehooks-ts';
@@ -23,13 +22,7 @@ const Player = (properties: PlayerProperties) => {
   const [volume, setVolume] = useLocalStorage('current-volume', 0.5, {
     initializeWithValue: false,
   });
-  const [soundsURLS, setSoundsURLS] = useState<string[]>([]);
   const [musicURLS, setMusicURLS] = useState<PlayList[]>([]);
-
-  const sound = new Howl({
-    src: [soundsURLS[0] || ''],
-    format: 'aac',
-  });
 
   const handleVolumeUpdate = (event: ChangeEvent<HTMLInputElement>) => {
     const newVolume = Number(event.target.value);
@@ -39,10 +32,6 @@ const Player = (properties: PlayerProperties) => {
 
   const handleClick = () => {
     setIsActive((previousState) => !previousState);
-
-    if (soundsURLS[0]) {
-      sound.play();
-    }
   };
 
   useEffect(() => {
@@ -58,17 +47,8 @@ const Player = (properties: PlayerProperties) => {
       setMusicURLS(playList);
     };
 
-    const fetchSounds = async () => {
-      const response = await fetch('/api/get-sounds');
-      const sounds = await response.json();
-
-      setSoundsURLS(sounds);
-    };
-
-    fetchMusic();
-    fetchSounds();
-
     setTimeout(() => {
+      fetchMusic();
       setIsDisabled(false);
     }, 1000);
   }, []);

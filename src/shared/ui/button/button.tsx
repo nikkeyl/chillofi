@@ -1,6 +1,7 @@
 'use client';
 
 import clsx from 'clsx';
+import { Howl } from 'howler';
 import { useEffect, useState } from 'react';
 
 import style from './button.module.scss';
@@ -10,9 +11,29 @@ const Button = (properties: ButtonProperties) => {
   const { label, labelledBy, isActive, text, type = 'switch', onClick } = properties;
 
   const [isDisabled, setIsDisabled] = useState(true);
+  const [soundsURLS, setSoundsURLS] = useState<string[]>([]);
+
+  const sound = new Howl({
+    src: [soundsURLS[0] || ''],
+    format: 'aac',
+  });
+
+  const handleClick = () => {
+    if (soundsURLS[0]) {
+      sound.play();
+    }
+  };
 
   useEffect(() => {
+    const fetchSounds = async () => {
+      const response = await fetch('/api/get-sounds');
+      const sounds = await response.json();
+
+      setSoundsURLS(sounds);
+    };
+
     setTimeout(() => {
+      fetchSounds();
       setIsDisabled(false);
     }, 1000);
   }, []);
@@ -29,7 +50,10 @@ const Button = (properties: ButtonProperties) => {
           isActive && style.active,
         )}
         disabled={isDisabled}
-        onClick={onClick}
+        onClick={() => {
+          handleClick();
+          onClick();
+        }}
         type='button'
       />
       <span id={labelledBy}>{text}</span>

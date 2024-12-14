@@ -2,7 +2,8 @@ type SwitcherProperties = {
   label: string;
   labelledBy: string;
   text: string;
-  type: 'noise' | 'image';
+  isNoise?: boolean;
+  isImage?: boolean;
 };
 
 export type { SwitcherProperties };
