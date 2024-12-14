@@ -6,9 +6,6 @@ public
 *.md
 bun.lockb
 
-# *rc
-.ecrc
-
 # Configs
 .editorconfig
 .gitattributes
