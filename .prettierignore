@@ -1,14 +1,8 @@
 # Directories
-.husky
 public
 
 # Files
 *.md
-bun.lockb
-
-# Configs
-.editorconfig
-.gitattributes
 
 # Ignores
 .gitignore
