@@ -1,17 +1,13 @@
-import { useTranslations } from 'next-intl';
-import type { PropsWithChildren } from 'react';
-
 import style from './controls.module.scss';
+import type { Properties } from './controls.properties';
 
-const Controls = (properties: PropsWithChildren) => {
-  const { children } = properties;
-
-  const translations = useTranslations('labels');
+const Controls = (properties: Properties) => {
+  const { ariaLabel, children } = properties;
 
   return (
-    <div aria-label={translations('controls')} className={style.wrapper}>
+    <footer aria-label={ariaLabel} className={style.wrapper}>
       {children}
-    </div>
+    </footer>
   );
 };
 
