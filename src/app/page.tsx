@@ -12,12 +12,13 @@ const HomePage = async () => {
   const images = await getImages();
   const translations = await getTranslations('labels');
 
+  const altTranslation = translations('alt');
+  const controlsTranslation = translations('controls');
+  const imageTranslation = translations('image_control_label');
   const noiseTranslation = translations('noise_control_label');
   const playTranslation = translations('play_control_label');
-  const imageTranslation = translations('image_control_label');
-  const controlsTranslation = translations('controls');
   const screenTranslation = translations('screen');
-  const altTranslation = translations('alt');
+  const switcherTranslation = translations('switcher_control');
 
   return (
     <NoiseProvider>
@@ -25,12 +26,14 @@ const HomePage = async () => {
         <Screen alt={altTranslation} ariaLabel={screenTranslation} />
         <Controls ariaLabel={controlsTranslation}>
           <Switcher
+            ariaLabel={switcherTranslation}
             ariaLabelledBy={noiseTranslation}
             text={noiseTranslation}
             type='noise'
           />
           <Player ariaLabelledBy={playTranslation} text={playTranslation} />
           <Switcher
+            ariaLabel={switcherTranslation}
             ariaLabelledBy={imageTranslation}
             text={imageTranslation}
             type='image'

@@ -1,7 +1,6 @@
 'use client';
 
 import { Howl } from 'howler';
-import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 
 import { useImageContext } from '@/providers/image-provider/use-image.context';
@@ -11,14 +10,13 @@ import { Button } from '@/ui/button/button';
 import type { SwitcherProperties } from './switcher.properties';
 
 const Switcher = (properties: SwitcherProperties) => {
-  const { ariaLabelledBy, text, type } = properties;
+  const { ariaLabel, ariaLabelledBy, text, type } = properties;
 
   const { setIsNoise } = useNoiseContext();
   const { setNextImage } = useImageContext();
 
   const [soundsURLS, setSoundsURLS] = useState<string[]>([]);
 
-  const translations = useTranslations('labels');
   const sound = new Howl({
     src: [soundsURLS[0] || ''],
     format: 'aac',
@@ -49,7 +47,7 @@ const Switcher = (properties: SwitcherProperties) => {
 
   return (
     <Button
-      ariaLabel={translations('switcher_control')}
+      ariaLabel={ariaLabel}
       ariaLabelledBy={ariaLabelledBy}
       onClick={handleClick}
       text={text}
