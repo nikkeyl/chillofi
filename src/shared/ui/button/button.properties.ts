@@ -1,6 +1,6 @@
 type ButtonProperties = {
-  ariaLabel: string;
-  ariaLabelledBy: string;
+  label: string;
+  labelledBy: string;
   text: string;
   isActive?: boolean;
   type?: 'switch' | 'play';

@@ -10,19 +10,21 @@ import style from './screen.module.scss';
 import type { Properties } from './screen.properties';
 
 const Screen = (properties: Properties) => {
-  const { ariaLabel, alt } = properties;
+  const { alt, label } = properties;
 
   const { isNoise } = useNoiseContext();
   const { currentImage } = useImageContext();
 
+  const blurImage = 'UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA';
+
   return (
     <main
-      aria-label={ariaLabel}
-      className={clsx(style.screen, isNoise && style.noiseEffect)}
+      aria-label={label}
+      className={clsx(style.screen, isNoise && style.noise)}
     >
       <Image
         alt={alt}
-        blurDataURL='data:image/webp;base64,UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA'
+        blurDataURL={`data:image/webp;base64,${blurImage}`}
         fetchPriority='high'
         fill
         placeholder='blur'

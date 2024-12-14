@@ -1,6 +1,6 @@
 type Properties = {
-  ariaLabel: string;
   alt: string;
+  label: string;
 };
 
 export type { Properties };

@@ -2,7 +2,6 @@
 
 import { Howl } from 'howler';
 import dynamic from 'next/dynamic';
-import { useTranslations } from 'next-intl';
 import { ChangeEvent, useEffect, useState } from 'react';
 import { useLocalStorage } from 'usehooks-ts';
 
@@ -17,7 +16,7 @@ const AudioPlayer = dynamic(() => import('react-modern-audio-player'), {
 });
 
 const Player = (properties: PlayerProperties) => {
-  const { ariaLabelledBy, text } = properties;
+  const { label, labelledBy, text, volumeControlLabel, volumeLabel } = properties;
 
   const [isActive, setIsActive] = useState(false);
   const [isDisabled, setIsDisabled] = useState(true);
@@ -27,8 +26,6 @@ const Player = (properties: PlayerProperties) => {
   const [soundsURLS, setSoundsURLS] = useState<string[]>([]);
   const [musicURLS, setMusicURLS] = useState<PlayList[]>([]);
 
-  const translations = useTranslations('labels');
-  const volumeTranslation = translations('volume_control_label');
   const sound = new Howl({
     src: [soundsURLS[0] || ''],
     format: 'aac',
@@ -79,18 +76,18 @@ const Player = (properties: PlayerProperties) => {
   return (
     <>
       <Button
-        ariaLabel={translations('play_control')}
-        ariaLabelledBy={ariaLabelledBy}
         isActive={isActive}
+        label={label}
+        labelledBy={labelledBy}
         onClick={handleClick}
         text={text}
         type='play'
       />
       <label
         aria-disabled={isDisabled}
-        aria-label={translations('volume_control')}
+        aria-label={volumeControlLabel}
         className={style.slider}
-        htmlFor={volumeTranslation}
+        htmlFor={volumeLabel}
       >
         <input
           aria-disabled={isDisabled}
@@ -99,7 +96,7 @@ const Player = (properties: PlayerProperties) => {
           aria-valuenow={volume}
           className={style.track}
           disabled={isDisabled}
-          id={volumeTranslation}
+          id={volumeLabel}
           max={1}
           min={0}
           onChange={handleVolumeUpdate}
@@ -107,7 +104,7 @@ const Player = (properties: PlayerProperties) => {
           type='range'
           value={volume}
         />
-        <span aria-labelledby={volumeTranslation}>{volumeTranslation}</span>
+        <span aria-labelledby={volumeLabel}>{volumeLabel}</span>
       </label>
       <AudioPlayer
         audioInitialState={{

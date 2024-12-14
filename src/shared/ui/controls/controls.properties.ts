@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from 'react';
 
 type Properties = PropsWithChildren & {
-  ariaLabel: string;
+  label: string;
 };
 
 export type { Properties };
