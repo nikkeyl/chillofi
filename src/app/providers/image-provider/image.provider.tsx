@@ -3,15 +3,10 @@
 import { type PropsWithChildren, useCallback, useMemo } from 'react';
 import { useLocalStorage } from 'usehooks-ts';
 
-import type { ScreenImagesProviderProperties } from './screen-images.provider.properties';
-import {
-  ScreenImagesContext,
-  type ScreenImagesContextValue,
-} from './screen-images-context';
+import { ImageContext, type ImageContextValue } from './image.context';
+import type { ImageProviderProperties } from './image.provider.properties';
 
-const ScreenImagesProvider = (
-  properties: PropsWithChildren<ScreenImagesProviderProperties>,
-) => {
+const ImageProvider = (properties: PropsWithChildren<ImageProviderProperties>) => {
   const { children, images } = properties;
 
   const [currentImageIndex, setCurrentImageIndex] = useLocalStorage(
@@ -30,7 +25,7 @@ const ScreenImagesProvider = (
     );
   }, [setCurrentImageIndex, images.length]);
 
-  const value = useMemo<ScreenImagesContextValue>(
+  const value = useMemo<ImageContextValue>(
     () => ({
       currentImage,
       setNextImage,
@@ -38,11 +33,7 @@ const ScreenImagesProvider = (
     [currentImage, setNextImage],
   );
 
-  return (
-    <ScreenImagesContext.Provider value={value}>
-      {children}
-    </ScreenImagesContext.Provider>
-  );
+  return <ImageContext.Provider value={value}>{children}</ImageContext.Provider>;
 };
 
-export { ScreenImagesProvider };
+export { ImageProvider };

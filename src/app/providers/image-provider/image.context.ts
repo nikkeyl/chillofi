@@ -3,11 +3,11 @@
 import type { StaticImageData } from 'next/image';
 import { createContext } from 'react';
 
-type ScreenImagesContextValue = {
+type ImageContextValue = {
   currentImage: StaticImageData | string;
   setNextImage: () => void;
 };
 
-const ScreenImagesContext = createContext<ScreenImagesContextValue | null>(null);
+const ImageContext = createContext<ImageContextValue | null>(null);
 
-export { ScreenImagesContext, type ScreenImagesContextValue };
+export { ImageContext, type ImageContextValue };

@@ -1,7 +1,5 @@
 {
   "exclude": [
-    "src/app/providers/index.ts",
-    "src/app/providers/screen-images-provider/screen-images.provider.tsx",
     "src/widgets/screen/screen.tsx"
   ]
 }

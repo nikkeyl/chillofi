@@ -1,9 +1,12 @@
 import { getTranslations } from 'next-intl/server';
 
-import { getImages } from '@/config';
-import { ScreenImagesProvider, ScreenNoiseEffectProvider } from '@/providers';
-import { Controls } from '@/ui';
-import { Player, Screen, Switcher } from '@/widgets';
+import { getImages } from '@/config/get-images';
+import { ImageProvider } from '@/providers/image-provider/image.provider';
+import { NoiseProvider } from '@/providers/noise-provider/noise.provider';
+import { Controls } from '@/ui/controls/controls';
+import { Player } from '@/widgets/player/player';
+import { Screen } from '@/widgets/screen/screen';
+import { Switcher } from '@/widgets/switcher/switcher';
 
 const HomePage = async () => {
   const images = await getImages();
@@ -12,12 +15,15 @@ const HomePage = async () => {
   const noiseTranslation = translations('noise_control_label');
   const playTranslation = translations('play_control_label');
   const imageTranslation = translations('image_control_label');
+  const controlsTranslation = translations('controls');
+  const screenTranslation = translations('screen');
+  const altTranslation = translations('alt');
 
   return (
-    <ScreenNoiseEffectProvider>
-      <ScreenImagesProvider images={images}>
-        <Screen />
-        <Controls>
+    <NoiseProvider>
+      <ImageProvider images={images}>
+        <Screen alt={altTranslation} ariaLabel={screenTranslation} />
+        <Controls ariaLabel={controlsTranslation}>
           <Switcher
             ariaLabelledBy={noiseTranslation}
             text={noiseTranslation}
@@ -30,8 +36,8 @@ const HomePage = async () => {
             type='image'
           />
         </Controls>
-      </ScreenImagesProvider>
-    </ScreenNoiseEffectProvider>
+      </ImageProvider>
+    </NoiseProvider>
   );
 };
 

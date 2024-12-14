@@ -2,25 +2,26 @@
 
 import clsx from 'clsx';
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
 
-import { useScreenImagesContext, useScreenNoiseEffectContext } from '@/providers';
+import { useImageContext } from '@/providers/image-provider/use-image.context';
+import { useNoiseContext } from '@/providers/noise-provider/use-noise.context';
 
 import style from './screen.module.scss';
+import type { Properties } from './screen.properties';
 
-const Screen = () => {
-  const { isNoiseEffect } = useScreenNoiseEffectContext();
-  const { currentImage } = useScreenImagesContext();
+const Screen = (properties: Properties) => {
+  const { ariaLabel, alt } = properties;
 
-  const translations = useTranslations('labels');
+  const { isNoise } = useNoiseContext();
+  const { currentImage } = useImageContext();
 
   return (
-    <div
-      aria-label={translations('screen')}
-      className={clsx(style.screen, isNoiseEffect && style.noiseEffect)}
+    <main
+      aria-label={ariaLabel}
+      className={clsx(style.screen, isNoise && style.noiseEffect)}
     >
       <Image
-        alt={translations('alt')}
+        alt={alt}
         blurDataURL='data:image/webp;base64,UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA'
         fetchPriority='high'
         fill
@@ -28,7 +29,7 @@ const Screen = () => {
         priority
         src={currentImage}
       />
-    </div>
+    </main>
   );
 };
 

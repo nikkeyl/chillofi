@@ -4,16 +4,17 @@ import { Howl } from 'howler';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 
-import { useScreenImagesContext, useScreenNoiseEffectContext } from '@/providers';
-import { Button } from '@/ui';
+import { useImageContext } from '@/providers/image-provider/use-image.context';
+import { useNoiseContext } from '@/providers/noise-provider/use-noise.context';
+import { Button } from '@/ui/button/button';
 
 import type { SwitcherProperties } from './switcher.properties';
 
 const Switcher = (properties: SwitcherProperties) => {
   const { ariaLabelledBy, text, type } = properties;
 
-  const { setIsNoiseEffect } = useScreenNoiseEffectContext();
-  const { setNextImage } = useScreenImagesContext();
+  const { setIsNoise } = useNoiseContext();
+  const { setNextImage } = useImageContext();
 
   const [soundsURLS, setSoundsURLS] = useState<string[]>([]);
 
@@ -31,7 +32,7 @@ const Switcher = (properties: SwitcherProperties) => {
     if (type === 'image') {
       setNextImage();
     } else {
-      setIsNoiseEffect();
+      setIsNoise();
     }
   };
 

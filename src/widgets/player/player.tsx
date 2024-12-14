@@ -6,8 +6,8 @@ import { useTranslations } from 'next-intl';
 import { ChangeEvent, useEffect, useState } from 'react';
 import { useLocalStorage } from 'usehooks-ts';
 
-import type { PlayList } from '@/types';
-import { Button } from '@/ui';
+import type { PlayList } from '@/types/playlist';
+import { Button } from '@/ui/button/button';
 
 import style from './player.module.scss';
 import type { PlayerProperties } from './player.properties';
