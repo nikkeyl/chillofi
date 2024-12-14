@@ -29,10 +29,10 @@ const HomePage = async () => {
         <Screen alt={altTranslation} label={screenTranslation} />
         <Controls label={controlsTranslation}>
           <Switcher
+            isNoise
             label={switcherControlTranslation}
             labelledBy={noiseLabelTranslation}
             text={noiseLabelTranslation}
-            type='noise'
           />
           <Player
             label={playControlTranslation}
@@ -42,10 +42,10 @@ const HomePage = async () => {
             volumeLabel={volumeLabelTranslation}
           />
           <Switcher
+            isImage
             label={switcherControlTranslation}
             labelledBy={imageLabelTranslation}
             text={imageLabelTranslation}
-            type='image'
           />
         </Controls>
       </ImageProvider>

@@ -1,8 +1,5 @@
 'use client';
 
-import { Howl } from 'howler';
-import { useEffect, useState } from 'react';
-
 import { useImageContext } from '@/providers/image-provider/use-image.context';
 import { useNoiseContext } from '@/providers/noise-provider/use-noise.context';
 import { Button } from '@/ui/button/button';
@@ -10,40 +7,20 @@ import { Button } from '@/ui/button/button';
 import type { SwitcherProperties } from './switcher.properties';
 
 const Switcher = (properties: SwitcherProperties) => {
-  const { label, labelledBy, text, type } = properties;
+  const { label, labelledBy, text, isImage, isNoise } = properties;
 
   const { setIsNoise } = useNoiseContext();
   const { setNextImage } = useImageContext();
 
-  const [soundsURLS, setSoundsURLS] = useState<string[]>([]);
-
-  const sound = new Howl({
-    src: [soundsURLS[0] || ''],
-    format: 'aac',
-  });
-
   const handleClick = () => {
-    if (soundsURLS[0]) {
-      sound.play();
+    if (isImage) {
+      setNextImage();
     }
 
-    if (type === 'image') {
-      setNextImage();
-    } else {
+    if (isNoise) {
       setIsNoise();
     }
   };
-
-  useEffect(() => {
-    const fetchSounds = async () => {
-      const response = await fetch('/api/get-sounds');
-      const sounds = await response.json();
-
-      setSoundsURLS(sounds);
-    };
-
-    fetchSounds();
-  }, []);
 
   return (
     <Button
