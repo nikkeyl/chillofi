@@ -18,10 +18,7 @@ const Screen = (properties: Properties) => {
   const blurImage = 'UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA';
 
   return (
-    <main
-      aria-label={label}
-      className={clsx(style.screen, isNoise && style.noise)}
-    >
+    <main aria-label={label} className={clsx(style.screen, isNoise && style.noise)}>
       <Image
         alt={alt}
         blurDataURL={`data:image/webp;base64,${blurImage}`}
