@@ -40,12 +40,18 @@
     }
   }
 
-  &.noiseEffect {
+  &::after {
+    transition:
+      background-color var(--default-transition, 0.2s ease-in-out),
+      animation var(--default-transition, 0.2s ease-in-out);
+  }
+
+  &.noise {
     &::after {
       background-color: scale($color-primary-dark, $alpha: -90%);
-      animation: flicker infinite var(--default-transition, $default-transition);
+      animation: noise infinite var(--default-transition, $default-transition);
 
-      @keyframes flicker {
+      @keyframes noise {
         $steps: 50;
 
         @for $index from 0 through $steps {

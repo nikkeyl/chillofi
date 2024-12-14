@@ -1,6 +1,6 @@
 type SwitcherProperties = {
-  ariaLabel: string;
-  ariaLabelledBy: string;
+  label: string;
+  labelledBy: string;
   text: string;
   type: 'noise' | 'image';
 };

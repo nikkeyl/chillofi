@@ -2,8 +2,6 @@ import type { Metadata, Viewport } from 'next';
 
 import socialCoverImage from '@/socials/cover.jpg';
 
-import { isProduction } from './constants';
-
 const title = 'Chillofi';
 const description = 'LOFI-radio for work, study and relax';
 const images = [
@@ -41,7 +39,7 @@ const metadata: Metadata = {
     'study',
     'work',
   ],
-  metadataBase: isProduction ? new URL(siteURL) : new URL('http://localhost:3000'),
+  metadataBase: new URL(siteURL),
   robots: {
     index: true,
     follow: true,
