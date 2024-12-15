@@ -7,7 +7,7 @@
 
 .button {
   position: relative;
-  background-color: var(--color-primary-light, $color-primary-light);
+  background-color: var(--color-secondary, $color-secondary);
   transition: opacity var(--default-transition, $default-transition);
 
   &::before,
@@ -28,10 +28,7 @@
     aspect-ratio: 1;
     inline-size: to-rem(32);
 
-    background-image: var(
-      --color-primary-light-gradient,
-      $color-primary-light-gradient
-    );
+    background-image: var(--color-accent, $color-accent);
 
     transition: scale var(--default-transition, $default-transition);
   }

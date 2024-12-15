@@ -1,8 +1,8 @@
 @use "functions" as *;
 
 // Main Colors
-$color-primary-dark: #130f0e;
-$color-primary-light: #e7cf8a;
+$color-primary: #130f0e;
+$color-secondary: #e7cf8a;
 
 // Secondary Colors
 $color-secondary-red: #f00;
@@ -10,14 +10,14 @@ $color-secondary-green: #0f0;
 $color-secondary-blue: #00f;
 
 // Gradients
-$color-primary-light-gradient: linear-gradient(
+$color-accent: linear-gradient(
   rgb(150 150 150) 30%,
   rgb(40 40 40) 60%,
   rgb(77 77 77) 90%
 );
 
 // Box Shadows
-$default-box-shadow: 0 0 to-rem(20) to-rem(8) $color-primary-dark inset;
+$default-box-shadow: 0 0 to-rem(20) to-rem(8) $color-primary inset;
 
 // Z Indexes
 $z-index-1: 1;
