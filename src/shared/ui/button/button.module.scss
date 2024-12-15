@@ -37,15 +37,15 @@
   }
 
   &:not(:disabled, [aria-disabled="true"]) {
-    &:not(.rectangle):active {
-      &::after {
-        scale: 0.8;
-      }
-    }
-
     &:focus-visible {
       &::after {
         scale: 0.9;
+      }
+    }
+
+    &:not(.rectangle):active {
+      &::after {
+        scale: 0.8;
       }
     }
 
