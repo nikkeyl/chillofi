@@ -4,7 +4,7 @@
 
 .screen {
   position: relative;
-  border: to-rem(3) solid var(--color-primary-dark, $color-primary-dark);
+  border: to-rem(3) solid var(--color-primary, $color-primary);
   border-radius: to-rem(25);
   filter: brightness(0.8) sepia(50%);
 
@@ -18,11 +18,10 @@
   }
 
   &::before {
-    box-shadow: 0 0 to-rem(80) to-rem(60)
-      var(--color-primary-dark, $color-primary-dark) inset;
+    box-shadow: 0 0 to-rem(80) to-rem(60) var(--color-primary, $color-primary) inset;
     background-image: linear-gradient(
-        scale($color-primary-dark, $alpha: -100%) 50%,
-        scale(scale($color-primary-dark, $alpha: -10%), $alpha: -65%) 50%
+        scale($color-primary, $alpha: -100%) 50%,
+        scale(scale($color-primary, $alpha: -10%), $alpha: -65%) 50%
       ),
       linear-gradient(
         90deg,
@@ -35,8 +34,8 @@
       to-rem(4) 100%;
 
     @media (width >= 58.75rem) {
-      box-shadow: 0 0 to-rem(120) to-rem(100)
-        var(--color-primary-dark, $color-primary-dark) inset;
+      box-shadow: 0 0 to-rem(120) to-rem(100) var(--color-primary, $color-primary)
+        inset;
     }
   }
 
@@ -48,7 +47,7 @@
 
   &.noise {
     &::after {
-      background-color: scale($color-primary-dark, $alpha: -90%);
+      background-color: scale($color-primary, $alpha: -90%);
       animation: noise infinite var(--default-transition, $default-transition);
 
       @keyframes noise {

@@ -2,11 +2,11 @@
 
 :root {
   // Main Colors
-  --color-primary-dark: #{$color-primary-dark};
-  --color-primary-light: #{$color-primary-light};
+  --color-primary: #{$color-primary};
+  --color-secondary: #{$color-secondary};
 
   // Gradients
-  --color-primary-light-gradient: #{$color-primary-light-gradient};
+  --color-accent: #{$color-accent};
 
   // Box Shadows
   --default-box-shadow: #{$default-box-shadow};
@@ -28,7 +28,7 @@
   font-family: "Helvetica Neue", sans-serif;
   font-weight: 600;
 
-  color: var(--color-primary-light, $color-primary-light);
+  color: var(--color-secondary, $color-secondary);
 
   -webkit-font-smoothing: antialiased;
 }
