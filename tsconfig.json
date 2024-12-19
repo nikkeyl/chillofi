@@ -24,13 +24,13 @@
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "paths": {
-      "@/config/*": ["./src/app/config/*"],
-      "@/providers/*": ["./src/app/providers/*"],
+      "@/config": ["./src/app/config/index.ts"],
+      "@/providers": ["./src/app/providers/index.ts"],
       "@/socials/*": ["./public/socials/*"],
       "@/styles/*": ["./src/app/styles/*"],
-      "@/types/*": ["./src/shared/types/*"],
-      "@/ui/*": ["./src/shared/ui/*"],
-      "@/widgets/*": ["./src/widgets/*"]
+      "@/types": ["./src/shared/types/index.ts"],
+      "@/ui": ["./src/shared/ui/index.ts"],
+      "@/widgets": ["./src/widgets/index.ts"]
     },
     "resolveJsonModule": true,
     // Projects
