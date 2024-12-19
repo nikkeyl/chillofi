@@ -1,8 +1,7 @@
 'use client';
 
-import { useImageContext } from '@/providers/image-provider/use-image.context';
-import { useNoiseContext } from '@/providers/noise-provider/use-noise.context';
-import { Button } from '@/ui/button/button';
+import { useImageContext, useNoiseContext } from '@/providers';
+import { Button } from '@/ui';
 
 import type { SwitcherProperties } from './switcher.properties';
 

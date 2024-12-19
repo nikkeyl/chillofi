@@ -3,8 +3,7 @@
 import clsx from 'clsx';
 import Image from 'next/image';
 
-import { useImageContext } from '@/providers/image-provider/use-image.context';
-import { useNoiseContext } from '@/providers/noise-provider/use-noise.context';
+import { useImageContext, useNoiseContext } from '@/providers';
 
 import style from './screen.module.scss';
 import type { Properties } from './screen.properties';
