@@ -1,4 +1,4 @@
-type ButtonProperties = {
+type Properties = {
   label: string;
   labelledBy: string;
   text: string;
@@ -7,4 +7,4 @@ type ButtonProperties = {
   onClick: () => void;
 };
 
-export type { ButtonProperties };
+export type { Properties };
