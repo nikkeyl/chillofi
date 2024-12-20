@@ -8,13 +8,13 @@ import type { PlayList } from '@/types';
 import { Button } from '@/ui';
 
 import style from './player.module.scss';
-import type { PlayerProperties } from './player.properties';
+import type { Properties } from './player.properties';
 
 const AudioPlayer = dynamic(() => import('react-modern-audio-player'), {
   ssr: false,
 });
 
-const Player = (properties: PlayerProperties) => {
+const Player = (properties: Properties) => {
   const { label, labelledBy, text, volumeControlLabel, volumeLabel } = properties;
 
   const [isActive, setIsActive] = useState(false);

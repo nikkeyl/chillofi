@@ -5,9 +5,9 @@ import { Howl } from 'howler';
 import { useEffect, useState } from 'react';
 
 import style from './button.module.scss';
-import type { ButtonProperties } from './button.properties';
+import type { Properties } from './button.properties';
 
-const Button = (properties: ButtonProperties) => {
+const Button = (properties: Properties) => {
   const { label, labelledBy, isActive, text, type = 'switch', onClick } = properties;
 
   const [isDisabled, setIsDisabled] = useState(true);

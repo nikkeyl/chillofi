@@ -1,4 +1,4 @@
-type PlayerProperties = {
+type Properties = {
   label: string;
   labelledBy: string;
   text: string;
@@ -6,4 +6,4 @@ type PlayerProperties = {
   volumeLabel: string;
 };
 
-export type { PlayerProperties };
+export type { Properties };

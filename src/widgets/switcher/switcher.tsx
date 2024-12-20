@@ -3,9 +3,9 @@
 import { useImageContext, useNoiseContext } from '@/providers';
 import { Button } from '@/ui';
 
-import type { SwitcherProperties } from './switcher.properties';
+import type { Properties } from './switcher.properties';
 
-const Switcher = (properties: SwitcherProperties) => {
+const Switcher = (properties: Properties) => {
   const { label, labelledBy, text, isImage, isNoise } = properties;
 
   const { setIsNoise } = useNoiseContext();

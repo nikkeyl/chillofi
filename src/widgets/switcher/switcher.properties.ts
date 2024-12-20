@@ -1,4 +1,4 @@
-type SwitcherProperties = {
+type Properties = {
   label: string;
   labelledBy: string;
   text: string;
@@ -6,4 +6,4 @@ type SwitcherProperties = {
   isImage?: boolean;
 };
 
-export type { SwitcherProperties };
+export type { Properties };
