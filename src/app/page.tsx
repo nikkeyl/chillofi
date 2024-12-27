@@ -1,9 +1,13 @@
 import { getTranslations } from 'next-intl/server';
 
-import { getImages } from '@/config';
-import { ImageProvider, NoiseProvider } from '@/providers';
-import { Controls } from '@/ui';
-import { Player, Screen, Switcher } from '@/widgets';
+import { getImages } from '@/config/get-images';
+import { Controls } from '@/ui/controls/controls';
+import { Player } from '@/widgets/player/player';
+import { Screen } from '@/widgets/screen/screen';
+import { Switcher } from '@/widgets/switcher/switcher';
+
+import { ImageProvider } from './providers/image-provider/image.provider';
+import { NoiseProvider } from './providers/noise-provider/noise.provider';
 
 const HomePage = async () => {
   const images = await getImages();
