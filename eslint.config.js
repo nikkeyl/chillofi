@@ -5,6 +5,7 @@ import importSortPlugin from 'eslint-plugin-simple-import-sort';
 import nextPlugin from '@next/eslint-plugin-next';
 import parser from '@typescript-eslint/parser';
 import prettierConfig from 'eslint-config-prettier';
+import sortDestructureKeysPlugin from 'eslint-plugin-sort-destructure-keys';
 import unicornPlugin from 'eslint-plugin-unicorn';
 
 export default defineFlatConfig([
@@ -32,6 +33,7 @@ export default defineFlatConfig([
     },
     plugins: {
       'simple-import-sort': importSortPlugin,
+      'sort-destructure-keys': sortDestructureKeysPlugin,
       next: nextPlugin,
       unicorn: unicornPlugin,
     },
@@ -54,6 +56,7 @@ export default defineFlatConfig([
       'react/jsx-sort-props': 'warn',
       'simple-import-sort/exports': 'warn',
       'simple-import-sort/imports': 'warn',
+      'sort-destructure-keys/sort-destructure-keys': 'warn',
       'unicorn/no-unused-properties': 'warn',
       'unicorn/string-content': 'warn',
     },
