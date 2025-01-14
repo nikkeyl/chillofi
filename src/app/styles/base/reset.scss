@@ -3,38 +3,38 @@
 *,
 *::before,
 *::after {
+  cursor: url("/icons/cursor-default.svg"), default;
+
+  user-select: none;
+
   outline: none;
 
   margin: 0;
 
+  padding: 0;
+
   border: 0;
 
   box-sizing: border-box;
-
-  padding: 0;
-
-  cursor: url("/icons/cursor-default.svg"), default;
-
-  user-select: none;
 }
 
 body {
-  display: grid;
+  overscroll-behavior: none;
 
-  min-block-size: 100svb;
+  background-color: var(--color-primary, $color-primary);
 
   padding: to-rem(10) to-rem(10) to-rem(15);
 
+  min-block-size: 100svb;
+
   overflow: hidden;
 
-  overscroll-behavior: none;
+  display: grid;
 
   grid-template-rows: 1fr auto;
   gap: to-rem(15);
 
   font-size: to-rem(8);
-
-  background-color: var(--color-primary, $color-primary);
 }
 
 img {
@@ -43,8 +43,8 @@ img {
 }
 
 span {
-  opacity: 0.5;
   margin-inline: auto;
+  opacity: 0.5;
 }
 
 button,
@@ -54,8 +54,8 @@ input {
 
   &:disabled,
   [aria-disabled="true"] {
-    opacity: 0.5;
     pointer-events: none;
+    opacity: 0.5;
 
     + span {
       opacity: 0.25;
