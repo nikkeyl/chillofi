@@ -25,10 +25,10 @@
   &::after {
     inset: to-rem(2);
 
+    background-image: var(--color-accent, $color-accent);
+
     aspect-ratio: 1;
     inline-size: to-rem(32);
-
-    background-image: var(--color-accent, $color-accent);
 
     transition: scale var(--default-transition, $default-transition);
   }

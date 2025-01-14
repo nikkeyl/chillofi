@@ -3,9 +3,9 @@
 .wrapper {
   display: flex;
 
-  gap: to-rem(10);
-
   flex-wrap: nowrap;
+
+  gap: to-rem(10);
 
   align-items: center;
   justify-content: center;
