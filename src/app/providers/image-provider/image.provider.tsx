@@ -1,6 +1,6 @@
 'use client';
 
-import { type PropsWithChildren, useCallback, useMemo } from 'react';
+import { type PropsWithChildren, useCallback, useEffect, useMemo } from 'react';
 import { useLocalStorage } from 'usehooks-ts';
 
 import { ImageContext, type ImageContextValue } from './image.context';
@@ -18,6 +18,13 @@ const ImageProvider = (properties: PropsWithChildren<ImageProviderProperties>) =
   );
 
   const currentImage = images[currentImageIndex] ?? '';
+
+  useEffect(() => {
+    const nextImageIndex = (currentImageIndex + 1) % images.length;
+    const nextImage = new Image();
+
+    nextImage.src = images[nextImageIndex] ?? '';
+  }, [currentImageIndex, images]);
 
   const setNextImage = useCallback(() => {
     setCurrentImageIndex(
