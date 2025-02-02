@@ -1,6 +1,6 @@
-type PlayList = {
+type PlayListTypes = {
   src: string;
   id: number;
 };
 
-export type { PlayList };
+export type { PlayListTypes };

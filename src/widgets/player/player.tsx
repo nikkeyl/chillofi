@@ -1,13 +1,13 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { ChangeEvent, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocalStorage } from 'usehooks-ts';
 
-import type { PlayList } from '@/types/playlist';
+import type { PlayListTypes } from '@/types/playlist';
 import { Button } from '@/ui/button/button';
 
-import style from './player.module.scss';
+import { Range } from '../range/range';
 import type { Properties } from './player.properties';
 
 const AudioPlayer = dynamic(() => import('react-modern-audio-player'), {
@@ -22,11 +22,9 @@ const Player = (properties: Properties) => {
   const [volume, setVolume] = useLocalStorage('current-volume', 0.5, {
     initializeWithValue: false,
   });
-  const [musicURLS, setMusicURLS] = useState<PlayList[]>([]);
+  const [musicURLS, setMusicURLS] = useState<PlayListTypes[]>([]);
 
-  const handleVolumeUpdate = (event: ChangeEvent<HTMLInputElement>) => {
-    const newVolume = Number(event.target.value);
-
+  const handleVolumeUpdate = (newVolume: number) => {
     setVolume(newVolume);
   };
 
@@ -63,29 +61,13 @@ const Player = (properties: Properties) => {
         text={text}
         type='play'
       />
-      <label
-        aria-disabled={isDisabled}
-        aria-label={volumeControlLabel}
-        className={style.slider}
-        htmlFor={volumeLabel}
-      >
-        <input
-          aria-disabled={isDisabled}
-          aria-valuemax={1}
-          aria-valuemin={0}
-          aria-valuenow={volume}
-          className={style.track}
-          disabled={isDisabled}
-          id={volumeLabel}
-          max={1}
-          min={0}
-          onChange={handleVolumeUpdate}
-          step={0.001}
-          type='range'
-          value={volume}
-        />
-        <span aria-labelledby={volumeLabel}>{volumeLabel}</span>
-      </label>
+      <Range
+        isDisabled={isDisabled}
+        onChange={handleVolumeUpdate}
+        volume={volume}
+        volumeControlLabel={volumeControlLabel}
+        volumeLabel={volumeLabel}
+      />
       <AudioPlayer
         audioInitialState={{
           volume,

@@ -35,37 +35,37 @@
     box-shadow: 0 0 to-rem(10) to-rem(5) var(--color-primary, $color-primary) inset;
   }
 
-  &::-webkit-slider-thumb {
-    position: relative;
-    z-index: var(--z-index-1, $z-index-1);
+  // &::-webkit-slider-thumb {
+  //   position: relative;
+  //   z-index: var(--z-index-1, $z-index-1);
 
-    background-image: var(--color-accent, $color-accent);
+  //   background-image: var(--color-accent, $color-accent);
 
-    border-radius: var(--default-border-radius, $default-border-radius);
+  //   border-radius: var(--default-border-radius, $default-border-radius);
 
-    block-size: to-rem(36);
-    inline-size: to-rem(18);
+  //   block-size: to-rem(36);
+  //   inline-size: to-rem(18);
 
-    appearance: none;
+  //   appearance: none;
 
-    transition: scale var(--default-transition, $default-transition);
-  }
+  //   transition: scale var(--default-transition, $default-transition);
+  // }
 
-  &::-moz-range-thumb {
-    position: relative;
-    z-index: var(--z-index-1, $z-index-1);
+  // &::-moz-range-thumb {
+  //   position: relative;
+  //   z-index: var(--z-index-1, $z-index-1);
 
-    background-image: var(--color-accent, $color-accent);
+  //   background-image: var(--color-accent, $color-accent);
 
-    border-radius: var(--default-border-radius, $default-border-radius);
+  //   border-radius: var(--default-border-radius, $default-border-radius);
 
-    block-size: to-rem(36);
-    inline-size: to-rem(18);
+  //   block-size: to-rem(36);
+  //   inline-size: to-rem(18);
 
-    appearance: none;
+  //   appearance: none;
 
-    transition: scale var(--default-transition, $default-transition);
-  }
+  //   transition: scale var(--default-transition, $default-transition);
+  // }
 
   &:disabled {
     opacity: 0.5;
@@ -108,4 +108,30 @@
       }
     }
   }
+}
+
+.thumb {
+  position: absolute;
+  inset-block-start: 50%;
+  z-index: var(--z-index-1, $z-index-1);
+
+  transform: translate(-50%, -50%);
+
+  background-image: var(--color-accent, $color-accent);
+
+  border-radius: var(--default-border-radius, $default-border-radius);
+
+  block-size: to-rem(36);
+  inline-size: to-rem(18);
+
+  // display: flex;
+  display: block;
+
+  // appearance: none;
+
+  transition:
+    scale var(--default-transition, $default-transition),
+    inset-inline-start 0.1s;
+
+  // inset-inline-start var(--default-transition, $default-transition);
 }
