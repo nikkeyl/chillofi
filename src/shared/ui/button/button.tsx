@@ -8,7 +8,7 @@ import style from './button.module.scss';
 import type { Properties } from './button.properties';
 
 const Button = (properties: Properties) => {
-  const { label, labelledBy, isActive, text, type = 'switch', onClick } = properties;
+  const { isActive, label, labelledBy, onClick, text, type = 'switch' } = properties;
 
   const [isDisabled, setIsDisabled] = useState(true);
   const [soundsURLS, setSoundsURLS] = useState<string[]>([]);

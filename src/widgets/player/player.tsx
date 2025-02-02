@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import { useLocalStorage } from 'usehooks-ts';
 
-import type { PlayList } from '@/types/playlist';
+import type { PlayListTypes } from '@/types/playlist';
 import { Button } from '@/ui/button/button';
 
 import { Range } from '../range/range';
@@ -22,7 +22,7 @@ const Player = (properties: Properties) => {
   const [volume, setVolume] = useLocalStorage('current-volume', 0.5, {
     initializeWithValue: false,
   });
-  const [musicURLS, setMusicURLS] = useState<PlayList[]>([]);
+  const [musicURLS, setMusicURLS] = useState<PlayListTypes[]>([]);
 
   const handleVolumeUpdate = (newVolume: number) => {
     setVolume(newVolume);

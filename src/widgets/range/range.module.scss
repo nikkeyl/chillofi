@@ -129,8 +129,9 @@
 
   // appearance: none;
 
-  transition: scale var(--default-transition, $default-transition),
-  left 0.1s;
+  transition:
+    scale var(--default-transition, $default-transition),
+    inset-inline-start 0.1s;
 
   // inset-inline-start var(--default-transition, $default-transition);
 }
