@@ -14,7 +14,7 @@ const Button = (properties: Properties) => {
   const [soundsURLS, setSoundsURLS] = useState<string[]>([]);
 
   const sound = new Howl({
-    src: [soundsURLS[0] || ''],
+    src: [soundsURLS[0] ?? ''],
     format: 'aac',
   });
 
