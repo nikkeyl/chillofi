@@ -1,0 +1,14 @@
+{
+  "labels": {
+    "controls": "Kontrolliert",
+    "alt": "Kein Zeichen",
+    "image_control_label": "Bild",
+    "noise_control_label": "Lärm",
+    "play_control_label": "Aus/Ein",
+    "play_control": "Wiedergabe Controller",
+    "screen": "Schirm",
+    "switcher_control": "Schaltender Controller",
+    "volume_control_label": "Band",
+    "volume_control": "Lautstärkeregler"
+  }
+}

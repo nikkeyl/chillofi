@@ -1,0 +1,12 @@
+@mixin pseudo {
+  content: "";
+  position: absolute;
+}
+
+@mixin media-hover($type: hover) {
+  @media (any-hover: $type) {
+    &:hover {
+      @content;
+    }
+  }
+}

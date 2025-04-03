@@ -1,0 +1,12 @@
+@use "sass:math" as *;
+
+@function rounder($divisible, $divisor, $decimal: 4) {
+  $divide: div($divisible, $divisor);
+  $pow: pow(10, $decimal);
+
+  @return div(round($divide * $pow), $pow);
+}
+
+@function to-rem($px) {
+  @return rounder($px, 16) + rem;
+}

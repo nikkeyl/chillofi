@@ -1,0 +1,9 @@
+# Directories
+public
+
+# Files
+*.md
+
+# Ignores
+.gitignore
+.prettierignore

@@ -1,0 +1,111 @@
+@use "@/styles/abstracts" as *;
+
+.slider {
+  block-size: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+.track {
+  position: relative;
+
+  margin-block-start: to-rem(9);
+
+  border-radius: var(--default-border-radius, $default-border-radius);
+
+  block-size: to-rem(18);
+  inline-size: to-rem(126);
+
+  transition: opacity var(--default-transition, $default-transition);
+
+  &::before,
+  &::after {
+    @include pseudo;
+
+    border-radius: inherit;
+  }
+
+  &::before {
+    inset: 0;
+    background-color: var(--color-secondary, $color-secondary);
+  }
+
+  &::after {
+    inset: to-rem(-1);
+    box-shadow: 0 0 to-rem(10) to-rem(5) var(--color-primary, $color-primary) inset;
+  }
+
+  &::-webkit-slider-thumb {
+    position: relative;
+    z-index: var(--z-index-1, $z-index-1);
+
+    border-radius: var(--default-border-radius, $default-border-radius);
+
+    block-size: to-rem(36);
+    inline-size: to-rem(18);
+
+    appearance: none;
+
+    background-image: var(--color-accent, $color-accent);
+
+    transition: scale var(--default-transition, $default-transition);
+  }
+
+  &::-moz-range-thumb {
+    position: relative;
+    z-index: var(--z-index-1, $z-index-1);
+
+    border-radius: var(--default-border-radius, $default-border-radius);
+
+    block-size: to-rem(36);
+    inline-size: to-rem(18);
+
+    appearance: none;
+
+    background-image: var(--color-accent, $color-accent);
+
+    transition: scale var(--default-transition, $default-transition);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+
+  &:not(:disabled):focus-visible,
+  &:not(:disabled):active {
+    &::-webkit-slider-thumb {
+      scale: 0.9;
+    }
+
+    &::-moz-range-thumb {
+      scale: 0.9;
+    }
+  }
+
+  @include media-hover {
+    &::before,
+    &::after {
+      cursor: url("/icons/cursor-pointer.svg"), pointer;
+    }
+
+    &::-webkit-slider-thumb {
+      cursor: url("/icons/cursor-pointer.svg"), pointer;
+
+      &:active {
+        cursor:
+          url("/icons/cursor-grabbing.svg") 7 0,
+          grabbing;
+      }
+    }
+
+    &::-moz-range-thumb {
+      cursor: url("/icons/cursor-pointer.svg"), pointer;
+
+      &:active {
+        cursor:
+          url("/icons/cursor-grabbing.svg") 7 0,
+          grabbing;
+      }
+    }
+  }
+}

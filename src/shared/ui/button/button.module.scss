@@ -1,0 +1,84 @@
+@use "@/styles/abstracts" as *;
+
+.wrapper {
+  display: grid;
+  gap: to-rem(5);
+}
+
+.button {
+  position: relative;
+  background-color: var(--color-secondary, $color-secondary);
+  transition: opacity var(--default-transition, $default-transition);
+
+  &::before,
+  &::after {
+    @include pseudo;
+
+    border-radius: inherit;
+  }
+
+  &::before {
+    inset: to-rem(-1);
+    box-shadow: var(--default-box-shadow, $default-box-shadow);
+  }
+
+  &::after {
+    inset: to-rem(2);
+
+    aspect-ratio: 1;
+    inline-size: to-rem(32);
+
+    background-image: var(--color-accent, $color-accent);
+
+    transition: scale var(--default-transition, $default-transition);
+  }
+
+  &:not(:disabled, [aria-disabled="true"]) {
+    &:focus-visible {
+      &::after {
+        scale: 0.9;
+      }
+    }
+
+    &:not(.rectangle):active {
+      &::after {
+        scale: 0.8;
+      }
+    }
+
+    @include media-hover {
+      &::before,
+      &::after {
+        cursor: url("/icons/cursor-pointer.svg"), pointer;
+      }
+    }
+  }
+
+  &.circle {
+    border-radius: 50%;
+    aspect-ratio: 1;
+    inline-size: to-rem(36);
+
+    &::after {
+      transition: scale var(--default-transition, $default-transition);
+    }
+  }
+
+  &.rectangle {
+    border-radius: var(--default-border-radius, $default-border-radius);
+    block-size: to-rem(36);
+    inline-size: to-rem(72);
+
+    &::after {
+      transition:
+        inset-inline var(--default-transition, $default-transition),
+        scale var(--default-transition, $default-transition);
+    }
+
+    &.active {
+      &::after {
+        inset-inline-start: to-rem(38);
+      }
+    }
+  }
+}

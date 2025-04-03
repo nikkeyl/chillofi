@@ -1,0 +1,14 @@
+{
+  "labels": {
+    "controls": "Контроллеры",
+    "alt": "Нет Сигнала",
+    "image_control_label": "Изобр.",
+    "noise_control_label": "Шум",
+    "play_control_label": "Выкл/Вкл",
+    "play_control": "Контроллер Воспроизведения",
+    "screen": "Экран",
+    "switcher_control": "Контроллер Переключения",
+    "volume_control_label": "Громкость",
+    "volume_control": "Контроллер Громкости"
+  }
+}

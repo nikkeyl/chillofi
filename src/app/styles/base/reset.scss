@@ -1,0 +1,64 @@
+@use "@/styles/abstracts" as *;
+
+*,
+*::before,
+*::after {
+  cursor: url("/icons/cursor-default.svg"), default;
+
+  user-select: none;
+
+  margin: 0;
+
+  padding: 0;
+
+  border: 0;
+
+  box-sizing: border-box;
+
+  outline: none;
+}
+
+body {
+  overscroll-behavior: none;
+
+  padding: to-rem(10) to-rem(10) to-rem(15);
+
+  min-block-size: 100svb;
+
+  overflow: hidden;
+
+  display: grid;
+
+  grid-template-rows: 1fr auto;
+  gap: to-rem(15);
+
+  background-color: var(--color-primary, $color-primary);
+
+  font-size: to-rem(12);
+}
+
+img {
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+span {
+  margin-inline: auto;
+  opacity: 0.5;
+}
+
+button,
+input {
+  appearance: none;
+  display: block;
+
+  &:disabled,
+  [aria-disabled="true"] {
+    pointer-events: none;
+    opacity: 0.5;
+
+    + span {
+      opacity: 0.25;
+    }
+  }
+}

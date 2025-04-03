@@ -1,0 +1,14 @@
+{
+  "labels": {
+    "controls": "コントロール",
+    "alt": "シグナルなし",
+    "image_control_label": "イメージ",
+    "noise_control_label": "ノイズ",
+    "play_control_label": "オフ/オン",
+    "play_control": "プレーコントロール",
+    "screen": "スクリーン",
+    "switcher_control": "スイッチャーコントロール",
+    "volume_control_label": "ボリューム",
+    "volume_control": "ボリュームコントロール"
+  }
+}

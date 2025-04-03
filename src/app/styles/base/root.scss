@@ -1,0 +1,34 @@
+@use "@/styles/abstracts" as *;
+
+:root {
+  // Main Colors
+  --color-primary: #{$color-primary};
+  --color-secondary: #{$color-secondary};
+
+  // Gradients
+  --color-accent: #{$color-accent};
+
+  // Box Shadows
+  --default-box-shadow: #{$default-box-shadow};
+
+  // Z Indexes
+  --z-index-1: #{$z-index-1};
+
+  // Border Radiuses
+  --default-border-radius: #{$default-border-radius};
+
+  // Transitions
+  --default-transition: #{$default-transition};
+
+  color: var(--color-secondary, $color-secondary);
+
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 600;
+
+  text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
+
+  line-height: 1;
+
+  -webkit-font-smoothing: antialiased;
+}

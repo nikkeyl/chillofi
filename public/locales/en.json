@@ -1,0 +1,14 @@
+{
+  "labels": {
+    "controls": "Controls",
+    "alt": "No Signal",
+    "image_control_label": "Image",
+    "noise_control_label": "Noise",
+    "play_control_label": "Off/On",
+    "play_control": "Play Control",
+    "screen": "Screen",
+    "switcher_control": "Switcher Control",
+    "volume_control_label": "Volume",
+    "volume_control": "Volume Control"
+  }
+}
