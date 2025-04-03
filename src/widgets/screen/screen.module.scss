@@ -34,7 +34,7 @@
       100% to-rem(3),
       to-rem(4) 100%;
 
-    @media (width >= 58.75rem) {
+    @media (width >= 58.75em) {
       box-shadow: 0 0 to-rem(120) to-rem(100) var(--color-primary, $color-primary)
         inset;
     }
@@ -42,14 +42,14 @@
 
   &::after {
     transition:
-      background-color var(--default-transition, 0.2s ease-in-out),
-      animation var(--default-transition, 0.2s ease-in-out);
+      background-color var(--default-transition, $default-transition),
+      animation var(--default-transition, $default-transition);
   }
 
   &.noise {
     &::after {
       background-color: scale($color-primary, $alpha: -90%);
-      animation: noise infinite var(--default-transition, $default-transition);
+      animation: noise 0.2s infinite;
 
       @keyframes noise {
         $steps: 50;
