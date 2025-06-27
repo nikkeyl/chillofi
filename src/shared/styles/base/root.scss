@@ -1,23 +1,17 @@
 @use "@/styles/abstracts" as *;
 
 :root {
-  // Main Colors
   --color-primary: #{$color-primary};
   --color-secondary: #{$color-secondary};
 
-  // Gradients
   --color-accent: #{$color-accent};
 
-  // Box Shadows
   --default-box-shadow: #{$default-box-shadow};
 
-  // Z Indexes
   --z-index-1: #{$z-index-1};
 
-  // Border Radiuses
   --default-border-radius: #{$default-border-radius};
 
-  // Transitions
   --default-transition: #{$default-transition};
 
   color: var(--color-secondary, $color-secondary);
