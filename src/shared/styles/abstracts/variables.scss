@@ -2,21 +2,15 @@
 
 $color-primary: #130f0e;
 $color-secondary: #e7cf8a;
-
 $color-secondary-red: #f00;
 $color-secondary-green: #0f0;
 $color-secondary-blue: #00f;
-
 $color-accent: linear-gradient(
   rgb(150 150 150) 30%,
   rgb(40 40 40) 60%,
   rgb(77 77 77) 90%
 );
-
 $default-box-shadow: 0 0 to-rem(20) to-rem(8) $color-primary inset;
-
 $z-index-1: 1;
-
 $default-border-radius: to-rem(5);
-
 $default-transition: 0.2s;
