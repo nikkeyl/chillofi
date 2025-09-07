@@ -9,7 +9,7 @@ export default withNextIntl(
       formats: ['image/webp'],
       remotePatterns: [
         {
-          hostname: 'chillofi.vercel.app',
+          hostname: 'chillofi.com',
           pathname: '/images/**',
           protocol: 'https',
         },
