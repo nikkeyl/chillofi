@@ -3,7 +3,7 @@ services:
     image: ${IMAGE_TAG:-placeholder:latest}
     container_name: chillofi-frontend
     ports:
-      - 3000:3000
+      - 3001:3000
     environment:
       - NODE_OPTIONS=--max-old-space-size=256
     restart: unless-stopped
