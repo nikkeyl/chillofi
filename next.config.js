@@ -5,6 +5,7 @@ const withNextIntl = createNextIntlPlugin('./src/app/i18n/get-request-config.ts'
 
 export default withNextIntl(
   defineConfig({
+    output: 'standalone',
     images: {
       formats: ['image/webp'],
       remotePatterns: [

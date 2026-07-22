@@ -1,28 +1,25 @@
 'use client';
 
-import dynamic from 'next/dynamic';
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent, useEffect, useRef, useState } from 'react';
 import { useLocalStorage } from 'usehooks-ts';
 
-import type { PlayList } from '@/types/playlist';
 import { Button } from '@/ui/button/button';
 
 import style from './player.module.scss';
 import type { Properties } from './player.properties';
 
-const AudioPlayer = dynamic(() => import('react-modern-audio-player'), {
-  ssr: false,
-});
-
 const Player = (properties: Properties) => {
   const { label, labelledBy, text, volumeControlLabel, volumeLabel } = properties;
+
+  const audioElementReference = useRef<HTMLAudioElement>(null);
 
   const [isActive, setIsActive] = useState(false);
   const [isDisabled, setIsDisabled] = useState(true);
   const [volume, setVolume] = useLocalStorage('current-volume', 0.5, {
     initializeWithValue: false,
   });
-  const [musicURLS, setMusicURLS] = useState<PlayList[]>([]);
+  const [musicURLS, setMusicURLS] = useState<string[]>([]);
+  const [trackIndex, setTrackIndex] = useState(0);
 
   const handleVolumeUpdate = (event: ChangeEvent<HTMLInputElement>) => {
     const newVolume = Number(event.target.value);
@@ -34,24 +31,37 @@ const Player = (properties: Properties) => {
     setIsActive((previousState) => !previousState);
   };
 
+  const handleTrackEnded = () => {
+    setTrackIndex((previousIndex) => (previousIndex + 1) % musicURLS.length);
+  };
+
   useEffect(() => {
     const fetchMusic = async () => {
       const response = await fetch('/api/get-music');
       const music = await response.json();
 
-      const playList = music.map((src: string, id: number) => ({
-        src,
-        id,
-      }));
-
-      setMusicURLS(playList);
+      setMusicURLS(music);
+      setIsDisabled(false);
     };
 
-    setTimeout(() => {
-      fetchMusic();
-      setIsDisabled(false);
-    }, 1000);
+    fetchMusic();
   }, []);
+
+  useEffect(() => {
+    if (!audioElementReference.current) return;
+
+    audioElementReference.current.volume = volume;
+  }, [volume]);
+
+  useEffect(() => {
+    if (!audioElementReference.current || musicURLS.length === 0) return;
+
+    if (isActive) {
+      audioElementReference.current.play();
+    } else {
+      audioElementReference.current.pause();
+    }
+  }, [isActive, musicURLS]);
 
   return (
     <>
@@ -86,15 +96,13 @@ const Player = (properties: Properties) => {
         />
         <span aria-labelledby={volumeLabel}>{volumeLabel}</span>
       </label>
-      <AudioPlayer
-        audioInitialState={{
-          volume,
-          curPlayId: 0,
-          isPlaying: isActive,
-          muted: !volume,
-        }}
-        playList={musicURLS}
-      />
+      <audio
+        ref={audioElementReference}
+        onEnded={handleTrackEnded}
+        src={musicURLS[trackIndex]}
+      >
+        <track kind='captions' label='No captions' src='' />
+      </audio>
     </>
   );
 };

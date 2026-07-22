@@ -2,7 +2,7 @@
 
 import clsx from 'clsx';
 import { Howl } from 'howler';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import style from './button.module.scss';
 import type { Properties } from './button.properties';
@@ -12,16 +12,10 @@ const Button = (properties: Properties) => {
 
   const [isDisabled, setIsDisabled] = useState(true);
   const [soundsURLS, setSoundsURLS] = useState<string[]>([]);
-
-  const sound = new Howl({
-    src: [soundsURLS[0] ?? ''],
-    format: 'aac',
-  });
+  const soundReference = useRef<Howl | null>(null);
 
   const handleClick = () => {
-    if (soundsURLS[0]) {
-      sound.play();
-    }
+    soundReference.current?.play();
   };
 
   useEffect(() => {
@@ -30,13 +24,28 @@ const Button = (properties: Properties) => {
       const sounds = await response.json();
 
       setSoundsURLS(sounds);
+      setIsDisabled(false);
     };
 
-    setTimeout(() => {
-      fetchSounds();
-      setIsDisabled(false);
-    }, 1000);
+    fetchSounds();
   }, []);
+
+  useEffect(() => {
+    const soundSource = soundsURLS[0];
+
+    if (!soundSource) return undefined;
+
+    const sound = new Howl({
+      src: [soundSource],
+      format: 'aac',
+    });
+
+    soundReference.current = sound;
+
+    return () => {
+      sound.unload();
+    };
+  }, [soundsURLS]);
 
   return (
     <div className={style.wrapper}>

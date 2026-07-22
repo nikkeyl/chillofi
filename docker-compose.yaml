@@ -1,0 +1,22 @@
+services:
+  frontend:
+    image: ${IMAGE_TAG:-placeholder:latest}
+    container_name: chillofi-frontend
+    ports:
+      - 3000:3000
+    environment:
+      - NODE_OPTIONS=--max-old-space-size=256
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 600M
+        reservations:
+          cpus: '0.5'
+          memory: 300M
+    logging:
+      driver: 'json-file'
+      options:
+        max-size: '10m'
+        max-file: '3'
