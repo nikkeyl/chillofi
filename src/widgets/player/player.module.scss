@@ -35,6 +35,11 @@
     box-shadow: 0 0 to-rem(10) to-rem(5) var(--color-primary, $color-primary) inset;
   }
 
+  &::-webkit-slider-runnable-track {
+    appearance: none;
+    background: transparent;
+  }
+
   &::-webkit-slider-thumb {
     position: relative;
     z-index: var(--z-index-1, $z-index-1);
@@ -49,6 +54,11 @@
     background-image: var(--color-accent, $color-accent);
 
     transition: scale var(--default-transition, $default-transition);
+  }
+
+  &::-moz-range-track {
+    appearance: none;
+    background: transparent;
   }
 
   &::-moz-range-thumb {

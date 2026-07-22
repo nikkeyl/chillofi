@@ -12,6 +12,8 @@ const Player = (properties: Properties) => {
   const { label, labelledBy, text, volumeControlLabel, volumeLabel } = properties;
 
   const audioElementReference = useRef<HTMLAudioElement>(null);
+  const audioContextReference = useRef<AudioContext | null>(null);
+  const gainNodeReference = useRef<GainNode | null>(null);
 
   const [isActive, setIsActive] = useState(false);
   const [isDisabled, setIsDisabled] = useState(true);
@@ -27,7 +29,31 @@ const Player = (properties: Properties) => {
     setVolume(newVolume);
   };
 
+  const ensureAudioGraph = () => {
+    if (!audioElementReference.current || gainNodeReference.current) return;
+
+    const AudioContextConstructor =
+      window.AudioContext ||
+      (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+    const audioContext = new AudioContextConstructor();
+    const sourceNode = audioContext.createMediaElementSource(audioElementReference.current);
+    const gainNode = audioContext.createGain();
+
+    sourceNode.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+    gainNode.gain.value = volume;
+
+    audioContextReference.current = audioContext;
+    gainNodeReference.current = gainNode;
+  };
+
   const handleClick = () => {
+    ensureAudioGraph();
+
+    if (audioContextReference.current?.state === 'suspended') {
+      audioContextReference.current.resume();
+    }
+
     setIsActive((previousState) => !previousState);
   };
 
@@ -48,6 +74,11 @@ const Player = (properties: Properties) => {
   }, []);
 
   useEffect(() => {
+    if (gainNodeReference.current) {
+      gainNodeReference.current.gain.value = volume;
+      return;
+    }
+
     if (!audioElementReference.current) return;
 
     audioElementReference.current.volume = volume;
@@ -61,7 +92,7 @@ const Player = (properties: Properties) => {
     } else {
       audioElementReference.current.pause();
     }
-  }, [isActive, musicURLS]);
+  }, [isActive, musicURLS, trackIndex]);
 
   return (
     <>
