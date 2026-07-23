@@ -3,6 +3,7 @@
 import { ChangeEvent, useEffect, useRef, useState } from 'react';
 import { useLocalStorage } from 'usehooks-ts';
 
+import { useClickSound } from '@/hooks/use-click-sound';
 import { Button } from '@/ui/button/button';
 
 import style from './player.module.scss';
@@ -14,6 +15,9 @@ const Player = (props: Props) => {
   const audioElementReference = useRef<HTMLAudioElement>(null);
   const audioContextReference = useRef<AudioContext | null>(null);
   const gainNodeReference = useRef<GainNode | null>(null);
+  const isInternalToggleReference = useRef(false);
+
+  const { playSound } = useClickSound();
 
   const [isActive, setIsActive] = useState(false);
   const [isDisabled, setIsDisabled] = useState(true);
@@ -57,11 +61,35 @@ const Player = (props: Props) => {
       audioContextReference.current.resume();
     }
 
+    isInternalToggleReference.current = true;
     setIsActive((previousState) => !previousState);
   };
 
   const handleTrackEnded = () => {
+    isInternalToggleReference.current = true;
     setTrackIndex((previousIndex) => (previousIndex + 1) % musicURLS.length);
+  };
+
+  const handleAudioPause = () => {
+    if (!isInternalToggleReference.current) {
+      playSound();
+    }
+
+    isInternalToggleReference.current = false;
+    setIsActive(false);
+  };
+
+  const handleAudioPlay = () => {
+    if (audioContextReference.current?.state === 'suspended') {
+      audioContextReference.current.resume();
+    }
+
+    if (!isInternalToggleReference.current) {
+      playSound();
+    }
+
+    isInternalToggleReference.current = false;
+    setIsActive(true);
   };
 
   useEffect(() => {
@@ -132,6 +160,8 @@ const Player = (props: Props) => {
       </label>
       <audio
         onEnded={handleTrackEnded}
+        onPause={handleAudioPause}
+        onPlay={handleAudioPlay}
         ref={audioElementReference}
         src={musicURLS[trackIndex]}
       >

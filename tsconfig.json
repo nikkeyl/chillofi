@@ -19,6 +19,7 @@
     "moduleResolution": "Bundler",
     "paths": {
       "@/config/*": ["./src/shared/config/*"],
+      "@/hooks/*": ["./src/shared/hooks/*"],
       "@/providers/*": ["./src/app/providers/*"],
       "@/socials/*": ["./public/socials/*"],
       "@/styles/*": ["./src/shared/styles/*"],
