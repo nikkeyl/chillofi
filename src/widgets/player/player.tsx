@@ -71,6 +71,8 @@ const Player = (props: Props) => {
   };
 
   const handleAudioPause = () => {
+    if (audioElementReference.current?.ended) return;
+
     if (!isInternalToggleReference.current) {
       playSound();
     }

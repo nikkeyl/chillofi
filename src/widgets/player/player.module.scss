@@ -36,6 +36,7 @@
   }
 
   &::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
     appearance: none;
     background: transparent;
   }
