@@ -1,4 +1,4 @@
-type Properties = {
+type Props = {
   label: string;
   labelledBy: string;
   text: string;
@@ -7,4 +7,4 @@ type Properties = {
   onClick: () => void;
 };
 
-export type { Properties };
+export type { Props };

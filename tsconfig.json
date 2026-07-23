@@ -11,7 +11,7 @@
     "noEmit": true,
     "skipLibCheck": true,
     "allowJs": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "lib": ["DOM.Iterable", "DOM", "ESNext"],
     "target": "ESNext",
     "allowImportingTsExtensions": true,
@@ -43,5 +43,11 @@
     "isolatedModules": true
   },
   "exclude": ["node_modules"],
-  "include": ["**/*.tsx", "**/*.ts", ".next/types/**/*.ts", "next-env.d.ts"]
+  "include": [
+    "**/*.tsx",
+    "**/*.ts",
+    ".next/types/**/*.ts",
+    "next-env.d.ts",
+    ".next/dev/types/**/*.ts"
+  ]
 }

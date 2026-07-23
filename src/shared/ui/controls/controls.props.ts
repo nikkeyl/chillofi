@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from 'react';
 
-type Properties = PropsWithChildren & {
+type Props = PropsWithChildren & {
   label: string;
 };
 
-export type { Properties };
+export type { Props };

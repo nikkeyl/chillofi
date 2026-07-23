@@ -4,8 +4,8 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
 import type { PropsWithChildren } from 'react';
 
-const RootLayout = async (properties: PropsWithChildren) => {
-  const { children } = properties;
+const RootLayout = async (props: PropsWithChildren) => {
+  const { children } = props;
 
   const locale = await getLocale();
   const messages = await getMessages();

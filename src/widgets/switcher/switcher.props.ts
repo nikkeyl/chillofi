@@ -1,4 +1,4 @@
-type Properties = {
+type Props = {
   label: string;
   labelledBy: string;
   text: string;
@@ -6,4 +6,4 @@ type Properties = {
   isImage?: boolean;
 };
 
-export type { Properties };
+export type { Props };

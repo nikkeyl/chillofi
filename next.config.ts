@@ -10,7 +10,7 @@ export default withNextIntl(
       formats: ['image/webp'],
       remotePatterns: [
         {
-          hostname: 'chillofi.com',
+          hostname: 'chillofi.nikkeyl.com',
           pathname: '/images/**',
           protocol: 'https',
         },

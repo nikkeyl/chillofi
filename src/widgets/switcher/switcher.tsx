@@ -4,10 +4,10 @@ import { useImageContext } from '@/providers/image-provider/use-image.context';
 import { useNoiseContext } from '@/providers/noise-provider/use-noise.context';
 import { Button } from '@/ui/button/button';
 
-import type { Properties } from './switcher.properties';
+import type { Props } from './switcher.props';
 
-const Switcher = (properties: Properties) => {
-  const { isImage, isNoise, label, labelledBy, text } = properties;
+const Switcher = (props: Props) => {
+  const { isImage, isNoise, label, labelledBy, text } = props;
 
   const { setIsNoise } = useNoiseContext();
   const { setNextImage } = useImageContext();

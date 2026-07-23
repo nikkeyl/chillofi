@@ -1,26 +1,28 @@
 import { defineFlatConfig } from 'eslint-define-config';
-import { extend } from '@archoleat/eslint-flat-compatibility';
+import { fixupPluginRules } from '@eslint/compat';
+import eslintPluginReactHooksPlugin from 'eslint-plugin-react-hooks';
 import globals from 'globals';
+import importPlugin from 'eslint-plugin-import';
 import importSortPlugin from 'eslint-plugin-simple-import-sort';
 import nextPlugin from '@next/eslint-plugin-next';
-import parser from '@typescript-eslint/parser';
 import prettierConfig from 'eslint-config-prettier';
+import reactPlugin from 'eslint-plugin-react';
 import sortDestructureKeysPlugin from 'eslint-plugin-sort-destructure-keys';
+import typeScriptParser from '@typescript-eslint/parser';
+import typeScriptPlugin from '@typescript-eslint/eslint-plugin';
 import unicornPlugin from 'eslint-plugin-unicorn';
 
 export default defineFlatConfig([
-  ...extend('airbnb', 'airbnb-typescript', 'plugin:react/jsx-runtime'),
   {
     files: ['src/**/*.tsx', 'src/**/*.ts'],
     languageOptions: {
-      parser,
+      parser: typeScriptParser,
       globals: {
         ...globals.browser,
         ...globals.es2015,
       },
       parserOptions: {
         ecmaVersion: 'latest',
-        project: 'tsconfig.json',
       },
       sourceType: 'module',
     },
@@ -30,22 +32,50 @@ export default defineFlatConfig([
           project: 'tsconfig.json',
         },
       },
+      react: {
+        version: 'detect',
+      },
     },
     plugins: {
+      '@typescript-eslint': typeScriptPlugin,
+      'react-hooks': fixupPluginRules(eslintPluginReactHooksPlugin),
       'simple-import-sort': importSortPlugin,
       'sort-destructure-keys': sortDestructureKeysPlugin,
-      next: nextPlugin,
+      import: fixupPluginRules(importPlugin),
+      next: fixupPluginRules(nextPlugin),
+      react: fixupPluginRules(reactPlugin),
       unicorn: unicornPlugin,
     },
     rules: {
+      '@typescript-eslint/ban-ts-comment': 'error',
+      '@typescript-eslint/naming-convention': [
+        'error',
+        {
+          selector: 'variableLike',
+          format: ['snake_case', 'camelCase', 'PascalCase', 'UPPER_CASE'],
+          filter: {
+            regex: '^_',
+            match: false,
+          },
+        },
+      ],
+      '@typescript-eslint/no-explicit-any': 'error',
+      'comma-dangle': ['warn', 'only-multiline'],
       'func-style': ['error', 'expression'],
+      'object-shorthand': ['warn', 'always'],
+      'import/default': 'error',
+      'import/export': 'error',
       'import/exports-last': 'error',
       'import/group-exports': 'error',
+      'import/named': 'error',
+      'import/namespace': 'error',
       'import/no-commonjs': 'error',
       'import/no-default-export': 'off',
       'import/no-namespace': 'error',
       'import/no-unassigned-import': 'off',
+      'import/no-unresolved': ['error', { commonjs: true, amd: true }],
       'import/prefer-default-export': 'off',
+      'react/destructuring-assignment': ['error', 'always'],
       'react/function-component-definition': [
         'error',
         {
@@ -53,8 +83,18 @@ export default defineFlatConfig([
           unnamedComponents: 'arrow-function',
         },
       ],
+      'react-hooks/exhaustive-deps': 'warn',
+      'react-hooks/rules-of-hooks': 'error',
+      'react/jsx-curly-brace-presence': 'warn',
       'react/jsx-sort-props': 'warn',
-      'simple-import-sort/exports': 'warn',
+      'react/self-closing-comp': [
+        'error',
+        {
+          component: true,
+          html: true,
+        },
+      ],
+      'simple-import-sort/exports': 'error',
       'simple-import-sort/imports': 'warn',
       'sort-destructure-keys/sort-destructure-keys': 'warn',
       'unicorn/no-unused-properties': 'warn',

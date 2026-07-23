@@ -4,10 +4,10 @@ import { type PropsWithChildren, useCallback, useMemo } from 'react';
 import { useLocalStorage } from 'usehooks-ts';
 
 import { ImageContext, type ImageContextValue } from './image.context';
-import type { ImageProviderProperties } from './image.provider.properties';
+import type { ImageProviderProps } from './image.provider.props';
 
-const ImageProvider = (properties: PropsWithChildren<ImageProviderProperties>) => {
-  const { children, images } = properties;
+const ImageProvider = (props: PropsWithChildren<ImageProviderProps>) => {
+  const { children, images } = props;
 
   const [currentImageIndex, setCurrentImageIndex] = useLocalStorage(
     'current-image-index',

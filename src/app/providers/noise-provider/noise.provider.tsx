@@ -5,23 +5,21 @@ import { useLocalStorage } from 'usehooks-ts';
 
 import { NoiseContext, type NoiseContextValue } from './noise.context';
 
-const NoiseProvider = (properties: PropsWithChildren) => {
-  const { children } = properties;
+const NoiseProvider = (props: PropsWithChildren) => {
+  const { children } = props;
 
   const [isNoise, setIsNoise] = useLocalStorage('is-noise', true, {
     initializeWithValue: false,
   });
 
-  const toggleNoise = () => {
-    setIsNoise((previousState) => !previousState);
-  };
-
   const value = useMemo<NoiseContextValue>(
     () => ({
       isNoise,
-      setIsNoise: toggleNoise,
+      setIsNoise: () => {
+        setIsNoise((previousState) => !previousState);
+      },
     }),
-    [isNoise, toggleNoise],
+    [isNoise, setIsNoise],
   );
 
   return <NoiseContext.Provider value={value}>{children}</NoiseContext.Provider>;

@@ -5,10 +5,10 @@ import { Howl } from 'howler';
 import { useEffect, useRef, useState } from 'react';
 
 import style from './button.module.scss';
-import type { Properties } from './button.properties';
+import type { Props } from './button.props';
 
-const Button = (properties: Properties) => {
-  const { isActive, label, labelledBy, onClick, text, type = 'switch' } = properties;
+const Button = (props: Props) => {
+  const { isActive, label, labelledBy, onClick, text, type = 'switch' } = props;
 
   const [isDisabled, setIsDisabled] = useState(true);
   const [soundsURLS, setSoundsURLS] = useState<string[]>([]);

@@ -6,10 +6,10 @@ import { useLocalStorage } from 'usehooks-ts';
 import { Button } from '@/ui/button/button';
 
 import style from './player.module.scss';
-import type { Properties } from './player.properties';
+import type { Props } from './player.props';
 
-const Player = (properties: Properties) => {
-  const { label, labelledBy, text, volumeControlLabel, volumeLabel } = properties;
+const Player = (props: Props) => {
+  const { label, labelledBy, text, volumeControlLabel, volumeLabel } = props;
 
   const audioElementReference = useRef<HTMLAudioElement>(null);
   const audioContextReference = useRef<AudioContext | null>(null);
@@ -34,9 +34,12 @@ const Player = (properties: Properties) => {
 
     const AudioContextConstructor =
       window.AudioContext ||
-      (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+      (window as unknown as { webkitAudioContext: typeof AudioContext })
+        .webkitAudioContext;
     const audioContext = new AudioContextConstructor();
-    const sourceNode = audioContext.createMediaElementSource(audioElementReference.current);
+    const sourceNode = audioContext.createMediaElementSource(
+      audioElementReference.current,
+    );
     const gainNode = audioContext.createGain();
 
     sourceNode.connect(gainNode);
@@ -128,11 +131,11 @@ const Player = (properties: Properties) => {
         <span aria-labelledby={volumeLabel}>{volumeLabel}</span>
       </label>
       <audio
-        ref={audioElementReference}
         onEnded={handleTrackEnded}
+        ref={audioElementReference}
         src={musicURLS[trackIndex]}
       >
-        <track kind='captions' label='No captions' src='' />
+        <track kind='captions' label='No captions' />
       </audio>
     </>
   );

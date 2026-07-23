@@ -7,10 +7,10 @@ import { useImageContext } from '@/providers/image-provider/use-image.context';
 import { useNoiseContext } from '@/providers/noise-provider/use-noise.context';
 
 import style from './screen.module.scss';
-import type { Properties } from './screen.properties';
+import type { Props } from './screen.props';
 
-const Screen = (properties: Properties) => {
-  const { alt, label } = properties;
+const Screen = (props: Props) => {
+  const { alt, label } = props;
 
   const { isNoise } = useNoiseContext();
   const { currentImage } = useImageContext();
