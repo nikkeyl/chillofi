@@ -1,5 +1,6 @@
 'use client';
 
+import clsx from 'clsx';
 import { ChangeEvent, useEffect, useRef, useState } from 'react';
 import { useLocalStorage } from 'usehooks-ts';
 
@@ -148,6 +149,7 @@ const Player = (props: Props) => {
         className={style.slider}
         htmlFor={volumeLabel}
       >
+        <div className={clsx(style.track, style.underlay)} />
         <input
           aria-disabled={isDisabled}
           aria-valuemax={1}
