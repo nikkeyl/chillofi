@@ -48,8 +48,8 @@ const Player = (props: Props) => {
 
     sourceNode.connect(gainNode);
     gainNode.connect(audioContext.destination);
-    gainNode.gain.value = volume;
 
+    gainNode.gain.value = volume;
     audioContextReference.current = audioContext;
     gainNodeReference.current = gainNode;
   };
@@ -62,11 +62,13 @@ const Player = (props: Props) => {
     }
 
     isInternalToggleReference.current = true;
+
     setIsActive((previousState) => !previousState);
   };
 
   const handleTrackEnded = () => {
     isInternalToggleReference.current = true;
+
     setTrackIndex((previousIndex) => (previousIndex + 1) % musicURLS.length);
   };
 
@@ -78,6 +80,7 @@ const Player = (props: Props) => {
     }
 
     isInternalToggleReference.current = false;
+
     setIsActive(false);
   };
 
@@ -91,6 +94,7 @@ const Player = (props: Props) => {
     }
 
     isInternalToggleReference.current = false;
+
     setIsActive(true);
   };
 
@@ -109,6 +113,7 @@ const Player = (props: Props) => {
   useEffect(() => {
     if (gainNodeReference.current) {
       gainNodeReference.current.gain.value = volume;
+
       return;
     }
 
