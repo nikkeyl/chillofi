@@ -39,9 +39,13 @@ jobs:
           script: |
             cd /sites/chillofi.nikkeyl.com
 
-            echo "${{ secrets.DC_PAT }}" | docker login ghcr.io -u ${{ github.repository_owner }} --password-stdin
+            echo "${{ secrets.DC_PAT }}" |
+              docker login ghcr.io \
+                -u "${{ github.repository_owner }}" \
+                --password-stdin
 
-            IMAGE_TAG="${{ steps.vars.outputs.IMAGE_NAME }}:${{ steps.vars.outputs.TAG }}" \
-            docker compose up -d --pull always
+            IMAGE_NAME="${{ steps.vars.outputs.IMAGE_NAME }}"
+            TAG="${{ steps.vars.outputs.TAG }}"
+            IMAGE_TAG="${IMAGE_NAME}:${TAG}" docker compose up -d --pull always
 
             docker image prune -f
