@@ -31,7 +31,7 @@
         "@typescript-eslint/eslint-plugin": "^8.65.0",
         "@typescript-eslint/parser": "^8.65.0",
         "conventional-changelog-conventionalcommits": "^10.2.1",
-        "editorconfig-checker": "^6.1.1",
+        "editorconfig-checker": "^7.0.0",
         "eslint": "^10.7.0",
         "eslint-config-prettier": "^10.1.8",
         "eslint-define-config": "^2.1.0",
@@ -682,7 +682,7 @@
 
     "eastasianwidth": ["eastasianwidth@0.2.0", "", {}, "sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA=="],
 
-    "editorconfig-checker": ["editorconfig-checker@6.1.1", "", { "bin": { "ec": "dist/index.js", "editorconfig-checker": "dist/index.js" } }, "sha512-kiOb6qaWpMNt7Z/43ba0Pa1Inhr2/t9nKbvEKtCeXJ5AesztoM9AgLOOQVB4QUv/nGjgz3xkbx4pcogVRD2NWw=="],
+    "editorconfig-checker": ["editorconfig-checker@7.0.0", "", { "bin": { "ec": "dist/index.js", "editorconfig-checker": "dist/index.js" } }, "sha512-bqTCyzjz6Qbah4hBO032mQiwGstrHL/jwsnlFvlqrDcpv8rv2pSgLo00Fnji1u6PGtSdY6uydzVLUdHupbpNBQ=="],
 
     "electron-to-chromium": ["electron-to-chromium@1.5.395", "", {}, "sha512-7zt9Aw+SrmxLWLN0zhaTWZQiCdryLVrYTq5R7iZakLvi2UQPYMMsROYV/2qVCzMeCiSXHwKOU+sZ4zOVVlrtKA=="],
 

@@ -36,7 +36,7 @@
     "@typescript-eslint/eslint-plugin": "^8.65.0",
     "@typescript-eslint/parser": "^8.65.0",
     "conventional-changelog-conventionalcommits": "^10.2.1",
-    "editorconfig-checker": "^6.1.1",
+    "editorconfig-checker": "^7.0.0",
     "eslint": "^10.7.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-define-config": "^2.1.0",
