@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'next.config.*'
+      - 'package.json'
+      - 'public/**'
+      - 'src/**'
 
 permissions:
   contents: read
