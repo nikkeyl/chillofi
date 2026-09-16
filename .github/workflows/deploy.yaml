@@ -39,7 +39,7 @@ jobs:
           script: |
             cd /sites/chillofi.nikkeyl.com
 
-            echo "${{ secrets.DC_PAT }}" |
+            echo "${{ secrets.CHILLOFI_PAT }}" |
               docker login ghcr.io \
                 -u "${{ github.repository_owner }}" \
                 --password-stdin
