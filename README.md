@@ -13,9 +13,13 @@ playback and volume controls, background switching, and a visual noise effect.
 ## Features
 
 - Continuous playback through the bundled music collection.
+
 - Play and pause controls, with volume saved in local storage.
+
 - Switchable illustrated backgrounds and a visual noise overlay.
+
 - Interface translations in English, German, Japanese, and Russian.
+
 - Language selection from the browser's preferred language, with English
   as the fallback.
 
@@ -52,9 +56,13 @@ The application uses TypeScript, React, Next.js App Router, `next-intl`,
 and SCSS modules.
 
 - `src/app/page.tsx` composes the screen and playback controls.
+
 - `src/widgets/player/` owns playback state and the audio element.
+
 - Image and noise providers share visual state between the screen and controls.
+
 - Route handlers enumerate music and sound-effect files from `public/audio/`.
+
 - The player connects an HTML audio element to a Web Audio gain node
   for volume control.
 
@@ -77,10 +85,10 @@ GitHub Actions workflows for build, linting, and formatting checks.
 For changes to playback or controls, manually check:
 
 1. Start, pause, and resume playback.
-2. Change volume and reload the page to check persistence.
-3. Allow a track to finish and check that the next track starts.
-4. Switch backgrounds and toggle the noise overlay.
-5. Navigate the controls with a keyboard and check the mobile layout.
+1. Change volume and reload the page to check persistence.
+1. Allow a track to finish and check that the next track starts.
+1. Switch backgrounds and toggle the noise overlay.
+1. Navigate the controls with a keyboard and check the mobile layout.
 
 The repository does not currently include an automated application test suite.
 
