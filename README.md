@@ -77,21 +77,6 @@ requires a server runtime rather than a static export.
 - Playback begins after user interaction, in line with browser autoplay rules.
 - Volume persistence depends on browser local storage.
 
-## Verification
-
-Build the application with `bun run build`. The repository also includes
-GitHub Actions workflows for build, linting, and formatting checks.
-
-For changes to playback or controls, manually check:
-
-1. Start, pause, and resume playback.
-1. Change volume and reload the page to check persistence.
-1. Allow a track to finish and check that the next track starts.
-1. Switch backgrounds and toggle the noise overlay.
-1. Navigate the controls with a keyboard and check the mobile layout.
-
-The repository does not currently include an automated application test suite.
-
 ## License
 
 [MIT](./LICENSE).
