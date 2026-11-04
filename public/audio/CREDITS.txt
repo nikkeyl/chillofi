@@ -1,0 +1,80 @@
+Music by Purrple Cat — https://purrplecat.com/
+
+All 13 music recordings listed below are distributed under Creative Commons
+Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).
+https://creativecommons.org/licenses/by-sa/4.0/
+
+The AAC files are format conversions of the original recordings.
+Original download URLs and conversion history were not retained.
+No endorsement by Purrple Cat is implied.
+
+Crescent Moon — Purrple Cat
+Album: City Nights
+File: music/crescent-moon.aac
+Source and license: https://purrplecat.bandcamp.com/track/crescent-moon
+
+Field Of Fireflies — Purrple Cat
+Album: Mellow Skies
+File: music/field-of-fireflies.aac
+Source and license: https://purrplecat.bandcamp.com/track/field-of-fireflies
+
+Forgotten Places — Purrple Cat
+Album: Distant Worlds III
+File: music/forgotten-places.aac
+Source and license: https://purrplecat.bandcamp.com/track/forgotten-places
+
+Green Tea — Purrple Cat
+Album: Bloom
+File: music/green-tea.aac
+Source and license: https://purrplecat.bandcamp.com/track/green-tea
+
+Heart of the Ocean — Purrple Cat
+Album: Oasis
+File: music/heart-of-the-ocean.aac
+Source and license: https://purrplecat.bandcamp.com/track/heart-of-the-ocean
+
+In the Past — Purrple Cat
+Album: Signs of Life
+File: music/in-the-past.aac
+Source and license: https://purrplecat.bandcamp.com/track/in-the-past
+
+Journey's End — Purrple Cat
+Album: Adventure Island
+File: music/journey-end.aac
+Source and license: https://purrplecat.bandcamp.com/track/journeys-end
+
+Lazy Afternoon — Purrple Cat
+Album: Signs of Life
+File: music/lazy-afternoon.aac
+Source and license: https://purrplecat.bandcamp.com/track/lazy-afternoon
+
+Lost and Found — Purrple Cat
+Album: Signs of Life
+File: music/lost-and-found.aac
+Source and license: https://purrplecat.bandcamp.com/track/lost-and-found
+
+Missing You — Purrple Cat
+Album: Distant Worlds
+File: music/missing-you.aac
+Source and license: https://purrplecat.bandcamp.com/track/missing-you
+
+Serendipity — Purrple Cat
+Album: Signs of Life
+File: music/serendipity.aac
+Source and license: https://purrplecat.bandcamp.com/track/serendipity
+
+Signs of Life — Purrple Cat
+Album: Signs of Life
+File: music/signs-of-life.aac
+Source and license: https://purrplecat.bandcamp.com/track/signs-of-life
+
+Silent Wood — Purrple Cat
+Album: House in the Woods
+File: music/silent-wood.aac
+Source and license: https://purrplecat.bandcamp.com/track/silent-wood
+
+Sound effect: effects/switch.aac
+Retained unchanged at the repository owner's request.
+The owner reports obtaining it from a publicly accessible source.
+Its original source and license have not been documented.
+The CC BY-SA music license does not apply to this effect.

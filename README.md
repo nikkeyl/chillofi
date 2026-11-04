@@ -77,6 +77,21 @@ requires a server runtime rather than a static export.
 - Playback begins after user interaction, in line with browser autoplay rules.
 - Volume persistence depends on browser local storage.
 
+## Visual assets
+
+The six illustrated backgrounds in `public/images/` were generated with
+OpenAI image generation through ChatGPT and optimized as WebP images.
+
+## Music credits
+
+The 13 bundled music tracks are by [Purrple Cat](https://purrplecat.com/),
+licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+See [audio sources and permissions](./AUDIO-LICENSES.md) for the status of
+individual recordings and the sound effect.
+
 ## License
 
-[MIT](./LICENSE).
+Application source code: [MIT](./LICENSE).
+Music recordings: [CC BY-SA 4.0](./LICENSES/CC-BY-SA-4.0.txt).
+The music license does not cover the button sound effect; see
+[AUDIO-LICENSES.md](./AUDIO-LICENSES.md).

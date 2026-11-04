@@ -28,6 +28,13 @@ const Screen = (props: Props) => {
         priority
         src={currentImage}
       />
+      <small className={style.credits}>
+        Music: <a href='https://purrplecat.com/'>Purrple Cat</a>
+        {' · '}
+        <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a>
+        {' · '}
+        <a href='/audio/CREDITS.txt'>Track credits</a>
+      </small>
     </main>
   );
 };
