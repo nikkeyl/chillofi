@@ -3,7 +3,7 @@
 *,
 *::before,
 *::after {
-  cursor: url("/icons/cursor-default.svg"), default;
+  cursor: default;
 
   user-select: none;
 
@@ -16,6 +16,10 @@
   box-sizing: border-box;
 
   outline: none;
+}
+
+:any-link {
+  cursor: url("/icons/cursor-pointer.svg"), pointer;
 }
 
 body {

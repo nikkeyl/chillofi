@@ -21,7 +21,6 @@ const Player = (props: Props) => {
   const { playSound } = useClickSound();
 
   const [isActive, setIsActive] = useState(false);
-  const [isDisabled, setIsDisabled] = useState(true);
   const [volume, setVolume] = useLocalStorage('current-volume', 0.5, {
     initializeWithValue: false,
   });
@@ -105,7 +104,6 @@ const Player = (props: Props) => {
       const music = await response.json();
 
       setMusicURLS(music);
-      setIsDisabled(false);
     };
 
     fetchMusic();
@@ -144,19 +142,16 @@ const Player = (props: Props) => {
         type='play'
       />
       <label
-        aria-disabled={isDisabled}
         aria-label={volumeControlLabel}
         className={style.slider}
         htmlFor={volumeLabel}
       >
         <div className={clsx(style.track, style.underlay)} />
         <input
-          aria-disabled={isDisabled}
           aria-valuemax={1}
           aria-valuemin={0}
           aria-valuenow={volume}
           className={style.track}
-          disabled={isDisabled}
           id={volumeLabel}
           max={1}
           min={0}
