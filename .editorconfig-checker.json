@@ -1,7 +1,3 @@
 {
-  "exclude": [
-    "bun.lock",
-    "CC-BY-SA-4.0.txt",
-    "semantic-pull-request-title.yaml"
-  ]
+  "exclude": ["bun.lock", "CC-BY-SA-4.0.txt", "semantic-pull-request-title.yaml"]
 }
