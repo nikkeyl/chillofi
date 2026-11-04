@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 
-import socialCoverImage from '@/socials/cover.jpg';
+import socialCoverImage from '@/socials/cover-ai.jpg';
 
 const title = 'Chillofi';
 const description = 'LOFI-radio for work, study and relax';

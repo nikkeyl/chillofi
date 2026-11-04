@@ -2,7 +2,7 @@
 
 A browser-based lo-fi music player for work, study, and relaxation.
 
-![Chillofi cover](./public/socials/cover.jpg)
+![Chillofi cover](./public/socials/cover-ai.jpg)
 
 ## Overview
 
