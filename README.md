@@ -30,18 +30,10 @@ docker run --rm -p 3000:3000 chillofi
 - Providers share image and noise state. Browser language selects English,
   German, Japanese or Russian, with English as the fallback.
 
-## Files
-
-- `src/app/page.tsx` — composition; `src/widgets/player/` — playback state.
-
-- `src/app/api/{get-music,get-sounds}/route.ts` — audio file lists.
-
-- `src/shared/config/get-images.ts` — backgrounds; `public/images/` — six
-  illustrations generated through ChatGPT and optimized as WebP.
-
-- `public/audio/` — music and sound effects; [audio sources](AUDIO-LICENSES.md).
-
 ## Credits and license
+
+The six illustrated backgrounds were generated through ChatGPT and optimized as
+WebP.
 
 The 13 music tracks are by [Purrple Cat](https://purrplecat.com/), under
 [CC BY-SA 4.0](LICENSES/CC-BY-SA-4.0.txt). See
