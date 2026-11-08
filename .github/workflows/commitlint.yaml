@@ -38,4 +38,5 @@ jobs:
       - name: Lint
         run: |
           COMMIT_MESSAGE=$(cat commit_message.txt)
+
           echo "$COMMIT_MESSAGE" | bun commitlint
