@@ -20,7 +20,6 @@ Use Bun 1.3.10, as pinned in `Dockerfile`.
 
 ```sh
 bun install --frozen-lockfile
-
 bun run dev
 ```
 
@@ -34,7 +33,6 @@ Or run the container:
 
 ```sh
 docker build -t chillofi .
-
 docker run --rm -p 3000:3000 chillofi
 ```
 
