@@ -39,9 +39,12 @@ docker run --rm -p 3000:3000 chillofi
 ## Audio and backgrounds
 
 Route handlers read the bundled music and sound files from `public/audio/`.
-The player needs a server runtime, and changing that collection requires
-redeploying the assets. An HTML audio element feeds a Web Audio gain node
-for volume control.
+An HTML audio element feeds a Web Audio gain node for volume control.
+
+> [!NOTE]
+>
+> The player needs a server runtime. Changing the bundled audio collection
+> requires redeploying its assets.
 
 The six illustrated backgrounds were generated through ChatGPT and optimized
 as WebP. They are bundled with the application.
