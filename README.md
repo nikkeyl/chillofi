@@ -3,14 +3,12 @@
 A browser lo-fi player for work, study and relaxation, built with Next.js,
 React and TypeScript.
 
-[Listen](https://chillofi.nikkeyl.com/).
-
 ## Playback
 
-Start playback with the player controls and adjust the volume. Tracks advance
-automatically when they end.
-Choose a background and switch the visual noise effect on or off. Playback
-requires user interaction; the browser does not start music automatically.
+Start playback with the player controls and adjust the volume. Tracks
+advance automatically when they end. Choose a background and switch the
+visual noise effect on or off. Playback requires user interaction; the
+browser does not start music automatically.
 
 Volume and background preferences persist in local storage. The interface
 supports English, German, Japanese and Russian, using the browser language
@@ -22,6 +20,7 @@ Use Bun 1.3.10, as pinned in `Dockerfile`.
 
 ```sh
 bun install --frozen-lockfile
+
 bun run dev
 ```
 
@@ -35,6 +34,7 @@ Or run the container:
 
 ```sh
 docker build -t chillofi .
+
 docker run --rm -p 3000:3000 chillofi
 ```
 
