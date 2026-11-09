@@ -1,6 +1,9 @@
 name: Build
 
 on:
+  pull_request:
+    branches:
+      - main
   push:
     branches:
       - main
@@ -9,6 +12,18 @@ on:
       - 'package.json'
       - 'public/**'
       - 'src/**'
+      - 'Dockerfile*'
+      - '.dockerignore'
+      - 'bun.lock*'
+      - 'bunfig.toml'
+      - 'tsconfig*.json'
+      - 'next-env.d.ts'
+      - '*.config.*'
+      - '.npmrc'
+      - '.bun-version'
+      - '.node-version'
+      - '.nvmrc'
+      - '.github/workflows/build.yaml'
 
 permissions:
   contents: read
@@ -27,8 +42,53 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+        with:
+          fetch-depth: 0
+
+      - name: Filter Changed Files
+        id: changes
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+
+          if [[ "$EVENT_NAME" != 'pull_request' ]]; then
+            echo 'run=true' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          if git diff --quiet "$BASE_SHA...$HEAD_SHA" -- \
+              ':(glob)next.config.*' \
+              ':(glob)package.json' \
+              ':(glob)public/**' \
+              ':(glob)src/**' \
+              ':(glob)Dockerfile*' \
+              ':(glob).dockerignore' \
+              ':(glob)bun.lock*' \
+              ':(glob)bunfig.toml' \
+              ':(glob)tsconfig*.json' \
+              ':(glob)next-env.d.ts' \
+              ':(glob)*.config.*' \
+              ':(glob).npmrc' \
+              ':(glob).bun-version' \
+              ':(glob).node-version' \
+              ':(glob).nvmrc' \
+              ':(glob).github/workflows/build.yaml'; then
+            echo 'run=false' >> "$GITHUB_OUTPUT"
+          else
+            status=$?
+
+            if (( status != 1 )); then
+              exit "$status"
+            fi
+
+            echo 'run=true' >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Login To GHCR
+        if: ${{ steps.changes.outputs.run == 'true' && github.event_name == 'push' }}
         uses: docker/login-action@650006c6eb7dba73a995cc03b0b2d7f5ca915bee
         with:
           registry: ghcr.io
@@ -36,6 +96,7 @@ jobs:
           password: ${{ secrets.CHILLOFI_PAT }}
 
       - name: Define Image Tag And Name
+        if: ${{ steps.changes.outputs.run == 'true' }}
         id: image
         run: |
           TAG=$(echo $GITHUB_SHA | cut -c1-8)
@@ -46,10 +107,11 @@ jobs:
           echo "IMAGE_NAME=$IMAGE_NAME" >> $GITHUB_OUTPUT
 
       - name: Build And Push Docker Image
+        if: ${{ steps.changes.outputs.run == 'true' }}
         uses: docker/build-push-action@53b7df96c91f9c12dcc8a07bcb9ccacbed38856a
         with:
           context: .
-          push: true
+          push: ${{ github.event_name == 'push' }}
           tags: |
             ${{ steps.image.outputs.IMAGE_NAME }}:${{ steps.image.outputs.TAG }}
             ${{ steps.image.outputs.IMAGE_NAME }}:latest
